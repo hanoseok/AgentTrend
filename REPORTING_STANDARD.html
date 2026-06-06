@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Trend Reporting Standard</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --ink: #141b2d;
+      --muted: #657083;
+      --line: #d8dee9;
+      --accent: #1d4ed8;
+      --accent-soft: #eaf1ff;
+      --danger: #b42318;
+      --danger-soft: #fff1f0;
+      --shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto 56px;
+    }
+    .hero, .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-bottom: 18px;
+    }
+    h1 { margin: 0 0 10px; font-size: 34px; letter-spacing: 0; }
+    h2 { margin: 0 0 14px; font-size: 22px; }
+    h3 { margin: 22px 0 8px; font-size: 17px; }
+    p { margin: 0 0 12px; }
+    .lead { color: var(--muted); font-size: 17px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      background: #fcfdff;
+    }
+    .card strong { color: var(--accent); display: block; margin-bottom: 6px; }
+    ol, ul { padding-left: 22px; }
+    .warning {
+      background: var(--danger-soft);
+      border-color: #ffccc7;
+    }
+    .warning strong { color: var(--danger); }
+    @media (max-width: 760px) {
+      main { width: min(100% - 20px, 1120px); margin-top: 18px; }
+      .hero, .section { padding: 22px; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <h1>Agent Trend Reporting Standard</h1>
+      <p class="lead">에이전트 트렌드 자료를 CEO 보고, 임원 공유, 플랫폼 전략 논의, 제품/기술 로드맵 조정에 바로 사용할 수 있도록 맞추는 운영 기준.</p>
+    </section>
+
+    <section class="section">
+      <h2>핵심 원칙</h2>
+      <div class="grid">
+        <article class="card"><strong>최신성</strong>조사 시점, 발표일, 제품 출시일, 스펙 버전, 인수/제휴/투자 시점을 구분한다. "최신"이라고 쓸 때는 확인 날짜를 남긴다.</article>
+        <article class="card"><strong>출처 신뢰도</strong>공식 스펙, 표준 단체, 논문, GitHub 릴리스, 회사 공식 문서를 우선한다. 소셜 신호는 검증 전까지 미확인 신호로 분리한다.</article>
+        <article class="card"><strong>보고 구조</strong>Executive Summary, What Changed, Technical Detail, Kakao Implications, Recommended Actions, Risks, Sources를 기본 골격으로 쓴다.</article>
+        <article class="card"><strong>기술 깊이</strong>아키텍처, API 계약, 데이터/상태 모델, 인증/인가, tracing/eval, failure mode, SDK 현황, 운영 난이도를 확인한다.</article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>출처 우선순위</h2>
+      <ol>
+        <li>공식 스펙, 공식 문서, 표준 단체, 논문, GitHub 릴리스</li>
+        <li>회사 공식 블로그, 개발자 블로그, 제품 릴리스 노트</li>
+        <li>주요 언론과 분석기관</li>
+        <li>커뮤니티, 소셜, 개인 블로그</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>카카오 관점 필수 질문</h2>
+      <ul>
+        <li>카카오톡, Kanana, 쇼핑/선물하기, 로컬/지도, 결제, 콘텐츠, 사내 업무 중 어디에 직접 적용 가능한가</li>
+        <li>중앙 AI 플랫폼 팀이 제공해야 할 공통 기능은 무엇인가</li>
+        <li>서비스 팀이 직접 구현해야 할 도메인 기능은 무엇인가</li>
+        <li>외부 표준을 그대로 채택할 것인가, 내부 호환 표준으로 감쌀 것인가</li>
+        <li>개인정보, 결제, 메시징, 예약 같은 고위험 액션의 승인 흐름은 어떻게 둘 것인가</li>
+        <li>경쟁사 대비 카카오가 빠르게 차별화할 수 있는 데이터/서비스 접점은 무엇인가</li>
+      </ul>
+    </section>
+
+    <section class="section warning">
+      <h2>금지 사항</h2>
+      <div class="grid">
+        <article class="card warning"><strong>출처 없는 단정</strong>확인되지 않은 사실을 확정적으로 쓰지 않는다.</article>
+        <article class="card warning"><strong>홍보성 요약</strong>벤더 발표를 그대로 옮기지 않고 구현 가능성과 한계를 따진다.</article>
+        <article class="card warning"><strong>일반 뉴스 나열</strong>카카오 적용 포인트 없는 뉴스는 보고 대상에서 낮춘다.</article>
+        <article class="card warning"><strong>변경점 누락</strong>기존 조사와 달라진 내용을 별도로 표시한다.</article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

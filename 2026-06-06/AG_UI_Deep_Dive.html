@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AG-UI Deep Dive</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --ink:#142033; --muted:#667085; --line:#d8dee9; --accent:#2563eb; --soft:#eaf1ff; --amber:#b54708; --amber-soft:#fff7ed; --shadow:0 16px 42px rgba(15,23,42,.08); }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); line-height:1.62; }
+    a { color:var(--accent); text-decoration:none; overflow-wrap:anywhere; }
+    a:hover { text-decoration:underline; }
+    .page { width:min(1200px,calc(100% - 32px)); margin:28px auto 60px; display:grid; grid-template-columns:260px minmax(0,1fr); gap:22px; align-items:start; }
+    nav { position:sticky; top:18px; background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:18px; }
+    nav strong { display:block; margin-bottom:10px; }
+    nav a { display:block; padding:8px 0; color:#344054; font-size:14px; border-top:1px solid #eef2f7; }
+    .hero, section { background:var(--panel); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); padding:30px; margin-bottom:18px; }
+    h1 { margin:0; font-size:clamp(34px,5vw,52px); line-height:1.06; letter-spacing:0; }
+    h2 { margin:0 0 16px; font-size:24px; }
+    h3 { margin:22px 0 10px; font-size:18px; }
+    p { margin:0 0 13px; }
+    .eyebrow { margin:0 0 8px; color:var(--accent); font-weight:850; font-size:14px; }
+    .lead { max-width:900px; margin-top:16px; color:#344054; font-size:18px; }
+    .meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+    .pill { display:inline-flex; border-radius:999px; border:1px solid #bed3ff; background:var(--soft); color:#1e40af; padding:7px 11px; font-size:13px; font-weight:760; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .grid.two { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .card { border:1px solid var(--line); border-radius:14px; padding:18px; background:#fcfdff; }
+    .card strong { display:block; margin-bottom:6px; color:var(--accent); }
+    .callout { border:1px solid #bed3ff; background:var(--soft); border-radius:14px; padding:18px; margin:14px 0; }
+    .warn { border-color:#fed7aa; background:var(--amber-soft); }
+    table { width:100%; border-collapse:collapse; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:white; }
+    th, td { padding:13px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { background:#f1f4f9; color:#344054; font-size:14px; }
+    tr:last-child td { border-bottom:0; }
+    ul, ol { padding-left:22px; }
+    li { margin:6px 0; }
+    code { background:#eef2f7; border:1px solid #dbe3ee; border-radius:6px; padding:2px 6px; font-size:.92em; }
+    .sources { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .sources a { display:block; padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:#fcfdff; }
+    @media (max-width:900px){ .page{display:block;width:min(100% - 20px,1200px);margin-top:18px}.hero,section{padding:22px}nav{position:static;margin-bottom:18px}.grid,.grid.two,.sources{grid-template-columns:1fr}h1{font-size:30px} }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <strong>AG-UI</strong>
+      <a href="#summary">Executive Summary</a>
+      <a href="#what">What It Is</a>
+      <a href="#technical">Technical Model</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#kakao">Kakao Implications</a>
+      <a href="#actions">Actions</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <main>
+      <header class="hero">
+        <p class="eyebrow">Protocol Deep Dive</p>
+        <h1>AG-UI: Agent-User Interaction Protocol</h1>
+        <p class="lead">AG-UI는 에이전트 백엔드와 사용자 앱 프론트엔드를 연결하는 이벤트 기반 상호작용 프로토콜이다. 에이전트가 장시간 실행되고, 도구를 쓰고, 상태를 바꾸고, 중간 승인을 요구하는 제품에서는 채팅 API만으로 부족하다. AG-UI는 그 빈 공간을 메운다.</p>
+        <div class="meta">
+          <span class="pill">작성 시점: 2026-06-06 20:18 KST</span>
+          <span class="pill">조사 수준: Deep Dive</span>
+          <span class="pill">Raw: raw/AG_UI_Deep_Dive.md</span>
+        </div>
+      </header>
+
+      <section id="summary">
+        <h2>1. Executive Summary</h2>
+        <div class="grid">
+          <article class="card"><strong>핵심 역할</strong>AG-UI는 UI component spec이 아니라 event transport/interaction protocol이다. agent state, tool call, streaming text, interrupt, shared state를 앱에 전달한다.</article>
+          <article class="card"><strong>왜 지금 중요한가</strong>agentic app은 request-response API가 아니라 long-running, streaming, cancellable, human-in-loop workflow다. 프론트엔드 표준이 필요해졌다.</article>
+          <article class="card"><strong>카카오 포인트</strong>톡/카나나/상담/커머스 agent UX를 일관되게 만들려면 AG-UI식 event bus와 lifecycle이 필요하다.</article>
+        </div>
+        <div class="callout">
+          <strong>CEO 보고용 한 줄:</strong> AG-UI는 “에이전트가 앱 안에서 일하는 모습을 사용자에게 안전하고 추적 가능하게 보여주는 UX 프로토콜”이다.
+        </div>
+      </section>
+
+      <section id="what">
+        <h2>2. What It Is</h2>
+        <p>AG-UI 공식 문서는 이를 AI agent와 user-facing application을 연결하는 open, lightweight, event-based protocol로 정의한다. MCP가 agent에게 tools/data를 주고 A2A가 agent 간 협업을 다룬다면, AG-UI는 agent와 사용자 앱 사이의 실시간 상호작용을 다룬다.</p>
+        <p>A2-UI와 혼동하면 안 된다. A2-UI는 agent가 전달할 수 있는 선언형 UI payload/spec에 가깝고, AG-UI는 그 payload와 상태, tool call, interrupt, action을 오가는 연결 채널이다. 둘은 경쟁보다 조합 관계다.</p>
+      </section>
+
+      <section id="technical">
+        <h2>3. Technical Model</h2>
+        <h3>Event Categories</h3>
+        <table>
+          <thead><tr><th>카테고리</th><th>의미</th><th>카카오 UX 예</th></tr></thead>
+          <tbody>
+            <tr><td>Lifecycle</td><td>RunStarted, StepStarted, RunFinished, RunError 등 agent run의 경계를 표현.</td><td>“예약 가능 매장 검색 중”, “결제 조건 검증 중” 진행 표시.</td></tr>
+            <tr><td>Text Message</td><td>텍스트 메시지 streaming start/content/end.</td><td>톡 말풍선이 실시간으로 생성됨.</td></tr>
+            <tr><td>Tool Call</td><td>agent가 어떤 tool을 어떤 인자로 호출하는지 프론트에 노출.</td><td>“지도 검색”, “상품 재고 조회”, “쿠폰 적용”을 투명하게 표시.</td></tr>
+            <tr><td>State</td><td>StateSnapshot/StateDelta로 agent와 UI state를 동기화.</td><td>장바구니, 예약 조건, 배송지, 선택 옵션이 동기화됨.</td></tr>
+            <tr><td>Activity</td><td>계획, 검색, 분석 같은 중간 활동을 구조화.</td><td>CS agent가 문의 원인 분석 단계를 보여줌.</td></tr>
+            <tr><td>Interrupt</td><td>사용자 승인/수정/재시도/에스컬레이션을 위해 run을 멈춤.</td><td>결제, 개인정보 제공, 외부 전송 전에 승인 요청.</td></tr>
+            <tr><td>Custom / Raw</td><td>앱별 이벤트와 외부 시스템 이벤트를 담는 확장 지점.</td><td>카카오톡 채널, 알림, 지도, Pay 이벤트를 감쌈.</td></tr>
+          </tbody>
+        </table>
+        <h3>주요 기능</h3>
+        <ul>
+          <li>Streaming chat, tool result streaming, cancel/resume.</li>
+          <li>Shared state와 JSON Patch 기반 incremental update.</li>
+          <li>Frontend tool calls와 backend tool rendering.</li>
+          <li>Human-in-the-loop interrupt.</li>
+          <li>Sub-agent composition, scoped tracing, cancellation.</li>
+          <li>Reasoning visibility는 raw chain-of-thought가 아니라 summaries/traces 중심.</li>
+        </ul>
+      </section>
+
+      <section id="ecosystem">
+        <h2>4. Ecosystem / Trend Signal</h2>
+        <p>AG-UI는 CopilotKit, LangGraph, CrewAI와의 초기 연동에서 출발했지만 현재 문서와 GitHub는 Microsoft Agent Framework, Google ADK, AWS Strands/Bedrock, Mastra, Pydantic AI, Agno, LlamaIndex, AG2 등 다양한 agent framework와의 연동을 내세운다. 즉 프론트엔드 agent interaction layer로 확장되는 중이다.</p>
+        <div class="callout warn">
+          <strong>판단:</strong> AG-UI는 아직 모든 플랫폼이 채택한 확정 표준은 아니지만, agent 앱을 실제 제품으로 만들 때 필요한 event taxonomy가 상당히 실무적이다. 카카오는 그대로 종속되기보다 AG-UI-compatible internal event schema를 만드는 것이 현실적이다.
+        </div>
+      </section>
+
+      <section id="kakao">
+        <h2>5. Kakao Implications</h2>
+        <table>
+          <thead><tr><th>카카오 적용 영역</th><th>AG-UI가 해결하는 문제</th><th>필요 설계</th></tr></thead>
+          <tbody>
+            <tr><td>카나나 / 톡 agent</td><td>말풍선만으로 장시간 task, tool call, approval 상태를 표현하기 어렵다.</td><td>thread/run/step/event id 체계, resumable run, cancel UI.</td></tr>
+            <tr><td>커머스 / Pay</td><td>상품 비교, 옵션 선택, 결제 승인, 주문 추적이 모두 다른 UI 상태다.</td><td>StateSnapshot/Delta + Interrupt + Trusted Surface event.</td></tr>
+            <tr><td>CS / 운영 agent</td><td>agent가 어떤 근거와 tool로 판단했는지 추적해야 한다.</td><td>ToolCall events, activity trace, human escalation.</td></tr>
+            <tr><td>개발자/사내 agent</td><td>장시간 workflow 진행 상황과 subagent 작업을 보여줘야 한다.</td><td>Run/Step lifecycle, nested delegation trace, log streaming.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="actions">
+        <h2>6. Recommended Actions</h2>
+        <ol>
+          <li><strong>Kakao Agent Event Schema:</strong> AG-UI event taxonomy를 참고해 내부 공통 event envelope를 만든다.</li>
+          <li><strong>Interrupt First:</strong> 결제, 개인정보 제공, 외부 메시지 발송, 예약 확정은 모두 interrupt로 모델링한다.</li>
+          <li><strong>Trace Policy:</strong> raw chain-of-thought 없이 tool call, decision summary, evidence, approval record를 남긴다.</li>
+          <li><strong>AG-UI + A2-UI PoC:</strong> AG-UI transport 위에 A2-UI payload를 얹어 쇼핑/예약 UI를 동적으로 렌더링한다.</li>
+          <li><strong>Mobile Constraints:</strong> 톡 모바일 환경에서 event 폭주, reconnect, offline, push notification, partial rendering을 테스트한다.</li>
+        </ol>
+      </section>
+
+      <section id="sources">
+        <h2>7. Sources</h2>
+        <h3>Official / Specification</h3>
+        <div class="sources">
+          <a href="https://docs.ag-ui.com/">AG-UI official documentation</a>
+          <a href="https://docs.ag-ui.com/introduction">AG-UI Overview</a>
+          <a href="https://docs.ag-ui.com/concepts/events">AG-UI Events</a>
+          <a href="https://docs.ag-ui.com/concepts/state.md">AG-UI State Management</a>
+          <a href="https://docs.ag-ui.com/concepts/interrupts">AG-UI Interrupts</a>
+          <a href="https://docs.ag-ui.com/concepts/tools">AG-UI Tools</a>
+          <a href="https://docs.ag-ui.com/concepts/generative-ui-specs.md">AG-UI Generative UI</a>
+          <a href="https://docs.ag-ui.com/concepts/reasoning">AG-UI Reasoning</a>
+          <a href="https://github.com/ag-ui-protocol/ag-ui">AG-UI GitHub repository</a>
+          <a href="https://docs.ag-ui.com/sdk/js/core/overview">AG-UI TypeScript SDK overview</a>
+          <a href="https://docs.ag-ui.com/sdk/python/core/overview">AG-UI Python SDK overview</a>
+        </div>
+        <h3>Ecosystem / Demos</h3>
+        <div class="sources">
+          <a href="https://dojo.ag-ui.com/">AG-UI Dojo examples</a>
+          <a href="https://www.copilotkit.ai/docs/AG-UI-and-A2UI-Explained.pdf">CopilotKit - AG-UI and A2UI explained</a>
+          <a href="https://www.copilotkit.ai/blog/build-with-googles-new-a2ui-spec-agent-user-interfaces-with-a2ui-ag-ui">CopilotKit - Building with A2UI and AG-UI</a>
+          <a href="https://a2ui.org/introduction/what-is-a2ui/">A2UI explanation of AG-UI transport relationship</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

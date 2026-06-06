@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Trend Source Watchlist</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --ink: #142033;
+      --muted: #667085;
+      --line: #d8dee9;
+      --accent: #2563eb;
+      --accent-soft: #eaf1ff;
+      --green: #067647;
+      --green-soft: #ecfdf3;
+      --amber: #b54708;
+      --amber-soft: #fff7ed;
+      --shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.62;
+    }
+    main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 32px auto 56px;
+    }
+    .hero, section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-bottom: 18px;
+    }
+    h1 { margin: 0 0 10px; font-size: 36px; letter-spacing: 0; line-height: 1.1; }
+    h2 { margin: 0 0 16px; font-size: 23px; letter-spacing: 0; }
+    p { margin: 0 0 12px; }
+    .lead { color: var(--muted); font-size: 17px; max-width: 900px; }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid #bed3ff;
+      background: var(--accent-soft);
+      color: #1e40af;
+      padding: 6px 10px;
+      font-size: 13px;
+      font-weight: 760;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+    }
+    th, td {
+      padding: 13px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f1f4f9; color: #344054; font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
+    a:hover { text-decoration: underline; }
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .required { color: var(--green); background: var(--green-soft); border: 1px solid #abefc6; }
+    .related { color: var(--amber); background: var(--amber-soft); border: 1px solid #fed7aa; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fcfdff;
+    }
+    .card strong { display: block; color: var(--accent); margin-bottom: 6px; }
+    ul { padding-left: 22px; margin: 8px 0 0; }
+    li { margin: 6px 0; }
+    @media (max-width: 860px) {
+      main { width: min(100% - 20px, 1180px); margin-top: 18px; }
+      .hero, section { padding: 22px; }
+      .grid { grid-template-columns: 1fr; }
+      table { font-size: 14px; }
+      th, td { padding: 10px; }
+      h1 { font-size: 29px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <h1>Agent Trend Source Watchlist</h1>
+      <p class="lead">에이전트 트렌드 정기 조사에서 매번 순회할 소스 목록. 브리프는 이 목록을 기준으로 새 이슈, 기존 주제 업데이트, 딥다이브 후보를 확인한다.</p>
+      <div class="meta">
+        <span class="pill">최종 갱신: 2026-06-06 19:35 KST</span>
+        <span class="pill">정기 확인: 08:00 / 16:00 / 00:00 KST</span>
+        <span class="pill">Raw: 2026-06-06/raw/SOURCE_WATCHLIST.md</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>1. 필수 순회 소스</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>소스</th>
+            <th>URL</th>
+            <th>확인할 신호</th>
+            <th>딥다이브 후보 판단 기준</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag required">Required</span><br><strong>GeekNews</strong></td>
+            <td><a href="https://news.hada.io/">https://news.hada.io/</a></td>
+            <td>한국 개발자 커뮤니티에서 주목받는 에이전트, MCP, Claude Code, 프로토콜, 개발 워크플로 이슈.</td>
+            <td>댓글/포인트가 붙고, 국내 개발자 관점에서 논쟁이 생기거나 실무 적용성이 보이면 후보화.</td>
+          </tr>
+          <tr>
+            <td><span class="tag required">Required</span><br><strong>MarkTechPost</strong></td>
+            <td><a href="https://www.marktechpost.com/">https://www.marktechpost.com/</a></td>
+            <td>Agentic AI 논문/프레임워크/프로토콜/런타임/상거래/온디바이스 에이전트 소개.</td>
+            <td>공식 repo, 논문, 벤치마크, 구현체가 있고 카카오 플랫폼 아키텍처에 연결되면 후보화.</td>
+          </tr>
+          <tr>
+            <td><span class="tag required">Required</span><br><strong>GitHub Blog</strong></td>
+            <td><a href="https://github.blog/">https://github.blog/</a></td>
+            <td>Copilot coding agent, Copilot CLI, SDK, custom agents, skills, MCP, code review, sandbox, enterprise controls.</td>
+            <td>개발자 agent UX, agent control center, review/security/sandbox 기능 변화가 있으면 후보화.</td>
+          </tr>
+          <tr>
+            <td><span class="tag required">Required</span><br><strong>Reddit r/Agent_AI</strong></td>
+            <td><a href="https://www.reddit.com/r/Agent_AI/">https://www.reddit.com/r/Agent_AI/</a></td>
+            <td>에이전트 커뮤니티에서 많이 공유되는 프로젝트, MCP 서버, 프롬프트/스킬/런타임 논쟁.</td>
+            <td>반복 언급, 구체적 프로젝트, 사용 후기, 운영 실패담이 있으면 후보화.</td>
+          </tr>
+          <tr>
+            <td><span class="tag required">Required</span><br><strong>Reddit r/ClaudeCode</strong></td>
+            <td><a href="https://www.reddit.com/r/ClaudeCode/">https://www.reddit.com/r/ClaudeCode/</a></td>
+            <td>Claude Code 기능 변화, dynamic workflows, subagents, MCP, workflows, CLI/desktop 사용 패턴.</td>
+            <td>공식 발표와 커뮤니티 반응이 동시에 강하거나 실제 workflow 변화가 있으면 후보화.</td>
+          </tr>
+          <tr>
+            <td><span class="tag required">Required</span><br><strong>Reddit r/claudeskills</strong></td>
+            <td><a href="https://www.reddit.com/r/claudeskills/">https://www.reddit.com/r/claudeskills/</a></td>
+            <td>Claude Skills, CLAUDE.md, project memory, 업무 지식 패키징, skill marketplace 흐름.</td>
+            <td>반복 가능한 업무 지식/검증 절차를 skill화한 사례가 있으면 후보화.</td>
+          </tr>
+          <tr>
+            <td><span class="tag required">Required</span><br><strong>Reddit r/vibecoding</strong></td>
+            <td><a href="https://www.reddit.com/r/vibecoding/">https://www.reddit.com/r/vibecoding/</a></td>
+            <td>AI coding 실전 사용, 실패담, 생산성 도구, agent runtime, 보안/품질 문제.</td>
+            <td>개인/소규모 팀의 실제 사용 문제가 플랫폼 공통 병목으로 보이면 후보화.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>2. 관련 보조 소스</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>소스</th>
+            <th>URL</th>
+            <th>활용 방식</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Reddit r/AI_Agents</strong></td>
+            <td><a href="https://www.reddit.com/r/AI_Agents/">https://www.reddit.com/r/AI_Agents/</a></td>
+            <td>에이전트 프로젝트, MCP, observability, runtime 실패담을 보조 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Reddit r/ClaudeAI</strong></td>
+            <td><a href="https://www.reddit.com/r/ClaudeAI/">https://www.reddit.com/r/ClaudeAI/</a></td>
+            <td>Claude Code 외 Claude 생태계의 agent memory, MCP gateway, multi-agent 운영 사례 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Reddit r/mcp</strong></td>
+            <td><a href="https://www.reddit.com/r/mcp/">https://www.reddit.com/r/mcp/</a></td>
+            <td>MCP 서버, tool governance, agent-ready web, security 이슈를 보조 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Google Developers Blog</strong></td>
+            <td><a href="https://developers.googleblog.com/">https://developers.googleblog.com/</a></td>
+            <td>A2A, UCP, AP2, A2UI, AG-UI, ADK 등 공식 프로토콜/SDK 업데이트 교차 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Anthropic / Claude Blog</strong></td>
+            <td><a href="https://claude.com/blog">https://claude.com/blog</a></td>
+            <td>Claude Code, Skills, Managed Agents, MCP, memory, workflow 기능의 공식 발표 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>OpenAI News / Docs</strong></td>
+            <td><a href="https://openai.com/news/">https://openai.com/news/</a></td>
+            <td>OpenAI Agents, Codex, Responses/Agents SDK, MCP, agent commerce 관련 공식 업데이트 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Model Context Protocol Docs / Blog</strong></td>
+            <td><a href="https://modelcontextprotocol.io/">https://modelcontextprotocol.io/</a><br><a href="https://blog.modelcontextprotocol.io/">https://blog.modelcontextprotocol.io/</a></td>
+            <td>MCP specification, registry, apps, tasks, risk annotations, auth/OAuth, governance 변경을 공식 출처로 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>A2A Protocol Docs</strong></td>
+            <td><a href="https://a2a-protocol.org/latest/">https://a2a-protocol.org/latest/</a></td>
+            <td>A2A specification, Agent Card, task lifecycle, SDK, release notes, enterprise feature 변경 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>OpenAI Agents SDK Docs</strong></td>
+            <td><a href="https://openai.github.io/openai-agents-python/">https://openai.github.io/openai-agents-python/</a></td>
+            <td>agents, handoffs, sandbox agents, guardrails, MCP, sessions, human-in-the-loop, tracing 구조 변화 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Claude Code Docs</strong></td>
+            <td><a href="https://code.claude.com/docs">https://code.claude.com/docs</a></td>
+            <td>Claude Code workflows, skills, MCP, hooks, memory, sandbox/managed agents 등 실사용 기능 변화 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>AG-UI Docs</strong></td>
+            <td><a href="https://docs.ag-ui.com/">https://docs.ag-ui.com/</a></td>
+            <td>Agent-user interaction, streaming events, generative UI, frontend/backend agent protocol 변화 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>AP2 / Google Agentic Commerce</strong></td>
+            <td><a href="https://ap2-protocol.org/">https://ap2-protocol.org/</a><br><a href="https://github.com/google-agentic-commerce">https://github.com/google-agentic-commerce</a></td>
+            <td>agent payments, checkout/payment mandate, commerce authorization, samples, UCP/AP2 연결 변화 확인.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>3. 자동 소스 추가 기준</h2>
+      <div class="grid">
+        <article class="card">
+          <strong>스스로 추가 가능</strong>
+          링크를 돌다가 지속 확인 가치가 높은 사이트를 발견하면 사용자 승인 없이 watchlist에 추가한다. 단, 추가 이유와 관찰할 신호를 남긴다.
+        </article>
+        <article class="card">
+          <strong>추가 기준</strong>
+          공식 문서/스펙/릴리스, 고품질 기술 분석, 커뮤니티 실사용 후기, 오픈소스 프로젝트, 카카오 적용 가능성이 있으면 추가한다.
+        </article>
+        <article class="card">
+          <strong>정리 기준</strong>
+          노이즈가 크거나 업데이트가 끊기거나 홍보성 자료만 반복되면 보조 소스로 낮추거나 제거 후보로 표시한다.
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. 매회 체크 방식</h2>
+      <div class="grid">
+        <article class="card">
+          <strong>소스 커버리지</strong>
+          브리프마다 어떤 소스를 확인했는지, 유의미한 업데이트가 있었는지, 업데이트가 없으면 "특이사항 없음"으로 남긴다.
+        </article>
+        <article class="card">
+          <strong>신호 분류</strong>
+          공식 발표, 커뮤니티 열기, 오픈소스 프로젝트, 실패담/운영 이슈, 보안 이슈, 카카오 적용 가능성으로 분류한다.
+        </article>
+        <article class="card">
+          <strong>딥다이브 전 확인</strong>
+          주제가 깊게 볼 만하면 발견 소스, 사람들이 하는 말, 트렌디한 이유, 카카오에 중요한 이유를 정리하고 사용자에게 먼저 묻는다.
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. 딥다이브 후보 점수 기준</h2>
+      <ul>
+        <li>공식 발표 또는 스펙/릴리스/논문이 있는가</li>
+        <li>커뮤니티에서 반복적으로 언급되거나 실제 사용 후기가 있는가</li>
+        <li>프로젝트, SDK, 오픈소스 repo, 벤치마크가 있는가</li>
+        <li>카카오톡, Kanana, 쇼핑/선물하기, 로컬/지도, 결제, 사내 개발 플랫폼과 연결되는가</li>
+        <li>보안, 권한, 감사, observability, 비용, UX 같은 플랫폼 의사결정에 영향을 주는가</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Project / Paper Alert 기준</h2>
+      <div class="grid">
+        <article class="card">
+          <strong>프로젝트 신호</strong>
+          GitHub repo, SDK, MCP server, agent framework, benchmark tool, sandbox/runtime, skill marketplace가 갑자기 많이 언급되거나 실제 사용 후기가 붙으면 우선 보고한다.
+        </article>
+        <article class="card">
+          <strong>논문 신호</strong>
+          arXiv, 연구소 블로그, 벤치마크 리더보드에서 agent architecture, memory, eval, tool use, multi-agent, security 관련 논문이 이슈가 되면 우선 보고한다.
+        </article>
+        <article class="card">
+          <strong>보고 방식</strong>
+          프로젝트/논문명, 링크, 왜 이슈인지, 사람들이 하는 말, 기술 핵심, 검증 필요점, 카카오 적용 가능성, 딥다이브 추천 여부를 함께 쓴다.
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

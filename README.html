@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Trend 자료 저장 규칙</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d8dee9;
+      --accent: #2563eb;
+      --accent-soft: #eaf1ff;
+      --ok: #0f766e;
+      --shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    main {
+      width: min(1040px, calc(100% - 32px));
+      margin: 32px auto 56px;
+    }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 18px;
+      padding: 34px;
+    }
+    h1 { margin: 0 0 10px; font-size: 34px; letter-spacing: 0; }
+    h2 { margin: 34px 0 12px; font-size: 22px; }
+    .lead { color: var(--muted); margin: 0; font-size: 17px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card strong { color: var(--accent); }
+    ul { padding-left: 22px; }
+    code {
+      background: #eef2f7;
+      border: 1px solid #dbe3ee;
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-size: 0.92em;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .notice {
+      margin-top: 20px;
+      background: var(--accent-soft);
+      border: 1px solid #bed3ff;
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    @media (max-width: 720px) {
+      main { width: min(100% - 20px, 1040px); margin-top: 18px; }
+      .hero { padding: 24px; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <h1>Agent Trend 자료 저장 규칙</h1>
+      <p class="lead">에이전트 트렌드 조사 자료를 CEO 보고와 내부 공유에 바로 쓸 수 있도록 날짜별 HTML 정본과 raw 원본으로 분리해 관리한다.</p>
+      <div class="notice">
+        사람이 읽는 보고서는 날짜 폴더의 <code>.html</code>로 저장한다. 조사 원문, 초안, Markdown 원본은 같은 날짜 폴더 아래 <code>raw/</code>에 보관한다.
+      </div>
+    </section>
+
+    <section>
+      <h2>작성 기준</h2>
+      <div class="grid">
+        <article class="card"><strong>보고 목적</strong><br>단순 뉴스 요약이 아니라 기술 변화, 시장 신호, 제품화 가능성, 카카오 영향, 의사결정 포인트를 함께 정리한다.</article>
+        <article class="card"><strong>출처 기준</strong><br>중요한 주장은 1차 출처 또는 신뢰 가능한 공식 출처를 우선 확인하고 링크를 남긴다.</article>
+        <article class="card"><strong>판단 구조</strong><br>사실, 해석, 제안을 구분하고 카카오 AI 서비스와 에이전트 플랫폼 관점의 결론을 낸다.</article>
+        <article class="card"><strong>업데이트 추적</strong><br>기존 조사 주제의 변경점, 정정, 제품화, 보안 이슈 변화를 매번 확인한다.</article>
+      </div>
+    </section>
+
+    <section>
+      <h2>폴더 규칙</h2>
+      <ul>
+        <li>날짜 폴더: <code>YYYY-MM-DD</code></li>
+        <li>정기 브리프 HTML: <code>YYYY-MM-DD/HHmm_agent_trend_brief.html</code></li>
+        <li>정기 브리프 raw 원본: <code>YYYY-MM-DD/raw/HHmm_agent_trend_brief.md</code></li>
+        <li>주제별 딥다이브 HTML: <code>YYYY-MM-DD/{Topic}_Deep_Dive.html</code></li>
+        <li>주제별 딥다이브 raw 원본: <code>YYYY-MM-DD/raw/{Topic}_Deep_Dive.md</code></li>
+        <li>보고 템플릿: <a href="_templates/Brief_Template.html"><code>_templates/Brief_Template.html</code></a></li>
+        <li>운영 원칙: <a href="REPORTING_STANDARD.html"><code>REPORTING_STANDARD.html</code></a></li>
+        <li>조사 이력: <a href="RESEARCH_LOG.html"><code>RESEARCH_LOG.html</code></a></li>
+        <li>소스 watchlist: <a href="SOURCE_WATCHLIST.html"><code>SOURCE_WATCHLIST.html</code></a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>정기 브리프 체크 항목</h2>
+      <ul>
+        <li>새로 나온 중요한 에이전트 관련 뉴스</li>
+        <li>이전에 조사한 주제의 업데이트, 정정, 제품화, 보안 이슈</li>
+        <li>카카오 AI 서비스와 에이전트 플랫폼에 필요한 액션</li>
+        <li>당장 추적해야 할 리스크와 의사결정 포인트</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>현재 문서</h2>
+      <ul>
+        <li><a href="RESEARCH_LOG.html">조사 이력 요약</a></li>
+        <li><a href="index.html">Agent Trend 전체 인덱스</a></li>
+        <li><a href="SOURCE_WATCHLIST.html">정기 확인 소스 Watchlist</a></li>
+        <li><a href="2026-06-06/UCP_Deep_Dive.html">2026-06-06 UCP Deep Dive</a></li>
+        <li><a href="2026-06-06/AP2_Deep_Dive.html">2026-06-06 AP2 Deep Dive</a></li>
+        <li><a href="2026-06-06/AG_UI_Deep_Dive.html">2026-06-06 AG-UI Deep Dive</a></li>
+        <li><a href="2026-06-06/A2_UI_Deep_Dive.html">2026-06-06 A2-UI Deep Dive</a></li>
+        <li><a href="2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html">2026-06-06 Selected Agent Project / Paper Deep Dive</a></li>
+        <li><a href="2026-06-06/2000_agent_trend_brief.html">2026-06-06 20:00 Agent Trend Brief</a></li>
+        <li><a href="2026-06-06/Agent_Trend_Scout.html">2026-06-06 Agent Trend Scout</a></li>
+        <li><a href="2026-06-06/A2A_Deep_Dive.html">2026-06-06 A2A Deep Dive</a></li>
+        <li><a href="2026-06-06/raw/UCP_Deep_Dive.md">UCP raw 원본</a></li>
+        <li><a href="2026-06-06/raw/AP2_Deep_Dive.md">AP2 raw 원본</a></li>
+        <li><a href="2026-06-06/raw/AG_UI_Deep_Dive.md">AG-UI raw 원본</a></li>
+        <li><a href="2026-06-06/raw/A2_UI_Deep_Dive.md">A2-UI raw 원본</a></li>
+        <li><a href="2026-06-06/raw/index.md">전체 인덱스 raw 원본</a></li>
+        <li><a href="2026-06-06/raw/Selected_Agent_Project_Paper_Deep_Dive.md">Selected Agent Project / Paper raw 원본</a></li>
+        <li><a href="2026-06-06/raw/A2A_Deep_Dive.md">A2A raw 원본</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
