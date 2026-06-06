@@ -1,6 +1,6 @@
 # Agent Trend 조사 이력
 
-- 최종 갱신: 2026-06-07 00:42 KST
+- 최종 갱신: 2026-06-07 01:12 KST
 - 기준: 현재 폴더에 저장 완료된 HTML 정본과 raw 원본
 - 정기 업데이트: 08:00 / 16:00 / 00:00 KST
 
@@ -19,7 +19,7 @@
 | 2026-06-07 | AgentBound | Expanded Deep Dive, MCP permission boundary | MCP server access control, AgentManifest, policy vocabulary, runtime enforcement, threat model, connector admission flow, risk tier, approval policy, audit schema를 AI 플랫폼 설계 관점으로 정리 | `2026-06-07/AgentBound_Deep_Dive.html`, `2026-06-07/raw/AgentBound_Deep_Dive.md` |
 | 2026-06-07 | SWE-Skills-Bench | Expanded Deep Dive, Skill eval benchmark | public SWE skills의 marginal utility, paired evaluation method, pass-rate delta, token overhead, version mismatch, skill contract, 내부 평가 playbook을 정리 | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`, `2026-06-07/raw/SWE_Skills_Bench_Deep_Dive.md` |
 | 2026-06-07 | COLLEAGUE.SKILL | Expanded Deep Dive, Trace-to-skill / expert skill | human/role trace를 versioned skill package로 distill하는 흐름, lifecycle, artifact contract, capability track, bounded behavior track, privacy/consent/IP/governance 리스크와 평가 프레임을 정리 | `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html`, `2026-06-07/raw/COLLEAGUE_SKILL_Deep_Dive.md` |
-| 2026-06-07 | Hermes Agent | Expanded Deep Dive, Open-source persistent agent | memory, skills, messaging gateway, MCP, cron/webhook, provider routing을 묶은 persistent agent OS stack, autonomy risk, benchmark evaluation plan을 정리 | `2026-06-07/Hermes_Agent_Deep_Dive.html`, `2026-06-07/raw/Hermes_Agent_Deep_Dive.md` |
+| 2026-06-07 | Hermes Agent | Detailed Deep Dive, Persistent agent runtime / product benchmark | official docs/GitHub/release/community/security sources를 재확인하고 architecture, memory/profile state model, skill lifecycle, MCP catalog/filtering, cron/gateway automation, security controls, PoC metrics까지 확장 정리 | `2026-06-07/Hermes_Agent_Deep_Dive.html`, `2026-06-07/raw/Hermes_Agent_Deep_Dive.md` |
 | 2026-06-07 | SkillNet | Expanded Deep Dive, Skill infrastructure / graph | skill repository, ontology, graph, supply pipeline, 5-D evaluation, skill data model, SWE-Skills-Bench와 결합한 measured utility 중심 skill platform 설계를 정리 | `2026-06-07/SkillNet_Deep_Dive.html`, `2026-06-07/raw/SkillNet_Deep_Dive.md` |
 | 2026-06-06 | AI Platform / Service Applicability | Synthesis, 브리핑 + 적용 설계 | A2A, UCP, AP2, AG-UI, A2-UI, Dynamic Workflows, AgentBound, Hermes Agent, SkillNet 조사 결과를 특정 회사명 없이 AI 플랫폼 및 서비스 적용 관점으로 재정리. 레이어 맵, 사용 가능 포인트, 30/60/90일 실행안, 리스크를 포함 | `2026-06-06/AI_Platform_Service_Applicability.html`, `2026-06-06/raw/AI_Platform_Service_Applicability.md` |
 | 2026-06-06 | A2A / Agent2Agent Protocol | Deep Dive, 브리핑 + 기술 상세 | Google 공개, Linux Foundation 이관, A2A v1.0, MCP와의 차이, Agent Card, Task lifecycle, Artifact, 프로토콜 흐름, 보안/거버넌스, Agent Registry와 Orchestrator 적용 방향 | `2026-06-06/A2A_Deep_Dive.html`, `2026-06-06/raw/A2A_Deep_Dive.md` |

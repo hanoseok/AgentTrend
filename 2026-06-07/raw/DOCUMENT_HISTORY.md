@@ -1,6 +1,6 @@
 # Document Update History
 
-- 최종 갱신: 2026-06-07 00:42 KST
+- 최종 갱신: 2026-06-07 01:12 KST
 - HTML 정본: `DOCUMENT_HISTORY.html`
 - 기준: git commit 이력과 문서 metadata
 - 정렬 기준: 최신 업데이트 내림차순
@@ -9,14 +9,14 @@
 
 | 최신 업데이트 | 문서 | 상태 | 히스토리 anchor |
 | --- | --- | --- | --- |
-| 2026-06-07 00:42 KST | `DOCUMENT_HISTORY.html` | Created | `#history-document-history` |
-| 2026-06-07 00:42 KST | `index.html` | Reports updated | `#history-index` |
-| 2026-06-07 00:42 KST | `RESEARCH_LOG.html` | Updated | `#history-research-log` |
+| 2026-06-07 01:12 KST | `DOCUMENT_HISTORY.html` | Updated | `#history-document-history` |
+| 2026-06-07 01:12 KST | `index.html` | Reports updated | `#history-index` |
+| 2026-06-07 01:12 KST | `RESEARCH_LOG.html` | Updated | `#history-research-log` |
+| 2026-06-07 01:12 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | `#history-hermes-agent` |
 | 2026-06-07 00:37 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | `#history-dynamic-workflows` |
 | 2026-06-07 00:37 KST | `2026-06-07/AgentBound_Deep_Dive.html` | Expanded Deep Dive | `#history-agentbound` |
 | 2026-06-07 00:37 KST | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html` | Expanded Deep Dive | `#history-swe-skills-bench` |
 | 2026-06-07 00:37 KST | `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html` | Expanded Deep Dive | `#history-colleague-skill` |
-| 2026-06-07 00:37 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Expanded Deep Dive | `#history-hermes-agent` |
 | 2026-06-07 00:37 KST | `2026-06-07/SkillNet_Deep_Dive.html` | Expanded Deep Dive | `#history-skillnet` |
 | 2026-06-07 00:24 KST | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | `#history-ai-platform-applicability` |
 | 2026-06-07 00:24 KST | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | `#history-a2a` |
@@ -35,10 +35,12 @@
 
 ### Document Update History
 
+- 2026-06-07 01:12 KST: Hermes Agent detailed update를 반영하고 Latest Update Summary와 Reports 정렬 기준을 갱신.
 - 2026-06-07 00:42 KST: 문서별 업데이트 히스토리 페이지를 신규 생성. Reports 정렬과 각 문서별 anchor 연결 기준으로 사용.
 
 ### Agent Trend 전체 인덱스
 
+- 2026-06-07 01:12 KST: Hermes Agent를 Detailed Deep Dive로 승격하고 Reports 최신 업데이트순 정렬, 핵심 용도, Agent Platform 읽기 경로를 갱신.
 - 2026-06-07 00:42 KST: Reports를 공개 HTML 산출물 목록으로 확장하고, 최신 업데이트순 정렬과 History 링크를 추가.
 - 2026-06-07 00:37 KST, `9c60981`: 2026-06-07 개별 딥다이브의 Expanded Deep Dive 상태와 핵심 범위를 반영.
 - 2026-06-07 00:24 KST, `c694a4e`: source link 표기 방식을 관련 섹션 inline pill 기준으로 정리.
@@ -70,6 +72,7 @@
 
 ### Hermes Agent
 
+- 2026-06-07 01:12 KST: 공식 docs/GitHub/release/community/security sources를 재확인하고 architecture, state model, skills, gateway/MCP/cron, security, community risk, PoC plan, platform action sections를 추가해 상세 리서치로 확장.
 - 2026-06-07 00:37 KST, `9c60981`: System Stack Reading, Autonomy Risk Matrix, Evaluation Plan을 추가해 persistent agent 제품 benchmark로 확장.
 - 2026-06-07 00:24 KST, `c694a4e`: 공식 docs, GitHub, product page, community risk signal 링크를 관련 섹션 주변에 정리.
 - 2026-06-07 00:18 KST, `b8646ef`: Hermes Agent 개별 deep dive 문서 생성.
@@ -135,6 +138,7 @@
 
 ### Agent Trend 조사 이력
 
+- 2026-06-07 01:12 KST: Hermes Agent 조사 수준과 핵심 범위를 Detailed Deep Dive 기준으로 업데이트.
 - 2026-06-07 00:42 KST: Document Update History 생성 항목을 추가하고 최종 갱신 시각을 반영.
 - 2026-06-07 00:37 KST, `9c60981`: Expanded Deep Dive 상태와 2026-06-07 개별 문서의 확장 범위를 반영.
 - 2026-06-07 00:24 KST, `c694a4e`: source catalog와 inline source 원칙을 반영.

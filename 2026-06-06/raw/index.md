@@ -1,6 +1,6 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-07 00:42 KST
+- 최종 갱신: 2026-06-07 01:12 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
 - 정기 업데이트: 00:00 / 08:00 / 16:00 KST
@@ -50,9 +50,10 @@
 2. `2026-06-06/A2A_Deep_Dive.html`
 3. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
 4. `2026-06-07/AgentBound_Deep_Dive.html`
-5. `2026-06-07/SkillNet_Deep_Dive.html`
-6. `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`
-7. `2026-06-06/AG_UI_Deep_Dive.html`
+5. `2026-06-07/Hermes_Agent_Deep_Dive.html`
+6. `2026-06-07/SkillNet_Deep_Dive.html`
+7. `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`
+8. `2026-06-06/AG_UI_Deep_Dive.html`
 
 ### 커머스 / 결제
 
@@ -72,14 +73,14 @@
 
 | 최신 업데이트 | 문서 | 유형 | 핵심 용도 | History |
 | --- | --- | --- | --- | --- |
-| 2026-06-07 00:42 KST | `DOCUMENT_HISTORY.html` | Operations | 각 HTML 정본의 생성/업데이트 타임라인과 Reports 정렬 기준 | `DOCUMENT_HISTORY.html#history-document-history` |
-| 2026-06-07 00:42 KST | `index.html` | Hub | 전체 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
-| 2026-06-07 00:42 KST | `RESEARCH_LOG.html` | Operations | 날짜별 조사 주제, 조사 수준, 산출물 링크를 관리하는 이력 문서 | `DOCUMENT_HISTORY.html#history-research-log` |
+| 2026-06-07 01:12 KST | `DOCUMENT_HISTORY.html` | Operations | 각 HTML 정본의 생성/업데이트 타임라인과 Reports 정렬 기준 | `DOCUMENT_HISTORY.html#history-document-history` |
+| 2026-06-07 01:12 KST | `index.html` | Hub | 전체 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
+| 2026-06-07 01:12 KST | `RESEARCH_LOG.html` | Operations | 날짜별 조사 주제, 조사 수준, 산출물 링크를 관리하는 이력 문서 | `DOCUMENT_HISTORY.html#history-research-log` |
+| 2026-06-07 01:12 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | persistent agent runtime, architecture, memory/profile state model, skills lifecycle, gateway/MCP/cron, security controls, PoC metrics | `DOCUMENT_HISTORY.html#history-hermes-agent` |
 | 2026-06-07 00:37 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | workflow runtime, subagent orchestration, task-specific harness, execution mechanics, evaluation protocol, platform blueprint | `DOCUMENT_HISTORY.html#history-dynamic-workflows` |
 | 2026-06-07 00:37 KST | `2026-06-07/AgentBound_Deep_Dive.html` | Expanded Deep Dive | MCP server permission manifest, threat model, connector admission flow, evidence caveats, runtime audit schema | `DOCUMENT_HISTORY.html#history-agentbound` |
 | 2026-06-07 00:37 KST | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html` | Expanded Deep Dive | agent skill marginal utility, paired evaluation method, skill contract, token cost, internal eval playbook | `DOCUMENT_HISTORY.html#history-swe-skills-bench` |
 | 2026-06-07 00:37 KST | `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html` | Expanded Deep Dive | trace-to-skill lifecycle, expert skill artifact contract, governance, role-task evaluation, consent/privacy controls | `DOCUMENT_HISTORY.html#history-colleague-skill` |
-| 2026-06-07 00:37 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Expanded Deep Dive | persistent agent OS stack, memory, skills, gateway, cron/webhook, MCP, autonomy risk, platform benchmark plan | `DOCUMENT_HISTORY.html#history-hermes-agent` |
 | 2026-06-07 00:37 KST | `2026-06-07/SkillNet_Deep_Dive.html` | Expanded Deep Dive | skill supply pipeline, repository, ontology, graph, 5-D evaluation, skill data model, research agenda | `DOCUMENT_HISTORY.html#history-skillnet` |
 | 2026-06-07 00:24 KST | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | 조사한 프로토콜/프로젝트를 AI 플랫폼 및 서비스 적용 관점으로 재정리 | `DOCUMENT_HISTORY.html#history-ai-platform-applicability` |
 | 2026-06-07 00:24 KST | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | agent-to-agent 표준과 Agent Registry/orchestrator 설계 | `DOCUMENT_HISTORY.html#history-a2a` |
