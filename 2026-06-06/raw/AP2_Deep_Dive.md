@@ -18,7 +18,7 @@ AP2는 agentic commerce에서 “사용자가 정말 이 결제를 허락했는�
 
 - AP2는 상품 검색이나 checkout API가 아니라 결제 위임, 사용자 의도 증명, 분쟁 증거, agent key 신뢰를 다룬다.
 - Checkout Mandate, Payment Mandate, Receipt, Verifiable Digital Credential, Trusted Surface, deterministic verification이 핵심이다.
-- Kakao Pay가 agent 결제를 지원하려면 “LLM이 결제를 결정했다”가 아니라 “비-agent trusted surface가 구체적 조건을 사용자가 승인했다”는 증거가 필요하다.
+- 결제 서비스가 agent 결제를 지원하려면 “LLM이 결제를 결정했다”가 아니라 “비-agent trusted surface가 구체적 조건을 사용자가 승인했다”는 증거가 필요하다.
 
 ## 2. What It Is
 
@@ -38,13 +38,13 @@ AP2가 해결하려는 문제:
 
 ### Roles
 
-| Role | 설명 | 카카오 대응 |
+| Role | 설명 | AI 플랫폼 대응 |
 | --- | --- | --- |
-| Shopping Agent | 상품 탐색, checkout 구성, 구매 실행을 수행하는 agent | 카나나/톡 쇼핑 agent |
-| Credential Provider | payment credential 접근 권한을 검증하고 credential scope를 제한 | Kakao Pay, wallet, card vault |
-| Merchant | checkout을 제공/완료하고 inventory, price, discount integrity를 검증 | 선물하기, 쇼핑 merchant, 외부 파트너 |
-| Merchant Payment Processor | payment credential이 checkout에 대해 승인됐는지 확인하고 결제를 처리 | PG/PSP 또는 Kakao Pay processor |
-| Trusted Surface | 사용자 동의를 명확히 받고 mandate를 생성하는 신뢰 UI. AP2 spec상 non-agentic이어야 함 | KakaoTalk/Pay 승인 화면 |
+| Shopping Agent | 상품 탐색, checkout 구성, 구매 실행을 수행하는 agent | 대화형 AI 서비스/대화형 쇼핑 agent |
+| Credential Provider | payment credential 접근 권한을 검증하고 credential scope를 제한 | 결제 서비스, wallet, card vault |
+| Merchant | checkout을 제공/완료하고 inventory, price, discount integrity를 검증 | 커머스, 쇼핑 merchant, 외부 파트너 |
+| Merchant Payment Processor | payment credential이 checkout에 대해 승인됐는지 확인하고 결제를 처리 | PG/PSP 또는 결제 서비스 processor |
+| Trusted Surface | 사용자 동의를 명확히 받고 mandate를 생성하는 신뢰 UI. AP2 spec상 non-agentic이어야 함 | 대화형 AI 서비스/결제 승인 UI 승인 화면 |
 
 ### Mandates
 
@@ -63,17 +63,17 @@ AP2가 해결하려는 문제:
 
 참고 링크: [Human-present sample](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-present/cards), [Human-not-present sample](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-not-present/cards), [x402 sample](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-not-present/x402)
 
-| Flow | 설명 | 카카오 UX 예 |
+| Flow | 설명 | AI 플랫폼 UX 예 |
 | --- | --- | --- |
-| Human Present / Direct | 사용자가 checkout 내용을 보고 Pay trusted surface에서 바로 승인한다 | 톡 쇼핑 agent가 장바구니를 만들고 Pay 승인 화면에서 사용자가 최종 결제 |
+| Human Present / Direct | 사용자가 checkout 내용을 보고 payment-service trusted surface에서 바로 승인한다 | 대화형 쇼핑 agent가 장바구니를 만들고 결제 승인 화면에서 사용자가 최종 결제 |
 | Human Not Present / Autonomous | 사용자가 사전에 제약 조건이 있는 open mandate를 승인한다 | “이번 주 생필품 5만원 이하, 특정 제휴몰에서만 자동 구매” |
-| Agent-to-Agent Delegation | Shopping Agent가 다른 agent에게 작업을 위임할 수 있으나, 결제 권한은 mandate와 agent key 제약으로 제한된다 | personal agent가 여행 예약 전문 agent에게 위임하되 Pay mandate 범위만 허용 |
+| Agent-to-Agent Delegation | Shopping Agent가 다른 agent에게 작업을 위임할 수 있으나, 결제 권한은 mandate와 agent key 제약으로 제한된다 | personal agent가 여행 예약 전문 agent에게 위임하되 payment mandate 범위만 허용 |
 
-## 5. Kakao Implications
+## 5. AI Platform Implications
 
-Kakao Pay에 필요한 설계:
+결제 서비스에 필요한 설계:
 
-- Trusted Surface: LLM이 생성한 화면이 아니라 Pay가 제어하는 deterministic approval UI가 필요하다.
+- Trusted Surface: LLM이 생성한 화면이 아니라 결제 서비스가 제어하는 deterministic approval UI가 필요하다.
 - Mandate Schema: merchant, amount, item hash, cart hash, delivery, expiry, retry policy, refund/cancel policy를 포함해야 한다.
 - Agent Identity: 어떤 agent/provider/key가 위임받았는지 기록하고 폐기/정지 가능해야 한다.
 - Audit Trail: 사용자 intent, checkout state, payment state, merchant response, receipt를 분쟁 대응 가능한 형태로 보관해야 한다.
@@ -81,14 +81,14 @@ Kakao Pay에 필요한 설계:
 
 사업 기회:
 
-카카오가 먼저 확보할 수 있는 지점은 “톡 안에서 안전하게 agent에게 결제 권한을 일부 맡기는 UX”다. 선물 추천, 장보기, 예약, 음식 주문, 정기 구매, 쿠폰 최적화 같은 flow에서 AP2식 mandate는 사용자 신뢰를 만드는 핵심 장치가 된다.
+AI 서비스가 먼저 확보할 수 있는 지점은 “대화형 서비스 안에서 안전하게 agent에게 결제 권한을 일부 맡기는 UX”다. 선물 추천, 장보기, 예약, 음식 주문, 정기 구매, 쿠폰 최적화 같은 flow에서 AP2식 mandate는 사용자 신뢰를 만드는 핵심 장치가 된다.
 
 ## 6. Recommended Actions
 
-1. AP2-compatible mandate draft: 카카오 내부용 Checkout Mandate와 Payment Mandate schema를 작성한다.
-2. Trusted Surface prototype: KakaoTalk/Pay에서 agent 결제 승인 화면을 분리해 PoC한다.
+1. AP2-compatible mandate draft: 조직 내부용 Checkout Mandate와 Payment Mandate schema를 작성한다.
+2. Trusted Surface prototype: 대화형 AI 서비스/결제 승인 UI에서 agent 결제 승인 화면을 분리해 PoC한다.
 3. Dispute evidence model: 분쟁, 환불, 오주문, agent 오류 발생 시 필요한 evidence package를 정의한다.
-4. Regulatory review: 전자금융, PG, 본인확인, 카드사/네트워크, 개인정보 위임 범위를 법무/보안/Pay와 함께 검토한다.
+4. Regulatory review: 전자금융, PG, 본인확인, 카드사/네트워크, 개인정보 위임 범위를 법무/보안/결제 조직과 함께 검토한다.
 5. Risk simulation: replay attack, context-binding failure, amount manipulation, merchant-side cart mutation, prompt injection을 테스트한다.
 
 ## 7. Sources

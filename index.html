@@ -153,6 +153,7 @@
       <strong>Agent Trend Index</strong>
       <a href="#quick">Quick Read</a>
       <a href="#map">Protocol Map</a>
+      <a href="2026-06-06/AI_Platform_Service_Applicability.html">Applicability</a>
       <a href="#paths">Reading Paths</a>
       <a href="#reports">Reports</a>
       <a href="#raw">Raw Sources</a>
@@ -165,7 +166,7 @@
         <h1>Agent Trend 전체 인덱스</h1>
         <p class="lead">에이전트 트렌드 조사 자료를 한 번에 보는 허브. 브리핑, 플랫폼 설계, 커머스/결제, UI 프로토콜, 스킬/보안 조사 자료로 바로 이동할 수 있게 정리했다.</p>
         <div class="meta">
-          <span class="pill">최종 갱신: 2026-06-06 21:28 KST</span>
+          <span class="pill">최종 갱신: 2026-06-06 23:38 KST</span>
           <span class="pill">정본: HTML</span>
           <span class="pill">raw 원본: 날짜 폴더 아래 raw/</span>
           <span class="pill">정기 업데이트: 00:00 / 08:00 / 16:00 KST</span>
@@ -176,11 +177,11 @@
         <h2>1. Quick Read</h2>
         <div class="grid">
           <article class="card"><strong>지금 가장 중요한 축</strong>Dynamic Workflows + AgentBound. agent가 더 많은 일을 병렬로 실행할수록 workflow runtime, cost cap, checkpoint, human approval, permission boundary가 같이 필요하다.</article>
-          <article class="card"><strong>카카오 사업 연결 축</strong>UCP + AP2 + AG-UI + A2-UI. 톡/선물하기/쇼핑/예약/Pay를 agentic commerce로 묶으려면 commerce, payment, UI event, declarative UI가 함께 필요하다.</article>
+          <article class="card"><strong>AI 플랫폼 사업 연결 축</strong>UCP + AP2 + AG-UI + A2-UI. 대화형 AI 서비스/커머스/쇼핑/예약/결제를 agentic commerce로 묶으려면 commerce, payment, UI event, declarative UI가 함께 필요하다.</article>
           <article class="card"><strong>플랫폼 품질 축</strong>SkillNet + SWE-Skills-Bench + COLLEAGUE.SKILL. 스킬은 많이 모으는 것이 아니라 task 개선, token cost, version compatibility, governance까지 검증해야 한다.</article>
         </div>
         <div class="callout">
-          <strong>브리핑 시작점:</strong> 15분 안에 전체를 보려면 <a href="2026-06-06/2000_agent_trend_brief.html">20:00 Agent Trend Brief</a>를 먼저 보고, 이어서 <a href="2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html">Selected Agent Project / Paper Deep Dive</a>와 <a href="2026-06-06/UCP_Deep_Dive.html">UCP</a>, <a href="2026-06-06/AP2_Deep_Dive.html">AP2</a>를 보면 된다.
+          <strong>브리핑 시작점:</strong> 15분 안에 전체를 보려면 <a href="2026-06-06/AI_Platform_Service_Applicability.html">AI 플랫폼 및 서비스 적용 포인트</a>를 먼저 보고, 이어서 <a href="2026-06-06/2000_agent_trend_brief.html">20:00 Agent Trend Brief</a>, <a href="2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html">Selected Agent Project / Paper Deep Dive</a>, <a href="2026-06-06/UCP_Deep_Dive.html">UCP</a>, <a href="2026-06-06/AP2_Deep_Dive.html">AP2</a>를 보면 된다.
         </div>
       </section>
 
@@ -192,7 +193,7 @@
               <th>레이어</th>
               <th>관련 자료</th>
               <th>무엇을 해결하나</th>
-              <th>카카오 관점</th>
+              <th>AI 플랫폼 관점</th>
             </tr>
           </thead>
           <tbody>
@@ -200,31 +201,31 @@
               <td><strong>Agent-to-Agent</strong></td>
               <td><a href="2026-06-06/A2A_Deep_Dive.html">A2A Deep Dive</a></td>
               <td>agent discovery, task delegation, Agent Card, task lifecycle, artifact 교환.</td>
-              <td>카카오 내부/외부 agent registry와 orchestrator의 표준 후보.</td>
+              <td>내부/외부 agent registry와 orchestrator의 표준 후보.</td>
             </tr>
             <tr>
               <td><strong>Commerce</strong></td>
               <td><a href="2026-06-06/UCP_Deep_Dive.html">UCP Deep Dive</a></td>
               <td>상품 탐색, cart, checkout, order, identity linking, merchant capability discovery.</td>
-              <td>선물하기, 쇼핑, 예약, 지도/로컬, 채널 파트너를 agent-readable commerce로 전환.</td>
+              <td>커머스, 쇼핑, 예약, 지도/로컬, 채널 파트너를 agent-readable commerce로 전환.</td>
             </tr>
             <tr>
               <td><strong>Payment Trust</strong></td>
               <td><a href="2026-06-06/AP2_Deep_Dive.html">AP2 Deep Dive</a></td>
               <td>결제 위임, 사용자 의도 증명, mandate, trusted surface, dispute evidence.</td>
-              <td>Kakao Pay agent 결제의 승인 UX, 감사, 분쟁 대응 기준.</td>
+              <td>결제 서비스 agent 결제의 승인 UX, 감사, 분쟁 대응 기준.</td>
             </tr>
             <tr>
               <td><strong>Agent UI Events</strong></td>
               <td><a href="2026-06-06/AG_UI_Deep_Dive.html">AG-UI Deep Dive</a></td>
               <td>agent run lifecycle, text streaming, tool call, state delta, interrupt, custom event.</td>
-              <td>카카오톡/카나나/CS/커머스 agent UX의 공통 event schema.</td>
+              <td>대화형 AI 서비스/CS/커머스 agent UX의 공통 event schema.</td>
             </tr>
             <tr>
               <td><strong>Generative UI</strong></td>
               <td><a href="2026-06-06/A2_UI_Deep_Dive.html">A2-UI Deep Dive</a></td>
               <td>agent가 안전한 선언형 UI payload를 만들고 client가 native UI로 렌더링.</td>
-              <td>톡 말풍선 안의 상품 카드, 예약 form, 승인 summary, CS action UI.</td>
+              <td>채팅 UI 안의 상품 카드, 예약 form, 승인 summary, CS action UI.</td>
             </tr>
             <tr>
               <td><strong>Security / Skills / Runtime</strong></td>
@@ -242,6 +243,7 @@
           <article class="card">
             <strong>브리핑 / 전략</strong>
             <ol>
+              <li><a href="2026-06-06/AI_Platform_Service_Applicability.html">AI 플랫폼 및 서비스 적용 포인트</a></li>
               <li><a href="2026-06-06/2000_agent_trend_brief.html">20:00 Agent Trend Brief</a></li>
               <li><a href="2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html">Selected Agent Project / Paper Deep Dive</a></li>
               <li><a href="2026-06-06/UCP_Deep_Dive.html">UCP</a>와 <a href="2026-06-06/AP2_Deep_Dive.html">AP2</a></li>
@@ -250,13 +252,14 @@
           <article class="card">
             <strong>Agent Platform 설계</strong>
             <ol>
+              <li><a href="2026-06-06/AI_Platform_Service_Applicability.html">AI 플랫폼 및 서비스 적용 포인트</a></li>
               <li><a href="2026-06-06/A2A_Deep_Dive.html">A2A Deep Dive</a></li>
               <li><a href="2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html">Dynamic Workflows / AgentBound / SkillNet 묶음</a></li>
               <li><a href="2026-06-06/AG_UI_Deep_Dive.html">AG-UI Deep Dive</a></li>
             </ol>
           </article>
           <article class="card">
-            <strong>커머스 / 결제 / Pay</strong>
+            <strong>커머스 / 결제</strong>
             <ol>
               <li><a href="2026-06-06/UCP_Deep_Dive.html">UCP Deep Dive</a></li>
               <li><a href="2026-06-06/AP2_Deep_Dive.html">AP2 Deep Dive</a></li>
@@ -286,14 +289,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>2026-06-06</td><td><a href="2026-06-06/A2A_Deep_Dive.html">A2A Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td>agent-to-agent 표준과 카카오 agent registry/orchestrator 설계.</td></tr>
+            <tr><td>2026-06-06</td><td><a href="2026-06-06/AI_Platform_Service_Applicability.html">AI Platform / Service Applicability</a></td><td><span class="tag priority">Synthesis</span></td><td>A2A, UCP, AP2, AG-UI, A2-UI, Dynamic Workflows, AgentBound, Hermes Agent, SkillNet을 AI 플랫폼 및 서비스 적용 관점으로 재정리.</td></tr>
+            <tr><td>2026-06-06</td><td><a href="2026-06-06/A2A_Deep_Dive.html">A2A Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td>agent-to-agent 표준과 Agent Registry/orchestrator 설계.</td></tr>
             <tr><td>2026-06-06</td><td><a href="2026-06-06/Agent_Trend_Scout.html">Agent Trend Scout</a></td><td><span class="tag brief">Scout</span></td><td>GeekNews, MarkTechPost, GitHub Blog, Reddit 기반 딥다이브 후보 발굴.</td></tr>
             <tr><td>2026-06-06</td><td><a href="2026-06-06/2000_agent_trend_brief.html">20:00 Agent Trend Brief</a></td><td><span class="tag brief">8시간 Brief</span></td><td>정기 브리프 형식의 트렌드/업데이트 요약.</td></tr>
             <tr><td>2026-06-06</td><td><a href="2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html">Selected Agent Project / Paper Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td>Dynamic Workflows, AgentBound, skills, commerce stack, Hermes Agent, SkillNet 묶음.</td></tr>
             <tr><td>2026-06-06</td><td><a href="2026-06-06/UCP_Deep_Dive.html">UCP Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td>agentic commerce capability/discovery/checkout/order 표준.</td></tr>
             <tr><td>2026-06-06</td><td><a href="2026-06-06/AP2_Deep_Dive.html">AP2 Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td>agent 결제 위임, mandate, trusted surface, dispute evidence.</td></tr>
             <tr><td>2026-06-06</td><td><a href="2026-06-06/AG_UI_Deep_Dive.html">AG-UI Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td>agent frontend event protocol, interrupt, state delta, tool call UX.</td></tr>
-            <tr><td>2026-06-06</td><td><a href="2026-06-06/A2_UI_Deep_Dive.html">A2-UI Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td>agent-generated declarative UI payload/spec와 카카오 component catalog 설계.</td></tr>
+            <tr><td>2026-06-06</td><td><a href="2026-06-06/A2_UI_Deep_Dive.html">A2-UI Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td>agent-generated declarative UI payload/spec와 AI 플랫폼 component catalog 설계.</td></tr>
           </tbody>
         </table>
       </section>
@@ -305,6 +309,7 @@
           <article class="card"><strong>Core / Brief</strong>
             <ul>
               <li><a href="2026-06-06/raw/A2A_Deep_Dive.md">A2A raw</a></li>
+              <li><a href="2026-06-06/raw/AI_Platform_Service_Applicability.md">AI 플랫폼 및 서비스 적용 raw</a></li>
               <li><a href="2026-06-06/raw/Agent_Trend_Scout.md">Agent Trend Scout raw</a></li>
               <li><a href="2026-06-06/raw/2000_agent_trend_brief.md">20:00 Brief raw</a></li>
               <li><a href="2026-06-06/raw/Selected_Agent_Project_Paper_Deep_Dive.md">Selected Deep Dive raw</a></li>

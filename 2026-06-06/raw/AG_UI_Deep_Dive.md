@@ -40,15 +40,15 @@ AG-UI 공식 문서는 이를 AI agent와 user-facing application을 연결하�
 
 ### Event Categories
 
-| 카테고리 | 의미 | 카카오 UX 예 |
+| 카테고리 | 의미 | AI 플랫폼 UX 예 |
 | --- | --- | --- |
 | Lifecycle | RunStarted, StepStarted, RunFinished, RunError 등 agent run의 경계를 표현 | “예약 가능 매장 검색 중”, “결제 조건 검증 중” 진행 표시 |
-| Text Message | 텍스트 메시지 streaming start/content/end | 톡 말풍선이 실시간으로 생성됨 |
+| Text Message | 텍스트 메시지 streaming start/content/end | 채팅 UI이 실시간으로 생성됨 |
 | Tool Call | agent가 어떤 tool을 어떤 인자로 호출하는지 프론트에 노출 | “지도 검색”, “상품 재고 조회”, “쿠폰 적용” 표시 |
 | State | StateSnapshot/StateDelta로 agent와 UI state를 동기화 | 장바구니, 예약 조건, 배송지, 선택 옵션 동기화 |
 | Activity | 계획, 검색, 분석 같은 중간 활동을 구조화 | CS agent가 문의 원인 분석 단계를 보여줌 |
 | Interrupt | 사용자 승인/수정/재시도/에스컬레이션을 위해 run을 멈춤 | 결제, 개인정보 제공, 외부 전송 전에 승인 요청 |
-| Custom / Raw | 앱별 이벤트와 외부 시스템 이벤트를 담는 확장 지점 | 카카오톡 채널, 알림, 지도, Pay 이벤트를 감쌈 |
+| Custom / Raw | 앱별 이벤트와 외부 시스템 이벤트를 담는 확장 지점 | 대화형 AI 서비스 채널, 알림, 지도, 결제 이벤트를 감쌈 |
 
 ### 주요 기능
 
@@ -69,24 +69,24 @@ AG-UI는 CopilotKit, LangGraph, CrewAI와의 초기 연동에서 출발했지만
 
 - AG-UI는 아직 모든 플랫폼이 채택한 확정 표준은 아니다.
 - 하지만 agent 앱을 실제 제품으로 만들 때 필요한 event taxonomy가 상당히 실무적이다.
-- 카카오는 그대로 종속되기보다 AG-UI-compatible internal event schema를 만드는 것이 현실적이다.
+- AI 플랫폼은 그대로 종속되기보다 AG-UI-compatible internal event schema를 만드는 것이 현실적이다.
 
-## 5. Kakao Implications
+## 5. AI Platform Implications
 
-| 카카오 적용 영역 | AG-UI가 해결하는 문제 | 필요 설계 |
+| AI 서비스 적용 영역 | AG-UI가 해결하는 문제 | 필요 설계 |
 | --- | --- | --- |
-| 카나나 / 톡 agent | 말풍선만으로 장시간 task, tool call, approval 상태를 표현하기 어렵다 | thread/run/step/event id 체계, resumable run, cancel UI |
-| 커머스 / Pay | 상품 비교, 옵션 선택, 결제 승인, 주문 추적이 모두 다른 UI 상태다 | StateSnapshot/Delta + Interrupt + Trusted Surface event |
+| 대화형 AI 서비스 / 대화형 agent | 말풍선만으로 장시간 task, tool call, approval 상태를 표현하기 어렵다 | thread/run/step/event id 체계, resumable run, cancel UI |
+| 커머스 / 결제 | 상품 비교, 옵션 선택, 결제 승인, 주문 추적이 모두 다른 UI 상태다 | StateSnapshot/Delta + Interrupt + Trusted Surface event |
 | CS / 운영 agent | agent가 어떤 근거와 tool로 판단했는지 추적해야 한다 | ToolCall events, activity trace, human escalation |
 | 개발자/사내 agent | 장시간 workflow 진행 상황과 subagent 작업을 보여줘야 한다 | Run/Step lifecycle, nested delegation trace, log streaming |
 
 ## 6. Recommended Actions
 
-1. Kakao Agent Event Schema: AG-UI event taxonomy를 참고해 내부 공통 event envelope를 만든다.
+1. AI 서비스 Agent Event Schema: AG-UI event taxonomy를 참고해 내부 공통 event envelope를 만든다.
 2. Interrupt First: 결제, 개인정보 제공, 외부 메시지 발송, 예약 확정은 모두 interrupt로 모델링한다.
 3. Trace Policy: raw chain-of-thought 없이 tool call, decision summary, evidence, approval record를 남긴다.
 4. AG-UI + A2-UI PoC: AG-UI transport 위에 A2-UI payload를 얹어 쇼핑/예약 UI를 동적으로 렌더링한다.
-5. Mobile Constraints: 톡 모바일 환경에서 event 폭주, reconnect, offline, push notification, partial rendering을 테스트한다.
+5. Mobile Constraints: 모바일 대화형 서비스 환경에서 event 폭주, reconnect, offline, push notification, partial rendering을 테스트한다.
 
 ## 7. Sources
 

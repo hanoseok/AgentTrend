@@ -151,7 +151,7 @@
       <a href="#new">신규 사항</a>
       <a href="#updates">기존 조사 업데이트</a>
       <a href="#technical">Technical Detail</a>
-      <a href="#kakao">Kakao Implications</a>
+      <a href="#platform">AI Platform Implications</a>
       <a href="#actions">Recommended Actions</a>
       <a href="#sources">Sources</a>
     </nav>
@@ -179,7 +179,7 @@
         <div class="summary-grid">
           <article class="card"><strong>Dynamic Workflows가 최강 신호</strong>Anthropic 공식 발표와 Reddit 반응이 동시에 강하다. 병렬 subagent, workflow-as-code, 장시간 코드베이스 작업, token burn 논쟁이 모두 붙었다.</article>
           <article class="card"><strong>MCP는 production protocol로 이동</strong>2026-07-28 RC는 stateless core, MCP Apps, Tasks, OAuth/OIDC, deprecation policy를 포함한다. 단순 tool 연결을 넘어 플랫폼 계약이 되고 있다.</article>
-          <article class="card"><strong>Skills는 hype보다 eval</strong>SWE-Skills-Bench는 49개 public SWE skills 중 39개가 pass-rate 개선이 없다고 보고한다. 카카오 skill marketplace는 eval/compatibility 중심이어야 한다.</article>
+          <article class="card"><strong>Skills는 hype보다 eval</strong>SWE-Skills-Bench는 49개 public SWE skills 중 39개가 pass-rate 개선이 없다고 보고한다. skill marketplace는 eval/compatibility 중심이어야 한다.</article>
         </div>
       </section>
 
@@ -192,7 +192,7 @@
             <tr><td>MarkTechPost</td><td>Checked</td><td>AIO Sandbox, UCP, OpenSpace, Cloudflare Agents SDK 확인</td><td>AIO Sandbox와 UCP 딥다이브 후보</td></tr>
             <tr><td>GitHub Blog</td><td>Checked</td><td>Copilot App preview 확대, gh skill, usage billing 확인</td><td>Agent-native developer UX 딥다이브 후보</td></tr>
             <tr><td>Reddit r/ClaudeCode / r/vibecoding</td><td>Checked</td><td>Dynamic Workflows 반응이 강함. token burn, 비용, 제어권 논쟁</td><td>최우선 딥다이브 후보</td></tr>
-            <tr><td>MCP / OpenAI / UCP / AP2 / AG-UI Docs</td><td>Checked</td><td>protocol stack과 production runtime 기준 확인</td><td>카카오 플랫폼 계약 설계에 반영</td></tr>
+            <tr><td>MCP / OpenAI / UCP / AP2 / AG-UI Docs</td><td>Checked</td><td>protocol stack과 production runtime 기준 확인</td><td>AI 플랫폼 계약 설계에 반영</td></tr>
           </tbody>
         </table>
       </section>
@@ -206,11 +206,11 @@
           <a href="https://arxiv.org/abs/2605.31264">COLLEAGUE.SKILL</a>
         </div>
         <table>
-          <thead><tr><th>구분</th><th>프로젝트/논문</th><th>왜 이슈인가</th><th>사람들이 하는 말</th><th>카카오 영향</th><th>딥다이브</th></tr></thead>
+          <thead><tr><th>구분</th><th>프로젝트/논문</th><th>왜 이슈인가</th><th>사람들이 하는 말</th><th>AI 플랫폼/서비스 영향</th><th>딥다이브</th></tr></thead>
           <tbody>
             <tr><td>Project</td><td><strong>Claude Code Dynamic Workflows / ultracode</strong></td><td>공식 발표와 커뮤니티 반응이 동시에 강함. 수십~수백 subagent, Bun port 사례</td><td>전환점이라는 반응과 token burn/제어권 우려가 동시에 큼</td><td>사내 개발/운영 에이전트, 보안 감사, 마이그레이션 자동화</td><td><span class="tag yes">Yes</span></td></tr>
             <tr><td>Spec</td><td><strong>MCP 2026-07-28 RC</strong></td><td>stateless core, MCP Apps, Tasks, OAuth/OIDC alignment, deprecation policy</td><td>production MCP의 큰 전환점</td><td>MCP registry, task lifecycle, app rendering, auth 설계 영향</td><td><span class="tag yes">Yes</span></td></tr>
-            <tr><td>Paper</td><td><strong>AgentBound</strong></td><td>MCP 서버 접근통제 논문. 296개 MCP 서버 분석, 자동 policy 생성</td><td>MCP 서버 권한 과다 문제를 정면으로 다룸</td><td>카카오 MCP 보안 baseline 후보</td><td><span class="tag yes">Yes</span></td></tr>
+            <tr><td>Paper</td><td><strong>AgentBound</strong></td><td>MCP 서버 접근통제 논문. 296개 MCP 서버 분석, 자동 policy 생성</td><td>MCP 서버 권한 과다 문제를 정면으로 다룸</td><td>AI 플랫폼 MCP 보안 baseline 후보</td><td><span class="tag yes">Yes</span></td></tr>
             <tr><td>Paper</td><td><strong>SWE-Skills-Bench</strong></td><td>Agent skills 효과 검증. 39/49 skills가 pass-rate 개선 없음</td><td>skills hype에 제동</td><td>skill marketplace eval 기준 필요</td><td><span class="tag yes">Yes</span></td></tr>
             <tr><td>Paper/Project</td><td><strong>COLLEAGUE.SKILL</strong></td><td>expert traces를 portable/correctable skill로 증류</td><td>person-grounded skills 가능성, 검증 필요</td><td>사내 업무/CS/운영 지식 skill화</td><td><span class="tag medium">Maybe</span></td></tr>
           </tbody>
@@ -220,14 +220,14 @@
       <section id="new">
         <h2>4. 신규 사항</h2>
         <table>
-          <thead><tr><th>중요도</th><th>주제</th><th>새로 확인한 내용</th><th>카카오 영향</th><th>출처</th></tr></thead>
+          <thead><tr><th>중요도</th><th>주제</th><th>새로 확인한 내용</th><th>AI 플랫폼/서비스 영향</th><th>출처</th></tr></thead>
           <tbody>
             <tr><td><span class="tag high">High</span></td><td>Dynamic Workflows</td><td>2026-05-28 Anthropic 발표. workflow script + parallel subagents + verification</td><td>workflow orchestration, budget guardrail, subagent trace 필요</td><td>Anthropic, Reddit</td></tr>
             <tr><td><span class="tag high">High</span></td><td>MCP 2026-07-28 RC</td><td>출시 이후 최대급 revision. stateless core와 Tasks/App/Auth 변화</td><td>MCP registry 설계 업데이트 필요</td><td>MCP Blog</td></tr>
             <tr><td><span class="tag high">High</span></td><td>AgentBound</td><td>MCP 서버 접근통제 논문</td><td>permission tier, sandbox policy, audit에 직접 연결</td><td>Paper</td></tr>
             <tr><td><span class="tag high">High</span></td><td>SWE-Skills-Bench</td><td>skills 효과가 제한적이라는 벤치마크</td><td>skill marketplace에 eval/compatibility 필수</td><td>arXiv</td></tr>
             <tr><td><span class="tag medium">Medium</span></td><td>GitHub Copilot App + gh skill</td><td>agent-native app, MCP, skills, scheduled automations, voice, cloud sessions</td><td>내부 개발 플랫폼 UX 참고</td><td>GitHub</td></tr>
-            <tr><td><span class="tag medium">Medium</span></td><td>UCP/AP2/AG-UI</td><td>commerce, payment, user-facing UI protocol stack</td><td>쇼핑/선물하기/페이/예약 전략에 중요</td><td>Docs</td></tr>
+            <tr><td><span class="tag medium">Medium</span></td><td>UCP/AP2/AG-UI</td><td>commerce, payment, user-facing UI protocol stack</td><td>쇼핑/커머스/결제/예약 전략에 중요</td><td>Docs</td></tr>
           </tbody>
         </table>
       </section>
@@ -254,19 +254,19 @@
           <a href="https://docs.ag-ui.com/">AG-UI</a>
         </div>
         <div class="card-grid">
-          <article class="card"><strong>Workflow runtime</strong>Dynamic Workflows의 본질은 agent가 orchestration code를 만들고 병렬 실행/검증/재개를 운영하는 runtime이다. 카카오는 cost cap, model routing, trace, approval을 같이 설계해야 한다.</article>
-          <article class="card"><strong>MCP enterprise shift</strong>MCP RC는 stateless HTTP, MCP Apps, Tasks, auth/OIDC, deprecation policy를 강조한다. 카카오 MCP registry도 versioning과 task lifecycle을 포함해야 한다.</article>
+          <article class="card"><strong>Workflow runtime</strong>Dynamic Workflows의 본질은 agent가 orchestration code를 만들고 병렬 실행/검증/재개를 운영하는 runtime이다. AI 플랫폼은 cost cap, model routing, trace, approval을 같이 설계해야 한다.</article>
+          <article class="card"><strong>MCP enterprise shift</strong>MCP RC는 stateless HTTP, MCP Apps, Tasks, auth/OIDC, deprecation policy를 강조한다. MCP registry도 versioning과 task lifecycle을 포함해야 한다.</article>
           <article class="card"><strong>Skills eval</strong>GitHub는 skill install/publish 생태계를 밀고 있지만, SWE-Skills-Bench는 대부분의 skills가 효과가 제한적이라고 말한다. 배포 전 task eval이 필수다.</article>
-          <article class="card"><strong>Commerce/UI stack</strong>UCP는 checkout/order, AP2는 mandate/audit, AG-UI는 streaming/interrupt/shared state를 다룬다. 카카오 서비스형 에이전트는 이 세 계층을 모두 봐야 한다.</article>
+          <article class="card"><strong>Commerce/UI stack</strong>UCP는 checkout/order, AP2는 mandate/audit, AG-UI는 streaming/interrupt/shared state를 다룬다. 서비스형 에이전트는 이 세 계층을 모두 봐야 한다.</article>
         </div>
       </section>
 
-      <section id="kakao">
-        <h2>7. Kakao Implications</h2>
+      <section id="platform">
+        <h2>7. AI Platform Implications</h2>
         <ul>
-          <li>카카오 AI 플랫폼: Agent Registry와 MCP Registry를 통합하되 risk annotation, permission, Tasks, UI rendering, deprecation을 같이 관리해야 한다.</li>
-          <li>Kanana/카카오톡: AG-UI류의 streaming, interrupt, approval, shared state, user steering이 필요하다.</li>
-          <li>쇼핑/선물하기/페이/로컬 예약: UCP/AP2 스타일의 checkout mandate, payment mandate, identity linking, order lifecycle을 검토해야 한다.</li>
+          <li>AI 플랫폼: Agent Registry와 MCP Registry를 통합하되 risk annotation, permission, Tasks, UI rendering, deprecation을 같이 관리해야 한다.</li>
+          <li>대화형 AI 서비스: AG-UI류의 streaming, interrupt, approval, shared state, user steering이 필요하다.</li>
+          <li>쇼핑/커머스/결제/로컬 예약: UCP/AP2 스타일의 checkout mandate, payment mandate, identity linking, order lifecycle을 검토해야 한다.</li>
           <li>사내 개발 플랫폼: agent task board, review queue, trace view, budget guardrail이 필요하다.</li>
         </ul>
       </section>

@@ -135,7 +135,7 @@
       <h1>Agent Trend 조사 이력</h1>
       <p class="lead">날짜별로 어떤 에이전트 트렌드를 조사했는지, 어느 정도 깊이로 정리했는지 한눈에 보는 인덱스. 기준은 현재 폴더에 저장 완료된 HTML 정본과 raw 원본이다.</p>
       <div class="meta">
-        <span class="pill">최종 갱신: 2026-06-06 20:18 KST</span>
+        <span class="pill">최종 갱신: 2026-06-06 23:38 KST</span>
         <span class="pill">정본: HTML</span>
         <span class="pill">원본: raw Markdown</span>
         <span class="pill">정기 업데이트: 08:00 / 16:00 / 00:00 KST</span>
@@ -157,10 +157,22 @@
         <tbody>
           <tr>
             <td>2026-06-06</td>
+            <td><strong>AI Platform / Service Applicability</strong></td>
+            <td><span class="tag deep">Synthesis</span><br>브리핑 + 적용 설계</td>
+            <td>
+              A2A, UCP, AP2, AG-UI, A2-UI, Dynamic Workflows, AgentBound, Hermes Agent, SkillNet 조사 결과를 특정 회사명 없이 AI 플랫폼 및 서비스 적용 관점으로 재정리. 레이어 맵, 사용 가능 포인트, 30/60/90일 실행안, 리스크를 포함.
+            </td>
+            <td>
+              <a href="2026-06-06/AI_Platform_Service_Applicability.html">HTML 보고서</a><br>
+              <a href="2026-06-06/raw/AI_Platform_Service_Applicability.md">raw 원본</a>
+            </td>
+          </tr>
+          <tr>
+            <td>2026-06-06</td>
             <td><strong>A2A / Agent2Agent Protocol</strong></td>
             <td><span class="tag deep">Deep Dive</span><br>브리핑 + 기술 상세</td>
             <td>
-              Google 공개, Linux Foundation 이관, A2A v1.0, MCP와의 차이, Agent Card, Task lifecycle, Artifact, 프로토콜 흐름, 보안/거버넌스, 카카오 Agent Registry와 Orchestrator 적용 방향.
+              Google 공개, Linux Foundation 이관, A2A v1.0, MCP와의 차이, Agent Card, Task lifecycle, Artifact, 프로토콜 흐름, 보안/거버넌스, Agent Registry와 Orchestrator 적용 방향.
             </td>
             <td>
               <a href="2026-06-06/A2A_Deep_Dive.html">HTML 보고서</a><br>
@@ -208,7 +220,7 @@
             <td><strong>UCP / Universal Commerce Protocol</strong></td>
             <td><span class="tag deep">Deep Dive</span><br>Agentic commerce protocol</td>
             <td>
-              commerce capability/discovery/checkout/order 표준. UCP roles, capability negotiation, <code>/.well-known/ucp</code>, REST/MCP/A2A/Embedded transport, AP2 결합, Google/Shopify/Universal Cart 업데이트, 카카오 선물하기/쇼핑/예약/Pay 적용 방향.
+              commerce capability/discovery/checkout/order 표준. UCP roles, capability negotiation, <code>/.well-known/ucp</code>, REST/MCP/A2A/Embedded transport, AP2 결합, Google/Shopify/Universal Cart 업데이트, AI 플랫폼 커머스/쇼핑/예약/결제 적용 방향.
             </td>
             <td>
               <a href="2026-06-06/UCP_Deep_Dive.html">HTML 보고서</a><br>
@@ -220,7 +232,7 @@
             <td><strong>AP2 / Agent Payments Protocol</strong></td>
             <td><span class="tag deep">Deep Dive</span><br>Agent payment trust layer</td>
             <td>
-              Checkout Mandate, Payment Mandate, Verifiable Digital Credential, Trusted Surface, human-present/human-not-present 결제 위임, FIDO 표준화 흐름, Kakao Pay agent 결제 승인/감사/분쟁 증거 설계.
+              Checkout Mandate, Payment Mandate, Verifiable Digital Credential, Trusted Surface, human-present/human-not-present 결제 위임, FIDO 표준화 흐름, 결제 서비스 agent 결제 승인/감사/분쟁 증거 설계.
             </td>
             <td>
               <a href="2026-06-06/AP2_Deep_Dive.html">HTML 보고서</a><br>
@@ -232,7 +244,7 @@
             <td><strong>AG-UI / Agent-User Interaction Protocol</strong></td>
             <td><span class="tag deep">Deep Dive</span><br>Agent frontend interaction</td>
             <td>
-              agent backend와 user-facing app을 연결하는 event protocol. Lifecycle, text, tool call, state snapshot/delta, activity, interrupt, custom events, AG-UI와 A2-UI 차이, 카카오톡/카나나/커머스/CS UX event schema 적용 방향.
+              agent backend와 user-facing app을 연결하는 event protocol. Lifecycle, text, tool call, state snapshot/delta, activity, interrupt, custom events, AG-UI와 A2-UI 차이, 대화형 AI 서비스/커머스/CS UX event schema 적용 방향.
             </td>
             <td>
               <a href="2026-06-06/AG_UI_Deep_Dive.html">HTML 보고서</a><br>
@@ -244,7 +256,7 @@
             <td><strong>A2-UI / Agent-to-User Interface</strong></td>
             <td><span class="tag deep">Deep Dive</span><br>Generative UI spec</td>
             <td>
-              agent-generated declarative UI payload/spec. Surface, component, data model, action, catalog, validator, A2A/AG-UI/SSE/MCP transport, version status, Macaron-A2UI 논문, 카카오톡 native renderer와 Kakao component catalog 적용 방향.
+              agent-generated declarative UI payload/spec. Surface, component, data model, action, catalog, validator, A2A/AG-UI/SSE/MCP transport, version status, Macaron-A2UI 논문, 대화형 AI 서비스 native renderer와 service component catalog 적용 방향.
             </td>
             <td>
               <a href="2026-06-06/A2_UI_Deep_Dive.html">HTML 보고서</a><br>
@@ -260,11 +272,11 @@
       <div class="grid">
         <article class="card">
           <strong>Deep Dive</strong>
-          특정 주제를 브리핑 판단과 실무 기술 설계까지 이어지도록 깊게 정리한 자료. 공식 출처, 기술 구조, 시장 신호, 카카오 적용 방향, 리스크, 권장 액션을 포함한다.
+          특정 주제를 브리핑 판단과 실무 기술 설계까지 이어지도록 깊게 정리한 자료. 공식 출처, 기술 구조, 시장 신호, AI 플랫폼/서비스 적용 방향, 리스크, 권장 액션을 포함한다.
         </article>
         <article class="card">
           <strong>8시간 Brief</strong>
-          새로 나온 트렌드와 기존 조사 업데이트를 빠르게 훑는 정기 브리프. 중요도, 변경점, 카카오 영향, 추적 리스크를 중심으로 정리한다.
+          새로 나온 트렌드와 기존 조사 업데이트를 빠르게 훑는 정기 브리프. 중요도, 변경점, AI 플랫폼/서비스 영향, 추적 리스크를 중심으로 정리한다.
         </article>
       </div>
     </section>
@@ -294,7 +306,7 @@
           <tr>
             <td>A2A</td>
             <td><span class="tag deep">Deep Dive 완료</span></td>
-            <td>agent-to-agent 표준화, Agent Card, Task lifecycle, signed card, enterprise security, 카카오 내부 호환 표준.</td>
+            <td>agent-to-agent 표준화, Agent Card, Task lifecycle, signed card, enterprise security, 조직 내부 호환 표준.</td>
           </tr>
           <tr>
             <td>Agent Commerce / Payments</td>
@@ -319,7 +331,7 @@
           <tr>
             <td>On-device / Multimodal / Voice Agents</td>
             <td><span class="tag watch">Monitoring</span></td>
-            <td>음성, 이미지, 화면 이해, 기기 내 실행, 모바일 UX, 카카오톡/디바이스 접점.</td>
+            <td>음성, 이미지, 화면 이해, 기기 내 실행, 모바일 UX, 대화형 AI 서비스/디바이스 접점.</td>
           </tr>
         </tbody>
       </table>

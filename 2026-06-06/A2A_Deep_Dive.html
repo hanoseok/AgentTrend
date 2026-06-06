@@ -296,7 +296,7 @@
       <a href="#components">구성요소</a>
       <a href="#flow">프로토콜 흐름</a>
       <a href="#security">보안과 거버넌스</a>
-      <a href="#kakao">카카오 적용 방향</a>
+      <a href="#platform">AI 플랫폼/서비스 적용 방향</a>
       <a href="#actions">권장 액션</a>
       <a href="#sources">출처</a>
     </nav>
@@ -305,7 +305,7 @@
       <header class="hero">
         <p class="eyebrow">Agent Trend Deep Dive</p>
         <h1>A2A: Agent2Agent Protocol</h1>
-        <p class="lead">에이전트가 서로를 발견하고, 작업을 위임하고, 상태와 결과물을 교환하기 위한 공개 프로토콜. 카카오 AI 서비스와 에이전트 플랫폼 설계에서는 내부 Agent Registry, Task lifecycle, Artifact, 권한 위임, 감사 추적의 기준점으로 봐야 한다.</p>
+        <p class="lead">에이전트가 서로를 발견하고, 작업을 위임하고, 상태와 결과물을 교환하기 위한 공개 프로토콜. AI 플랫폼 및 서비스 설계에서는 내부 Agent Registry, Task lifecycle, Artifact, 권한 위임, 감사 추적의 기준점으로 봐야 한다.</p>
         <div class="meta">
           <span class="pill">검증 시점: 2026-06-06 18:45 KST</span>
           <span class="pill">주제: A2A / Agent Platform / Interoperability</span>
@@ -327,11 +327,11 @@
           <a href="https://a2a-protocol.org/latest/announcing-1.0/">A2A v1.0</a>
         </div>
         <div class="callout">
-          <strong>결론.</strong> A2A는 에이전트 시대의 "서비스 간 협업 프로토콜" 후보다. 카카오는 A2A를 당장 전면 채택하기보다 내부 Agent Registry, Task 상태 모델, Artifact schema, 인증/인가, audit trace를 A2A-compatible하게 설계하는 것이 전략적으로 안전하다.
+          <strong>결론.</strong> A2A는 에이전트 시대의 "서비스 간 협업 프로토콜" 후보다. AI 플랫폼은 A2A를 당장 전면 채택하기보다 내부 Agent Registry, Task 상태 모델, Artifact schema, 인증/인가, audit trace를 A2A-compatible하게 설계하는 것이 전략적으로 안전하다.
         </div>
         <div class="decision-grid">
           <article class="card"><strong>1. 플랫폼 계약</strong>내부 에이전트 플랫폼의 기본 계약을 A2A-compatible하게 잡을 것인가.</article>
-          <article class="card"><strong>2. Agent Registry</strong>카카오 서비스별 Agent Card와 Agent Registry를 중앙 플랫폼 기능으로 제공할 것인가.</article>
+          <article class="card"><strong>2. Agent Registry</strong>서비스별 Agent Card와 Agent Registry를 중앙 플랫폼 기능으로 제공할 것인가.</article>
           <article class="card"><strong>3. 고위험 액션 통제</strong>human approval, per-skill authorization, delegated token을 공통 표준으로 둘 것인가.</article>
           <article class="card"><strong>4. MCP 결합</strong>MCP와 A2A를 결합한 구조를 내부 AI 플랫폼 SDK에 포함할 것인가.</article>
         </div>
@@ -342,7 +342,7 @@
         <div class="summary-grid">
           <article class="card"><strong>시장 신호</strong>Google 발표 이후 Linux Foundation 프로젝트로 이동했고, 주요 기업과 클라우드 플랫폼 지원이 확대되는 흐름이다.</article>
           <article class="card"><strong>기술 신호</strong>MCP가 agent-to-tool 표준 후보라면, A2A는 agent-to-agent 표준 후보로 자리 잡는 중이다.</article>
-          <article class="card"><strong>카카오 신호</strong>카카오톡, Kanana, 쇼핑/선물하기, 로컬/지도, 결제, 일정, 고객센터가 각각 독립 에이전트화될 경우 표준 위임 체계가 필요하다.</article>
+          <article class="card"><strong>AI 플랫폼 신호</strong>대화형 AI 서비스, 쇼핑/커머스, 로컬/지도, 결제, 일정, 고객센터가 각각 독립 에이전트화될 경우 표준 위임 체계가 필요하다.</article>
           <article class="card"><strong>리스크 신호</strong>에이전트 간 위임은 개인정보, 결제, 예약, 메시지 발송 같은 고위험 액션을 확장하므로 보안/인가/감사 체계가 먼저 필요하다.</article>
         </div>
       </section>
@@ -360,7 +360,7 @@
           <div class="event"><div class="date">2026 기준</div><div>Linux Foundation 발표에 따르면 A2A는 150개 이상의 조직 지원, 주요 클라우드 플랫폼 통합, 엔터프라이즈 프로덕션 사용 사례를 확보한 것으로 소개된다.</div></div>
           <div class="event"><div class="date">A2A v1.0</div><div>안정 버전으로 발표되었고, multi-protocol binding, version negotiation, signed Agent Card, enterprise security 기능이 강조된다.</div></div>
         </div>
-        <p class="print-note">판단: A2A는 아직 모든 산업의 사실상 표준이라고 보기에는 이르지만, MCP와 함께 에이전트 플랫폼의 표준 인터페이스 후보로 반드시 추적해야 한다.</p>
+        <p class="print-note">판단: A2A는 아직 모든 산업의 사실상 표준이라고 보기에는 이르지만, MCP와 함께 에이전트 플랫폼의 표준 인터결제스 후보로 반드시 추적해야 한다.</p>
       </section>
 
       <section id="mcp">
@@ -375,7 +375,7 @@
               <th>구분</th>
               <th>MCP</th>
               <th>A2A</th>
-              <th>카카오 설계 의미</th>
+              <th>AI 플랫폼 설계 의미</th>
             </tr>
           </thead>
           <tbody>
@@ -388,7 +388,7 @@
             <tr>
               <td>예시</td>
               <td>캘린더 조회, CRM 검색, 문서 검색, DB 질의, 결제 API 호출</td>
-              <td>예약 에이전트, 선물하기 에이전트, 결제 에이전트 간 협업</td>
+              <td>예약 에이전트, 커머스 에이전트, 결제 에이전트 간 협업</td>
               <td>서비스별 전문 에이전트를 중앙 오케스트레이터가 조합</td>
             </tr>
             <tr>
@@ -412,14 +412,14 @@
           <a href="https://a2a-protocol.org/dev/specification/">Specification</a>
         </div>
         <div class="summary-grid">
-          <article class="card"><strong>Agent Card</strong>에이전트의 이름, 설명, 엔드포인트, 지원 기능, 입출력 형식, 인증 요구사항, 스킬 정보를 담는 discovery 명세. 카카오 Agent Registry의 기본 단위 후보.</article>
+          <article class="card"><strong>Agent Card</strong>에이전트의 이름, 설명, 엔드포인트, 지원 기능, 입출력 형식, 인증 요구사항, 스킬 정보를 담는 discovery 명세. Agent Registry의 기본 단위 후보.</article>
           <article class="card"><strong>A2A Client / Server</strong>Client는 작업을 위임하는 쪽, Server 또는 Remote Agent는 작업을 수행하는 쪽. 내부 구현과 모델 종류는 강제하지 않는다.</article>
           <article class="card"><strong>Message / Part</strong>에이전트 사이에서 오가는 요청과 응답의 구성 단위. 텍스트, 파일, 구조화 데이터 조각을 포함할 수 있다.</article>
-          <article class="card"><strong>Task / Artifact</strong>Task는 작업 상태를 관리하고 Artifact는 최종 결과물이다. 카카오에서는 UI와 액션으로 연결되는 구조화 결과물로 설계해야 한다.</article>
+          <article class="card"><strong>Task / Artifact</strong>Task는 작업 상태를 관리하고 Artifact는 최종 결과물이다. AI 플랫폼에서는 UI와 액션으로 연결되는 구조화 결과물로 설계해야 한다.</article>
         </div>
         <h3>Task lifecycle</h3>
         <table>
-          <thead><tr><th>상태</th><th>의미</th><th>카카오 UX/플랫폼 처리</th></tr></thead>
+          <thead><tr><th>상태</th><th>의미</th><th>AI 플랫폼 UX/플랫폼 처리</th></tr></thead>
           <tbody>
             <tr><td><code>submitted</code></td><td>작업 접수</td><td>traceId/contextId 발급, 정책 검사 시작</td></tr>
             <tr><td><code>working</code></td><td>작업 수행 중</td><td>진행 상태 표시, timeout/fallback 관리</td></tr>
@@ -472,10 +472,10 @@
         </div>
       </section>
 
-      <section id="kakao">
-        <h2>7. 카카오 AI 서비스 적용 방향</h2>
+      <section id="platform">
+        <h2>7. AI 플랫폼 및 서비스 적용 방향</h2>
         <div class="summary-grid">
-          <article class="card"><strong>내부 Agent Registry</strong>카카오의 각 서비스 또는 도메인 에이전트를 Agent Card 기반으로 등록한다. 검색, 발견, 권한, SLA, 데이터 접근 범위, 정책 태그를 하나의 registry에서 관리한다.</article>
+          <article class="card"><strong>내부 Agent Registry</strong>AI 플랫폼의 각 서비스 또는 도메인 에이전트를 Agent Card 기반으로 등록한다. 검색, 발견, 권한, SLA, 데이터 접근 범위, 정책 태그를 하나의 registry에서 관리한다.</article>
           <article class="card"><strong>Orchestrator와 전문 에이전트 분리</strong>사용자-facing 에이전트는 orchestration에 집중하고, 전문 에이전트는 자신의 도메인 기능, 정책, 데이터 접근, 액션 실행을 책임진다.</article>
           <article class="card"><strong>구조화 Artifact 중심 UX</strong>예약 후보, 선물 추천, 결제 요청, 일정 변경을 텍스트가 아니라 UI와 액션으로 연결되는 구조화 결과물로 다룬다.</article>
           <article class="card"><strong>Human-in-the-loop</strong>결제, 예약 확정, 메시지 발송, 개인정보 공유처럼 사용자에게 영향이 큰 액션은 명시적 승인을 받는다.</article>
@@ -484,9 +484,9 @@
         <table>
           <thead><tr><th>도메인</th><th>역할</th><th>A2A 적용 포인트</th></tr></thead>
           <tbody>
-            <tr><td>카카오톡 대화/메시징</td><td>사용자 의도 이해와 알림/메시지 액션</td><td>고위험 메시지 발송 승인, 대화 context 최소 전달</td></tr>
+            <tr><td>대화형 AI 서비스 대화/메시징</td><td>사용자 의도 이해와 알림/메시지 액션</td><td>고위험 메시지 발송 승인, 대화 context 최소 전달</td></tr>
             <tr><td>로컬/지도/예약</td><td>장소 탐색, 예약 후보, 확정</td><td>예약 후보 Artifact, 취소 정책, 승인 상태</td></tr>
-            <tr><td>쇼핑/선물하기</td><td>상품 추천과 구매 플로우</td><td>상품 ID, 재고, 배송 가능일, 결제 승인 Artifact</td></tr>
+            <tr><td>쇼핑/커머스</td><td>상품 추천과 구매 플로우</td><td>상품 ID, 재고, 배송 가능일, 결제 승인 Artifact</td></tr>
             <tr><td>결제/정산</td><td>결제 요청, 승인, 영수증</td><td>auth_required, irreversible action guardrail</td></tr>
             <tr><td>사내 업무/문서 검색</td><td>문서/지식 검색과 업무 자동화</td><td>tenant별 권한, 문서 출처, 감사 로그</td></tr>
           </tbody>

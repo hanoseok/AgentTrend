@@ -51,7 +51,7 @@
       <a href="#what">What It Is</a>
       <a href="#technical">Technical Model</a>
       <a href="#ecosystem">Ecosystem</a>
-      <a href="#kakao">Kakao Implications</a>
+      <a href="#platform">AI Platform Implications</a>
       <a href="#actions">Actions</a>
       <a href="#sources">Sources</a>
     </nav>
@@ -77,7 +77,7 @@
         <div class="grid">
           <article class="card"><strong>핵심 역할</strong>AG-UI는 UI component spec이 아니라 event transport/interaction protocol이다. agent state, tool call, streaming text, interrupt, shared state를 앱에 전달한다.</article>
           <article class="card"><strong>왜 지금 중요한가</strong>agentic app은 request-response API가 아니라 long-running, streaming, cancellable, human-in-loop workflow다. 프론트엔드 표준이 필요해졌다.</article>
-          <article class="card"><strong>카카오 포인트</strong>톡/카나나/상담/커머스 agent UX를 일관되게 만들려면 AG-UI식 event bus와 lifecycle이 필요하다.</article>
+          <article class="card"><strong>AI 플랫폼 포인트</strong>대화형 AI 서비스/상담/커머스 agent UX를 일관되게 만들려면 AG-UI식 event bus와 lifecycle이 필요하다.</article>
         </div>
         <div class="callout">
           <strong>브리핑 한 줄:</strong> AG-UI는 “에이전트가 앱 안에서 일하는 모습을 사용자에게 안전하고 추적 가능하게 보여주는 UX 프로토콜”이다.
@@ -104,15 +104,15 @@
         </div>
         <h3>Event Categories</h3>
         <table>
-          <thead><tr><th>카테고리</th><th>의미</th><th>카카오 UX 예</th></tr></thead>
+          <thead><tr><th>카테고리</th><th>의미</th><th>AI 플랫폼 UX 예</th></tr></thead>
           <tbody>
             <tr><td>Lifecycle</td><td>RunStarted, StepStarted, RunFinished, RunError 등 agent run의 경계를 표현.</td><td>“예약 가능 매장 검색 중”, “결제 조건 검증 중” 진행 표시.</td></tr>
-            <tr><td>Text Message</td><td>텍스트 메시지 streaming start/content/end.</td><td>톡 말풍선이 실시간으로 생성됨.</td></tr>
+            <tr><td>Text Message</td><td>텍스트 메시지 streaming start/content/end.</td><td>채팅 UI이 실시간으로 생성됨.</td></tr>
             <tr><td>Tool Call</td><td>agent가 어떤 tool을 어떤 인자로 호출하는지 프론트에 노출.</td><td>“지도 검색”, “상품 재고 조회”, “쿠폰 적용”을 투명하게 표시.</td></tr>
             <tr><td>State</td><td>StateSnapshot/StateDelta로 agent와 UI state를 동기화.</td><td>장바구니, 예약 조건, 배송지, 선택 옵션이 동기화됨.</td></tr>
             <tr><td>Activity</td><td>계획, 검색, 분석 같은 중간 활동을 구조화.</td><td>CS agent가 문의 원인 분석 단계를 보여줌.</td></tr>
             <tr><td>Interrupt</td><td>사용자 승인/수정/재시도/에스컬레이션을 위해 run을 멈춤.</td><td>결제, 개인정보 제공, 외부 전송 전에 승인 요청.</td></tr>
-            <tr><td>Custom / Raw</td><td>앱별 이벤트와 외부 시스템 이벤트를 담는 확장 지점.</td><td>카카오톡 채널, 알림, 지도, Pay 이벤트를 감쌈.</td></tr>
+            <tr><td>Custom / Raw</td><td>앱별 이벤트와 외부 시스템 이벤트를 담는 확장 지점.</td><td>대화형 AI 서비스 채널, 알림, 지도, 결제 이벤트를 감쌈.</td></tr>
           </tbody>
         </table>
         <h3>주요 기능</h3>
@@ -135,17 +135,17 @@
         </div>
         <p>AG-UI는 CopilotKit, LangGraph, CrewAI와의 초기 연동에서 출발했지만 현재 문서와 GitHub는 Microsoft Agent Framework, Google ADK, AWS Strands/Bedrock, Mastra, Pydantic AI, Agno, LlamaIndex, AG2 등 다양한 agent framework와의 연동을 내세운다. 즉 프론트엔드 agent interaction layer로 확장되는 중이다.</p>
         <div class="callout warn">
-          <strong>판단:</strong> AG-UI는 아직 모든 플랫폼이 채택한 확정 표준은 아니지만, agent 앱을 실제 제품으로 만들 때 필요한 event taxonomy가 상당히 실무적이다. 카카오는 그대로 종속되기보다 AG-UI-compatible internal event schema를 만드는 것이 현실적이다.
+          <strong>판단:</strong> AG-UI는 아직 모든 플랫폼이 채택한 확정 표준은 아니지만, agent 앱을 실제 제품으로 만들 때 필요한 event taxonomy가 상당히 실무적이다. AI 플랫폼은 그대로 종속되기보다 AG-UI-compatible internal event schema를 만드는 것이 현실적이다.
         </div>
       </section>
 
-      <section id="kakao">
-        <h2>5. Kakao Implications</h2>
+      <section id="platform">
+        <h2>5. AI Platform Implications</h2>
         <table>
-          <thead><tr><th>카카오 적용 영역</th><th>AG-UI가 해결하는 문제</th><th>필요 설계</th></tr></thead>
+          <thead><tr><th>AI 서비스 적용 영역</th><th>AG-UI가 해결하는 문제</th><th>필요 설계</th></tr></thead>
           <tbody>
-            <tr><td>카나나 / 톡 agent</td><td>말풍선만으로 장시간 task, tool call, approval 상태를 표현하기 어렵다.</td><td>thread/run/step/event id 체계, resumable run, cancel UI.</td></tr>
-            <tr><td>커머스 / Pay</td><td>상품 비교, 옵션 선택, 결제 승인, 주문 추적이 모두 다른 UI 상태다.</td><td>StateSnapshot/Delta + Interrupt + Trusted Surface event.</td></tr>
+            <tr><td>대화형 AI 서비스 / 대화형 agent</td><td>말풍선만으로 장시간 task, tool call, approval 상태를 표현하기 어렵다.</td><td>thread/run/step/event id 체계, resumable run, cancel UI.</td></tr>
+            <tr><td>커머스 / 결제</td><td>상품 비교, 옵션 선택, 결제 승인, 주문 추적이 모두 다른 UI 상태다.</td><td>StateSnapshot/Delta + Interrupt + Trusted Surface event.</td></tr>
             <tr><td>CS / 운영 agent</td><td>agent가 어떤 근거와 tool로 판단했는지 추적해야 한다.</td><td>ToolCall events, activity trace, human escalation.</td></tr>
             <tr><td>개발자/사내 agent</td><td>장시간 workflow 진행 상황과 subagent 작업을 보여줘야 한다.</td><td>Run/Step lifecycle, nested delegation trace, log streaming.</td></tr>
           </tbody>
@@ -155,11 +155,11 @@
       <section id="actions">
         <h2>6. Recommended Actions</h2>
         <ol>
-          <li><strong>Kakao Agent Event Schema:</strong> AG-UI event taxonomy를 참고해 내부 공통 event envelope를 만든다.</li>
+          <li><strong>AI 서비스 Agent Event Schema:</strong> AG-UI event taxonomy를 참고해 내부 공통 event envelope를 만든다.</li>
           <li><strong>Interrupt First:</strong> 결제, 개인정보 제공, 외부 메시지 발송, 예약 확정은 모두 interrupt로 모델링한다.</li>
           <li><strong>Trace Policy:</strong> raw chain-of-thought 없이 tool call, decision summary, evidence, approval record를 남긴다.</li>
           <li><strong>AG-UI + A2-UI PoC:</strong> AG-UI transport 위에 A2-UI payload를 얹어 쇼핑/예약 UI를 동적으로 렌더링한다.</li>
-          <li><strong>Mobile Constraints:</strong> 톡 모바일 환경에서 event 폭주, reconnect, offline, push notification, partial rendering을 테스트한다.</li>
+          <li><strong>Mobile Constraints:</strong> 모바일 대화형 서비스 환경에서 event 폭주, reconnect, offline, push notification, partial rendering을 테스트한다.</li>
         </ol>
       </section>
 
