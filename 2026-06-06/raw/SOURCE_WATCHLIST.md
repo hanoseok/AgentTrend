@@ -1,6 +1,6 @@
 # Agent Trend Source Watchlist
 
-- 최종 갱신: 2026-06-06 19:35 KST
+- 최종 갱신: 2026-06-07 00:12 KST
 - 정기 확인: 08:00 / 16:00 / 00:00 KST
 - 목적: 에이전트 트렌드 정기 조사에서 매번 순회할 소스 목록 관리
 
@@ -23,10 +23,13 @@
 | Reddit r/AI_Agents | https://www.reddit.com/r/AI_Agents/ | 에이전트 프로젝트, MCP, observability, runtime 실패담을 보조 확인 |
 | Reddit r/ClaudeAI | https://www.reddit.com/r/ClaudeAI/ | Claude Code 외 Claude 생태계의 agent memory, MCP gateway, multi-agent 운영 사례 확인 |
 | Reddit r/mcp | https://www.reddit.com/r/mcp/ | MCP 서버, tool governance, agent-ready web, security 이슈를 보조 확인 |
+| Reddit r/hermesagent | https://www.reddit.com/r/hermesagent/ | persistent agent, memory, skills, gateway, cron/webhook, tool bloat, 운영 실패담을 보조 확인 |
+| arXiv / Hugging Face Papers | https://arxiv.org/, https://huggingface.co/papers | agent security, skill eval, trace-to-skill, memory, workflow, multi-agent 논문과 커뮤니티 반응을 확인 |
 | Google Developers Blog | https://developers.googleblog.com/ | A2A, UCP, AP2, A2UI, AG-UI, ADK 등 공식 프로토콜/SDK 업데이트 교차 확인 |
 | Anthropic / Claude Blog | https://claude.com/blog | Claude Code, Skills, Managed Agents, MCP, memory, workflow 기능의 공식 발표 확인 |
 | OpenAI News / Docs | https://openai.com/news/ | OpenAI Agents, Codex, Responses/Agents SDK, MCP, agent commerce 관련 공식 업데이트 확인 |
 | Model Context Protocol Docs / Blog | https://modelcontextprotocol.io/, https://blog.modelcontextprotocol.io/ | MCP specification, registry, apps, tasks, risk annotations, auth/OAuth, governance 변경을 공식 출처로 확인 |
+| MCP Authorization / Permission Analysis | https://openfga.dev/docs/modeling/agents/mcp-authorization, https://mcpblog.dev/blog/2026-03-21-chmod-ai-agents-mcp-permissions | MCP server 권한 모델, tool-level authorization, policy enforcement, audit trail 설계 사례를 확인 |
 | A2A Protocol Docs | https://a2a-protocol.org/latest/ | A2A specification, Agent Card, task lifecycle, SDK, release notes, enterprise feature 변경 확인 |
 | OpenAI Agents SDK Docs | https://openai.github.io/openai-agents-python/ | agents, handoffs, sandbox agents, guardrails, MCP, sessions, human-in-the-loop, tracing 구조 변화 확인 |
 | Claude Code Docs | https://code.claude.com/docs | Claude Code workflows, skills, MCP, hooks, memory, sandbox/managed agents 등 실사용 기능 변화 확인 |

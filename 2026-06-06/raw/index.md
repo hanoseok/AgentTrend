@@ -1,6 +1,6 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-06 23:48 KST
+- 최종 갱신: 2026-06-07 00:12 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
 - 정기 업데이트: 00:00 / 08:00 / 16:00 KST
@@ -16,8 +16,10 @@
 1. `2026-06-06/AI_Platform_Service_Applicability.html`
 2. `2026-06-06/2000_agent_trend_brief.html`
 3. `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
-4. `2026-06-06/UCP_Deep_Dive.html`
-5. `2026-06-06/AP2_Deep_Dive.html`
+4. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
+5. `2026-06-07/AgentBound_Deep_Dive.html`
+6. `2026-06-06/UCP_Deep_Dive.html`
+7. `2026-06-06/AP2_Deep_Dive.html`
 
 ## 2. Protocol / Platform Map
 
@@ -28,7 +30,7 @@
 | Payment Trust | `2026-06-06/AP2_Deep_Dive.html` | 결제 위임, 사용자 의도 증명, mandate, trusted surface, dispute evidence | 결제 서비스 agent 결제의 승인 UX, 감사, 분쟁 대응 기준 |
 | Agent UI Events | `2026-06-06/AG_UI_Deep_Dive.html` | agent run lifecycle, text streaming, tool call, state delta, interrupt, custom event | 대화형 AI 서비스/CS/커머스 agent UX의 공통 event schema |
 | Generative UI | `2026-06-06/A2_UI_Deep_Dive.html` | agent가 안전한 선언형 UI payload를 만들고 client가 native UI로 렌더링 | 채팅 UI 안의 상품 카드, 예약 form, 승인 summary, CS action UI |
-| Security / Skills / Runtime | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html` | Dynamic Workflows, AgentBound, SWE-Skills-Bench, COLLEAGUE.SKILL, Hermes Agent, SkillNet | workflow runtime, MCP permission boundary, skill registry/eval, persistent agent governance |
+| Security / Skills / Runtime | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`, `2026-06-07/AgentBound_Deep_Dive.html`, `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`, `2026-06-07/SkillNet_Deep_Dive.html` | Dynamic Workflows, AgentBound, SWE-Skills-Bench, COLLEAGUE.SKILL, Hermes Agent, SkillNet을 각각 분리 정리 | workflow runtime, MCP permission boundary, skill registry/eval, persistent agent governance |
 
 ## 3. Reading Paths
 
@@ -37,15 +39,20 @@
 1. `2026-06-06/AI_Platform_Service_Applicability.html`
 2. `2026-06-06/2000_agent_trend_brief.html`
 3. `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
-4. `2026-06-06/UCP_Deep_Dive.html`
-5. `2026-06-06/AP2_Deep_Dive.html`
+4. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
+5. `2026-06-07/AgentBound_Deep_Dive.html`
+6. `2026-06-06/UCP_Deep_Dive.html`
+7. `2026-06-06/AP2_Deep_Dive.html`
 
 ### Agent Platform 설계
 
 1. `2026-06-06/AI_Platform_Service_Applicability.html`
 2. `2026-06-06/A2A_Deep_Dive.html`
-3. `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
-4. `2026-06-06/AG_UI_Deep_Dive.html`
+3. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
+4. `2026-06-07/AgentBound_Deep_Dive.html`
+5. `2026-06-07/SkillNet_Deep_Dive.html`
+6. `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`
+7. `2026-06-06/AG_UI_Deep_Dive.html`
 
 ### 커머스 / 결제
 
@@ -63,11 +70,17 @@
 
 | 날짜 | 문서 | 유형 | 핵심 용도 |
 | --- | --- | --- | --- |
+| 2026-06-07 | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Deep Dive | workflow runtime, subagent orchestration, checkpoint, verifier, cost cap, approval control plane |
+| 2026-06-07 | `2026-06-07/AgentBound_Deep_Dive.html` | Deep Dive | MCP server permission manifest, policy enforcement, risk tier, audit schema |
+| 2026-06-07 | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html` | Deep Dive | agent skill marginal utility, pass-rate delta, token cost, version compatibility |
+| 2026-06-07 | `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html` | Deep Dive | trace-to-skill, expert skill governance, consent, privacy, rollback |
+| 2026-06-07 | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Deep Dive | persistent personal agent, memory, skills, gateway, cron/webhook, provider routing |
+| 2026-06-07 | `2026-06-07/SkillNet_Deep_Dive.html` | Deep Dive | skill repository, ontology, skill graph, 5-D evaluation, activation policy |
 | 2026-06-06 | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | 조사한 프로토콜/프로젝트를 AI 플랫폼 및 서비스 적용 관점으로 재정리 |
 | 2026-06-06 | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | agent-to-agent 표준과 Agent Registry/orchestrator 설계 |
 | 2026-06-06 | `2026-06-06/Agent_Trend_Scout.html` | Scout | GeekNews, MarkTechPost, GitHub Blog, Reddit 기반 딥다이브 후보 발굴 |
 | 2026-06-06 | `2026-06-06/2000_agent_trend_brief.html` | 8시간 Brief | 정기 브리프 형식의 트렌드/업데이트 요약 |
-| 2026-06-06 | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html` | Deep Dive | Dynamic Workflows, AgentBound, skills, commerce stack, Hermes Agent, SkillNet 묶음 |
+| 2026-06-06 | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html` | Overview | Dynamic Workflows, AgentBound, skills, commerce stack, Hermes Agent, SkillNet 우선순위 매트릭스. 개별 딥다이브는 2026-06-07 문서로 분리 |
 | 2026-06-06 | `2026-06-06/UCP_Deep_Dive.html` | Deep Dive | agentic commerce capability/discovery/checkout/order 표준 |
 | 2026-06-06 | `2026-06-06/AP2_Deep_Dive.html` | Deep Dive | agent 결제 위임, mandate, trusted surface, dispute evidence |
 | 2026-06-06 | `2026-06-06/AG_UI_Deep_Dive.html` | Deep Dive | agent frontend event protocol, interrupt, state delta, tool call UX |
@@ -114,19 +127,29 @@
 - [Claude Code Docs](https://code.claude.com/docs)
 - [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
 - [open-dynamic-workflows](https://github.com/imsai-sh/open-dynamic-workflows)
+- [Hermes Docs Home](https://hermes-agent.nousresearch.com/docs/)
 - [Hermes Docs](https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-hermes-agent)
+- [Hermes Tools](https://hermes-agent.nousresearch.com/docs/user-guide/features/tools)
+- [Hermes Product Page](https://nousresearch.com/hermes-agent/)
 - [Hermes GitHub](https://github.com/NousResearch/hermes-agent)
 
 ### Security / Permission Boundary / Skills
 
 - [AgentBound PDF](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf)
 - [AgentBound FSE](https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/14/AgentBound-Securing-Execution-Boundaries-of-AI-Agents)
+- [AgentBound arXiv](https://arxiv.org/abs/2510.21236)
+- [AgentBound replication](https://zenodo.org/records/19468201)
+- [OpenFGA MCP authorization](https://openfga.dev/docs/modeling/agents/mcp-authorization)
+- [MCP permission analysis](https://mcpblog.dev/blog/2026-03-21-chmod-ai-agents-mcp-permissions)
 - [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)
 - [SWE-Skills-Bench GitHub](https://github.com/GeniusHTX/SWE-Skills-Bench)
 - [COLLEAGUE.SKILL](https://arxiv.org/abs/2605.31264)
+- [COLLEAGUE.SKILL HF](https://huggingface.co/papers/2605.31264)
+- [Skill trace auditing](https://arxiv.org/abs/2605.11946)
 - [SkillNet paper](https://arxiv.org/abs/2603.04448)
 - [SkillNet GitHub](https://github.com/zjunlp/SkillNet)
 - [SkillNet site](https://skillnet.openkg.cn)
+- [SkillNet HF blog](https://huggingface.co/blog/xzwnlp/skillnet)
 
 ### UCP / Agentic Commerce
 
@@ -218,6 +241,9 @@
 - [Production MCP thread](https://www.reddit.com/r/ClaudeAI/comments/1tuqqpn/i_ship_ai_agents_in_production_the_mess_is_mcp/)
 - [MCP server thread](https://www.reddit.com/r/ClaudeAI/comments/1s4gz18/built_an_mcp_server_that_turns_claude_code_into_a/)
 - [Agent runtime thread](https://www.reddit.com/r/AI_Agents/comments/1tgwlh1/your_vibe_coded_repo_is_rotting_i_built_an_open/)
+- [Hermes tool/skill bloat](https://www.reddit.com/r/hermesagent/comments/1t34qee/hermes_agent_tool_and_skills_bloat/)
+- [Hermes skills loading](https://www.reddit.com/r/hermesagent/comments/1tp0by4/does_hermes_actually_load_the_skills_every_single/)
+- [Hermes cron monitoring](https://www.reddit.com/r/hermesagent/comments/1t9gz2f/the_cron_job_every_serious_hermes_agent_user/)
 - [GeekNews topic 25327](https://news.hada.io/topic?id=25327)
 - [GeekNews topic 27108](https://news.hada.io/topic?id=27108)
 - [GeekNews topic 27530](https://news.hada.io/topic?id=27530)
@@ -233,6 +259,12 @@
 - `2026-06-06/raw/Agent_Trend_Scout.md`
 - `2026-06-06/raw/2000_agent_trend_brief.md`
 - `2026-06-06/raw/Selected_Agent_Project_Paper_Deep_Dive.md`
+- `2026-06-07/raw/Claude_Code_Dynamic_Workflows_Deep_Dive.md`
+- `2026-06-07/raw/AgentBound_Deep_Dive.md`
+- `2026-06-07/raw/SWE_Skills_Bench_Deep_Dive.md`
+- `2026-06-07/raw/COLLEAGUE_SKILL_Deep_Dive.md`
+- `2026-06-07/raw/Hermes_Agent_Deep_Dive.md`
+- `2026-06-07/raw/SkillNet_Deep_Dive.md`
 - `2026-06-06/raw/UCP_Deep_Dive.md`
 - `2026-06-06/raw/AP2_Deep_Dive.md`
 - `2026-06-06/raw/AG_UI_Deep_Dive.md`

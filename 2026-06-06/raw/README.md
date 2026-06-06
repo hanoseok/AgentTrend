@@ -48,7 +48,7 @@
 
 지금까지 실제 조사에 사용한 전체 외부 링크는 `index.html#references`와 `2026-06-06/raw/index.md`의 Reference Links에 주제별로 모아둔다.
 
-참고 링크: [A2A](https://a2a-protocol.org/latest/), [MCP](https://modelcontextprotocol.io/), [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/), [A2UI](https://a2ui.org/), [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [AgentBound](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf), [SkillNet](https://arxiv.org/abs/2603.04448), [Hermes Agent](https://github.com/NousResearch/hermes-agent)
+참고 링크: [A2A](https://a2a-protocol.org/latest/), [MCP](https://modelcontextprotocol.io/), [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/), [A2UI](https://a2ui.org/), [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [AgentBound](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf), [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401), [COLLEAGUE.SKILL](https://arxiv.org/abs/2605.31264), [SkillNet](https://arxiv.org/abs/2603.04448), [Hermes Agent](https://github.com/NousResearch/hermes-agent)
 
 ## 현재 문서
 
@@ -64,6 +64,12 @@
 - `2026-06-06/2000_agent_trend_brief.html`: 2026-06-06 20:00 Agent Trend Brief
 - `2026-06-06/Agent_Trend_Scout.html`: 2026-06-06 Agent Trend Scout
 - `2026-06-06/A2A_Deep_Dive.html`: 2026-06-06 A2A Deep Dive
+- `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`: 2026-06-07 Claude Code Dynamic Workflows Deep Dive
+- `2026-06-07/AgentBound_Deep_Dive.html`: 2026-06-07 AgentBound Deep Dive
+- `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`: 2026-06-07 SWE-Skills-Bench Deep Dive
+- `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html`: 2026-06-07 COLLEAGUE.SKILL Deep Dive
+- `2026-06-07/Hermes_Agent_Deep_Dive.html`: 2026-06-07 Hermes Agent Deep Dive
+- `2026-06-07/SkillNet_Deep_Dive.html`: 2026-06-07 SkillNet Deep Dive
 - `2026-06-06/raw/UCP_Deep_Dive.md`: UCP raw 원본
 - `2026-06-06/raw/AP2_Deep_Dive.md`: AP2 raw 원본
 - `2026-06-06/raw/AG_UI_Deep_Dive.md`: AG-UI raw 원본
@@ -72,3 +78,9 @@
 - `2026-06-06/raw/index.md`: 전체 인덱스 raw 원본
 - `2026-06-06/raw/Selected_Agent_Project_Paper_Deep_Dive.md`: Selected Agent Project / Paper raw 원본
 - `2026-06-06/raw/A2A_Deep_Dive.md`: A2A raw 원본
+- `2026-06-07/raw/Claude_Code_Dynamic_Workflows_Deep_Dive.md`: Dynamic Workflows raw 원본
+- `2026-06-07/raw/AgentBound_Deep_Dive.md`: AgentBound raw 원본
+- `2026-06-07/raw/SWE_Skills_Bench_Deep_Dive.md`: SWE-Skills-Bench raw 원본
+- `2026-06-07/raw/COLLEAGUE_SKILL_Deep_Dive.md`: COLLEAGUE.SKILL raw 원본
+- `2026-06-07/raw/Hermes_Agent_Deep_Dive.md`: Hermes Agent raw 원본
+- `2026-06-07/raw/SkillNet_Deep_Dive.md`: SkillNet raw 원본

@@ -10,7 +10,7 @@
 
 ### 결론
 
-A2A는 에이전트 시대의 "서비스 간 협업 프로토콜" 후보이며, AI 플랫폼가 AI 서비스와 에이전트 플랫폼을 만들 때 내부 표준 설계에 반영해야 할 가능성이 높다. 지금 당장 A2A를 전면 채택한다기보다, 내부 Agent Registry, Task 상태 모델, Artifact schema, 인증/인가, audit trace를 A2A-compatible하게 설계하는 것이 전략적으로 안전하다.
+A2A는 에이전트 시대의 "서비스 간 협업 프로토콜" 후보이며, AI 플랫폼이 AI 서비스와 에이전트 플랫폼을 만들 때 내부 표준 설계에 반영해야 할 가능성이 높다. 지금 당장 A2A를 전면 채택한다기보다, 내부 Agent Registry, Task 상태 모델, Artifact schema, 인증/인가, audit trace를 A2A-compatible하게 설계하는 것이 전략적으로 안전하다.
 
 ### 왜 중요한가
 
@@ -133,7 +133,7 @@ A2A는 작업을 상태 기반으로 관리한다. 주요 상태는 submitted, w
 
 A2A는 인증과 인가를 프로토콜 자체의 마법으로 해결하지 않는다. HTTP, TLS, OAuth, OIDC, mTLS, API key 등 기존 엔터프라이즈 보안 메커니즘과 결합하는 방식에 가깝다. 따라서 플랫폼 구현자가 책임져야 할 영역이 크다.
 
-AI 플랫폼가 특히 봐야 할 리스크:
+AI 플랫폼이 특히 봐야 할 리스크:
 
 - 잘못된 Agent Card 또는 악성 Agent Card 등록
 - 에이전트 간 prompt injection 전파

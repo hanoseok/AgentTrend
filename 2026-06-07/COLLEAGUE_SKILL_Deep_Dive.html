@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>COLLEAGUE.SKILL Deep Dive</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --ink:#141f33; --muted:#667085; --line:#d8dee9; --accent:#2563eb; --soft:#eaf1ff; --green:#067647; --green-soft:#ecfdf3; --amber:#b54708; --amber-soft:#fff7ed; --red:#b42318; --red-soft:#fff1f0; --shadow:0 16px 42px rgba(15,23,42,.08); }
+    * { box-sizing:border-box; } body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); line-height:1.62; }
+    a { color:var(--accent); text-decoration:none; overflow-wrap:anywhere; } a:hover { text-decoration:underline; }
+    .page { width:min(1180px, calc(100% - 32px)); margin:28px auto 60px; display:grid; grid-template-columns:250px minmax(0,1fr); gap:22px; }
+    nav, .hero, section { background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); }
+    nav { position:sticky; top:18px; padding:18px; align-self:start; } nav strong { display:block; margin-bottom:10px; } nav a { display:block; padding:8px 0; border-top:1px solid #eef2f7; color:#344054; font-size:14px; }
+    .hero, section { padding:30px; margin-bottom:18px; } h1 { margin:0; font-size:clamp(34px,5vw,52px); line-height:1.06; letter-spacing:0; } h2 { margin:0 0 16px; font-size:24px; } h3 { margin:22px 0 10px; font-size:18px; }
+    p { margin:0 0 13px; } .lead { max-width:900px; margin-top:16px; color:#344054; font-size:18px; } .eyebrow { margin:0 0 8px; color:var(--accent); font-weight:850; }
+    .meta, .source-pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; } .pill, .source-pills a { display:inline-flex; border-radius:999px; border:1px solid #bed3ff; background:var(--soft); color:#1e40af; padding:6px 10px; font-size:13px; font-weight:760; }
+    .source-pills { margin:8px 0 14px; } .source-pills a { font-size:12px; padding:3px 8px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; } .card { border:1px solid var(--line); border-radius:12px; padding:16px; background:#fcfdff; } .card strong { display:block; color:var(--accent); margin-bottom:6px; }
+    .callout { border:1px solid #bed3ff; background:var(--soft); border-radius:14px; padding:18px; margin:14px 0; }
+    table { width:100%; border-collapse:collapse; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff; } th,td { padding:13px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; } th { background:#f1f4f9; color:#344054; font-size:14px; } tr:last-child td { border-bottom:0; }
+    .tag { display:inline-block; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:850; white-space:nowrap; } .high { color:var(--red); background:var(--red-soft); border:1px solid #ffccc7; } .medium { color:var(--amber); background:var(--amber-soft); border:1px solid #fed7aa; } .ok { color:var(--green); background:var(--green-soft); border:1px solid #abefc6; }
+    code { background:#eef2f7; border:1px solid #dbe3ee; border-radius:6px; padding:2px 6px; } ul,ol { padding-left:22px; }
+    @media (max-width:900px){ .page{display:block;width:min(100% - 20px,1180px);} nav{position:static;margin-bottom:18px;} .grid{grid-template-columns:1fr;} .hero,section{padding:22px;} }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <strong>COLLEAGUE.SKILL</strong>
+      <a href="../index.html">Index</a>
+      <a href="#summary">Summary</a>
+      <a href="#what">What It Is</a>
+      <a href="#tracks">Skill Tracks</a>
+      <a href="#usecases">Use Cases</a>
+      <a href="#governance">Governance</a>
+      <a href="#actions">Actions</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <main>
+      <header class="hero">
+        <p class="eyebrow">2026-06-07 00:10 KST · Paper Deep Dive</p>
+        <h1>COLLEAGUE.SKILL</h1>
+        <p class="lead">COLLEAGUE.SKILL은 사람이나 role의 작업 trace를 agent가 사용할 수 있는 versioned skill package로 distill하는 논문이다. AI 플랫폼 관점에서는 “지식 검색”을 넘어 “업무 방식, 판단 기준, 커뮤니케이션 습관”을 audit 가능한 스킬로 이전하려는 흐름을 보여준다.</p>
+        <div class="meta">
+          <span class="pill">조사 수준: Deep Dive</span>
+          <span class="pill">유형: Trace-to-skill / Expert skill</span>
+          <span class="pill">raw: raw/COLLEAGUE_SKILL_Deep_Dive.md</span>
+        </div>
+      </header>
+
+      <section id="summary">
+        <h2>1. Executive Summary</h2>
+        <div class="source-pills">
+          <a href="https://arxiv.org/abs/2605.31264">arXiv</a>
+          <a href="https://huggingface.co/papers/2605.31264">Hugging Face Papers</a>
+          <a href="https://arxiv.org/abs/2605.11946">Skill Trace Auditing</a>
+          <a href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</a>
+        </div>
+        <div class="callout"><strong>핵심 판단:</strong> COLLEAGUE.SKILL류 접근은 expert skill platform의 방향을 보여주지만, 사람의 trace를 스킬화하는 순간 privacy, consent, IP, 평가/감시 이슈가 같이 생긴다. 기술 PoC보다 governance 설계가 먼저다.</div>
+        <div class="grid">
+          <article class="card"><strong>왜 중요함</strong>조직의 암묵지, 운영 노하우, 리뷰 기준, 응대 스타일을 agent skill로 보존하고 재사용하려는 수요와 맞닿아 있다.</article>
+          <article class="card"><strong>트렌디한 이유</strong>memory, persona, skill framework가 분리된 기능이 아니라 versioned, inspectable, correctable artifact로 수렴하고 있다.</article>
+        </div>
+      </section>
+
+      <section id="what">
+        <h2>2. What It Is</h2>
+        <p>논문은 target person 또는 role의 자료, 작업 흔적, 수정 이력, 커뮤니케이션 예시를 바탕으로 person-grounded AI skill을 생성하는 trace-to-skill distillation system을 제안한다. 결과물은 단순 persona prompt가 아니라 versioned skill package다.</p>
+        <p>핵심은 “누군가처럼 말하게 하기”가 아니라 “특정 역할의 업무 판단과 실행 방식을 inspectable하게 포장하고 업데이트할 수 있게 하기”다. 이 점에서 COLLEAGUE.SKILL은 enterprise skill, expert assistant, role-based agent 운영의 중요한 참고점이다.</p>
+      </section>
+
+      <section id="tracks">
+        <h2>3. Two Coordinated Tracks</h2>
+        <table>
+          <thead><tr><th>트랙</th><th>포함 내용</th><th>플랫폼 의미</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Capability Track</strong></td><td>업무 practices, mental models, decision heuristics, 절차적 판단 기준.</td><td>role별 skill card, playbook, checklist, tool-use rule로 변환 가능하다.</td></tr>
+            <tr><td><strong>Bounded Behavior Track</strong></td><td>communication style, interaction rules, correction history, 응답 경계.</td><td>톤앤매너와 행동 경계를 분리해 통제할 수 있다.</td></tr>
+            <tr><td><strong>Versioned Package</strong></td><td>생성, 수정, 검토, rollback 가능한 skill artifact.</td><td>agent skill을 배포 가능한 소프트웨어 자산으로 관리한다.</td></tr>
+            <tr><td><strong>Inspectable Output</strong></td><td>사람이 검토하고 고칠 수 있는 구조화된 결과물.</td><td>black-box personalization보다 governance에 적합하다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="usecases">
+        <h2>4. AI 플랫폼 및 서비스 적용 가능성</h2>
+        <table>
+          <thead><tr><th>영역</th><th>가능한 skill</th><th>초기 검증 방식</th></tr></thead>
+          <tbody>
+            <tr><td>개발/운영</td><td>코드리뷰 관점, 장애 대응 playbook, 배포 점검, legacy 운영 지식.</td><td>실제 issue/incident replay로 skill on/off 비교.</td></tr>
+            <tr><td>서비스 운영</td><td>정책 위반 판단, 고객 문의 분류, escalation 기준, 공지 작성 기준.</td><td>과거 ticket sample과 reviewer agreement 측정.</td></tr>
+            <tr><td>콘텐츠/커뮤니티</td><td>moderation playbook, tone guide, safety 판단 기준.</td><td>blind review와 false positive/negative 측정.</td></tr>
+            <tr><td>비즈니스 운영</td><td>상품 운영 rule, 파트너 대응 방식, 광고/추천 정책.</td><td>업무 산출물 품질 평가와 human correction rate 측정.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="governance">
+        <h2>5. Governance Risks</h2>
+        <table>
+          <thead><tr><th>리스크</th><th>문제</th><th>필수 통제</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag high">Privacy</span></td><td>작업 trace에 개인정보, 민감한 업무 정보, private communication이 포함될 수 있다.</td><td>PII masking, data minimization, source allowlist.</td></tr>
+            <tr><td><span class="tag high">Consent</span></td><td>개인의 업무 방식이 skill로 복제될 수 있다.</td><td>명시적 동의, 사용 범위 제한, opt-out, 삭제권.</td></tr>
+            <tr><td><span class="tag medium">IP / Labor</span></td><td>개인의 노하우와 조직 자산의 경계가 모호하다.</td><td>ownership policy, usage policy, access control.</td></tr>
+            <tr><td><span class="tag high">Surveillance</span></td><td>skill 생성이 평가/감시 도구로 오용될 수 있다.</td><td>목적 제한, audit, reviewer separation.</td></tr>
+            <tr><td><span class="tag medium">Behavior Drift</span></td><td>업데이트 과정에서 역할 기준이 왜곡될 수 있다.</td><td>versioning, rollback, eval set, human approval.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="actions">
+        <h2>6. Recommended Actions</h2>
+        <ol>
+          <li>expert skill 후보는 개인이 아니라 role/task 단위로 먼저 정의한다.</li>
+          <li>trace 수집 전 consent, masking, retention, deletion policy를 문서화한다.</li>
+          <li>skill package에는 source provenance, reviewer, version, allowed use case를 필수 metadata로 넣는다.</li>
+          <li>SWE-Skills-Bench 방식으로 skill on/off 성능과 token cost를 측정한다.</li>
+          <li>사용자나 운영자가 skill 내용을 inspect, correct, rollback할 수 있는 UI를 설계한다.</li>
+        </ol>
+      </section>
+
+      <section id="sources">
+        <h2>7. Sources</h2>
+        <div class="source-pills">
+          <a href="https://arxiv.org/abs/2605.31264">COLLEAGUE.SKILL arXiv</a>
+          <a href="https://huggingface.co/papers/2605.31264">Hugging Face Paper Page</a>
+          <a href="https://arxiv.org/abs/2605.11946">Counterfactual Trace Auditing of LLM Agent Skills</a>
+          <a href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</a>
+          <a href="https://arxiv.org/abs/2603.04448">SkillNet</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

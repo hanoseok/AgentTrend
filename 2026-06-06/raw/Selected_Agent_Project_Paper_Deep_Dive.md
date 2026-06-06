@@ -5,11 +5,22 @@
 - 대상: 사용자가 지정한 1, 3, 4, 5, 7번 항목 + Hermes Agent + SkillNet
 - HTML 정본: `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
 
+## 0. 개별 딥다이브
+
+이 문서는 전체 우선순위와 연결 구조를 보는 개요다. 상세 딥다이브는 2026-06-07 개별 문서에서 각각 관리한다.
+
+- `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`, `2026-06-07/raw/Claude_Code_Dynamic_Workflows_Deep_Dive.md`
+- `2026-06-07/AgentBound_Deep_Dive.html`, `2026-06-07/raw/AgentBound_Deep_Dive.md`
+- `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`, `2026-06-07/raw/SWE_Skills_Bench_Deep_Dive.md`
+- `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html`, `2026-06-07/raw/COLLEAGUE_SKILL_Deep_Dive.md`
+- `2026-06-07/Hermes_Agent_Deep_Dive.html`, `2026-06-07/raw/Hermes_Agent_Deep_Dive.md`
+- `2026-06-07/SkillNet_Deep_Dive.html`, `2026-06-07/raw/SkillNet_Deep_Dive.md`
+
 ## 1. Executive Summary
 
 참고 링크: [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [AgentBound](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf), [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401), [UCP](https://ucp.dev/), [AG-UI](https://docs.ag-ui.com/)
 
-사용자가 지정한 7개 항목을 묶어 조사한 결론은 명확하다. 에이전트 플랫폼 경쟁은 모델 품질만이 아니라 workflow runtime, permission boundary, skill registry, eval, commerce/payment, UI protocol을 누가 먼저 제품화하느냐의 싸움으로 이동 중이다.
+사용자가 지정한 7개 항목을 묶어 본 개요의 결론은 명확하다. 에이전트 플랫폼 경쟁은 모델 품질만이 아니라 workflow runtime, permission boundary, skill registry, eval, commerce/payment, UI protocol을 누가 먼저 제품화하느냐의 싸움으로 이동 중이다.
 
 브리핑 한 줄:
 

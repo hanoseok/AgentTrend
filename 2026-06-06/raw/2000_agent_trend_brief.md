@@ -11,7 +11,7 @@
 
 1. 이번 업데이트의 가장 강한 신호는 Claude Code Dynamic Workflows다. Anthropic 공식 발표와 Reddit 반응이 동시에 강하고, 병렬 subagent, workflow-as-code, 장시간 코드베이스 작업, token burn 논쟁이 모두 붙어 있다. 조직 내부 개발/운영 에이전트 플랫폼을 설계할 때 workflow orchestration, cost guardrail, subagent trace, approval gate를 반드시 포함해야 한다.
 
-2. MCP는 단순 tool 연결 표준에서 production-grade agent platform 표준으로 확장 중이다. 2026-07-28 MCP Specification RC는 stateless core, MCP Apps, Tasks extension, OAuth/OIDC 정렬, deprecation policy를 포함하는 큰 변화다. AI 플랫폼가 MCP registry를 만든다면 단순 서버 목록이 아니라 task lifecycle, UI rendering, authorization, version/deprecation까지 포함해야 한다.
+2. MCP는 단순 tool 연결 표준에서 production-grade agent platform 표준으로 확장 중이다. 2026-07-28 MCP Specification RC는 stateless core, MCP Apps, Tasks extension, OAuth/OIDC 정렬, deprecation policy를 포함하는 큰 변화다. AI 플랫폼이 MCP registry를 만든다면 단순 서버 목록이 아니라 task lifecycle, UI rendering, authorization, version/deprecation까지 포함해야 한다.
 
 3. Project / Paper Alert 쪽에서는 AgentBound, SWE-Skills-Bench, COLLEAGUE.SKILL을 우선 추적해야 한다. AgentBound는 MCP 서버 접근통제 논문이고, SWE-Skills-Bench는 skill adoption 과열에 제동을 거는 벤치마크이며, COLLEAGUE.SKILL은 expert trace를 skill로 증류하는 흐름이다. AI 플랫폼에서 skill marketplace를 만들 경우 "많이 설치"가 아니라 eval과 권한, 버전 호환성을 기준으로 관리해야 한다.
 
