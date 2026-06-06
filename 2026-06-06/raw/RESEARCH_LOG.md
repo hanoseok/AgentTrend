@@ -1,8 +1,14 @@
 # Agent Trend 조사 이력
 
-- 최종 갱신: 2026-06-06 23:38 KST
+- 최종 갱신: 2026-06-06 23:48 KST
 - 기준: 현재 폴더에 저장 완료된 HTML 정본과 raw 원본
 - 정기 업데이트: 08:00 / 16:00 / 00:00 KST
+
+## 0. Reference Links
+
+조사에 사용한 전체 외부 링크는 `index.html#references`와 `2026-06-06/raw/index.md`의 Reference Links에 모아둔다. 아래는 조사 이력에서 가장 자주 참조하는 핵심 출처다.
+
+참고 링크: [A2A](https://a2a-protocol.org/latest/), [MCP](https://modelcontextprotocol.io/), [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/), [A2UI](https://a2ui.org/), [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [AgentBound](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf), [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401), [SkillNet](https://arxiv.org/abs/2603.04448)
 
 ## 1. 저장 완료된 조사 자료
 

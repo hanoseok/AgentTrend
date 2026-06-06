@@ -1,6 +1,6 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-06 23:38 KST
+- 최종 갱신: 2026-06-06 23:48 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
 - 정기 업데이트: 00:00 / 08:00 / 16:00 KST
@@ -73,7 +73,160 @@
 | 2026-06-06 | `2026-06-06/AG_UI_Deep_Dive.html` | Deep Dive | agent frontend event protocol, interrupt, state delta, tool call UX |
 | 2026-06-06 | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | agent-generated declarative UI payload/spec와 AI 플랫폼 component catalog 설계 |
 
-## 5. Raw Sources
+## 5. Reference Links
+
+지금까지 실제 조사에 사용했고 계속 참고할 만한 외부 링크를 주제별로 모았다. 개별 딥다이브 문서에는 각 섹션 바로 아래에 같은 링크가 `참고 링크:`로 반복되어 있다.
+
+### Watch Sources / Communities
+
+- [GeekNews](https://news.hada.io/)
+- [MarkTechPost](https://www.marktechpost.com/)
+- [GitHub Blog](https://github.blog/)
+- [r/Agent_AI](https://www.reddit.com/r/Agent_AI/)
+- [r/AI_Agents](https://www.reddit.com/r/AI_Agents/)
+- [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/)
+- [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/)
+- [r/claudeskills](https://www.reddit.com/r/claudeskills/)
+- [r/vibecoding](https://www.reddit.com/r/vibecoding/)
+- [r/mcp](https://www.reddit.com/r/mcp/)
+
+### A2A / Agent Interoperability
+
+- [Google A2A](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)
+- [Linux Foundation launch](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents)
+- [Linux Foundation update](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year)
+- [A2A docs](https://a2a-protocol.org/latest/)
+- [A2A v1.0](https://a2a-protocol.org/latest/announcing-1.0/)
+- [Key Concepts](https://a2a-protocol.org/latest/topics/key-concepts/)
+- [Agent Discovery](https://a2a-protocol.org/latest/topics/agent-discovery/)
+- [Specification](https://a2a-protocol.org/dev/specification/)
+- [Enterprise Ready](https://a2a-protocol.org/latest/topics/enterprise-ready/)
+- [A2A and MCP](https://a2a-protocol.org/latest/topics/a2a-and-mcp/)
+- [Agent protocol guide](https://developers.googleblog.com/developers-guide-to-ai-agent-protocols/)
+
+### MCP / Agents SDK / Runtime Docs
+
+- [MCP Docs](https://modelcontextprotocol.io/)
+- [MCP Blog](https://blog.modelcontextprotocol.io/)
+- [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)
+- [OpenAI News](https://openai.com/news/)
+- [Claude Blog](https://claude.com/blog)
+- [Claude Code Docs](https://code.claude.com/docs)
+- [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
+- [open-dynamic-workflows](https://github.com/imsai-sh/open-dynamic-workflows)
+- [Hermes Docs](https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-hermes-agent)
+- [Hermes GitHub](https://github.com/NousResearch/hermes-agent)
+
+### Security / Permission Boundary / Skills
+
+- [AgentBound PDF](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf)
+- [AgentBound FSE](https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/14/AgentBound-Securing-Execution-Boundaries-of-AI-Agents)
+- [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)
+- [SWE-Skills-Bench GitHub](https://github.com/GeniusHTX/SWE-Skills-Bench)
+- [COLLEAGUE.SKILL](https://arxiv.org/abs/2605.31264)
+- [SkillNet paper](https://arxiv.org/abs/2603.04448)
+- [SkillNet GitHub](https://github.com/zjunlp/SkillNet)
+- [SkillNet site](https://skillnet.openkg.cn)
+
+### UCP / Agentic Commerce
+
+- [UCP Docs](https://ucp.dev/)
+- [UCP Core Concepts](https://ucp.dev/documentation/core-concepts/)
+- [UCP Specification](https://ucp.dev/latest/specification/overview/)
+- [UCP Schema Reference](https://ucp.dev/2026-04-08/specification/reference/)
+- [UCP and AP2](https://ucp.dev/documentation/ucp-and-ap2/)
+- [UCP Versioning](https://ucp.dev/versioning/)
+- [UCP GitHub](https://github.com/Universal-Commerce-Protocol/ucp)
+- [UCP Discussions](https://github.com/Universal-Commerce-Protocol/ucp/discussions)
+- [Under the Hood UCP](https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/)
+- [Agentic shopping](https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/)
+- [Shopify Engineering UCP](https://shopify.engineering/UCP)
+- [Shopify UCP](https://www.shopify.com/ucp)
+- [UCP updates](https://blog.google/products-and-platforms/products/shopping/ucp-updates/)
+- [Universal Cart](https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/)
+- [Axios coverage](https://www.axios.com/2026/01/11/google-shopify-ai-shopping-standard-nrf-2026)
+- [InfoQ coverage](https://www.infoq.com/news/2026/01/google-agentic-commerce-ucp/)
+- [Strabo paper](https://arxiv.org/abs/2606.05043)
+
+### AP2 / Agent Payments
+
+- [AP2 Docs](https://ap2-protocol.org/)
+- [AP2 Specification](https://ap2-protocol.org/ap2/specification/)
+- [Google agentic commerce GitHub](https://github.com/google-agentic-commerce)
+- [AP2 GitHub](https://github.com/google-agentic-commerce/AP2)
+- [AP2 docs repo](https://github.com/google-agentic-commerce/AP2/tree/main/docs)
+- [AP2 code samples](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples)
+- [Human-present sample](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-present/cards)
+- [Human-not-present sample](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-not-present/cards)
+- [x402 sample](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-not-present/x402)
+- [Android credential sample](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/android/scenarios/digital-payment-credentials)
+- [Google Cloud AP2](https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol)
+- [AP2 and FIDO](https://blog.google/products-and-platforms/platforms/google-pay/agent-payments-protocol-fido-alliance/)
+- [FIDO standards](https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/)
+- [Zero-trust payment paper](https://arxiv.org/abs/2602.06345)
+- [x402 Extended paper](https://arxiv.org/abs/2601.22569)
+
+### AG-UI / A2-UI / Generative UI
+
+- [AG-UI Docs](https://docs.ag-ui.com/)
+- [AG-UI Introduction](https://docs.ag-ui.com/introduction)
+- [AG-UI Events](https://docs.ag-ui.com/concepts/events)
+- [AG-UI State](https://docs.ag-ui.com/concepts/state.md)
+- [AG-UI Interrupts](https://docs.ag-ui.com/concepts/interrupts)
+- [AG-UI Tools](https://docs.ag-ui.com/concepts/tools)
+- [AG-UI Generative UI](https://docs.ag-ui.com/concepts/generative-ui-specs.md)
+- [AG-UI Reasoning](https://docs.ag-ui.com/concepts/reasoning)
+- [AG-UI TypeScript SDK](https://docs.ag-ui.com/sdk/js/core/overview)
+- [AG-UI Python SDK](https://docs.ag-ui.com/sdk/python/core/overview)
+- [AG-UI GitHub](https://github.com/ag-ui-protocol/ag-ui)
+- [AG-UI Dojo](https://dojo.ag-ui.com/)
+- [A2UI Docs](https://a2ui.org/)
+- [What is A2UI](https://a2ui.org/introduction/what-is-a2ui/)
+- [A2UI Core Concepts](https://a2ui.org/concepts/overview/)
+- [A2UI v0.8](https://a2ui.org/specification/v0.8-a2ui/)
+- [A2UI v0.9](https://a2ui.org/specification/v0_9/docs/a2ui_protocol/)
+- [A2UI v0.10](https://a2ui.org/specification/v0_10/docs/a2ui_protocol/)
+- [A2UI GitHub](https://github.com/a2ui-project/a2ui)
+- [A2UI spec folder](https://github.com/a2ui-project/a2ui/tree/main/specification)
+- [AG2 A2UI docs](https://docs.ag2.ai/latest/docs/user-guide/a2a/a2ui/)
+- [AG2 A2UI agent](https://docs.ag2.ai/latest/docs/user-guide/reference-agents/a2uiagent/)
+- [A2UI Composer](https://a2ui-composer.ag-ui.com/)
+- [AG-UI/A2UI explainer](https://www.copilotkit.ai/docs/AG-UI-and-A2UI-Explained.pdf)
+- [A2UI walkthrough](https://www.copilotkit.ai/blog/build-with-googles-new-a2ui-spec-agent-user-interfaces-with-a2ui-ag-ui)
+- [Macaron-A2UI](https://arxiv.org/abs/2605.24830)
+
+### GitHub / Sandbox / Agent Web Signals
+
+- [GitHub Copilot App](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)
+- [Copilot coding agent](https://github.blog/ai-and-ml/github-copilot/whats-new-with-github-copilot-coding-agent/)
+- [Copilot App preview](https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/)
+- [gh skill](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/)
+- [Copilot VS Code release](https://github.blog/changelog/2026-03-06-github-copilot-in-visual-studio-code-v1-110-february-release/)
+- [Copilot CLI GA](https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available/)
+- [AIO Sandbox article](https://www.marktechpost.com/2026/03/29/agent-infra-releases-aio-sandbox-an-all-in-one-runtime-for-ai-agents-with-browser-shell-shared-filesystem-and-mcp/)
+- [AIO Sandbox GitHub](https://github.com/AgentInfra-AI/aio-sandbox)
+- [WebMCP article](https://www.marktechpost.com/2026/02/14/google-ai-introduces-the-webmcp-to-enable-direct-and-structured-website-interactions-for-new-ai-agents/)
+- [A-Evolve article](https://www.marktechpost.com/2026/03/29/meet-a-evolve-the-pytorch-moment-for-agentic-ai-systems-replacing-manual-tuning-with-automated-state-mutation-and-self-correction/)
+- [MarkTechPost UCP](https://www.marktechpost.com/2026/01/12/google-ai-releases-universal-commerce-protocol-ucp-an-open-source-standard-designed-to-power-the-next-generation-of-agentic-commerce/)
+
+### Community Threads / Discussion Signals
+
+- [r/ClaudeCode Dynamic Workflows](https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/)
+- [r/ClaudeAI Dynamic Workflows](https://www.reddit.com/r/ClaudeAI/comments/1tq9ofy/introducing_dynamic_workflows_in_claude_code/)
+- [r/vibecoding Dynamic Workflows](https://www.reddit.com/r/vibecoding/comments/1tqe2yp/anthropic_just_introduced_dynamic_workflows_in/)
+- [Claude Code workflows thread](https://www.reddit.com/r/ClaudeCode/comments/1tkjy4u/claude_code_dropped_workflows/)
+- [Production MCP thread](https://www.reddit.com/r/ClaudeAI/comments/1tuqqpn/i_ship_ai_agents_in_production_the_mess_is_mcp/)
+- [MCP server thread](https://www.reddit.com/r/ClaudeAI/comments/1s4gz18/built_an_mcp_server_that_turns_claude_code_into_a/)
+- [Agent runtime thread](https://www.reddit.com/r/AI_Agents/comments/1tgwlh1/your_vibe_coded_repo_is_rotting_i_built_an_open/)
+- [GeekNews topic 25327](https://news.hada.io/topic?id=25327)
+- [GeekNews topic 27108](https://news.hada.io/topic?id=27108)
+- [GeekNews topic 27530](https://news.hada.io/topic?id=27530)
+- [GeekNews topic 27636](https://news.hada.io/topic?id=27636)
+- [GeekNews topic 29171](https://news.hada.io/topic?id=29171)
+- [GeekNews topic 29493](https://news.hada.io/topic?id=29493)
+- [GeekNews topic 30028](https://news.hada.io/topic?id=30028)
+
+## 6. Raw Sources
 
 - `2026-06-06/raw/A2A_Deep_Dive.md`
 - `2026-06-06/raw/AI_Platform_Service_Applicability.md`
@@ -85,7 +238,7 @@
 - `2026-06-06/raw/AG_UI_Deep_Dive.md`
 - `2026-06-06/raw/A2_UI_Deep_Dive.md`
 
-## 6. Operations
+## 7. Operations
 
 - `RESEARCH_LOG.html`: 날짜별 조사 이력.
 - `SOURCE_WATCHLIST.html`: 정기 확인 소스 목록.

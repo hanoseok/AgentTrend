@@ -22,6 +22,8 @@
 3. 주요 언론과 분석기관
 4. 커뮤니티, 소셜, 개인 블로그
 
+참고 링크: [Reference Links](../../index.html#references), [Source Watchlist](../../SOURCE_WATCHLIST.html), [A2A](https://a2a-protocol.org/latest/), [MCP](https://modelcontextprotocol.io/), [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/), [A2UI](https://a2ui.org/)
+
 커뮤니티나 소셜에서 시작한 정보는 반드시 공식 출처 또는 독립 출처로 교차 확인한다. 확인되지 않은 내용은 "미확인 신호"로 분리한다.
 
 중요한 사실, 수치, 스펙, 커뮤니티 반응, 논문 주장은 하단 Sources에만 몰아두지 않는다. 해당 문단이나 섹션 바로 아래에 작은 source pill 링크를 붙여 근거를 바로 확인할 수 있게 한다. raw 원본에는 같은 위치에 `참고 링크:`를 남긴다.
