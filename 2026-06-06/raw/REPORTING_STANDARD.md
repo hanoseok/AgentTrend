@@ -22,11 +22,11 @@
 3. 주요 언론과 분석기관
 4. 커뮤니티, 소셜, 개인 블로그
 
-참고 링크: [Reference Links](../../index.html#references), [Source Watchlist](../../SOURCE_WATCHLIST.html), [A2A](https://a2a-protocol.org/latest/), [MCP](https://modelcontextprotocol.io/), [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/), [A2UI](https://a2ui.org/)
+참고 링크: [Source Catalog](../../index.html#references), [Source Watchlist](../../SOURCE_WATCHLIST.html), [A2A](https://a2a-protocol.org/latest/), [MCP](https://modelcontextprotocol.io/), [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/), [A2UI](https://a2ui.org/)
 
 커뮤니티나 소셜에서 시작한 정보는 반드시 공식 출처 또는 독립 출처로 교차 확인한다. 확인되지 않은 내용은 "미확인 신호"로 분리한다.
 
-중요한 사실, 수치, 스펙, 커뮤니티 반응, 논문 주장은 하단 Sources에만 몰아두지 않는다. 해당 문단이나 섹션 바로 아래에 작은 source pill 링크를 붙여 근거를 바로 확인할 수 있게 한다. raw 원본에는 같은 위치에 `참고 링크:`를 남긴다.
+중요한 사실, 수치, 스펙, 커뮤니티 반응, 논문 주장은 하단 출처 섹션에 몰아두지 않는다. 해당 문단이나 섹션 바로 아래에 작은 source pill 링크를 붙여 근거를 바로 확인할 수 있게 한다. raw 원본에는 같은 위치에 `참고 링크:`를 남긴다. 개별 보고서에는 독립적인 마지막 출처 모음을 두지 않고, 전체 링크 카탈로그는 인덱스와 watchlist에서만 관리한다.
 
 ### 3. 브리핑 구조
 
@@ -39,7 +39,7 @@
 - AI Platform Implications: AI 플랫폼 및 서비스 적용 가능성
 - Recommended Actions: 지금 할 일, 30일 내 할 일, 추적할 일
 - Risks / Watch Items: 기술, 보안, 사업, 규제 리스크
-- Sources: 확인한 링크와 신뢰도
+- Inline Evidence: 관련 요약 바로 아래에 `참고 링크:` 또는 source pill을 붙였는지 확인
 
 ### 4. 기술 깊이
 

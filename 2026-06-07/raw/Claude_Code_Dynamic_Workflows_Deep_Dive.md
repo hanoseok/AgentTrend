@@ -22,6 +22,8 @@ Anthropic이 2026-05-28 공개한 Claude Code 기능이다. Claude가 큰 작업
 
 ## 3. Trend Signals
 
+참고 링크: [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1tq9ofy/introducing_dynamic_workflows_in_claude_code/), [r/vibecoding](https://www.reddit.com/r/vibecoding/comments/1tqe2yp/anthropic_just_introduced_dynamic_workflows_in/)
+
 | 신호 | 의미 | 판단 |
 | --- | --- | --- |
 | 공식 발표 | Claude가 workflow code와 subagent orchestration을 직접 생성 | agent runtime이 제품의 전면 기능으로 올라왔다 |
@@ -52,11 +54,3 @@ Anthropic이 2026-05-28 공개한 Claude Code 기능이다. Claude가 큰 작업
 2. Workflow schema: task, branch, verifier, budget, approval, artifact schema를 정의한다.
 3. Cost guardrail: workflow별 token cap, subagent cap, stop condition을 둔다.
 4. Verifier first: test/build/security/policy checker 없이 자동 merge/action을 허용하지 않는다.
-
-## 7. Sources
-
-- Anthropic - Introducing dynamic workflows in Claude Code: https://claude.com/blog/introducing-dynamic-workflows-in-claude-code
-- GitHub - open-dynamic-workflows: https://github.com/imsai-sh/open-dynamic-workflows
-- Reddit r/ClaudeCode: https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/
-- Reddit r/ClaudeAI: https://www.reddit.com/r/ClaudeAI/comments/1tq9ofy/introducing_dynamic_workflows_in_claude_code/
-- Reddit r/vibecoding: https://www.reddit.com/r/vibecoding/comments/1tqe2yp/anthropic_just_introduced_dynamic_workflows_in/

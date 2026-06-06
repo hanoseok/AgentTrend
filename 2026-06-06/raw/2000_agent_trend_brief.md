@@ -63,7 +63,7 @@
 | A2A | AP2와 UCP 공식 문서에서 A2A가 commerce/payment stack의 일부로 연결됨 | 유지: A2A는 agent-to-agent 표준 후보 | A2A 단독이 아니라 MCP/UCP/AP2/AG-UI와 함께 설계해야 함 | A2A+UCP+AP2 통합 플로우 딥다이브 |
 | MCP Production Mess | MCP RC와 AgentBound가 production pain을 공식/연구 레벨에서 뒷받침 | 강화: tool 연결보다 governance가 중요 | registry, auth, policy, risk annotation, Tasks extension 설계 필요 | MCP 2026-07-28 RC 딥다이브 |
 | Skills Marketplace | GitHub gh skill과 SWE-Skills-Bench가 동시에 등장 | 수정: skill은 중요하지만 무조건 효과적이지 않음 | skill eval, version pinning, supply chain integrity, compatibility 테스트 필요 | SWE-Skills-Bench 딥다이브 |
-| Agentic Commerce | UCP/AP2 문서 확인으로 중요도 상승 | 강화: 쇼핑 추천이 아니라 결제 승인/audit 문제 | AI 플랫폼결제/커머스/쇼핑/로컬 예약의 공통 agent commerce contract 필요 | UCP/AP2/AG-UI 딥다이브 |
+| Agentic Commerce | UCP/AP2 문서 확인으로 중요도 상승 | 강화: 쇼핑 추천이 아니라 결제 승인/audit 문제 | AI 플랫폼 결제/커머스/쇼핑/로컬 예약의 공통 agent commerce contract 필요 | UCP/AP2/AG-UI 딥다이브 |
 
 ## 6. Technical Detail
 
@@ -107,23 +107,3 @@ UCP는 discovery-to-checkout-to-order lifecycle을 다루고, AP2는 human-prese
 - 보안 리스크: MCP 서버와 sandbox agent는 host/resource 접근권한을 명시적으로 통제해야 한다.
 - 품질 리스크: skills는 task에 맞지 않으면 효과가 없거나 오히려 성능을 떨어뜨릴 수 있다.
 - 제품 리스크: commerce agent는 추천보다 결제 승인, 책임, 분쟁 처리, audit trail이 더 어렵다.
-
-## 10. Sources
-
-- Anthropic, Dynamic workflows: https://claude.com/blog/introducing-dynamic-workflows-in-claude-code
-- Reddit r/ClaudeCode, Dynamic Workflows: https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/
-- Reddit r/ClaudeAI, Dynamic Workflows: https://www.reddit.com/r/ClaudeAI/comments/1tq9ofy/introducing_dynamic_workflows_in_claude_code/
-- MCP Blog, 2026-07-28 RC: https://blog.modelcontextprotocol.io/
-- MCP Docs: https://modelcontextprotocol.io/
-- AgentBound PDF: https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf
-- SWE-Skills-Bench: https://arxiv.org/abs/2603.15401
-- COLLEAGUE.SKILL: https://arxiv.org/abs/2605.31264
-- GitHub Copilot App preview: https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/
-- GitHub gh skill: https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/
-- GitHub usage-based billing: https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/
-- MarkTechPost, Agent-Infra AIO Sandbox: https://www.marktechpost.com/2026/03/29/agent-infra-releases-aio-sandbox-an-all-in-one-runtime-for-ai-agents-with-browser-shell-shared-filesystem-and-mcp/
-- MarkTechPost, UCP: https://www.marktechpost.com/2026/01/12/google-ai-releases-universal-commerce-protocol-ucp-an-open-source-standard-designed-to-power-the-next-generation-of-agentic-commerce/
-- UCP Docs: https://ucp.dev/
-- AP2 Docs: https://ap2-protocol.org/
-- AG-UI Docs: https://docs.ag-ui.com/
-- OpenAI Agents SDK: https://openai.github.io/openai-agents-python/

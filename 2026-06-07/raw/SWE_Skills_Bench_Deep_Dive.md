@@ -60,12 +60,3 @@ SkillNet은 skill을 만들고 연결하는 공급 측 infrastructure를 보여�
 3. pass-rate 개선이 없는 skill은 기본 주입하지 않고 search-only 상태로 둔다.
 4. version mismatch가 감지되면 skill을 자동 비활성화하거나 경고를 표시한다.
 5. 스킬 추천 UX에는 “왜 이 스킬을 넣었는가”와 “예상 비용”을 함께 보여준다.
-
-## 7. Sources
-
-- SWE-Skills-Bench arXiv: https://arxiv.org/abs/2603.15401
-- SWE-Skills-Bench GitHub: https://github.com/GeniusHTX/SWE-Skills-Bench
-- GitHub CLI Skills changelog: https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/
-- Counterfactual Trace Auditing: https://arxiv.org/abs/2605.11946
-- SkillNet paper: https://arxiv.org/abs/2603.04448
-- SkillNet GitHub: https://github.com/zjunlp/SkillNet

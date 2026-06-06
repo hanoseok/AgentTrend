@@ -86,9 +86,9 @@
 | 2026-06-06 | `2026-06-06/AG_UI_Deep_Dive.html` | Deep Dive | agent frontend event protocol, interrupt, state delta, tool call UX |
 | 2026-06-06 | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | agent-generated declarative UI payload/spec와 AI 플랫폼 component catalog 설계 |
 
-## 5. Reference Links
+## 5. Source Catalog
 
-지금까지 실제 조사에 사용했고 계속 참고할 만한 외부 링크를 주제별로 모았다. 개별 딥다이브 문서에는 각 섹션 바로 아래에 같은 링크가 `참고 링크:`로 반복되어 있다.
+이 영역은 전체 소스 탐색용 카탈로그다. 개별 딥다이브의 근거 링크는 마지막에 몰아두지 않고, 관련 요약과 판단이 나오는 섹션 바로 아래에 `참고 링크:`로 붙인다.
 
 ### Watch Sources / Communities
 

@@ -85,29 +85,3 @@ AI 플랫폼 설계 원칙:
 3. Validator: agent output이 catalog schema, child reference, data binding, action whitelist를 통과해야만 렌더링되게 한다.
 4. AG-UI Transport 결합: A2-UI payload는 AG-UI event stream 안에서 surface update로 전달한다.
 5. Security Review: phishing UI, deceptive button, hidden data exfiltration, malicious action injection, accessibility failure를 테스트한다.
-
-## 7. Sources
-
-### Official / Specification
-
-- A2UI official site: https://a2ui.org/
-- What is A2UI?: https://a2ui.org/introduction/what-is-a2ui/
-- A2UI Core Concepts: https://a2ui.org/concepts/overview/
-- A2UI v0.8 protocol docs: https://a2ui.org/specification/v0.8-a2ui/
-- A2UI v0.9 protocol docs: https://a2ui.org/specification/v0_9/docs/a2ui_protocol/
-- A2UI v0.10 protocol docs: https://a2ui.org/specification/v0_10/docs/a2ui_protocol/
-- A2UI GitHub repository: https://github.com/a2ui-project/a2ui
-- A2UI GitHub specification folder: https://github.com/a2ui-project/a2ui/tree/main/specification
-
-### Implementations / Ecosystem
-
-- AG2 A2UI integration docs: https://docs.ag2.ai/latest/docs/user-guide/a2a/a2ui/
-- AG2 A2UI reference agent: https://docs.ag2.ai/latest/docs/user-guide/reference-agents/a2uiagent/
-- A2UI Composer demo: https://a2ui-composer.ag-ui.com/
-- CopilotKit - AG-UI and A2UI explained: https://www.copilotkit.ai/docs/AG-UI-and-A2UI-Explained.pdf
-- CopilotKit - A2UI and AG-UI walkthrough: https://www.copilotkit.ai/blog/build-with-googles-new-a2ui-spec-agent-user-interfaces-with-a2ui-ag-ui
-
-### Research / Related
-
-- Macaron-A2UI paper: https://arxiv.org/abs/2605.24830
-- AG-UI docs for transport relationship: https://docs.ag-ui.com/

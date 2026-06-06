@@ -265,24 +265,3 @@ SkillNet은 “스킬을 대규모로 만들고 연결할 수 있다”는 공�
 ### 다음 딥다이브 추천
 
 가장 먼저 더 깊게 파야 할 주제는 Dynamic Workflows + AgentBound 조합이다. 이유는 agent가 더 많은 일을 병렬로 실행할수록 권한 경계와 감사가 없으면 위험도도 같이 커지기 때문이다. 두 번째는 SkillNet + SWE-Skills-Bench + COLLEAGUE.SKILL 묶음이다. AI 플랫폼이 skill marketplace를 만든다면 이 세 개가 바로 제품 요구사항과 평가 기준으로 연결된다.
-
-## 12. Sources
-
-- Anthropic Claude Blog - Introducing dynamic workflows in Claude Code: https://claude.com/blog/introducing-dynamic-workflows-in-claude-code
-- GitHub - open-dynamic-workflows: https://github.com/imsai-sh/open-dynamic-workflows
-- AgentBound PDF - Securing Execution Boundaries of AI Agents: https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf
-- FSE 2026 AgentBound program page: https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/14/AgentBound-Securing-Execution-Boundaries-of-AI-Agents
-- arXiv 2603.15401 - SWE-Skills-Bench: https://arxiv.org/abs/2603.15401
-- GitHub - SWE-Skills-Bench: https://github.com/GeniusHTX/SWE-Skills-Bench
-- arXiv 2605.31264 - COLLEAGUE.SKILL: https://arxiv.org/abs/2605.31264
-- arXiv 2603.04448 - SkillNet: https://arxiv.org/abs/2603.04448
-- GitHub - zjunlp/SkillNet: https://github.com/zjunlp/SkillNet
-- SkillNet project site: https://skillnet.openkg.cn
-- Hermes Agent official docs: https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-hermes-agent
-- GitHub - NousResearch/hermes-agent: https://github.com/NousResearch/hermes-agent
-- Universal Commerce Protocol: https://ucp.dev/
-- Agent Payments Protocol: https://ap2-protocol.org/
-- AG-UI documentation: https://docs.ag-ui.com/
-- Reddit r/ClaudeCode - Dynamic workflows discussion: https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/
-- Reddit r/ClaudeAI - Dynamic workflows discussion: https://www.reddit.com/r/ClaudeAI/comments/1tq9ofy/introducing_dynamic_workflows_in_claude_code/
-- Reddit r/vibecoding - Dynamic workflows discussion: https://www.reddit.com/r/vibecoding/comments/1tqe2yp/anthropic_just_introduced_dynamic_workflows_in/

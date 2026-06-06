@@ -90,29 +90,3 @@ AI 서비스가 먼저 확보할 수 있는 지점은 “대화형 서비스 안
 3. Dispute evidence model: 분쟁, 환불, 오주문, agent 오류 발생 시 필요한 evidence package를 정의한다.
 4. Regulatory review: 전자금융, PG, 본인확인, 카드사/네트워크, 개인정보 위임 범위를 법무/보안/결제 조직과 함께 검토한다.
 5. Risk simulation: replay attack, context-binding failure, amount manipulation, merchant-side cart mutation, prompt injection을 테스트한다.
-
-## 7. Sources
-
-### Official / Specification
-
-- AP2 official documentation: https://ap2-protocol.org/
-- AP2 v0.2 specification: https://ap2-protocol.org/ap2/specification/
-- AP2 GitHub repository: https://github.com/google-agentic-commerce/AP2
-- AP2 GitHub docs: https://github.com/google-agentic-commerce/AP2/tree/main/docs
-- AP2 code samples: https://github.com/google-agentic-commerce/AP2/tree/main/code/samples
-- UCP and AP2 integration: https://ucp.dev/documentation/ucp-and-ap2/
-
-### Samples / Flows
-
-- Human-present card flow sample: https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-present/cards
-- Human-not-present card flow sample: https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-not-present/cards
-- Human-not-present x402 flow sample: https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-not-present/x402
-- Android digital payment credentials sample: https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/android/scenarios/digital-payment-credentials
-
-### Standards / Research
-
-- Google Pay - AP2 and FIDO Alliance: https://blog.google/products-and-platforms/platforms/google-pay/agent-payments-protocol-fido-alliance/
-- Google Cloud - Agents to Payments protocol: https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol
-- FIDO Alliance - Agentic Authentication and Payments standards: https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/
-- Zero-Trust Runtime Verification for Agentic Payment Protocols: https://arxiv.org/abs/2602.06345
-- x402 Extended - A Protocol for AI Agent Payments: https://arxiv.org/abs/2601.22569

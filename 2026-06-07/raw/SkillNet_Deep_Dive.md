@@ -63,12 +63,3 @@ SkillNet은 “스킬을 만들고 연결할 수 있다”는 공급 측 논리�
 3. skill search는 popularity가 아니라 task fit, compatibility, measured utility 순으로 rank한다.
 4. 자동 생성 skill은 source provenance, human review, rollback version 없이는 production 사용을 막는다.
 5. platform roadmap에서는 “skill registry”와 “skill runtime activation”을 분리해 설계한다.
-
-## 7. Sources
-
-- SkillNet arXiv: https://arxiv.org/abs/2603.04448
-- SkillNet GitHub: https://github.com/zjunlp/SkillNet
-- SkillNet Project Site: https://skillnet.openkg.cn
-- Hugging Face SkillNet Blog: https://huggingface.co/blog/xzwnlp/skillnet
-- SWE-Skills-Bench arXiv: https://arxiv.org/abs/2603.15401
-- SWE-Skills-Bench GitHub: https://github.com/GeniusHTX/SWE-Skills-Bench

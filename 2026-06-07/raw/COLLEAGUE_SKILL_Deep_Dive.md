@@ -58,11 +58,3 @@ COLLEAGUE.SKILL은 사람이나 role의 작업 trace를 agent가 사용할 수 �
 3. skill package에는 source provenance, reviewer, version, allowed use case를 필수 metadata로 넣는다.
 4. SWE-Skills-Bench 방식으로 skill on/off 성능과 token cost를 측정한다.
 5. 사용자나 운영자가 skill 내용을 inspect, correct, rollback할 수 있는 UI를 설계한다.
-
-## 7. Sources
-
-- COLLEAGUE.SKILL arXiv: https://arxiv.org/abs/2605.31264
-- Hugging Face paper page: https://huggingface.co/papers/2605.31264
-- Counterfactual Trace Auditing of LLM Agent Skills: https://arxiv.org/abs/2605.11946
-- SWE-Skills-Bench: https://arxiv.org/abs/2603.15401
-- SkillNet: https://arxiv.org/abs/2603.04448

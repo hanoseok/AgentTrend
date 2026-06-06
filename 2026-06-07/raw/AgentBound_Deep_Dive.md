@@ -25,6 +25,8 @@ AgentBound는 MCP 서버용 access control framework를 제안한다. 서버가 
 
 ## 3. Trend Signals
 
+참고 링크: [Replication Package](https://zenodo.org/records/19468201), [arXiv](https://arxiv.org/abs/2510.21236)
+
 | 신호 | 논문/생태계 근거 | 해석 |
 | --- | --- | --- |
 | 296개 MCP 서버 데이터셋 | 논문과 FSE 페이지는 popular MCP server 296개를 수집해 평가했다고 설명한다. | MCP 보안은 이론적 문제가 아니라 이미 충분한 생태계 표본이 있는 문제다. |
@@ -61,13 +63,3 @@ AgentBound는 MCP 서버용 access control framework를 제안한다. 서버가 
 3. source scan 기반 manifest 자동 생성과 reviewer approval workflow를 붙인다.
 4. high-risk tool call은 user approval, admin approval, two-step confirmation 중 하나를 요구한다.
 5. agent trace와 tool audit log를 같은 run id로 묶어 사후 분석이 가능하게 한다.
-
-## 7. Sources
-
-- AgentBound PDF: https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf
-- FSE 2026 page: https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/14/AgentBound-Securing-Execution-Boundaries-of-AI-Agents
-- arXiv - Securing AI Agent Execution: https://arxiv.org/abs/2510.21236
-- Replication package: https://zenodo.org/records/19468201
-- MCP Docs: https://modelcontextprotocol.io/
-- OpenFGA MCP authorization: https://openfga.dev/docs/modeling/agents/mcp-authorization
-- MCP permission commentary: https://mcpblog.dev/blog/2026-03-21-chmod-ai-agents-mcp-permissions

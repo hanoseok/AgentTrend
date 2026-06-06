@@ -60,13 +60,3 @@ Hermes Agent는 Nous Research의 open-source agent framework다. terminal, messa
 3. 메신저형 agent에 대해서는 sensitive action 전 approval card를 필수화한다.
 4. tool/skill bloat를 막기 위해 per-task gating과 lazy descriptor loading을 설계한다.
 5. cron/webhook agent run에는 owner, scope, expiry, last-run summary, disable switch를 둔다.
-
-## 7. Sources
-
-- Hermes Documentation: https://hermes-agent.nousresearch.com/docs/
-- Hermes Agent Guide: https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-hermes-agent
-- Hermes Tools Docs: https://hermes-agent.nousresearch.com/docs/user-guide/features/tools
-- Nous Research Hermes Page: https://nousresearch.com/hermes-agent/
-- Hermes GitHub: https://github.com/NousResearch/hermes-agent
-- Reddit Tool/Skills Bloat: https://www.reddit.com/r/hermesagent/comments/1t34qee/hermes_agent_tool_and_skills_bloat/
-- Reddit Skills Loading: https://www.reddit.com/r/hermesagent/comments/1tp0by4/does_hermes_actually_load_the_skills_every_single/
