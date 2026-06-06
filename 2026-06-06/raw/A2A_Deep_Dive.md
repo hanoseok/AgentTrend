@@ -4,7 +4,9 @@
 - 주제: Agent2Agent Protocol, A2A
 - 목적: 카카오 AI 서비스와 에이전트 플랫폼 설계에 필요한 A2A의 의미, 구조, 리스크, 적용 포인트 정리
 
-## 0. CEO 보고용 핵심 판단
+## 0. 브리핑 핵심 판단
+
+참고 링크: [Google A2A 발표](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/), [Linux Foundation 이관](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents), [A2A v1.0](https://a2a-protocol.org/latest/announcing-1.0/)
 
 ### 결론
 
@@ -42,6 +44,8 @@ A2A는 서로 다른 에이전트가 능력을 공개하고, 상대를 발견하
 
 ## 2. 현재 상태와 타임라인
 
+참고 링크: [2025 Google 발표](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/), [2026 LF 업데이트](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year), [v1.0 발표](https://a2a-protocol.org/latest/announcing-1.0/)
+
 - 2025-04-09: Google이 A2A를 공개하고 50개 이상의 기술 파트너와 함께 에이전트 상호운용성 표준으로 발표했다.
 - 2025-06-23: Linux Foundation이 A2A Protocol Project를 출범시켰다. 프로젝트가 특정 벤더 주도에서 더 넓은 오픈 거버넌스 구조로 이동한 것이 중요하다.
 - 2026년 기준: Linux Foundation 발표에 따르면 A2A는 150개 이상의 조직 지원, 주요 클라우드 플랫폼 통합, 엔터프라이즈 프로덕션 사용 사례를 확보한 것으로 소개된다.
@@ -50,6 +54,8 @@ A2A는 서로 다른 에이전트가 능력을 공개하고, 상대를 발견하
 판단: A2A는 아직 모든 산업의 사실상 표준이라고 보기에는 이르지만, MCP와 함께 에이전트 플랫폼의 표준 인터페이스 후보로 반드시 추적해야 한다. 카카오는 내부 표준을 폐쇄적으로 만들기보다 A2A 호환성을 열어두는 편이 전략적으로 유리하다.
 
 ## 3. A2A와 MCP의 차이
+
+참고 링크: [A2A and MCP](https://a2a-protocol.org/latest/topics/a2a-and-mcp/), [MCP Docs](https://modelcontextprotocol.io/)
 
 MCP는 주로 에이전트가 외부 도구, 데이터, API에 접근하기 위한 표준이다. 예를 들어 캘린더 조회, CRM 검색, 문서 검색, 내부 DB 질의, 결제 API 호출 같은 도구 접근을 표준화한다.
 
@@ -69,6 +75,8 @@ A2A는 에이전트 간 협업을 표준화한다. 한 에이전트가 다른 �
 - 최종 응답은 오케스트레이터가 사용자에게 합성해서 제공한다.
 
 ## 4. 핵심 구성요소
+
+참고 링크: [Key Concepts](https://a2a-protocol.org/latest/topics/key-concepts/), [Agent Discovery](https://a2a-protocol.org/latest/topics/agent-discovery/), [Specification](https://a2a-protocol.org/dev/specification/)
 
 ### Agent Card
 
@@ -120,6 +128,8 @@ A2A는 작업을 상태 기반으로 관리한다. 주요 상태는 submitted, w
 - 실패와 중단, 사용자 추가 입력 요청을 정상 경로로 설계해야 한다.
 
 ## 6. 보안과 거버넌스
+
+참고 링크: [Enterprise Ready](https://a2a-protocol.org/latest/topics/enterprise-ready/), [Signed Agent Card](https://a2a-protocol.org/latest/topics/agent-discovery/)
 
 A2A는 인증과 인가를 프로토콜 자체의 마법으로 해결하지 않는다. HTTP, TLS, OAuth, OIDC, mTLS, API key 등 기존 엔터프라이즈 보안 메커니즘과 결합하는 방식에 가깝다. 따라서 플랫폼 구현자가 책임져야 할 영역이 크다.
 

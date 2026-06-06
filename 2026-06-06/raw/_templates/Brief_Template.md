@@ -2,9 +2,11 @@
 
 - 작성 시점: {YYYY-MM-DD HH:mm KST}
 - 조사 범위: AI agent platform, MCP, A2A, agent commerce, security/governance, eval/observability, memory/personalization, multimodal/voice/on-device agents
-- 용도: CEO/임원 공유 및 카카오 AI 서비스/에이전트 플랫폼 전략 참고
+- 용도: 임원 브리핑 공유 및 카카오 AI 서비스/에이전트 플랫폼 전략 참고
 
 ## 1. Executive Summary
+
+참고 링크: [핵심 출처 1]({source-url-1}), [핵심 출처 2]({source-url-2})
 
 오늘 가장 중요한 판단 3개를 쓴다. 각 항목은 사실, 의미, 카카오 액션이 한 문단 안에 들어가야 한다.
 
@@ -62,3 +64,5 @@
 ## 10. Sources
 
 - 출처명: URL
+
+중요한 출처는 하단에만 두지 않고 관련 섹션 바로 아래에도 `참고 링크:`로 반복한다. HTML 정본에서는 같은 링크를 작은 source pill 형태로 표시한다.

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AP2 Deep Dive</title>
   <style>
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+    .source-pills a { display: inline-flex; align-items: center; border: 1px solid #c7d2fe; border-radius: 999px; background: #f5f8ff; color: #1d4ed8; padding: 3px 8px; font-size: 12px; font-weight: 760; line-height: 1.3; }
     :root { --bg:#f6f7fb; --panel:#fff; --ink:#142033; --muted:#667085; --line:#d8dee9; --accent:#2563eb; --soft:#eaf1ff; --green:#067647; --green-soft:#ecfdf3; --amber:#b54708; --amber-soft:#fff7ed; --red:#b42318; --red-soft:#fff1f0; --shadow:0 16px 42px rgba(15,23,42,.08); }
     * { box-sizing:border-box; }
     body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); line-height:1.62; }
@@ -67,24 +69,39 @@
 
       <section id="summary">
         <h2>1. Executive Summary</h2>
+        <div class="source-pills">
+          <a href="https://ap2-protocol.org/">AP2 Docs</a>
+          <a href="https://github.com/google-agentic-commerce/AP2">AP2 GitHub</a>
+          <a href="https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/">FIDO</a>
+        </div>
         <div class="grid">
           <article class="card"><strong>핵심 역할</strong>AP2는 상품 검색이나 checkout API가 아니라 결제 위임, 사용자 의도 증명, 분쟁 증거, agent key 신뢰를 다루는 security protocol이다.</article>
           <article class="card"><strong>기술 포인트</strong>Checkout Mandate, Payment Mandate, Receipt, Verifiable Digital Credential, Trusted Surface, deterministic verification이 핵심 구성이다.</article>
           <article class="card"><strong>카카오 포인트</strong>Kakao Pay가 agent 결제를 지원하려면 “LLM이 결제를 결정했다”가 아니라 “비-agent trusted surface가 구체적 조건을 사용자가 승인했다”는 증거가 필요하다.</article>
         </div>
         <div class="callout">
-          <strong>CEO 보고용 한 줄:</strong> AP2는 agent가 돈을 쓰는 시대의 “전자서명 + 위임장 + 결제 증빙” 표준에 가깝다.
+          <strong>브리핑 한 줄:</strong> AP2는 agent가 돈을 쓰는 시대의 “전자서명 + 위임장 + 결제 증빙” 표준에 가깝다.
         </div>
       </section>
 
       <section id="what">
         <h2>2. What It Is</h2>
+        <div class="source-pills">
+          <a href="https://ap2-protocol.org/ap2/specification/">AP2 v0.2 Spec</a>
+          <a href="https://ucp.dev/documentation/ucp-and-ap2/">UCP + AP2</a>
+          <a href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol">Google Cloud</a>
+        </div>
         <p>공식 문서 기준 AP2는 secure, reliable, interoperable agent commerce를 위한 open protocol이다. A2A와 UCP의 extension으로 제공되며, MCP 등 다른 tool stack과도 결합될 수 있다. AP2가 해결하려는 문제는 기존 결제 시스템이 “사람이 신뢰 가능한 웹사이트에서 직접 구매 버튼을 누른다”는 가정 위에 설계됐다는 점이다.</p>
         <p>agent가 사용자를 대신해 구매하면 세 가지 질문이 생긴다. 사용자가 어떤 범위로 agent에게 권한을 줬는가, merchant가 받은 cart와 결제 조건이 사용자의 의도와 같은가, 잘못된 거래가 발생하면 누가 어떤 증거로 책임을 판단하는가.</p>
       </section>
 
       <section id="technical">
         <h2>3. Technical Model</h2>
+        <div class="source-pills">
+          <a href="https://github.com/google-agentic-commerce/AP2/tree/main/docs">AP2 Docs Repo</a>
+          <a href="https://github.com/google-agentic-commerce/AP2/tree/main/code/samples">Code Samples</a>
+          <a href="https://arxiv.org/abs/2602.06345">Zero-trust paper</a>
+        </div>
         <h3>Roles</h3>
         <table>
           <thead><tr><th>Role</th><th>설명</th><th>카카오 대응</th></tr></thead>
@@ -111,6 +128,11 @@
 
       <section id="flows">
         <h2>4. Main Flows</h2>
+        <div class="source-pills">
+          <a href="https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-present/cards">Human-present sample</a>
+          <a href="https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-not-present/cards">Human-not-present sample</a>
+          <a href="https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-not-present/x402">x402 sample</a>
+        </div>
         <table>
           <thead><tr><th>Flow</th><th>설명</th><th>카카오 UX 예</th></tr></thead>
           <tbody>

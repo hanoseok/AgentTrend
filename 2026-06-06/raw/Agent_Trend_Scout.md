@@ -7,6 +7,8 @@
 
 ## Executive Summary
 
+참고 링크: [Anthropic Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [MCP Blog](https://blog.modelcontextprotocol.io/), [GitHub Blog](https://github.blog/), [GeekNews](https://news.hada.io/)
+
 이번 스캔에서 가장 강한 신호는 세 가지다.
 
 1. 코딩 에이전트가 단일 채팅/단일 에이전트에서 벗어나 병렬 subagent, dynamic workflow, agent-native control center로 이동 중이다.
@@ -14,6 +16,8 @@
 3. agent-ready web, runtime sandbox, skills marketplace, agentic commerce protocol stack은 카카오 AI 서비스/에이전트 플랫폼에서 제품화 가능성이 높은 주변 인프라 트렌드다.
 
 ## 딥다이브 후보
+
+참고 링크: [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/), [r/Agent_AI](https://www.reddit.com/r/Agent_AI/), [r/claudeskills](https://www.reddit.com/r/claudeskills/), [r/vibecoding](https://www.reddit.com/r/vibecoding/), [MarkTechPost](https://www.marktechpost.com/)
 
 | 우선순위 | 후보 주제 | 왜 지금 트렌디한가 | 딥다이브 필요성 |
 | --- | --- | --- | --- |
@@ -30,6 +34,8 @@
 
 ### 1. Claude Code Dynamic Workflows / ultracode
 
+참고 링크: [Anthropic](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [Reddit thread](https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/)
+
 - 소스: Anthropic 공식 블로그, Reddit r/ClaudeCode
 - 확인 내용: Claude가 orchestration script를 직접 만들고, tens to hundreds of parallel subagents를 한 세션에서 실행하며, 결과 검증 후 사용자에게 전달하는 research preview.
 - 커뮤니티에서 나온 말: 기존 main-agent orchestration은 subagent 결과가 다시 main context로 들어오며 token tax를 만든다는 지적. Reddit에서는 control flow는 code가 맡고, judgment는 model이 맡는 구조가 흥미롭다는 반응이 있음.
@@ -37,6 +43,8 @@
 - 카카오 의미: 대규모 코드 마이그레이션, 보안 감사, 사내 문서/서비스 변경 추적, 장애 원인 분석에 적용 가능.
 
 ### 2. MCP Production Mess / Tool & Token Governance
+
+참고 링크: [MCP Blog](https://blog.modelcontextprotocol.io/), [MCP Docs](https://modelcontextprotocol.io/), [GeekNews](https://news.hada.io/)
 
 - 소스: GeekNews "MCP는 죽었나?", "MCP는 죽었다; MCP 만세", "Context Mode", Reddit "I ship AI agents in production. The mess is MCP."
 - 확인 내용: 많은 MCP 서버와 tool schema가 붙으면 첫 프롬프트 전부터 context가 소모되고, tool description 때문에 잘못된 tool selection이 발생한다는 실전 문제가 반복됨.
@@ -46,6 +54,8 @@
 
 ### 3. GitHub Agent-Native Developer Experience
 
+참고 링크: [Copilot App](https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/), [gh skill](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/)
+
 - 소스: GitHub Blog, Copilot App, Copilot CLI, Copilot coding agent 업데이트
 - 확인 내용: GitHub는 agent-native desktop, Canvas, sandbox, code review, SDK, scheduled tasks, memory를 하나의 개발자 workflow로 묶고 있음.
 - 트렌드 판단: IDE 보조 기능이 아니라 "agent control center"가 등장 중. 여러 agent가 병렬로 일하고, 인간은 상태를 보고 지시/검토/승인하는 UX가 중요해짐.
@@ -53,12 +63,16 @@
 
 ### 4. Agent Runtime Sandbox
 
+참고 링크: [AIO Sandbox](https://www.marktechpost.com/2026/03/29/agent-infra-releases-aio-sandbox-an-all-in-one-runtime-for-ai-agents-with-browser-shell-shared-filesystem-and-mcp/), [GitHub](https://github.com/AgentInfra-AI/aio-sandbox)
+
 - 소스: MarkTechPost Agent-Infra AIO Sandbox
 - 확인 내용: agent 실행 병목이 모델 추론에서 browser, shell, shared filesystem, MCP, IDE/Jupyter 관찰 환경을 갖춘 실행 runtime으로 이동.
 - 트렌드 판단: agent platform은 LLM wrapper가 아니라 격리 실행 환경, 상태 공유, artifact 관리, resource limit을 제공하는 runtime platform이 되어야 함.
 - 카카오 의미: 사내/서비스 agent가 실제 API, 브라우저, 파일, 코드 실행을 할 때 sandbox isolation과 policy enforcement가 필수.
 
 ### 5. Skills / CLAUDE.md / On-demand Skill Marketplace
+
+참고 링크: [r/claudeskills](https://www.reddit.com/r/claudeskills/), [GitHub skills](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/)
 
 - 소스: r/claudeskills, GitHub Copilot CLI/VS Code agent skills
 - 확인 내용: book-to-skill, CLAUDE.md generator, persistent project memory skill, frontend animation skill 등 domain know-how를 skill로 패키징하는 흐름이 큼.
@@ -73,6 +87,8 @@
 - 카카오 의미: 카카오 서비스가 외부/내부 agent에게 어떤 capability를 어떤 권한으로 노출할지 설계해야 함.
 
 ### 7. Agentic Commerce Protocol Stack: UCP/AP2/A2UI/AG-UI
+
+참고 링크: [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/), [A2UI](https://a2ui.org/)
 
 - 소스: Google Developer's Guide to AI Agent Protocols, GeekNews AI 에이전트 프로토콜 개발자 가이드, MarkTechPost UCP
 - 확인 내용: MCP는 데이터/도구, A2A는 에이전트 협업, UCP는 상거래, AP2는 결제 승인/audit, A2UI는 UI composition, AG-UI는 streaming UI로 역할 분담.

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2000 Agent Trend Brief</title>
   <style>
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+    .source-pills a { display: inline-flex; align-items: center; border: 1px solid #c7d2fe; border-radius: 999px; background: #f5f8ff; color: #1d4ed8; padding: 3px 8px; font-size: 12px; font-weight: 760; line-height: 1.3; }
     :root {
       --bg: #f6f7fb;
       --panel: #ffffff;
@@ -168,6 +170,12 @@
 
       <section id="summary">
         <h2>1. Executive Summary</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Anthropic</a>
+          <a href="https://blog.modelcontextprotocol.io/">MCP Blog</a>
+          <a href="https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf">AgentBound</a>
+          <a href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</a>
+        </div>
         <div class="summary-grid">
           <article class="card"><strong>Dynamic Workflows가 최강 신호</strong>Anthropic 공식 발표와 Reddit 반응이 동시에 강하다. 병렬 subagent, workflow-as-code, 장시간 코드베이스 작업, token burn 논쟁이 모두 붙었다.</article>
           <article class="card"><strong>MCP는 production protocol로 이동</strong>2026-07-28 RC는 stateless core, MCP Apps, Tasks, OAuth/OIDC, deprecation policy를 포함한다. 단순 tool 연결을 넘어 플랫폼 계약이 되고 있다.</article>
@@ -191,6 +199,12 @@
 
       <section id="alerts">
         <h2>3. Project / Paper Alert</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Dynamic Workflows</a>
+          <a href="https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf">AgentBound</a>
+          <a href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</a>
+          <a href="https://arxiv.org/abs/2605.31264">COLLEAGUE.SKILL</a>
+        </div>
         <table>
           <thead><tr><th>구분</th><th>프로젝트/논문</th><th>왜 이슈인가</th><th>사람들이 하는 말</th><th>카카오 영향</th><th>딥다이브</th></tr></thead>
           <tbody>
@@ -232,6 +246,13 @@
 
       <section id="technical">
         <h2>6. Technical Detail</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Workflow runtime</a>
+          <a href="https://modelcontextprotocol.io/">MCP Docs</a>
+          <a href="https://ucp.dev/">UCP</a>
+          <a href="https://ap2-protocol.org/">AP2</a>
+          <a href="https://docs.ag-ui.com/">AG-UI</a>
+        </div>
         <div class="card-grid">
           <article class="card"><strong>Workflow runtime</strong>Dynamic Workflows의 본질은 agent가 orchestration code를 만들고 병렬 실행/검증/재개를 운영하는 runtime이다. 카카오는 cost cap, model routing, trace, approval을 같이 설계해야 한다.</article>
           <article class="card"><strong>MCP enterprise shift</strong>MCP RC는 stateless HTTP, MCP Apps, Tasks, auth/OIDC, deprecation policy를 강조한다. 카카오 MCP registry도 versioning과 task lifecycle을 포함해야 한다.</article>

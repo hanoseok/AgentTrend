@@ -6,9 +6,11 @@
 
 ## 1. Executive Summary
 
+참고 링크: [UCP Docs](https://ucp.dev/), [Google Dev Blog](https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/), [Shopify Engineering](https://shopify.engineering/UCP)
+
 UCP는 agentic commerce의 “상거래 실행 언어”다. 에이전트가 상품 탐색, 장바구니, 체크아웃, 주문, 멤버십/계정 연결, 결제 핸들러를 merchant마다 별도 연동 없이 사용할 수 있게 만드는 표준이다.
 
-CEO 보고용 한 줄:
+브리핑 한 줄:
 
 > UCP는 “AI가 추천하는 쇼핑”이 아니라 “AI가 실제로 구매/예약/주문을 실행하는 커머스 운영체제”에 가깝다.
 
@@ -20,6 +22,8 @@ CEO 보고용 한 줄:
 - 카카오는 톡, 선물하기, 쇼핑, 예약, 지도, 로컬, 페이를 가진 국내 agentic commerce 플랫폼 후보군이다.
 
 ## 2. What It Is
+
+참고 링크: [Core Concepts](https://ucp.dev/documentation/core-concepts/), [Specification](https://ucp.dev/latest/specification/overview/), [GitHub](https://github.com/Universal-Commerce-Protocol/ucp)
 
 공식 문서 기준 UCP는 platform, agent, business가 상거래 기능을 상호운용할 수 있도록 하는 open standard다. 기존 commerce API가 각 쇼핑몰 또는 플랫폼별로 따로 붙어야 했다면, UCP는 business가 한 번 capability를 선언하고, agent/platform이 이를 발견하고 협상해 실행하는 모델이다.
 
@@ -34,6 +38,8 @@ UCP가 다루는 범위:
 - payment handler integration
 
 ## 3. Technical Model
+
+참고 링크: [Schema Reference](https://ucp.dev/2026-04-08/specification/reference/), [Versioning](https://ucp.dev/versioning/), [UCP + AP2](https://ucp.dev/documentation/ucp-and-ap2/)
 
 ### Roles
 
@@ -72,6 +78,8 @@ UCP는 REST, MCP, A2A, Embedded transport를 지원한다.
 OAuth 2.0, HTTP Message Signatures, API key, mTLS를 지원한다. Profile은 capability와 signing key discovery를 같이 제공한다.
 
 ## 4. Recent Updates / Trend Signal
+
+참고 링크: [Google agentic shopping](https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/), [UCP updates](https://blog.google/products-and-platforms/products/shopping/ucp-updates/), [Universal Cart](https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/)
 
 | 날짜 | 신호 | 의미 |
 | --- | --- | --- |

@@ -7,9 +7,11 @@
 
 ## 1. Executive Summary
 
+참고 링크: [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [AgentBound](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf), [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401), [UCP](https://ucp.dev/), [AG-UI](https://docs.ag-ui.com/)
+
 사용자가 지정한 7개 항목을 묶어 조사한 결론은 명확하다. 에이전트 플랫폼 경쟁은 모델 품질만이 아니라 workflow runtime, permission boundary, skill registry, eval, commerce/payment, UI protocol을 누가 먼저 제품화하느냐의 싸움으로 이동 중이다.
 
-CEO 보고용 한 줄:
+브리핑 한 줄:
 
 > 에이전트 산업은 “똑똑한 챗봇”에서 “권한 있는 소프트웨어 실행자”로 넘어가고 있으며, 승부처는 모델보다 agent runtime, 보안 경계, 스킬 유통, 결제/승인/감사 체계가 될 가능성이 높다.
 
@@ -55,6 +57,8 @@ CEO 보고용 한 줄:
 
 ## 4. 1번: Claude Code Dynamic Workflows / ultracode
 
+참고 링크: [Anthropic Blog](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [open-dynamic-workflows](https://github.com/imsai-sh/open-dynamic-workflows), [Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/)
+
 ### 무엇인가
 
 Anthropic이 2026-05-28 공개한 Claude Code 기능이다. Claude가 동적으로 orchestration script를 만들고, 큰 작업을 subtasks로 나눈 뒤 tens to hundreds of parallel subagents를 실행한다. Claude Code CLI, Desktop, VS Code extension, API, Bedrock, Vertex AI, Microsoft Foundry 등에서 research preview로 제공된다고 공식 블로그가 설명한다.
@@ -78,6 +82,8 @@ Anthropic이 2026-05-28 공개한 Claude Code 기능이다. Claude가 동적으�
 판단: 이 항목은 가장 먼저 깊게 파야 한다. 카카오 agent platform이 “상담/검색형 agent”를 넘어 “업무 수행형 agent”가 되려면 dynamic workflow와 같은 control plane이 필요하다.
 
 ## 5. 3번: AgentBound
+
+참고 링크: [AgentBound PDF](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf), [FSE page](https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/14/AgentBound-Securing-Execution-Boundaries-of-AI-Agents)
 
 ### 무엇인가
 
@@ -105,6 +111,8 @@ MCP/A2A를 카카오 내부와 외부 파트너 agent에 연결하면, tool serv
 
 ## 6. 4번: SWE-Skills-Bench
 
+참고 링크: [arXiv](https://arxiv.org/abs/2603.15401), [GitHub](https://github.com/GeniusHTX/SWE-Skills-Bench)
+
 ### 무엇인가
 
 SWE-Skills-Bench는 agent skill이 실제 software engineering task에 도움이 되는지 분리 측정한 벤치마크 논문이다. 49개 public SWE skills, pinned GitHub repositories, acceptance criteria가 있는 requirement documents, deterministic tests를 사용해 skill 주입 전후의 marginal utility를 비교한다.
@@ -126,6 +134,8 @@ SWE-Skills-Bench는 agent skill이 실제 software engineering task에 도움이
 
 ## 7. 5번: COLLEAGUE.SKILL
 
+참고 링크: [arXiv](https://arxiv.org/abs/2605.31264)
+
 ### 무엇인가
 
 COLLEAGUE.SKILL은 사람 또는 role의 작업 trace를 agent가 사용할 수 있는 versioned skill package로 distill하는 시스템을 제안한다. 논문은 capability track과 bounded behavior track을 나눠, 업무 방식, 판단 휴리스틱, 커뮤니케이션 스타일, correction history를 inspectable, updateable, rollback 가능한 skill로 만들 수 있다고 설명한다.
@@ -146,6 +156,8 @@ COLLEAGUE.SKILL은 사람 또는 role의 작업 trace를 agent가 사용할 수 
 위험: 개인의 trace를 skill로 만드는 순간 privacy, consent, labor/IP, 평가/감시 이슈가 생긴다. 카카오에서 이 방향을 검토한다면 기술 PoC보다 먼저 동의, anonymization, PII masking, 접근권한, 삭제권, rollback 정책이 필요하다.
 
 ## 8. 7번: UCP / AP2 / AG-UI
+
+참고 링크: [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/)
 
 ### 무엇인가
 
@@ -173,6 +185,8 @@ COLLEAGUE.SKILL은 사람 또는 role의 작업 trace를 agent가 사용할 수 
 
 ## 9. Hermes Agent
 
+참고 링크: [Hermes Docs](https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-hermes-agent), [GitHub](https://github.com/NousResearch/hermes-agent)
+
 ### 무엇인가
 
 Nous Research의 Hermes Agent는 terminal, messaging platforms, IDE에서 실행되는 open-source AI agent framework다. 공식 문서는 Claude Code, Codex, OpenClaw와 같은 autonomous coding/task-execution agent 범주로 설명하며, provider-agnostic model support, skills, persistent memory, multi-platform gateway, profiles, plugins, MCP servers, webhook triggers, cron scheduling을 특징으로 내세운다.
@@ -195,6 +209,8 @@ Nous Research의 Hermes Agent는 terminal, messaging platforms, IDE에서 실행
 판단: Hermes Agent는 카카오 내부 업무 assistant와 카나나형 persistent agent를 상상할 때 좋은 참고 사례다. 다만 그대로 도입할 대상이라기보다, “어떤 기능 묶음이 사용자에게 agent처럼 느껴지는가”를 보기 위한 product benchmark로 봐야 한다.
 
 ## 10. SkillNet
+
+참고 링크: [arXiv](https://arxiv.org/abs/2603.04448), [GitHub](https://github.com/zjunlp/SkillNet), [Project site](https://skillnet.openkg.cn)
 
 ### 무엇인가
 

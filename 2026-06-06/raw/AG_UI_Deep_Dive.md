@@ -6,9 +6,11 @@
 
 ## 1. Executive Summary
 
+참고 링크: [AG-UI Docs](https://docs.ag-ui.com/), [Overview](https://docs.ag-ui.com/introduction), [GitHub](https://github.com/ag-ui-protocol/ag-ui)
+
 AG-UI는 에이전트 백엔드와 사용자 앱 프론트엔드를 연결하는 이벤트 기반 상호작용 프로토콜이다. 에이전트가 장시간 실행되고, 도구를 쓰고, 상태를 바꾸고, 중간 승인을 요구하는 제품에서는 채팅 API만으로 부족하다. AG-UI는 그 빈 공간을 메운다.
 
-CEO 보고용 한 줄:
+브리핑 한 줄:
 
 > AG-UI는 “에이전트가 앱 안에서 일하는 모습을 사용자에게 안전하고 추적 가능하게 보여주는 UX 프로토콜”이다.
 
@@ -21,6 +23,8 @@ CEO 보고용 한 줄:
 
 ## 2. What It Is
 
+참고 링크: [Introduction](https://docs.ag-ui.com/introduction), [A2UI relation](https://a2ui.org/introduction/what-is-a2ui/)
+
 AG-UI 공식 문서는 이를 AI agent와 user-facing application을 연결하는 open, lightweight, event-based protocol로 정의한다.
 
 구분:
@@ -31,6 +35,8 @@ AG-UI 공식 문서는 이를 AI agent와 user-facing application을 연결하�
 - A2-UI: agent가 전달할 수 있는 선언형 UI payload/spec이다.
 
 ## 3. Technical Model
+
+참고 링크: [Events](https://docs.ag-ui.com/concepts/events), [State](https://docs.ag-ui.com/concepts/state.md), [Interrupts](https://docs.ag-ui.com/concepts/interrupts), [Tools](https://docs.ag-ui.com/concepts/tools)
 
 ### Event Categories
 
@@ -54,6 +60,8 @@ AG-UI 공식 문서는 이를 AI agent와 user-facing application을 연결하�
 - Reasoning visibility는 raw chain-of-thought가 아니라 summaries/traces 중심.
 
 ## 4. Ecosystem / Trend Signal
+
+참고 링크: [Dojo examples](https://dojo.ag-ui.com/), [AG-UI/A2UI explainer](https://www.copilotkit.ai/docs/AG-UI-and-A2UI-Explained.pdf), [CopilotKit walkthrough](https://www.copilotkit.ai/blog/build-with-googles-new-a2ui-spec-agent-user-interfaces-with-a2ui-ag-ui)
 
 AG-UI는 CopilotKit, LangGraph, CrewAI와의 초기 연동에서 출발했지만 현재 문서와 GitHub는 Microsoft Agent Framework, Google ADK, AWS Strands/Bedrock, Mastra, Pydantic AI, Agno, LlamaIndex, AG2 등 다양한 agent framework와의 연동을 내세운다.
 

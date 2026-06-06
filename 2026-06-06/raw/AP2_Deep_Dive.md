@@ -6,9 +6,11 @@
 
 ## 1. Executive Summary
 
+참고 링크: [AP2 Docs](https://ap2-protocol.org/), [AP2 GitHub](https://github.com/google-agentic-commerce/AP2), [FIDO](https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/)
+
 AP2는 agentic commerce에서 “사용자가 정말 이 결제를 허락했는가, merchant가 받은 요청은 실제 사용자 의도와 일치하는가, 나중에 분쟁이 나면 무엇을 증거로 삼는가”를 해결하려는 결제 trust layer다.
 
-CEO 보고용 한 줄:
+브리핑 한 줄:
 
 > AP2는 agent가 돈을 쓰는 시대의 “전자서명 + 위임장 + 결제 증빙” 표준에 가깝다.
 
@@ -20,6 +22,8 @@ CEO 보고용 한 줄:
 
 ## 2. What It Is
 
+참고 링크: [AP2 v0.2 Spec](https://ap2-protocol.org/ap2/specification/), [UCP + AP2](https://ucp.dev/documentation/ucp-and-ap2/), [Google Cloud](https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol)
+
 공식 문서 기준 AP2는 secure, reliable, interoperable agent commerce를 위한 open protocol이다. A2A와 UCP의 extension으로 제공되며, MCP 등 다른 tool stack과도 결합될 수 있다.
 
 AP2가 해결하려는 문제:
@@ -29,6 +33,8 @@ AP2가 해결하려는 문제:
 - Accountability: 잘못된 거래가 발생하면 누가 어떤 증거로 책임을 판단하는가?
 
 ## 3. Technical Model
+
+참고 링크: [AP2 Docs Repo](https://github.com/google-agentic-commerce/AP2/tree/main/docs), [Code Samples](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples), [Zero-trust paper](https://arxiv.org/abs/2602.06345)
 
 ### Roles
 
@@ -54,6 +60,8 @@ AP2가 해결하려는 문제:
 - Trusted Surface와 deterministic verification code가 agent의 요청을 검증한다.
 
 ## 4. Main Flows
+
+참고 링크: [Human-present sample](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-present/cards), [Human-not-present sample](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-not-present/cards), [x402 sample](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples/python/scenarios/a2a/human-not-present/x402)
 
 | Flow | 설명 | 카카오 UX 예 |
 | --- | --- | --- |

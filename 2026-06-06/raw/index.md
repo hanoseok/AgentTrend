@@ -11,7 +11,7 @@
 - 카카오 사업 연결 축: UCP + AP2 + AG-UI + A2-UI. 톡/선물하기/쇼핑/예약/Pay를 agentic commerce로 묶으려면 commerce, payment, UI event, declarative UI가 함께 필요하다.
 - 플랫폼 품질 축: SkillNet + SWE-Skills-Bench + COLLEAGUE.SKILL. 스킬은 많이 모으는 것이 아니라 task 개선, token cost, version compatibility, governance까지 검증해야 한다.
 
-CEO 보고 시작점:
+브리핑 시작점:
 
 1. `2026-06-06/2000_agent_trend_brief.html`
 2. `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
@@ -31,7 +31,7 @@ CEO 보고 시작점:
 
 ## 3. Reading Paths
 
-### CEO / 전략 보고
+### 브리핑 / 전략
 
 1. `2026-06-06/2000_agent_trend_brief.html`
 2. `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
@@ -84,4 +84,4 @@ CEO 보고 시작점:
 
 - `RESEARCH_LOG.html`: 날짜별 조사 이력.
 - `SOURCE_WATCHLIST.html`: 정기 확인 소스 목록.
-- `REPORTING_STANDARD.html`: CEO 보고와 내부 공유 작성 원칙.
+- `REPORTING_STANDARD.html`: 브리핑과 내부 공유 작성 원칙.

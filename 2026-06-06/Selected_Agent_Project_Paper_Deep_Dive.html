@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Selected Agent Project / Paper Deep Dive</title>
   <style>
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+    .source-pills a { display: inline-flex; align-items: center; border: 1px solid #c7d2fe; border-radius: 999px; background: #f5f8ff; color: #1d4ed8; padding: 3px 8px; font-size: 12px; font-weight: 760; line-height: 1.3; }
     :root {
       --bg: #f6f7fb;
       --panel: #ffffff;
@@ -192,13 +194,20 @@
 
       <section id="summary">
         <h2>1. Executive Summary</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Dynamic Workflows</a>
+          <a href="https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf">AgentBound</a>
+          <a href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</a>
+          <a href="https://ucp.dev/">UCP</a>
+          <a href="https://docs.ag-ui.com/">AG-UI</a>
+        </div>
         <div class="summary-grid">
           <article class="card"><strong>가장 큰 플랫폼 신호</strong>Claude Code Dynamic Workflows는 “하나의 agent가 대화로 일하는 방식”에서 “agent가 workflow code를 만들고 다수 subagent를 orchestration하는 방식”으로 전환했다. 카카오가 agent platform을 만든다면 workflow runtime은 필수 기반이다.</article>
           <article class="card"><strong>가장 시급한 방어선</strong>AgentBound는 MCP 서버를 trust-by-default로 두는 것이 위험하다는 점을 실험과 정책 모델로 보여준다. 카카오 플랫폼의 MCP/A2A 확장에는 manifest, sandbox, policy enforcement가 초기부터 들어가야 한다.</article>
           <article class="card"><strong>스킬은 양보다 검증</strong>SkillNet과 COLLEAGUE.SKILL은 스킬의 생성, 축적, 개인화, 배포 방향을 보여주지만 SWE-Skills-Bench는 public SWE skills 대부분이 실제 개선을 주지 못한다고 보고한다. 즉 skill marketplace는 eval marketplace여야 한다.</article>
         </div>
         <div class="callout">
-          <strong>CEO 보고용 한 줄:</strong> 에이전트 산업은 “똑똑한 챗봇”에서 “권한 있는 소프트웨어 실행자”로 넘어가고 있으며, 승부처는 모델보다 agent runtime, 보안 경계, 스킬 유통, 결제/승인/감사 체계가 될 가능성이 높다.
+          <strong>브리핑 한 줄:</strong> 에이전트 산업은 “똑똑한 챗봇”에서 “권한 있는 소프트웨어 실행자”로 넘어가고 있으며, 승부처는 모델보다 agent runtime, 보안 경계, 스킬 유통, 결제/승인/감사 체계가 될 가능성이 높다.
         </div>
       </section>
 
@@ -281,6 +290,11 @@
 
       <section id="dynamic-workflows">
         <h2>4. 1번: Claude Code Dynamic Workflows / ultracode</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Anthropic Blog</a>
+          <a href="https://github.com/imsai-sh/open-dynamic-workflows">open-dynamic-workflows</a>
+          <a href="https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/">Reddit r/ClaudeCode</a>
+        </div>
         <h3>무엇인가</h3>
         <p>Anthropic이 2026-05-28 공개한 Claude Code 기능이다. Claude가 동적으로 orchestration script를 만들고, 큰 작업을 subtasks로 나눈 뒤 tens to hundreds of parallel subagents를 실행한다. Claude Code CLI, Desktop, VS Code extension, API, Bedrock, Vertex AI, Microsoft Foundry 등에서 research preview로 제공된다고 공식 블로그가 설명한다.</p>
         <h3>왜 트렌디한가</h3>
@@ -329,6 +343,10 @@
 
       <section id="agentbound">
         <h2>5. 3번: AgentBound</h2>
+        <div class="source-pills">
+          <a href="https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf">AgentBound PDF</a>
+          <a href="https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/14/AgentBound-Securing-Execution-Boundaries-of-AI-Agents">FSE page</a>
+        </div>
         <h3>무엇인가</h3>
         <p>AgentBound는 AI agent 실행 경계, 특히 MCP server의 권한 문제를 다루는 FSE 2026 논문이다. 핵심은 MCP 서버가 필요한 resource access를 manifest로 선언하고, runtime policy enforcement engine이 파일, 네트워크, secret 등 실제 접근을 제한하는 구조다.</p>
         <h3>핵심 기술 신호</h3>
@@ -355,6 +373,10 @@
 
       <section id="swe-skills">
         <h2>6. 4번: SWE-Skills-Bench</h2>
+        <div class="source-pills">
+          <a href="https://arxiv.org/abs/2603.15401">arXiv</a>
+          <a href="https://github.com/GeniusHTX/SWE-Skills-Bench">GitHub</a>
+        </div>
         <h3>무엇인가</h3>
         <p>SWE-Skills-Bench는 agent skill이 실제 software engineering task에 도움이 되는지 분리 측정한 벤치마크 논문이다. 49개 public SWE skills, pinned GitHub repositories, acceptance criteria가 있는 requirement documents, deterministic tests를 사용해 skill 주입 전후의 marginal utility를 비교한다.</p>
         <h3>왜 중요한가</h3>
@@ -395,6 +417,9 @@
 
       <section id="colleague">
         <h2>7. 5번: COLLEAGUE.SKILL</h2>
+        <div class="source-pills">
+          <a href="https://arxiv.org/abs/2605.31264">arXiv</a>
+        </div>
         <h3>무엇인가</h3>
         <p>COLLEAGUE.SKILL은 사람 또는 role의 작업 trace를 agent가 사용할 수 있는 versioned skill package로 distill하는 시스템을 제안한다. 논문은 capability track과 bounded behavior track을 나눠, 업무 방식, 판단 휴리스틱, 커뮤니케이션 스타일, correction history를 inspectable, updateable, rollback 가능한 skill로 만들 수 있다고 설명한다.</p>
         <h3>왜 트렌디한가</h3>
@@ -417,6 +442,11 @@
 
       <section id="commerce">
         <h2>8. 7번: UCP / AP2 / AG-UI</h2>
+        <div class="source-pills">
+          <a href="https://ucp.dev/">UCP</a>
+          <a href="https://ap2-protocol.org/">AP2</a>
+          <a href="https://docs.ag-ui.com/">AG-UI</a>
+        </div>
         <h3>무엇인가</h3>
         <p>이 항목은 하나의 프로젝트가 아니라 agentic commerce와 user-facing agent app을 구성하는 protocol stack이다. UCP는 agent와 merchant가 discovery, checkout, order, post-purchase support를 interoperable하게 처리하도록 하는 commerce protocol이다. AP2는 agent가 결제할 때 authorization, authenticity, accountability를 verifiable credential과 mandate로 다루는 payment protocol이다. AG-UI는 agent backend와 user-facing frontend 사이의 event-based interaction protocol이다.</p>
         <h3>왜 카카오에 특히 중요한가</h3>
@@ -459,6 +489,10 @@
 
       <section id="hermes">
         <h2>9. Hermes Agent</h2>
+        <div class="source-pills">
+          <a href="https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-hermes-agent">Hermes Docs</a>
+          <a href="https://github.com/NousResearch/hermes-agent">GitHub</a>
+        </div>
         <h3>무엇인가</h3>
         <p>Nous Research의 Hermes Agent는 terminal, messaging platforms, IDE에서 실행되는 open-source AI agent framework다. 공식 문서는 Claude Code, Codex, OpenClaw와 같은 autonomous coding/task-execution agent 범주로 설명하며, provider-agnostic model support, skills, persistent memory, multi-platform gateway, profiles, plugins, MCP servers, webhook triggers, cron scheduling을 특징으로 내세운다.</p>
         <h3>왜 봐야 하는가</h3>
@@ -498,6 +532,11 @@
 
       <section id="skillnet">
         <h2>10. SkillNet</h2>
+        <div class="source-pills">
+          <a href="https://arxiv.org/abs/2603.04448">arXiv</a>
+          <a href="https://github.com/zjunlp/SkillNet">GitHub</a>
+          <a href="https://skillnet.openkg.cn">Project site</a>
+        </div>
         <h3>무엇인가</h3>
         <p>SkillNet은 AI skills를 생성, 평가, 연결하기 위한 open infrastructure를 제안한 2026년 arXiv 논문이다. 논문은 heterogeneous source에서 skill을 만들고, unified ontology로 관계를 연결하며, Safety, Completeness, Executability, Maintainability, Cost-awareness 기준으로 다차원 평가하는 구조를 제안한다. SkillNet은 200,000개 이상의 skills repository, interactive platform, Python toolkit을 포함한다고 설명한다.</p>
         <h3>왜 중요한가</h3>

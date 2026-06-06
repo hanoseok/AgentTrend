@@ -7,6 +7,8 @@
 
 ## 1. Executive Summary
 
+참고 링크: [Anthropic](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [MCP Blog](https://blog.modelcontextprotocol.io/), [AgentBound](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf), [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)
+
 1. 이번 업데이트의 가장 강한 신호는 Claude Code Dynamic Workflows다. Anthropic 공식 발표와 Reddit 반응이 동시에 강하고, 병렬 subagent, workflow-as-code, 장시간 코드베이스 작업, token burn 논쟁이 모두 붙어 있다. 카카오 내부 개발/운영 에이전트 플랫폼을 설계할 때 workflow orchestration, cost guardrail, subagent trace, approval gate를 반드시 포함해야 한다.
 
 2. MCP는 단순 tool 연결 표준에서 production-grade agent platform 표준으로 확장 중이다. 2026-07-28 MCP Specification RC는 stateless core, MCP Apps, Tasks extension, OAuth/OIDC 정렬, deprecation policy를 포함하는 큰 변화다. 카카오가 MCP registry를 만든다면 단순 서버 목록이 아니라 task lifecycle, UI rendering, authorization, version/deprecation까지 포함해야 한다.
@@ -29,6 +31,8 @@
 | 보조: UCP/AP2/AG-UI Docs | Checked | agentic commerce와 user-facing agent UI protocol stack 확인 | 카카오 쇼핑/선물하기/페이/로컬 예약 관점 딥다이브 후보 |
 
 ## 3. Project / Paper Alert
+
+참고 링크: [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [AgentBound](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf), [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401), [COLLEAGUE.SKILL](https://arxiv.org/abs/2605.31264)
 
 | 구분 | 프로젝트/논문 | 왜 이슈인가 | 사람들이 하는 말 | 카카오 영향 | 딥다이브 추천 |
 | --- | --- | --- | --- | --- | --- |
@@ -62,6 +66,8 @@
 | Agentic Commerce | UCP/AP2 문서 확인으로 중요도 상승 | 강화: 쇼핑 추천이 아니라 결제 승인/audit 문제 | 카카오페이/선물하기/쇼핑/로컬 예약의 공통 agent commerce contract 필요 | UCP/AP2/AG-UI 딥다이브 |
 
 ## 6. Technical Detail
+
+참고 링크: [Workflow runtime](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [MCP Docs](https://modelcontextprotocol.io/), [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/)
 
 ### 6.1 Dynamic workflows
 
