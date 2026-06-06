@@ -1,13 +1,13 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-07 00:12 KST
+- 최종 갱신: 2026-06-07 00:27 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
 - 정기 업데이트: 00:00 / 08:00 / 16:00 KST
 
 ## 1. Quick Read
 
-- 지금 가장 중요한 축: Dynamic Workflows + AgentBound. agent가 더 많은 일을 병렬로 실행할수록 workflow runtime, cost cap, checkpoint, human approval, permission boundary가 같이 필요하다.
+- 지금 가장 중요한 축: Dynamic Workflows + AgentBound. agent가 더 많은 일을 병렬로 실행할수록 workflow runtime, cost cap, checkpoint, human approval, permission boundary가 같이 필요하다. 두 문서는 확장 리서치 버전으로 업데이트했다.
 - AI 플랫폼 사업 연결 축: UCP + AP2 + AG-UI + A2-UI. 대화형 AI 서비스/커머스/쇼핑/예약/결제를 agentic commerce로 묶으려면 commerce, payment, UI event, declarative UI가 함께 필요하다.
 - 플랫폼 품질 축: SkillNet + SWE-Skills-Bench + COLLEAGUE.SKILL. 스킬은 많이 모으는 것이 아니라 task 개선, token cost, version compatibility, governance까지 검증해야 한다.
 
@@ -27,7 +27,7 @@
 | --- | --- | --- | --- |
 | Agent-to-Agent | `2026-06-06/A2A_Deep_Dive.html` | agent discovery, task delegation, Agent Card, task lifecycle, artifact 교환 | 내부/외부 agent registry와 orchestrator의 표준 후보 |
 | Commerce | `2026-06-06/UCP_Deep_Dive.html` | 상품 탐색, cart, checkout, order, identity linking, merchant capability discovery | 커머스, 쇼핑, 예약, 지도/로컬, 채널 파트너를 agent-readable commerce로 전환 |
-| Payment Trust | `2026-06-06/AP2_Deep_Dive.html` | 결제 위임, 사용자 의도 증명, mandate, trusted surface, dispute evidence | 결제 서비스 agent 결제의 승인 UX, 감사, 분쟁 대응 기준 |
+| Payment Trust | `2026-06-06/AP2_Deep_Dive.html` | 결제 위임, 사용자 의도 증명, mandate, trusted surface, dispute evidence | 결제 플랫폼 agent 결제의 승인 UX, 감사, 분쟁 대응 기준 |
 | Agent UI Events | `2026-06-06/AG_UI_Deep_Dive.html` | agent run lifecycle, text streaming, tool call, state delta, interrupt, custom event | 대화형 AI 서비스/CS/커머스 agent UX의 공통 event schema |
 | Generative UI | `2026-06-06/A2_UI_Deep_Dive.html` | agent가 안전한 선언형 UI payload를 만들고 client가 native UI로 렌더링 | 채팅 UI 안의 상품 카드, 예약 form, 승인 summary, CS action UI |
 | Security / Skills / Runtime | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`, `2026-06-07/AgentBound_Deep_Dive.html`, `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`, `2026-06-07/SkillNet_Deep_Dive.html` | Dynamic Workflows, AgentBound, SWE-Skills-Bench, COLLEAGUE.SKILL, Hermes Agent, SkillNet을 각각 분리 정리 | workflow runtime, MCP permission boundary, skill registry/eval, persistent agent governance |
@@ -70,12 +70,12 @@
 
 | 날짜 | 문서 | 유형 | 핵심 용도 |
 | --- | --- | --- | --- |
-| 2026-06-07 | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Deep Dive | workflow runtime, subagent orchestration, checkpoint, verifier, cost cap, approval control plane |
-| 2026-06-07 | `2026-06-07/AgentBound_Deep_Dive.html` | Deep Dive | MCP server permission manifest, policy enforcement, risk tier, audit schema |
-| 2026-06-07 | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html` | Deep Dive | agent skill marginal utility, pass-rate delta, token cost, version compatibility |
-| 2026-06-07 | `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html` | Deep Dive | trace-to-skill, expert skill governance, consent, privacy, rollback |
-| 2026-06-07 | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Deep Dive | persistent personal agent, memory, skills, gateway, cron/webhook, provider routing |
-| 2026-06-07 | `2026-06-07/SkillNet_Deep_Dive.html` | Deep Dive | skill repository, ontology, skill graph, 5-D evaluation, activation policy |
+| 2026-06-07 | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | workflow runtime, subagent orchestration, task-specific harness, execution mechanics, evaluation protocol, platform blueprint |
+| 2026-06-07 | `2026-06-07/AgentBound_Deep_Dive.html` | Expanded Deep Dive | MCP server permission manifest, threat model, connector admission flow, evidence caveats, runtime audit schema |
+| 2026-06-07 | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html` | Expanded Deep Dive | agent skill marginal utility, paired evaluation method, skill contract, token cost, internal eval playbook |
+| 2026-06-07 | `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html` | Expanded Deep Dive | trace-to-skill lifecycle, expert skill artifact contract, governance, role-task evaluation, consent/privacy controls |
+| 2026-06-07 | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Expanded Deep Dive | persistent agent OS stack, memory, skills, gateway, cron/webhook, MCP, autonomy risk, platform benchmark plan |
+| 2026-06-07 | `2026-06-07/SkillNet_Deep_Dive.html` | Expanded Deep Dive | skill supply pipeline, repository, ontology, graph, 5-D evaluation, skill data model, research agenda |
 | 2026-06-06 | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | 조사한 프로토콜/프로젝트를 AI 플랫폼 및 서비스 적용 관점으로 재정리 |
 | 2026-06-06 | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | agent-to-agent 표준과 Agent Registry/orchestrator 설계 |
 | 2026-06-06 | `2026-06-06/Agent_Trend_Scout.html` | Scout | GeekNews, MarkTechPost, GitHub Blog, Reddit 기반 딥다이브 후보 발굴 |

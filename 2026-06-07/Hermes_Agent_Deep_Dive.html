@@ -32,11 +32,14 @@
       <a href="#pattern">Product Pattern</a>
       <a href="#risks">Risks</a>
       <a href="#platform">Platform Design</a>
+      <a href="#stack">System Stack</a>
+      <a href="#autonomy">Autonomy Risk</a>
+      <a href="#evaluation">Evaluation</a>
       <a href="#actions">Actions</a>
     </nav>
     <main>
       <header class="hero">
-        <p class="eyebrow">2026-06-07 00:10 KST · Project Deep Dive</p>
+        <p class="eyebrow">2026-06-07 00:27 KST · Expanded Project Deep Dive</p>
         <h1>Hermes Agent</h1>
         <p class="lead">Hermes Agent는 Nous Research의 open-source agent framework다. terminal, messaging platforms, IDE에서 실행되고, skills, memory, gateway, MCP, cron, webhook, provider-agnostic model routing을 묶어 persistent personal agent 패턴을 보여준다.</p>
         <div class="meta">
@@ -111,14 +114,75 @@
         </ul>
       </section>
 
+      <section id="stack">
+        <h2>6. System Stack Reading</h2>
+        <div class="source-pills">
+          <a href="https://github.com/NousResearch/hermes-agent">GitHub README</a>
+          <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/tools">Tools Docs</a>
+          <a href="https://hermes-agent.nousresearch.com/docs/reference/skills-catalog/">Skills Catalog</a>
+          <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp">MCP Docs</a>
+        </div>
+        <p>Hermes Agent의 연구 가치는 특정 기능 하나가 아니라 agent OS에 필요한 구성요소를 거의 모두 한 제품 안에 묶어 보여준다는 데 있다. terminal/files, browser, memory, skills, MCP, messaging, cron, provider routing이 결합되면 agent는 “한 번 답하는 assistant”가 아니라 identity와 실행 이력을 가진 장기 실행 주체가 된다.</p>
+        <table>
+          <thead><tr><th>레이어</th><th>Hermes에서 보이는 형태</th><th>플랫폼 설계 해석</th></tr></thead>
+          <tbody>
+            <tr><td>Interaction Surface</td><td>terminal, messaging platform, IDE, webhook.</td><td>채널마다 identity, permission, approval UX를 분리해야 한다.</td></tr>
+            <tr><td>Tool Runtime</td><td>terminal/file/browser/media/delegation/messaging 도구와 toolsets.</td><td>tool descriptor를 lazy-load하고 task별 후보만 노출해야 한다.</td></tr>
+            <tr><td>Memory Layer</td><td>persistent memory, session search, profile별 state.</td><td>memory review, deletion, retention, conflict resolution이 필수다.</td></tr>
+            <tr><td>Skill Layer</td><td>bundled/optional skills, update/reset, skill catalog.</td><td>SkillNet식 registry와 SWE-Skills-Bench식 utility 평가가 필요하다.</td></tr>
+            <tr><td>Connector Layer</td><td>MCP server integration과 per-server filtering.</td><td>AgentBound식 manifest, sandbox, audit이 필요하다.</td></tr>
+            <tr><td>Automation Layer</td><td>cron, event hooks, scheduled delivery, no-agent mode.</td><td>무인 실행에서는 scope, expiry, notification, kill switch가 기본값이어야 한다.</td></tr>
+            <tr><td>Model Layer</td><td>provider-agnostic routing과 fallback.</td><td>cost, latency, data policy, task fit 기반 routing policy를 관리해야 한다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="autonomy">
+        <h2>7. Autonomy Risk Matrix</h2>
+        <div class="source-pills">
+          <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/cron">Cron Docs</a>
+          <a href="https://www.reddit.com/r/hermesagent/comments/1t34qee/hermes_agent_tool_and_skills_bloat/">Tool/Skills Bloat</a>
+          <a href="https://www.reddit.com/r/hermesagent/comments/1sqdt6b/cron_jobs_dont_have_full_toolset_and_skills/">Cron Tooling Discussion</a>
+        </div>
+        <p>Hermes의 장점인 지속성, 자동화, 멀티채널성은 동시에 위험면이다. 특히 cron/webhook은 사용자의 즉시 명령 없이 agent run을 시작하고, messaging gateway는 외부 채널에서 tool action을 유발할 수 있다. 따라서 autonomy는 기능 플래그가 아니라 권한 모델이다.</p>
+        <table>
+          <thead><tr><th>상황</th><th>위험</th><th>필수 제품 제어</th></tr></thead>
+          <tbody>
+            <tr><td>메신저에서 파일/브라우저 tool 사용</td><td>채널 탈취 또는 오인 명령이 실제 시스템 action으로 이어짐.</td><td>channel-scoped permission, sensitive action approval, device/session binding.</td></tr>
+            <tr><td>cron 기반 반복 실행</td><td>오래된 목적의 job이 계속 실행되거나 비용을 소모함.</td><td>expiry, last-run summary, pause switch, budget cap.</td></tr>
+            <tr><td>memory 기반 personalization</td><td>부정확한 기억이 장기간 의사결정에 영향을 줌.</td><td>memory inbox, approve/reject, conflict resolution, retention control.</td></tr>
+            <tr><td>skill 자동 축적</td><td>검증되지 않은 절차가 다음 작업에 반복 주입됨.</td><td>skill quarantine, eval before activation, provenance record.</td></tr>
+            <tr><td>multi-provider routing</td><td>민감 데이터가 의도와 다른 provider로 이동함.</td><td>provider policy, data classification, routing denylist.</td></tr>
+            <tr><td>MCP/plugin 확장</td><td>외부 도구가 과도한 권한으로 실행됨.</td><td>manifest review, per-server filtering, runtime enforcement.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="evaluation">
+        <h2>8. Evaluation Plan for Platform Benchmarking</h2>
+        <p>Hermes는 그대로 도입할 대상이라기보다 persistent agent 제품의 benchmark다. 따라서 평가는 “사용해보니 흥미롭다”가 아니라 어떤 기능 묶음이 실제 서비스 설계에 필요한지 분리해서 측정해야 한다.</p>
+        <table>
+          <thead><tr><th>평가 영역</th><th>테스트 방법</th><th>성공 기준</th></tr></thead>
+          <tbody>
+            <tr><td>Cross-session Continuity</td><td>여러 세션에 걸친 장기 task에서 memory/skill이 올바르게 재사용되는지 확인.</td><td>관련 기억은 재사용하고, 오래되거나 잘못된 기억은 수정 가능.</td></tr>
+            <tr><td>Channel Safety</td><td>terminal, messaging, webhook에서 동일 action을 요청했을 때 승인 정책이 달라지는지 확인.</td><td>채널별 권한과 승인 UI가 분리됨.</td></tr>
+            <tr><td>Scheduled Work</td><td>cron job의 생성, pause, resume, failure, expiry, notification을 검증.</td><td>무인 실행의 owner, scope, last result가 명확함.</td></tr>
+            <tr><td>Tool/Skill Gating</td><td>많은 tool과 skill을 연결한 뒤 관련 없는 task에서 context noise와 오작동을 측정.</td><td>per-task gating으로 불필요한 도구 노출을 줄임.</td></tr>
+            <tr><td>Recovery</td><td>tool failure, provider failure, permission denial 후 agent가 어떻게 복구하는지 확인.</td><td>실패 원인과 다음 조치가 trace에 남고 재시도가 제한됨.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
       <section id="actions">
-        <h2>6. Recommended Actions</h2>
+        <h2>9. Recommended Actions</h2>
         <ol>
           <li>Hermes를 기능 목록이 아니라 product pattern checklist로 벤치마크한다.</li>
           <li>memory, skill, tool, channel, scheduler를 하나의 permission matrix로 정리한다.</li>
           <li>메신저형 agent에 대해서는 sensitive action 전 approval card를 필수화한다.</li>
           <li>tool/skill bloat를 막기 위해 per-task gating과 lazy descriptor loading을 설계한다.</li>
           <li>cron/webhook agent run에는 owner, scope, expiry, last-run summary, disable switch를 둔다.</li>
+          <li>memory와 skill의 자동 축적은 quarantine 상태로 시작하고 human approval 후 활성화한다.</li>
+          <li>Hermes의 cron, MCP, skill catalog를 benchmark checklist로 삼아 자체 플랫폼 요구사항 표를 만든다.</li>
         </ol>
       </section>
 </main>

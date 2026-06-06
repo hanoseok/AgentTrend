@@ -1,7 +1,7 @@
 # AgentBound Deep Dive
 
-- 작성 시점: 2026-06-07 00:10 KST
-- 조사 수준: Deep Dive
+- 작성 시점: 2026-06-07 00:27 KST
+- 조사 수준: Expanded Deep Dive
 - 유형: Paper / Security / MCP permission boundary
 - HTML 정본: `2026-06-07/AgentBound_Deep_Dive.html`
 
@@ -56,10 +56,53 @@ AgentBound는 MCP 서버용 access control framework를 제안한다. 서버가 
 | `approval_policy` | 자동 실행 가능 여부와 승인 주체. | low-risk auto, high-risk user approval, admin approval. |
 | `audit_schema` | 어떤 action, payload, resource, result를 남길지. | tool name, input hash, output hash, resource id, deny reason. |
 
-## 6. Recommended Actions
+## 6. Threat Model: MCP 서버는 신뢰된 앱이 아니다
+
+참고 링크: [arXiv](https://arxiv.org/abs/2510.21236), [MCP Docs](https://modelcontextprotocol.io/), [OpenFGA MCP Auth](https://openfga.dev/docs/modeling/agents/mcp-authorization)
+
+AgentBound가 중요한 이유는 MCP 서버를 “도구 설명을 제공하는 라이브러리”가 아니라 “agent host에서 권한을 가진 실행 주체”로 본다는 점이다. MCP 서버가 local filesystem, remote API, browser, database, credential store에 접근할 수 있으면, prompt injection과 supply-chain 위험이 실제 시스템 action으로 연결된다.
+
+| 공격면 | 실패 시나리오 | AgentBound식 통제 |
+| --- | --- | --- |
+| Filesystem | 서버가 허용되지 않은 경로에서 문서, token, 설정 파일을 읽어 외부로 보냄 | path allowlist, read/write 분리, sensitive path deny |
+| Network Egress | 도구 호출 결과를 외부 endpoint로 유출하거나 악성 payload를 가져옴 | host allowlist, method restriction, payload size/rate limit |
+| Secrets | 환경변수, OAuth token, API key를 읽어 다른 tool call에 주입 | credential scope, secret broker, explicit grant, redaction log |
+| Tool Poisoning | 도구 설명 또는 prompt resource가 agent에게 잘못된 지시를 제공 | resource provenance, tool description review, high-risk tool isolation |
+| Rug Pull | 업데이트 후 동일 connector가 더 넓은 권한을 요구하거나 악성 동작을 추가 | version pinning, manifest diff approval, rollback |
+| Data Tampering | 읽기 도구로 보였던 서버가 실제 업무 데이터나 설정을 변경 | read/write capability 분리, write action approval, audit trail |
+
+## 7. Connector Admission Flow
+
+참고 링크: [Replication Package](https://zenodo.org/records/19468201), [MCP Permission Commentary](https://mcpblog.dev/blog/2026-03-21-chmod-ai-agents-mcp-permissions)
+
+AI 플랫폼이 MCP/tool ecosystem을 운영한다면 connector 등록 절차는 app store 심사와 비슷해야 한다. 핵심은 “유용한 도구인가”보다 “어떤 resource에 접근하며, 어느 조건에서 차단되는가”를 먼저 확인하는 것이다.
+
+| 단계 | 검토 항목 | 산출물 |
+| --- | --- | --- |
+| 1. Intake | source URL, maintainer, license, requested tools, install method | connector profile 초안 |
+| 2. Static Scan | filesystem, network, subprocess, env var, credential access 탐지 | 권한 후보 manifest와 위험 flag |
+| 3. Manifest Review | 선언 권한과 코드가 실제로 일치하는지 검토 | 승인된 capability set |
+| 4. Sandbox Profile | container, filesystem mount, egress, secret broker, timeout | runtime policy bundle |
+| 5. User/Admin Approval | 권한 설명, 민감 action, data sharing, update policy | consent record와 approval scope |
+| 6. Continuous Audit | tool call, denied access, manifest drift, update diff | run-level audit log와 alert |
+
+## 8. Evidence Strength and Caveats
+
+AgentBound의 수치가 중요한 이유는 권한 집행이 현실적인 성능 비용 안에서 가능하다는 근거를 제공하기 때문이다. 다만 논문의 수치는 특정 데이터셋과 구현에서의 결과이므로, 실제 플랫폼 적용 전에는 connector 유형별 재현 평가가 필요하다.
+
+| 논문 근거 | 강점 | 주의할 점 |
+| --- | --- | --- |
+| 296개 popular MCP servers | 충분히 실제 생태계에 가까운 표본을 사용 | 내부 connector, remote SaaS connector, enterprise plugin은 다른 권한 패턴을 가질 수 있음 |
+| 80.9% 자동 policy 생성 정확도 | source scan 기반 manifest 초안 작성 가능성을 보여줌 | 나머지 오류는 high-risk connector에서 치명적일 수 있으므로 human review 필요 |
+| 0.6ms 평균 overhead | permission enforcement가 UX를 크게 해치지 않을 가능성을 보여줌 | network-heavy, browser-heavy, DB-heavy tool에서는 별도 latency 측정 필요 |
+| 서버 수정 없이 집행 | ecosystem adoption barrier가 낮음 | host runtime과 sandbox integration이 없으면 정책이 문서에 머무를 수 있음 |
+
+## 9. Recommended Actions
 
 1. 모든 MCP/tool connector에 manifest 제출을 요구하는 registry draft를 만든다.
 2. 파일, 네트워크, secret, 데이터, 결제성 액션을 최소 권한 taxonomy로 분류한다.
 3. source scan 기반 manifest 자동 생성과 reviewer approval workflow를 붙인다.
 4. high-risk tool call은 user approval, admin approval, two-step confirmation 중 하나를 요구한다.
 5. agent trace와 tool audit log를 같은 run id로 묶어 사후 분석이 가능하게 한다.
+6. connector 업데이트 시 manifest diff와 권한 증가를 별도 승인 대상으로 만든다.
+7. Dynamic Workflows worker별로 서로 다른 connector 권한을 부여하는 실험을 설계한다.

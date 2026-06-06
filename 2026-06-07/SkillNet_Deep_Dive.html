@@ -33,11 +33,14 @@
       <a href="#architecture">Architecture</a>
       <a href="#evidence">Evidence</a>
       <a href="#with-swe">With SWE Bench</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#model">Data Model</a>
+      <a href="#agenda">Research Agenda</a>
       <a href="#actions">Actions</a>
     </nav>
     <main>
       <header class="hero">
-        <p class="eyebrow">2026-06-07 00:10 KST · Paper / Project Deep Dive</p>
+        <p class="eyebrow">2026-06-07 00:27 KST · Expanded Paper / Project Deep Dive</p>
         <h1>SkillNet</h1>
         <p class="lead">SkillNet은 AI skills를 생성, 평가, 검색, 연결하기 위한 open infrastructure다. skill을 prompt 조각이 아니라 ontology, graph, evaluation metadata를 가진 software asset으로 다루는 방향을 보여준다.</p>
         <div class="meta">
@@ -115,14 +118,72 @@
         </table>
       </section>
 
+      <section id="pipeline">
+        <h2>6. Skill Supply Pipeline</h2>
+        <div class="source-pills">
+          <a href="https://arxiv.org/abs/2603.04448">SkillNet arXiv</a>
+          <a href="https://github.com/zjunlp/SkillNet">GitHub CLI</a>
+          <a href="https://skillnet.openkg.cn">Project Site</a>
+        </div>
+        <p>SkillNet은 skill을 단순 문서 저장소가 아니라 공급망으로 본다. skill은 생성, 검색, 설치, 평가, 관계 분석, 재평가를 거쳐야 agent runtime에서 안전하게 활성화될 수 있다. 이 파이프라인이 없으면 skill repository는 빠르게 품질이 낮은 prompt fragment 저장소로 변한다.</p>
+        <table>
+          <thead><tr><th>단계</th><th>SkillNet 신호</th><th>플랫폼 요구사항</th></tr></thead>
+          <tbody>
+            <tr><td>Source Ingestion</td><td>repo, document, trajectory, prompt 등 heterogeneous source에서 skill 생성.</td><td>source provenance, license, data sensitivity를 먼저 기록한다.</td></tr>
+            <tr><td>Skill Generation</td><td>CLI와 toolkit으로 create workflow 제공.</td><td>자동 생성 skill은 human review 전 quarantine 상태로 둔다.</td></tr>
+            <tr><td>Search / Retrieval</td><td>keyword와 semantic search 지원.</td><td>task intent, compatibility, measured utility를 ranking feature로 쓴다.</td></tr>
+            <tr><td>Evaluation</td><td>Safety, Completeness, Executability, Maintainability, Cost-awareness 5-D 평가.</td><td>자동 점수와 task-level empirical eval을 분리한다.</td></tr>
+            <tr><td>Graph Analysis</td><td>skill 관계와 조합 가능성을 분석.</td><td>compose_with, conflicts_with, depends_on edge를 runtime planner에 제공한다.</td></tr>
+            <tr><td>Runtime Activation</td><td>agent가 필요 skill을 검색/설치/사용할 수 있는 구조.</td><td>기본 주입 대신 just-in-time activation과 token budget을 적용한다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="model">
+        <h2>7. Skill Data Model</h2>
+        <p>SkillNet과 SWE-Skills-Bench를 함께 보면, AI 플랫폼의 skill data model은 최소한 아래 네 가지를 동시에 가져야 한다. 특히 graph edge와 eval result가 분리되어야 “연결되어 보이는 skill”과 “실제로 도움이 되는 skill”을 구분할 수 있다.</p>
+        <table>
+          <thead><tr><th>객체</th><th>핵심 필드</th><th>설계 이유</th></tr></thead>
+          <tbody>
+            <tr><td>Skill Source</td><td>origin URL, author, license, created_at, source_type, sensitive_data_flag.</td><td>출처와 권리, 보안 위험을 추적한다.</td></tr>
+            <tr><td>Skill Card</td><td>task_scope, input/output, required_tools, supported_versions, examples.</td><td>agent와 사람이 적용 범위를 이해할 수 있게 한다.</td></tr>
+            <tr><td>Quality Evaluation</td><td>safety_score, executable_score, maintainability_score, cost_score, reviewer.</td><td>등록 심사와 재평가 기준을 제공한다.</td></tr>
+            <tr><td>Empirical Utility</td><td>pass-rate delta, token delta, latency delta, failure cases, test_set_id.</td><td>실제 task 개선 여부를 수치로 관리한다.</td></tr>
+            <tr><td>Graph Edge</td><td>depends_on, compose_with, conflicts_with, replaces, similar_to.</td><td>workflow planner가 조합과 배제를 판단하게 한다.</td></tr>
+            <tr><td>Runtime Policy</td><td>activation_rule, max_tokens, max_tools, risk_tier, approval_required.</td><td>skill 활성화가 비용과 권한을 통제하도록 만든다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="agenda">
+        <h2>8. Research Agenda and Caveats</h2>
+        <div class="source-pills">
+          <a href="SWE_Skills_Bench_Deep_Dive.html">SWE-Skills-Bench Local</a>
+          <a href="COLLEAGUE_SKILL_Deep_Dive.html">COLLEAGUE.SKILL Local</a>
+        </div>
+        <p>SkillNet은 agent skill의 공급 측 청사진으로 매우 중요하지만, 실제 업무 플랫폼에 적용하려면 아직 풀어야 할 연구 문제가 많다. 특히 benchmark 환경의 reward 향상이 실제 운영 업무의 품질 향상으로 곧장 이어진다고 보면 안 된다.</p>
+        <table>
+          <thead><tr><th>연구 질문</th><th>왜 중요한가</th><th>검증 방법</th></tr></thead>
+          <tbody>
+            <tr><td>Transferability</td><td>한 benchmark나 repo에서 효과가 있던 skill이 다른 업무에도 통하는가?</td><td>domain별 holdout task와 cross-repo evaluation.</td></tr>
+            <tr><td>Compositional Validity</td><td>두 skill을 합치면 실제로 더 좋아지는가, 아니면 충돌하는가?</td><td>compose_with edge별 paired evaluation과 conflict detection.</td></tr>
+            <tr><td>Cost-aware Activation</td><td>skill이 성능을 조금 올리지만 비용을 크게 늘리면 쓸 가치가 있는가?</td><td>cost-adjusted utility score와 budget-aware retrieval.</td></tr>
+            <tr><td>Safety of Auto-created Skills</td><td>자동 생성 skill이 민감정보, 잘못된 절차, 오래된 지식을 포함할 수 있다.</td><td>source audit, PII scan, human review, rollback.</td></tr>
+            <tr><td>Skill Decay</td><td>framework, API, 정책이 바뀌면 skill이 빠르게 낡는다.</td><td>freshness badge, dependency monitor, scheduled re-eval.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
       <section id="actions">
-        <h2>6. Recommended Actions</h2>
+        <h2>9. Recommended Actions</h2>
         <ol>
           <li>SkillNet을 참고해 skill card, graph edge, eval result schema를 먼저 정의한다.</li>
           <li>skill 생성보다 검증 pipeline을 먼저 만든다. 최소 기준은 skill on/off paired evaluation이다.</li>
           <li>skill search는 popularity가 아니라 task fit, compatibility, measured utility 순으로 rank한다.</li>
           <li>자동 생성 skill은 source provenance, human review, rollback version 없이는 production 사용을 막는다.</li>
           <li>platform roadmap에서는 “skill registry”와 “skill runtime activation”을 분리해 설계한다.</li>
+          <li>SkillNet식 5-D quality score와 SWE-Skills-Bench식 empirical utility를 모두 저장한다.</li>
+          <li>skill graph에는 도움이 되는 관계뿐 아니라 conflicts_with와 replaces 같은 배제 관계도 포함한다.</li>
         </ol>
       </section>
 </main>
