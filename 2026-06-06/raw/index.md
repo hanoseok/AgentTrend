@@ -1,6 +1,6 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-07 00:27 KST
+- 최종 갱신: 2026-06-07 00:42 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
 - 정기 업데이트: 00:00 / 08:00 / 16:00 KST
@@ -68,23 +68,31 @@
 
 ## 4. Reports
 
-| 날짜 | 문서 | 유형 | 핵심 용도 |
-| --- | --- | --- | --- |
-| 2026-06-07 | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | workflow runtime, subagent orchestration, task-specific harness, execution mechanics, evaluation protocol, platform blueprint |
-| 2026-06-07 | `2026-06-07/AgentBound_Deep_Dive.html` | Expanded Deep Dive | MCP server permission manifest, threat model, connector admission flow, evidence caveats, runtime audit schema |
-| 2026-06-07 | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html` | Expanded Deep Dive | agent skill marginal utility, paired evaluation method, skill contract, token cost, internal eval playbook |
-| 2026-06-07 | `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html` | Expanded Deep Dive | trace-to-skill lifecycle, expert skill artifact contract, governance, role-task evaluation, consent/privacy controls |
-| 2026-06-07 | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Expanded Deep Dive | persistent agent OS stack, memory, skills, gateway, cron/webhook, MCP, autonomy risk, platform benchmark plan |
-| 2026-06-07 | `2026-06-07/SkillNet_Deep_Dive.html` | Expanded Deep Dive | skill supply pipeline, repository, ontology, graph, 5-D evaluation, skill data model, research agenda |
-| 2026-06-06 | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | 조사한 프로토콜/프로젝트를 AI 플랫폼 및 서비스 적용 관점으로 재정리 |
-| 2026-06-06 | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | agent-to-agent 표준과 Agent Registry/orchestrator 설계 |
-| 2026-06-06 | `2026-06-06/Agent_Trend_Scout.html` | Scout | GeekNews, MarkTechPost, GitHub Blog, Reddit 기반 딥다이브 후보 발굴 |
-| 2026-06-06 | `2026-06-06/2000_agent_trend_brief.html` | 8시간 Brief | 정기 브리프 형식의 트렌드/업데이트 요약 |
-| 2026-06-06 | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html` | Overview | Dynamic Workflows, AgentBound, skills, commerce stack, Hermes Agent, SkillNet 우선순위 매트릭스. 개별 딥다이브는 2026-06-07 문서로 분리 |
-| 2026-06-06 | `2026-06-06/UCP_Deep_Dive.html` | Deep Dive | agentic commerce capability/discovery/checkout/order 표준 |
-| 2026-06-06 | `2026-06-06/AP2_Deep_Dive.html` | Deep Dive | agent 결제 위임, mandate, trusted surface, dispute evidence |
-| 2026-06-06 | `2026-06-06/AG_UI_Deep_Dive.html` | Deep Dive | agent frontend event protocol, interrupt, state delta, tool call UX |
-| 2026-06-06 | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | agent-generated declarative UI payload/spec와 AI 플랫폼 component catalog 설계 |
+현재 공개된 HTML 산출물을 최신 업데이트순으로 정렬했다. 각 문서의 상세 업데이트 이력은 `DOCUMENT_HISTORY.html`의 History anchor에서 확인한다.
+
+| 최신 업데이트 | 문서 | 유형 | 핵심 용도 | History |
+| --- | --- | --- | --- | --- |
+| 2026-06-07 00:42 KST | `DOCUMENT_HISTORY.html` | Operations | 각 HTML 정본의 생성/업데이트 타임라인과 Reports 정렬 기준 | `DOCUMENT_HISTORY.html#history-document-history` |
+| 2026-06-07 00:42 KST | `index.html` | Hub | 전체 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
+| 2026-06-07 00:42 KST | `RESEARCH_LOG.html` | Operations | 날짜별 조사 주제, 조사 수준, 산출물 링크를 관리하는 이력 문서 | `DOCUMENT_HISTORY.html#history-research-log` |
+| 2026-06-07 00:37 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | workflow runtime, subagent orchestration, task-specific harness, execution mechanics, evaluation protocol, platform blueprint | `DOCUMENT_HISTORY.html#history-dynamic-workflows` |
+| 2026-06-07 00:37 KST | `2026-06-07/AgentBound_Deep_Dive.html` | Expanded Deep Dive | MCP server permission manifest, threat model, connector admission flow, evidence caveats, runtime audit schema | `DOCUMENT_HISTORY.html#history-agentbound` |
+| 2026-06-07 00:37 KST | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html` | Expanded Deep Dive | agent skill marginal utility, paired evaluation method, skill contract, token cost, internal eval playbook | `DOCUMENT_HISTORY.html#history-swe-skills-bench` |
+| 2026-06-07 00:37 KST | `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html` | Expanded Deep Dive | trace-to-skill lifecycle, expert skill artifact contract, governance, role-task evaluation, consent/privacy controls | `DOCUMENT_HISTORY.html#history-colleague-skill` |
+| 2026-06-07 00:37 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Expanded Deep Dive | persistent agent OS stack, memory, skills, gateway, cron/webhook, MCP, autonomy risk, platform benchmark plan | `DOCUMENT_HISTORY.html#history-hermes-agent` |
+| 2026-06-07 00:37 KST | `2026-06-07/SkillNet_Deep_Dive.html` | Expanded Deep Dive | skill supply pipeline, repository, ontology, graph, 5-D evaluation, skill data model, research agenda | `DOCUMENT_HISTORY.html#history-skillnet` |
+| 2026-06-07 00:24 KST | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | 조사한 프로토콜/프로젝트를 AI 플랫폼 및 서비스 적용 관점으로 재정리 | `DOCUMENT_HISTORY.html#history-ai-platform-applicability` |
+| 2026-06-07 00:24 KST | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | agent-to-agent 표준과 Agent Registry/orchestrator 설계 | `DOCUMENT_HISTORY.html#history-a2a` |
+| 2026-06-07 00:24 KST | `2026-06-06/Agent_Trend_Scout.html` | Scout | GeekNews, MarkTechPost, GitHub Blog, Reddit 기반 딥다이브 후보 발굴 | `DOCUMENT_HISTORY.html#history-agent-trend-scout` |
+| 2026-06-07 00:24 KST | `2026-06-06/2000_agent_trend_brief.html` | 8시간 Brief | 정기 브리프 형식의 트렌드/업데이트 요약 | `DOCUMENT_HISTORY.html#history-2000-brief` |
+| 2026-06-07 00:24 KST | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html` | Overview | Dynamic Workflows, AgentBound, skills, commerce stack, Hermes Agent, SkillNet 우선순위 매트릭스. 개별 딥다이브는 2026-06-07 문서로 분리 | `DOCUMENT_HISTORY.html#history-selected-overview` |
+| 2026-06-07 00:24 KST | `2026-06-06/UCP_Deep_Dive.html` | Deep Dive | agentic commerce capability/discovery/checkout/order 표준 | `DOCUMENT_HISTORY.html#history-ucp` |
+| 2026-06-07 00:24 KST | `2026-06-06/AP2_Deep_Dive.html` | Deep Dive | agent 결제 위임, mandate, trusted surface, dispute evidence | `DOCUMENT_HISTORY.html#history-ap2` |
+| 2026-06-07 00:24 KST | `2026-06-06/AG_UI_Deep_Dive.html` | Deep Dive | agent frontend event protocol, interrupt, state delta, tool call UX | `DOCUMENT_HISTORY.html#history-ag-ui` |
+| 2026-06-07 00:24 KST | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | agent-generated declarative UI payload/spec와 AI 플랫폼 component catalog 설계 | `DOCUMENT_HISTORY.html#history-a2-ui` |
+| 2026-06-07 00:24 KST | `README.html` | Operations | 아카이브 구조, 운영 방식, 문서 접근 경로 안내 | `DOCUMENT_HISTORY.html#history-readme` |
+| 2026-06-07 00:24 KST | `REPORTING_STANDARD.html` | Operations | 브리핑 작성 원칙, 출처 표기, 문서 품질 기준 | `DOCUMENT_HISTORY.html#history-reporting-standard` |
+| 2026-06-07 00:18 KST | `SOURCE_WATCHLIST.html` | Operations | 정기 확인할 공식 문서, 커뮤니티, 논문, 뉴스 source 목록 | `DOCUMENT_HISTORY.html#history-source-watchlist` |
 
 ## 5. Source Catalog
 
@@ -269,9 +277,15 @@
 - `2026-06-06/raw/AP2_Deep_Dive.md`
 - `2026-06-06/raw/AG_UI_Deep_Dive.md`
 - `2026-06-06/raw/A2_UI_Deep_Dive.md`
+- `2026-06-07/raw/DOCUMENT_HISTORY.md`
+- `2026-06-06/raw/RESEARCH_LOG.md`
+- `2026-06-06/raw/SOURCE_WATCHLIST.md`
+- `2026-06-06/raw/REPORTING_STANDARD.md`
+- `2026-06-06/raw/README.md`
 
 ## 7. Operations
 
+- `DOCUMENT_HISTORY.html`: 각 HTML 정본의 업데이트 히스토리.
 - `RESEARCH_LOG.html`: 날짜별 조사 이력.
 - `SOURCE_WATCHLIST.html`: 정기 확인 소스 목록.
 - `REPORTING_STANDARD.html`: 브리핑과 내부 공유 작성 원칙.

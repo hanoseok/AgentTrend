@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document Update History</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --ink:#142033; --muted:#667085; --line:#d8dee9; --accent:#2563eb; --soft:#eaf1ff; --green:#067647; --green-soft:#ecfdf3; --amber:#b54708; --amber-soft:#fff7ed; --shadow:0 16px 42px rgba(15,23,42,.08); }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); line-height:1.62; }
+    a { color:var(--accent); text-decoration:none; overflow-wrap:anywhere; }
+    a:hover { text-decoration:underline; }
+    .page { width:min(1240px, calc(100% - 32px)); margin:28px auto 60px; display:grid; grid-template-columns:270px minmax(0,1fr); gap:22px; align-items:start; }
+    nav, .hero, section { background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); }
+    nav { position:sticky; top:18px; padding:18px; }
+    nav strong { display:block; margin-bottom:10px; }
+    nav a { display:block; padding:8px 0; border-top:1px solid #eef2f7; color:#344054; font-size:14px; }
+    .hero, section { padding:30px; margin-bottom:18px; }
+    h1 { margin:0; font-size:clamp(34px,5vw,52px); line-height:1.06; letter-spacing:0; }
+    h2 { margin:0 0 16px; font-size:24px; letter-spacing:0; }
+    h3 { margin:22px 0 10px; font-size:18px; letter-spacing:0; }
+    p { margin:0 0 13px; }
+    .eyebrow { margin:0 0 8px; color:var(--accent); font-weight:850; }
+    .lead { max-width:900px; margin-top:16px; color:#344054; font-size:18px; }
+    .meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+    .pill { display:inline-flex; border-radius:999px; border:1px solid #bed3ff; background:var(--soft); color:#1e40af; padding:6px 10px; font-size:13px; font-weight:760; }
+    .tag { display:inline-block; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:850; white-space:nowrap; }
+    .deep { color:var(--green); background:var(--green-soft); border:1px solid #abefc6; }
+    .ops { color:var(--amber); background:var(--amber-soft); border:1px solid #fed7aa; }
+    table { width:100%; border-collapse:collapse; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:white; }
+    th,td { padding:13px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { background:#f1f4f9; color:#344054; font-size:14px; }
+    tr:last-child td { border-bottom:0; }
+    .timeline { display:grid; gap:10px; margin-top:10px; }
+    .event { border:1px solid var(--line); border-radius:12px; padding:14px 16px; background:#fcfdff; }
+    .event strong { color:var(--accent); display:block; margin-bottom:4px; }
+    code { background:#eef2f7; border:1px solid #dbe3ee; border-radius:6px; padding:2px 6px; }
+    @media (max-width:980px){ .page{display:block;width:min(100% - 20px,1240px);} nav{position:static;margin-bottom:18px;} .hero,section{padding:22px;} table{font-size:14px;} th,td{padding:10px;} }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav aria-label="문서 히스토리 목차">
+      <strong>Document History</strong>
+      <a href="index.html">Index</a>
+      <a href="#summary">Summary</a>
+      <a href="#history-document-history">Document History</a>
+      <a href="#history-index">Index</a>
+      <a href="#history-2026-06-07">2026-06-07 Deep Dives</a>
+      <a href="#history-2026-06-06">2026-06-06 Reports</a>
+      <a href="#history-operations">Operations</a>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <p class="eyebrow">2026-06-07 00:42 KST · Document Update History</p>
+        <h1>문서별 업데이트 히스토리</h1>
+        <p class="lead">각 HTML 정본이 언제 생성되고 언제 주요 업데이트를 받았는지 추적하는 페이지. 기준은 git commit 이력과 문서 metadata이며, Reports 목록은 이 페이지의 최신 업데이트 시각을 기준으로 정렬한다.</p>
+        <div class="meta">
+          <span class="pill">정렬 기준: 최신 업데이트 내림차순</span>
+          <span class="pill">대상: 공개 HTML 산출물</span>
+          <span class="pill">raw: 2026-06-07/raw/DOCUMENT_HISTORY.md</span>
+        </div>
+      </header>
+
+      <section id="summary">
+        <h2>1. Latest Update Summary</h2>
+        <table>
+          <thead><tr><th>최신 업데이트</th><th>문서</th><th>상태</th><th>히스토리</th></tr></thead>
+          <tbody>
+            <tr><td>2026-06-07 00:42 KST</td><td><a href="DOCUMENT_HISTORY.html">Document Update History</a></td><td><span class="tag ops">Created</span></td><td><a href="#history-document-history">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:42 KST</td><td><a href="index.html">Agent Trend 전체 인덱스</a></td><td><span class="tag ops">Reports updated</span></td><td><a href="#history-index">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:42 KST</td><td><a href="RESEARCH_LOG.html">Agent Trend 조사 이력</a></td><td><span class="tag ops">Updated</span></td><td><a href="#history-research-log">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:37 KST</td><td><a href="2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html">Claude Code Dynamic Workflows / ultracode</a></td><td><span class="tag deep">Expanded Deep Dive</span></td><td><a href="#history-dynamic-workflows">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:37 KST</td><td><a href="2026-06-07/AgentBound_Deep_Dive.html">AgentBound</a></td><td><span class="tag deep">Expanded Deep Dive</span></td><td><a href="#history-agentbound">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:37 KST</td><td><a href="2026-06-07/SWE_Skills_Bench_Deep_Dive.html">SWE-Skills-Bench</a></td><td><span class="tag deep">Expanded Deep Dive</span></td><td><a href="#history-swe-skills-bench">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:37 KST</td><td><a href="2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html">COLLEAGUE.SKILL</a></td><td><span class="tag deep">Expanded Deep Dive</span></td><td><a href="#history-colleague-skill">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:37 KST</td><td><a href="2026-06-07/Hermes_Agent_Deep_Dive.html">Hermes Agent</a></td><td><span class="tag deep">Expanded Deep Dive</span></td><td><a href="#history-hermes-agent">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:37 KST</td><td><a href="2026-06-07/SkillNet_Deep_Dive.html">SkillNet</a></td><td><span class="tag deep">Expanded Deep Dive</span></td><td><a href="#history-skillnet">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="2026-06-06/AI_Platform_Service_Applicability.html">AI Platform / Service Applicability</a></td><td><span class="tag deep">Synthesis</span></td><td><a href="#history-ai-platform-applicability">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="2026-06-06/A2A_Deep_Dive.html">A2A Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td><a href="#history-a2a">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="2026-06-06/Agent_Trend_Scout.html">Agent Trend Scout</a></td><td><span class="tag ops">Scout</span></td><td><a href="#history-agent-trend-scout">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="2026-06-06/2000_agent_trend_brief.html">20:00 Agent Trend Brief</a></td><td><span class="tag ops">8시간 Brief</span></td><td><a href="#history-2000-brief">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html">Selected Agent Project / Paper Overview</a></td><td><span class="tag deep">Overview</span></td><td><a href="#history-selected-overview">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="2026-06-06/UCP_Deep_Dive.html">UCP Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td><a href="#history-ucp">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="2026-06-06/AP2_Deep_Dive.html">AP2 Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td><a href="#history-ap2">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="2026-06-06/AG_UI_Deep_Dive.html">AG-UI Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td><a href="#history-ag-ui">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="2026-06-06/A2_UI_Deep_Dive.html">A2-UI Deep Dive</a></td><td><span class="tag deep">Deep Dive</span></td><td><a href="#history-a2-ui">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="README.html">README</a></td><td><span class="tag ops">Operations</span></td><td><a href="#history-readme">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:24 KST</td><td><a href="REPORTING_STANDARD.html">Reporting Standard</a></td><td><span class="tag ops">Operations</span></td><td><a href="#history-reporting-standard">히스토리 보기</a></td></tr>
+            <tr><td>2026-06-07 00:18 KST</td><td><a href="SOURCE_WATCHLIST.html">Source Watchlist</a></td><td><span class="tag ops">Operations</span></td><td><a href="#history-source-watchlist">히스토리 보기</a></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="history-document-history">
+        <h2>2. Document Update History</h2>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:42 KST</strong>문서별 업데이트 히스토리 페이지를 신규 생성. Reports 정렬과 각 문서별 anchor 연결 기준으로 사용.</div>
+        </div>
+      </section>
+
+      <section id="history-index">
+        <h2>3. Agent Trend 전체 인덱스</h2>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:42 KST</strong>Reports를 공개 HTML 산출물 목록으로 확장하고, 최신 업데이트순 정렬과 History 링크를 추가.</div>
+          <div class="event"><strong>2026-06-07 00:37 KST · 9c60981</strong>2026-06-07 개별 딥다이브의 Expanded Deep Dive 상태와 핵심 범위를 반영.</div>
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>source link 표기 방식을 관련 섹션 inline pill 기준으로 정리.</div>
+          <div class="event"><strong>2026-06-07 00:18 KST · b8646ef</strong>개별 딥다이브 6종으로 분리된 문서 링크를 추가.</div>
+        </div>
+      </section>
+
+      <section id="history-2026-06-07">
+        <h2>4. 2026-06-07 Expanded Deep Dives</h2>
+        <h3 id="history-dynamic-workflows">Claude Code Dynamic Workflows / ultracode</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:37 KST · 9c60981</strong>Research Lens, Execution Mechanics, Evaluation Protocol, Platform Blueprint를 추가해 전문 리서치 문서로 확장.</div>
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>관련 주장 주변에 source pill을 배치하고 마지막 Sources 묶음 방식을 제거.</div>
+          <div class="event"><strong>2026-06-07 00:18 KST · b8646ef</strong>Selected Overview에서 분리해 독립 deep dive 문서로 생성.</div>
+        </div>
+
+        <h3 id="history-agentbound">AgentBound</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:37 KST · 9c60981</strong>Threat Model, Connector Admission Flow, Evidence Strength and Caveats를 추가해 MCP 권한 경계 분석을 확장.</div>
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>AgentBound 논문, FSE, arXiv, MCP 관련 링크를 요약 섹션 주변 source pill로 정리.</div>
+          <div class="event"><strong>2026-06-07 00:18 KST · b8646ef</strong>AgentBound 개별 deep dive 문서 생성.</div>
+        </div>
+
+        <h3 id="history-swe-skills-bench">SWE-Skills-Bench</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:37 KST · 9c60981</strong>Research Method Reading, Skill Contract, Internal Evaluation Playbook를 추가해 skill eval 방법론을 확장.</div>
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>논문, GitHub, GitHub skill 관리, Skill Trace Auditing 링크를 관련 섹션에 재배치.</div>
+          <div class="event"><strong>2026-06-07 00:18 KST · b8646ef</strong>SWE-Skills-Bench 개별 deep dive 문서 생성.</div>
+        </div>
+
+        <h3 id="history-colleague-skill">COLLEAGUE.SKILL</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:37 KST · 9c60981</strong>Trace-to-Skill Lifecycle, Artifact Contract, Evaluation Framework를 추가해 expert skill governance 분석을 확장.</div>
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>논문 및 관련 skill trace/eval 출처를 inline source pill 구조로 정리.</div>
+          <div class="event"><strong>2026-06-07 00:18 KST · b8646ef</strong>COLLEAGUE.SKILL 개별 deep dive 문서 생성.</div>
+        </div>
+
+        <h3 id="history-hermes-agent">Hermes Agent</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:37 KST · 9c60981</strong>System Stack Reading, Autonomy Risk Matrix, Evaluation Plan을 추가해 persistent agent 제품 benchmark로 확장.</div>
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>공식 docs, GitHub, product page, community risk signal 링크를 관련 섹션 주변에 정리.</div>
+          <div class="event"><strong>2026-06-07 00:18 KST · b8646ef</strong>Hermes Agent 개별 deep dive 문서 생성.</div>
+        </div>
+
+        <h3 id="history-skillnet">SkillNet</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:37 KST · 9c60981</strong>Skill Supply Pipeline, Skill Data Model, Research Agenda and Caveats를 추가해 skill infrastructure 분석을 확장.</div>
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>SkillNet 논문, GitHub, project site, Hugging Face 링크를 inline source pill 구조로 정리.</div>
+          <div class="event"><strong>2026-06-07 00:18 KST · b8646ef</strong>SkillNet 개별 deep dive 문서 생성.</div>
+        </div>
+      </section>
+
+      <section id="history-2026-06-06">
+        <h2>5. 2026-06-06 Reports</h2>
+        <h3 id="history-ai-platform-applicability">AI Platform / Service Applicability</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>출처 표기를 inline source pill 원칙에 맞춰 정리.</div>
+          <div class="event"><strong>2026-06-06 23:44 KST · adbfc6a</strong>특정 회사명 없이 AI 플랫폼 및 서비스 적용 관점의 synthesis 문서로 생성.</div>
+        </div>
+
+        <h3 id="history-a2a">A2A Deep Dive</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>출처 링크 위치와 문서 표현을 inline source 기준으로 정리.</div>
+          <div class="event"><strong>2026-06-06 23:51 KST · 5b3d749</strong>실제 참고 링크를 보강하고 전체 index source catalog와 연결.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>A2A deep dive 최초 생성.</div>
+        </div>
+
+        <h3 id="history-agent-trend-scout">Agent Trend Scout</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>후보 발굴 문서의 출처 표기와 표현을 정리.</div>
+          <div class="event"><strong>2026-06-06 23:44 KST · adbfc6a</strong>AI 플랫폼 관점으로 문서 표현을 일반화.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>watch source 기반 agent trend scout 문서 생성.</div>
+        </div>
+
+        <h3 id="history-2000-brief">20:00 Agent Trend Brief</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>source pill 위치와 문서 표현을 정리.</div>
+          <div class="event"><strong>2026-06-06 23:44 KST · adbfc6a</strong>AI 플랫폼 및 서비스 관점으로 업데이트.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>20:00 정기 브리프 최초 생성.</div>
+        </div>
+
+        <h3 id="history-selected-overview">Selected Agent Project / Paper Overview</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>최종 source 묶음 대신 관련 요약 주변 source pill 구조로 정리.</div>
+          <div class="event"><strong>2026-06-07 00:18 KST · b8646ef</strong>주요 주제를 2026-06-07 개별 deep dive 6종으로 분리하고 overview 성격을 명확화.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>선정 프로젝트/논문 개요 문서 최초 생성.</div>
+        </div>
+
+        <h3 id="history-ucp">UCP Deep Dive</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>출처 링크를 관련 섹션에 source pill로 정리.</div>
+          <div class="event"><strong>2026-06-06 23:44 KST · adbfc6a</strong>AI 플랫폼 및 서비스 적용 표현을 일반화.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>UCP deep dive 최초 생성.</div>
+        </div>
+
+        <h3 id="history-ap2">AP2 Deep Dive</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>출처 링크와 결제 위임 관련 요약을 inline source 기준으로 정리.</div>
+          <div class="event"><strong>2026-06-06 23:44 KST · adbfc6a</strong>AI 플랫폼 및 서비스 적용 표현을 일반화.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>AP2 deep dive 최초 생성.</div>
+        </div>
+
+        <h3 id="history-ag-ui">AG-UI Deep Dive</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>출처 링크를 관련 UI protocol 설명 주변에 정리.</div>
+          <div class="event"><strong>2026-06-06 23:44 KST · adbfc6a</strong>AI 플랫폼 및 서비스 적용 표현을 일반화.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>AG-UI deep dive 최초 생성.</div>
+        </div>
+
+        <h3 id="history-a2-ui">A2-UI Deep Dive</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>출처 링크와 generative UI 요약을 inline source 기준으로 정리.</div>
+          <div class="event"><strong>2026-06-06 23:44 KST · adbfc6a</strong>AI 플랫폼 및 서비스 적용 표현을 일반화.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>A2-UI deep dive 최초 생성.</div>
+        </div>
+      </section>
+
+      <section id="history-operations">
+        <h2>6. Operations Documents</h2>
+        <h3 id="history-research-log">Agent Trend 조사 이력</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:42 KST</strong>Document Update History 생성 항목을 추가하고 최종 갱신 시각을 반영.</div>
+          <div class="event"><strong>2026-06-07 00:37 KST · 9c60981</strong>Expanded Deep Dive 상태와 2026-06-07 개별 문서의 확장 범위를 반영.</div>
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>source catalog와 inline source 원칙을 반영.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>조사 이력 문서 최초 생성.</div>
+        </div>
+
+        <h3 id="history-readme">README</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>문서 운영 원칙과 source link 배치 기준을 업데이트.</div>
+          <div class="event"><strong>2026-06-07 00:18 KST · b8646ef</strong>개별 deep dive 분리 상태를 반영.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>리서치 아카이브 README 최초 생성.</div>
+        </div>
+
+        <h3 id="history-reporting-standard">Reporting Standard</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:24 KST · c694a4e</strong>참고 링크를 마지막에 몰지 않고 관련 섹션 주변에 붙이는 기준을 명확화.</div>
+          <div class="event"><strong>2026-06-06 23:51 KST · 5b3d749</strong>source catalog와 보고 기준을 보강.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>보고 작성 표준 문서 최초 생성.</div>
+        </div>
+
+        <h3 id="history-source-watchlist">Source Watchlist</h3>
+        <div class="timeline">
+          <div class="event"><strong>2026-06-07 00:18 KST · b8646ef</strong>2026-06-07 개별 deep dive 분리와 함께 watchlist를 갱신.</div>
+          <div class="event"><strong>2026-06-06 23:44 KST · adbfc6a</strong>AI 플랫폼 및 서비스 중심의 source monitoring 범위로 일반화.</div>
+          <div class="event"><strong>2026-06-06 21:30 KST · a292796</strong>정기 모니터링 source watchlist 최초 생성.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Agent Trend 조사 이력
 
-- 최종 갱신: 2026-06-07 00:27 KST
+- 최종 갱신: 2026-06-07 00:42 KST
 - 기준: 현재 폴더에 저장 완료된 HTML 정본과 raw 원본
 - 정기 업데이트: 08:00 / 16:00 / 00:00 KST
 
@@ -14,6 +14,7 @@
 
 | 날짜 | 조사 주제 | 조사 수준 | 핵심 범위 | 산출물 |
 | --- | --- | --- | --- | --- |
+| 2026-06-07 | Document Update History | Operations, 문서 업데이트 이력 | 각 HTML 정본의 생성/업데이트 타임라인, 최신 업데이트순 Reports 정렬 기준, 문서별 history anchor를 정리 | `DOCUMENT_HISTORY.html`, `2026-06-07/raw/DOCUMENT_HISTORY.md` |
 | 2026-06-07 | Claude Code Dynamic Workflows / ultracode | Expanded Deep Dive, Agent runtime / orchestration | dynamic workflow code 생성, subagent 병렬 실행, task-specific harness, checkpoint, verifier, cost cap, human approval, 평가 프로토콜을 workflow runtime 요구사항으로 정리 | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`, `2026-06-07/raw/Claude_Code_Dynamic_Workflows_Deep_Dive.md` |
 | 2026-06-07 | AgentBound | Expanded Deep Dive, MCP permission boundary | MCP server access control, AgentManifest, policy vocabulary, runtime enforcement, threat model, connector admission flow, risk tier, approval policy, audit schema를 AI 플랫폼 설계 관점으로 정리 | `2026-06-07/AgentBound_Deep_Dive.html`, `2026-06-07/raw/AgentBound_Deep_Dive.md` |
 | 2026-06-07 | SWE-Skills-Bench | Expanded Deep Dive, Skill eval benchmark | public SWE skills의 marginal utility, paired evaluation method, pass-rate delta, token overhead, version mismatch, skill contract, 내부 평가 playbook을 정리 | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`, `2026-06-07/raw/SWE_Skills_Bench_Deep_Dive.md` |
