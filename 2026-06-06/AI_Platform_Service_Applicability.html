@@ -60,6 +60,17 @@
       font-size: 14px;
       border-top: 1px solid #eef2f7;
     }
+    nav .nav-links, nav .toc-group { border-top:1px solid #eef2f7; margin-top:10px; padding-top:8px; }
+    nav .nav-label, nav .toc-group summary { display:block; color:var(--muted, #667085); font-size:12px; font-weight:850; }
+    nav .nav-label { margin-bottom:4px; }
+    nav .toc-group summary { cursor:pointer; color:#344054; list-style:none; }
+    nav .toc-group summary::-webkit-details-marker { display:none; }
+    nav .toc-group summary::after { content:"+"; float:right; color:var(--muted, #667085); font-weight:850; }
+    nav .toc-group[open] summary::after { content:"-"; }
+    nav .toc-links { margin-top:6px; padding-left:10px; border-left:2px solid var(--soft, #eaf1ff); }
+    nav .nav-links a, nav .toc-links a { border-top:0; }
+    nav .nav-links a + a, nav .toc-links a + a { border-top:1px solid #eef2f7; }
+    nav .toc-links a { font-size:13px; padding:6px 0; }
     main { min-width: 0; }
     .hero, section {
       background: var(--panel);
@@ -162,15 +173,23 @@
   <div class="page">
     <nav aria-label="문서 목차">
       <strong>Applicability</strong>
-      <a href="../index.html">Index</a>
-      <a href="#summary">Executive Summary</a>
-      <a href="#map">Platform Map</a>
-      <a href="#runtime">Runtime</a>
-      <a href="#registry">Registry / Governance</a>
-      <a href="#commerce">Commerce / Payment</a>
-      <a href="#ui">Agent UI</a>
-      <a href="#skills">Skills</a>
-      <a href="#roadmap">30/60/90</a>
+      <div class="nav-links" aria-label="문서 링크">
+        <span class="nav-label">링크</span>
+        <a href="../index.html">Index</a>
+      </div>
+      <details class="toc-group">
+        <summary>목차</summary>
+        <div class="toc-links">
+          <a href="#summary">Executive Summary</a>
+          <a href="#map">Platform Map</a>
+          <a href="#runtime">Runtime</a>
+          <a href="#registry">Registry / Governance</a>
+          <a href="#commerce">Commerce / Payment</a>
+          <a href="#ui">Agent UI</a>
+          <a href="#skills">Skills</a>
+          <a href="#roadmap">30/60/90</a>
+        </div>
+      </details>
     </nav>
 
     <main>

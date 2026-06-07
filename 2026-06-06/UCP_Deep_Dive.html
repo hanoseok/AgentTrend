@@ -16,6 +16,17 @@
     nav { position:sticky; top:18px; background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:18px; }
     nav strong { display:block; margin-bottom:10px; }
     nav a { display:block; padding:8px 0; color:#344054; font-size:14px; border-top:1px solid #eef2f7; }
+    nav .nav-links, nav .toc-group { border-top:1px solid #eef2f7; margin-top:10px; padding-top:8px; }
+    nav .nav-label, nav .toc-group summary { display:block; color:var(--muted, #667085); font-size:12px; font-weight:850; }
+    nav .nav-label { margin-bottom:4px; }
+    nav .toc-group summary { cursor:pointer; color:#344054; list-style:none; }
+    nav .toc-group summary::-webkit-details-marker { display:none; }
+    nav .toc-group summary::after { content:"+"; float:right; color:var(--muted, #667085); font-weight:850; }
+    nav .toc-group[open] summary::after { content:"-"; }
+    nav .toc-links { margin-top:6px; padding-left:10px; border-left:2px solid var(--soft, #eaf1ff); }
+    nav .nav-links a, nav .toc-links a { border-top:0; }
+    nav .nav-links a + a, nav .toc-links a + a { border-top:1px solid #eef2f7; }
+    nav .toc-links a { font-size:13px; padding:6px 0; }
     .hero, section { background:var(--panel); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); padding:30px; margin-bottom:18px; }
     h1 { margin:0; font-size:clamp(34px,5vw,52px); line-height:1.06; letter-spacing:0; }
     h2 { margin:0 0 16px; font-size:24px; }
@@ -51,12 +62,21 @@
   <div class="page">
     <nav>
       <strong>UCP</strong>
-      <a href="#summary">Executive Summary</a>
-      <a href="#what">What It Is</a>
-      <a href="#technical">Technical Model</a>
-      <a href="#latest">Recent Updates</a>
-      <a href="#platform">AI Platform Implications</a>
-      <a href="#actions">Actions</a>
+      <div class="nav-links" aria-label="문서 링크">
+        <span class="nav-label">링크</span>
+        <a href="../index.html">Index</a>
+      </div>
+      <details class="toc-group">
+        <summary>목차</summary>
+        <div class="toc-links">
+          <a href="#summary">Executive Summary</a>
+          <a href="#what">What It Is</a>
+          <a href="#technical">Technical Model</a>
+          <a href="#latest">Recent Updates</a>
+          <a href="#platform">AI Platform Implications</a>
+          <a href="#actions">Actions</a>
+        </div>
+      </details>
     </nav>
     <main>
       <header class="hero">
