@@ -192,3 +192,23 @@ PoC metrics:
 - 바로 쓰지 말 것: unstable proto에 직접 종속, production credential handling을 AX에 위임, MCP support를 완성 기능으로 가정, BYOH interface를 고정 계약으로 가정.
 - 다음 딥다이브 후보: Agent Substrate와 Agent Sandbox를 함께 묶어 "agent execution substrate" 관점으로 별도 분석할 가치가 높다.
 - 최종 판단: AX는 agent runtime 경쟁의 방향을 보여주는 강한 신호다. 도입 전략은 reference architecture + limited PoC + adapter isolation이 적합하다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [AX Site](https://agentexecutor.io/)
+- [GitHub release v0.1.0](https://github.com/google/ax/releases/tag/v0.1.0)
+- [GeekNews AX Topic](https://news.hada.io/topic?id=29439)
+- [Platform comparison](https://www.reddit.com/r/LLMDevs/comments/1tukc23/%D1%81ompared_agent_platforms_cloudflare_agents_aws/)
+- [Copilot Agent Tasks API](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/)
+
+### 딥리서치 출처
+
+- [Google AX GitHub](https://github.com/google/ax)
+- [README Raw](https://raw.githubusercontent.com/google/ax/main/README.md)
+- [ax.proto](https://raw.githubusercontent.com/google/ax/main/proto/ax.proto)
+- [eventlog.go](https://raw.githubusercontent.com/google/ax/main/internal/controller/executor/eventlog.go)
+- [AX manifests README](https://raw.githubusercontent.com/google/ax/main/manifests/README.md)
+- [Agent Substrate](https://github.com/agent-substrate/substrate)
+- [GKE Agent Sandbox](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/agent-sandbox)

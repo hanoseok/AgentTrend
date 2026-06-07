@@ -105,3 +105,19 @@ COLLEAGUE.SKILL류 시스템은 “그 사람처럼 보인다”가 아니라 �
 5. 사용자나 운영자가 skill 내용을 inspect, correct, rollback할 수 있는 UI를 설계한다.
 6. 개인 trace 기반 skill은 배포 전 privacy/consent 심사를 통과한 경우에만 사용할 수 있게 한다.
 7. 초기 PoC는 개인 이름을 붙인 skill이 아니라 “장애 대응 reviewer”, “정책 분류 reviewer”처럼 role skill로 제한한다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [COLLEAGUE.SKILL arXiv](https://arxiv.org/abs/2605.31264)
+- [Hugging Face Papers](https://huggingface.co/papers/2605.31264)
+- [Skill Trace Auditing](https://arxiv.org/abs/2605.11946)
+- [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)
+
+### 딥리서치 출처
+
+- [COLLEAGUE.SKILL arXiv](https://arxiv.org/abs/2605.31264)
+- [Hugging Face Papers](https://huggingface.co/papers/2605.31264)
+- [Skill Trace Auditing](https://arxiv.org/abs/2605.11946)
+- [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)

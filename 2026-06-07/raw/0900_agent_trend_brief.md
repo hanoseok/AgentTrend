@@ -144,3 +144,24 @@ Sources: [AX](https://github.com/google/ax), [Cline SDK](https://docs.cline.bot/
 - [SOURCE_WATCHLIST](../../SOURCE_WATCHLIST.html)
 - [Source Catalog](../../index.html#references)
 - [HTML](../0900_agent_trend_brief.html)
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [Source Watchlist](../SOURCE_WATCHLIST.html)
+- [GeekNews](https://news.hada.io/)
+- [MarkTechPost](https://www.marktechpost.com/)
+- [GitHub Blog](https://github.blog/)
+- [r/Agent_AI](https://www.reddit.com/r/Agent_AI/)
+- [r/hermesagent](https://www.reddit.com/r/hermesagent/)
+
+### 딥리서치 출처
+
+- [Google AX](https://github.com/google/ax)
+- [Kimi Code CLI](https://github.com/MoonshotAI/kimi-code)
+- [Cline SDK](https://docs.cline.bot/sdk/overview)
+- [Agent Tasks API](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/)
+- [Google Colab CLI](https://developers.googleblog.com/introducing-the-google-colab-cli/)
+- [Codex Sites](https://developers.openai.com/codex/sites)
+- [OpenAI Agents SDK Changelog](https://openai.github.io/openai-agents-python/release/)

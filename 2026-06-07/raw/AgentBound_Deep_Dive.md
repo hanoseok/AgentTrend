@@ -106,3 +106,20 @@ AgentBound의 수치가 중요한 이유는 권한 집행이 현실적인 성능
 5. agent trace와 tool audit log를 같은 run id로 묶어 사후 분석이 가능하게 한다.
 6. connector 업데이트 시 manifest diff와 권한 증가를 별도 승인 대상으로 만든다.
 7. Dynamic Workflows worker별로 서로 다른 connector 권한을 부여하는 실험을 설계한다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [AgentBound PDF](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf)
+- [FSE 2026](https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/14/AgentBound-Securing-Execution-Boundaries-of-AI-Agents)
+- [MCP Docs](https://modelcontextprotocol.io/)
+- [Community Signal](https://www.reddit.com/r/AI_Agents/comments/1rueo15/nobody_is_asking_where_mcp_servers_get_their_data/)
+
+### 딥리서치 출처
+
+- [AgentBound arXiv](https://arxiv.org/abs/2510.21236)
+- [Replication Package](https://zenodo.org/records/19468201)
+- [OpenFGA MCP Authorization](https://openfga.dev/docs/modeling/agents/mcp-authorization)
+- [MCP Permission Commentary](https://mcpblog.dev/blog/2026-03-21-chmod-ai-agents-mcp-permissions)
+- [MCP Docs](https://modelcontextprotocol.io/)

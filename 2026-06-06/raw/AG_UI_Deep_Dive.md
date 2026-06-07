@@ -87,3 +87,22 @@ AG-UI는 CopilotKit, LangGraph, CrewAI와의 초기 연동에서 출발했지만
 3. Trace Policy: raw chain-of-thought 없이 tool call, decision summary, evidence, approval record를 남긴다.
 4. AG-UI + A2-UI PoC: AG-UI transport 위에 A2-UI payload를 얹어 쇼핑/예약 UI를 동적으로 렌더링한다.
 5. Mobile Constraints: 모바일 대화형 서비스 환경에서 event 폭주, reconnect, offline, push notification, partial rendering을 테스트한다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [AG-UI Docs](https://docs.ag-ui.com/)
+- [AG-UI introduction](https://docs.ag-ui.com/introduction)
+- [A2UI relation](https://a2ui.org/introduction/what-is-a2ui/)
+- [AG-UI/A2UI explainer](https://www.copilotkit.ai/docs/AG-UI-and-A2UI-Explained.pdf)
+- [CopilotKit walkthrough](https://www.copilotkit.ai/blog/build-with-googles-new-a2ui-spec-agent-user-interfaces-with-a2ui-ag-ui)
+
+### 딥리서치 출처
+
+- [Events](https://docs.ag-ui.com/concepts/events)
+- [State](https://docs.ag-ui.com/concepts/state.md)
+- [Interrupts](https://docs.ag-ui.com/concepts/interrupts)
+- [Tools](https://docs.ag-ui.com/concepts/tools)
+- [GitHub](https://github.com/ag-ui-protocol/ag-ui)
+- [Dojo examples](https://dojo.ag-ui.com/)

@@ -103,3 +103,18 @@ Dynamic Workflows류 기능은 “멋진 데모”가 아니라 기존 single-ag
 4. Verifier first: test/build/security/policy checker 없이 자동 merge/action을 허용하지 않는다.
 5. PoC 평가는 single-agent baseline과 paired comparison으로 설계한다.
 6. AgentBound식 tool permission과 연결해 workflow worker별 권한을 최소화한다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [Anthropic Blog](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
+- [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/)
+- [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1tq9ofy/introducing_dynamic_workflows_in_claude_code/)
+- [r/vibecoding](https://www.reddit.com/r/vibecoding/comments/1tqe2yp/anthropic_just_introduced_dynamic_workflows_in/)
+
+### 딥리서치 출처
+
+- [Launch Post](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
+- [Harness Post](https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code)
+- [open-dynamic-workflows](https://github.com/imsai-sh/open-dynamic-workflows)

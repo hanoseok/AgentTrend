@@ -90,3 +90,21 @@ AI 서비스가 먼저 확보할 수 있는 지점은 “대화형 서비스 안
 3. Dispute evidence model: 분쟁, 환불, 오주문, agent 오류 발생 시 필요한 evidence package를 정의한다.
 4. Regulatory review: 전자금융, PG, 본인확인, 카드사/네트워크, 개인정보 위임 범위를 법무/보안/결제 조직과 함께 검토한다.
 5. Risk simulation: replay attack, context-binding failure, amount manipulation, merchant-side cart mutation, prompt injection을 테스트한다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [Google Cloud AP2](https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol)
+- [AP2 and FIDO](https://blog.google/products-and-platforms/platforms/google-pay/agent-payments-protocol-fido-alliance/)
+- [FIDO standards](https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/)
+- [UCP and AP2](https://ucp.dev/documentation/ucp-and-ap2/)
+
+### 딥리서치 출처
+
+- [AP2 Docs](https://ap2-protocol.org/)
+- [AP2 Specification](https://ap2-protocol.org/ap2/specification/)
+- [AP2 GitHub](https://github.com/google-agentic-commerce/AP2)
+- [AP2 Docs Repo](https://github.com/google-agentic-commerce/AP2/tree/main/docs)
+- [Code Samples](https://github.com/google-agentic-commerce/AP2/tree/main/code/samples)
+- [Zero-trust payment paper](https://arxiv.org/abs/2602.06345)

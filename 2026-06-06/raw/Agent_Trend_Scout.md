@@ -116,27 +116,22 @@ AI 플랫폼 및 서비스 관점에서 1번과 2번은 내부 플랫폼 설계�
 
 ## 출처
 
-- GeekNews, Vibium: https://news.hada.io/topic?id=25327
-- GeekNews, AI 에이전트 프로토콜 개발자 가이드: https://news.hada.io/topic?id=27636
-- GeekNews, Context Mode: https://news.hada.io/topic?id=27108
-- GeekNews, MCP는 죽었다; MCP 만세: https://news.hada.io/topic?id=27530
-- GeekNews, MCP는 죽었나?: https://news.hada.io/topic?id=30028
-- GeekNews, Code w/ Claude에서 발표한 모든 것들: https://news.hada.io/topic?id=29493
-- GeekNews, 에이전트 경제의 블루오션 기회: https://news.hada.io/topic?id=29171
-- MarkTechPost, WebMCP: https://www.marktechpost.com/2026/02/14/google-ai-introduces-the-webmcp-to-enable-direct-and-structured-website-interactions-for-new-ai-agents/
-- MarkTechPost, AIO Sandbox: https://www.marktechpost.com/2026/03/29/agent-infra-releases-aio-sandbox-an-all-in-one-runtime-for-ai-agents-with-browser-shell-shared-filesystem-and-mcp/
-- MarkTechPost, A-Evolve: https://www.marktechpost.com/2026/03/29/meet-a-evolve-the-pytorch-moment-for-agentic-ai-systems-replacing-manual-tuning-with-automated-state-mutation-and-self-correction/
-- MarkTechPost, UCP: https://www.marktechpost.com/2026/01/12/google-ai-releases-universal-commerce-protocol-ucp-an-open-source-standard-designed-to-power-the-next-generation-of-agentic-commerce/
-- GitHub Blog, Copilot app: https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/
-- GitHub Blog, Copilot CLI GA: https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available/
-- GitHub Blog, Copilot coding agent update: https://github.blog/ai-and-ml/github-copilot/whats-new-with-github-copilot-coding-agent/
-- GitHub Blog, VS Code Copilot v1.110: https://github.blog/changelog/2026-03-06-github-copilot-in-visual-studio-code-v1-110-february-release/
-- Anthropic, Dynamic workflows: https://claude.com/blog/introducing-dynamic-workflows-in-claude-code
-- Google Developers Blog, AI Agent Protocols: https://developers.googleblog.com/developers-guide-to-ai-agent-protocols/
-- Reddit r/Agent_AI: https://www.reddit.com/r/Agent_AI/
-- Reddit r/ClaudeCode dynamic workflows: https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/
-- Reddit r/ClaudeCode /workflows discussion: https://www.reddit.com/r/ClaudeCode/comments/1tkjy4u/claude_code_dropped_workflows/
-- Reddit r/claudeskills: https://www.reddit.com/r/claudeskills/
-- Reddit r/AI_Agents Repowise: https://www.reddit.com/r/AI_Agents/comments/1tgwlh1/your_vibe_coded_repo_is_rotting_i_built_an_open/
-- Reddit r/ClaudeAI MCP production mess: https://www.reddit.com/r/ClaudeAI/comments/1tuqqpn/i_ship_ai_agents_in_production_the_mess_is_mcp/
-- Reddit r/ClaudeAI Octopoda: https://www.reddit.com/r/ClaudeAI/comments/1s4gz18/built_an_mcp_server_that_turns_claude_code_into_a/
+### 왜 이걸 정리하게 되었는가
+
+- [GeekNews](https://news.hada.io/)
+- [MarkTechPost](https://www.marktechpost.com/)
+- [GitHub Blog](https://github.blog/)
+- [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/)
+- [r/Agent_AI](https://www.reddit.com/r/Agent_AI/)
+- [r/vibecoding](https://www.reddit.com/r/vibecoding/)
+
+### 딥리서치 출처
+
+- [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
+- [MCP Blog](https://blog.modelcontextprotocol.io/)
+- [Copilot App](https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/)
+- [AIO Sandbox](https://www.marktechpost.com/2026/03/29/agent-infra-releases-aio-sandbox-an-all-in-one-runtime-for-ai-agents-with-browser-shell-shared-filesystem-and-mcp/)
+- [UCP](https://ucp.dev/)
+- [AP2](https://ap2-protocol.org/)
+- [AG-UI](https://docs.ag-ui.com/)
+- [A2UI](https://a2ui.org/)

@@ -265,3 +265,24 @@ SkillNet은 “스킬을 대규모로 만들고 연결할 수 있다”는 공�
 ### 다음 딥다이브 추천
 
 가장 먼저 더 깊게 파야 할 주제는 Dynamic Workflows + AgentBound 조합이다. 이유는 agent가 더 많은 일을 병렬로 실행할수록 권한 경계와 감사가 없으면 위험도도 같이 커지기 때문이다. 두 번째는 SkillNet + SWE-Skills-Bench + COLLEAGUE.SKILL 묶음이다. AI 플랫폼이 skill marketplace를 만든다면 이 세 개가 바로 제품 요구사항과 평가 기준으로 연결된다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [Agent Trend Scout](Agent_Trend_Scout.html)
+- [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
+- [AgentBound PDF](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf)
+- [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)
+- [UCP](https://ucp.dev/)
+- [AG-UI](https://docs.ag-ui.com/)
+
+### 딥리서치 출처
+
+- [open-dynamic-workflows](https://github.com/imsai-sh/open-dynamic-workflows)
+- [AgentBound FSE](https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/14/AgentBound-Securing-Execution-Boundaries-of-AI-Agents)
+- [SWE-Skills-Bench GitHub](https://github.com/GeniusHTX/SWE-Skills-Bench)
+- [COLLEAGUE.SKILL](https://arxiv.org/abs/2605.31264)
+- [Hermes Docs](https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-hermes-agent)
+- [SkillNet](https://arxiv.org/abs/2603.04448)
+- [SkillNet GitHub](https://github.com/zjunlp/SkillNet)

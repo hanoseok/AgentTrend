@@ -106,3 +106,23 @@ AI 플랫폼은 UCP를 “해외 shopping protocol”로만 보면 안 된다. c
 3. AP2 결합 설계: checkout completion 전 payment-service trusted surface에서 mandate를 발행하는 흐름을 설계한다.
 4. AG-UI/A2-UI 프론트 결합: cart 비교, 배송지 선택, 결제 승인, 주문 추적을 agent UI event와 declarative UI로 분리한다.
 5. 리스크 검토: 가격/재고 불일치, 환불/취소 책임, 판매자 고지 의무, 개인정보/결제정보 위임, 전자상거래법/전자금융 규제 검토를 병행한다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [Google Dev Blog](https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/)
+- [Shopify Engineering](https://shopify.engineering/UCP)
+- [Google agentic shopping](https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/)
+- [UCP updates](https://blog.google/products-and-platforms/products/shopping/ucp-updates/)
+- [Universal Cart](https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/)
+
+### 딥리서치 출처
+
+- [UCP Docs](https://ucp.dev/)
+- [Core Concepts](https://ucp.dev/documentation/core-concepts/)
+- [Specification](https://ucp.dev/latest/specification/overview/)
+- [Schema Reference](https://ucp.dev/2026-04-08/specification/reference/)
+- [Versioning](https://ucp.dev/versioning/)
+- [UCP GitHub](https://github.com/Universal-Commerce-Protocol/ucp)
+- [UCP and AP2](https://ucp.dev/documentation/ucp-and-ap2/)

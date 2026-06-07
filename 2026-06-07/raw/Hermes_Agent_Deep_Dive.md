@@ -204,3 +204,23 @@ Hermes를 benchmark로 볼 때 평가는 기능 수가 아니라 “persistent a
 8. memory write에는 security scanning, approval inbox, conflict detection, retention policy, rollback을 적용한다.
 9. provider routing은 data sensitivity, retention, cost, latency, fallback, failure mode를 기준으로 정책화한다.
 10. Hermes의 latest surface 강화 신호를 추적하면서 desktop/web dashboard/agent status UX를 별도 benchmark로 남긴다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [Nous Product Page](https://nousresearch.com/hermes-agent/)
+- [Hermes Docs](https://hermes-agent.nousresearch.com/docs/)
+- [GitHub Repository](https://github.com/NousResearch/hermes-agent)
+- [Tool/Skills Bloat](https://www.reddit.com/r/hermesagent/comments/1t34qee/hermes_agent_tool_and_skills_bloat/)
+- [Skills Loading](https://www.reddit.com/r/hermesagent/comments/1tp0by4/does_hermes_actually_load_the_skills_every_single/)
+
+### 딥리서치 출처
+
+- [Architecture Docs](https://hermes-agent.nousresearch.com/docs/developer-guide/architecture/)
+- [README Raw](https://raw.githubusercontent.com/NousResearch/hermes-agent/main/README.md)
+- [Tools Docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/tools)
+- [Memory Docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory/)
+- [Skills Docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)
+- [Security Docs](https://hermes-agent.nousresearch.com/docs/user-guide/security/)
+- [Agent Security Systems Paper](https://arxiv.org/abs/2605.18991)

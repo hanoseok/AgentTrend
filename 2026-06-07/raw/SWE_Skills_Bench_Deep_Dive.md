@@ -103,3 +103,20 @@ AI 플랫폼에서 skill registry를 만들려면 출시 전후로 아래 실험
 5. 스킬 추천 UX에는 “왜 이 스킬을 넣었는가”와 “예상 비용”을 함께 보여준다.
 6. skill registry의 핵심 KPI를 등록 수가 아니라 pass-rate delta와 cost-adjusted utility로 둔다.
 7. 모델 또는 tool runtime이 바뀔 때마다 상위 skill을 자동 재평가하는 pipeline을 만든다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [SWE-Skills-Bench arXiv](https://arxiv.org/abs/2603.15401)
+- [Benchmark GitHub](https://github.com/GeniusHTX/SWE-Skills-Bench)
+- [GitHub gh skill](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/)
+- [SkillNet Paper](https://arxiv.org/abs/2603.04448)
+
+### 딥리서치 출처
+
+- [SWE-Skills-Bench arXiv](https://arxiv.org/abs/2603.15401)
+- [Benchmark GitHub](https://github.com/GeniusHTX/SWE-Skills-Bench)
+- [Skill Trace Auditing](https://arxiv.org/abs/2605.11946)
+- [SkillNet GitHub](https://github.com/zjunlp/SkillNet)
+- [SkillNet Site](https://skillnet.openkg.cn)

@@ -1,6 +1,6 @@
 # Document Update History
 
-- 최종 갱신: 2026-06-07 11:37 KST
+- 최종 갱신: 2026-06-07 11:42 KST
 - HTML 정본: `DOCUMENT_HISTORY.html`
 - 기준: git commit 이력과 문서 metadata
 - 정렬 기준: 최신 업데이트 내림차순
@@ -9,34 +9,35 @@
 
 | 최신 업데이트 | 문서 | 상태 | 히스토리 anchor |
 | --- | --- | --- | --- |
-| 2026-06-07 11:37 KST | `DOCUMENT_HISTORY.html` | Updated | `#history-document-history` |
-| 2026-06-07 11:37 KST | `index.html` | Reports updated | `#history-index` |
+| 2026-06-07 11:42 KST | `DOCUMENT_HISTORY.html` | Updated | `#history-document-history` |
+| 2026-06-07 11:42 KST | `index.html` | Reports updated | `#history-index` |
+| 2026-06-07 11:42 KST | `2026-06-07/Google_AX_Deep_Dive.html` | Detailed Deep Dive | `#history-google-ax` |
+| 2026-06-07 11:42 KST | `2026-06-07/0900_agent_trend_brief.html` | 8시간 Brief | `#history-0900-brief` |
+| 2026-06-07 11:42 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | `#history-hermes-agent` |
+| 2026-06-07 11:42 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | `#history-dynamic-workflows` |
+| 2026-06-07 11:42 KST | `2026-06-07/AgentBound_Deep_Dive.html` | Expanded Deep Dive | `#history-agentbound` |
+| 2026-06-07 11:42 KST | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html` | Expanded Deep Dive | `#history-swe-skills-bench` |
+| 2026-06-07 11:42 KST | `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html` | Expanded Deep Dive | `#history-colleague-skill` |
+| 2026-06-07 11:42 KST | `2026-06-07/SkillNet_Deep_Dive.html` | Expanded Deep Dive | `#history-skillnet` |
+| 2026-06-07 11:42 KST | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | `#history-ai-platform-applicability` |
+| 2026-06-07 11:42 KST | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | `#history-a2a` |
+| 2026-06-07 11:42 KST | `2026-06-06/Agent_Trend_Scout.html` | Scout | `#history-agent-trend-scout` |
+| 2026-06-07 11:42 KST | `2026-06-06/2000_agent_trend_brief.html` | 8시간 Brief | `#history-2000-brief` |
+| 2026-06-07 11:42 KST | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html` | Overview | `#history-selected-overview` |
+| 2026-06-07 11:42 KST | `2026-06-06/UCP_Deep_Dive.html` | Deep Dive | `#history-ucp` |
+| 2026-06-07 11:42 KST | `2026-06-06/AP2_Deep_Dive.html` | Deep Dive | `#history-ap2` |
+| 2026-06-07 11:42 KST | `2026-06-06/AG_UI_Deep_Dive.html` | Deep Dive | `#history-ag-ui` |
+| 2026-06-07 11:42 KST | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | `#history-a2-ui` |
+| 2026-06-07 11:42 KST | `REPORTING_STANDARD.html` | Operations | `#history-reporting-standard` |
 | 2026-06-07 11:17 KST | `RESEARCH_LOG.html` | Updated | `#history-research-log` |
 | 2026-06-07 11:17 KST | `SOURCE_WATCHLIST.html` | Updated | `#history-source-watchlist` |
-| 2026-06-07 11:17 KST | `2026-06-07/Google_AX_Deep_Dive.html` | Detailed Deep Dive | `#history-google-ax` |
-| 2026-06-07 09:00 KST | `2026-06-07/0900_agent_trend_brief.html` | 8시간 Brief | `#history-0900-brief` |
-| 2026-06-07 01:12 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | `#history-hermes-agent` |
-| 2026-06-07 00:37 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | `#history-dynamic-workflows` |
-| 2026-06-07 00:37 KST | `2026-06-07/AgentBound_Deep_Dive.html` | Expanded Deep Dive | `#history-agentbound` |
-| 2026-06-07 00:37 KST | `2026-06-07/SWE_Skills_Bench_Deep_Dive.html` | Expanded Deep Dive | `#history-swe-skills-bench` |
-| 2026-06-07 00:37 KST | `2026-06-07/COLLEAGUE_SKILL_Deep_Dive.html` | Expanded Deep Dive | `#history-colleague-skill` |
-| 2026-06-07 00:37 KST | `2026-06-07/SkillNet_Deep_Dive.html` | Expanded Deep Dive | `#history-skillnet` |
-| 2026-06-07 00:24 KST | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | `#history-ai-platform-applicability` |
-| 2026-06-07 00:24 KST | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | `#history-a2a` |
-| 2026-06-07 00:24 KST | `2026-06-06/Agent_Trend_Scout.html` | Scout | `#history-agent-trend-scout` |
-| 2026-06-07 00:24 KST | `2026-06-06/2000_agent_trend_brief.html` | 8시간 Brief | `#history-2000-brief` |
-| 2026-06-07 00:24 KST | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html` | Overview | `#history-selected-overview` |
-| 2026-06-07 00:24 KST | `2026-06-06/UCP_Deep_Dive.html` | Deep Dive | `#history-ucp` |
-| 2026-06-07 00:24 KST | `2026-06-06/AP2_Deep_Dive.html` | Deep Dive | `#history-ap2` |
-| 2026-06-07 00:24 KST | `2026-06-06/AG_UI_Deep_Dive.html` | Deep Dive | `#history-ag-ui` |
-| 2026-06-07 00:24 KST | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | `#history-a2-ui` |
 | 2026-06-07 00:24 KST | `README.html` | Operations | `#history-readme` |
-| 2026-06-07 00:24 KST | `REPORTING_STANDARD.html` | Operations | `#history-reporting-standard` |
 
 ## 2. Document Update History
 
 ### Document Update History
 
+- 2026-06-07 11:42 KST: 각 report의 출처 섹션 추가와 Reports 최신순 정렬 반영 이력을 추가.
 - 2026-06-07 11:37 KST: 프로토콜 맵 섹션 제거 요청을 반영하고, Index를 Reports 중심 구조로 정리한 이력을 추가.
 - 2026-06-07 11:17 KST: Google AX deep dive 생성, Agent Substrate/GKE Agent Sandbox source 추가, Reports 최신순 정렬, raw 경로를 반영.
 - 2026-06-07 09:00 KST: 09:00 Agent Trend Brief, Source Watchlist update, Reports 최신순 정렬, raw 경로를 반영.
@@ -45,6 +46,7 @@
 
 ### Agent Trend 전체 인덱스
 
+- 2026-06-07 11:42 KST: Reports 중심 탐색 기준에 맞춰 출처 섹션 추가 대상 report들의 최신 업데이트 시간을 반영.
 - 2026-06-07 11:37 KST: 프로토콜 맵 섹션과 nav 항목을 제거하고, Reports 중심 탐색 흐름에 맞춰 섹션 번호와 raw index를 정리.
 - 2026-06-07 11:17 KST: Google AX deep dive를 Reports와 Agent Platform 읽기 경로에 추가하고 Source Catalog에 AX proto, event log, manifests, Agent Substrate, GKE Agent Sandbox 링크를 보강.
 - 2026-06-07 09:00 KST: 09:00 Agent Trend Brief를 Reports 최상단에 추가하고 Source Catalog에 AX, Kimi Code CLI, Cline SDK, Copilot Agent Tasks API, Colab CLI, Codex Sites 링크를 보강.
@@ -56,10 +58,12 @@
 
 ### Google Agent Executor / AX
 
+- 2026-06-07 11:42 KST: 출처 섹션을 추가해 왜 정리했는가와 딥리서치 출처 링크를 분리.
 - 2026-06-07 11:17 KST: official site, GitHub README/release/proto/code/issues, Agent Substrate, GKE Agent Sandbox, Kubernetes Agent Sandbox, GeekNews/community signals를 확인하고 distributed runtime, event log, resumption/fork/trace, A2A/ADK/Colab interop, MCP readiness gap, security gap, PoC plan을 상세 리서치 문서로 생성.
 
 ### 09:00 Agent Trend Brief
 
+- 2026-06-07 11:42 KST: 출처 섹션을 추가해 트렌드 발견 출처와 딥리서치 출처 링크를 분리.
 - 2026-06-07 09:00 KST: 필수 watch sources와 공식 보조 소스를 확인하고 AX, Kimi Code CLI, Cline SDK, Copilot Agent Tasks API, Copilot App canvas/cloud automation, Colab CLI, Codex Sites, Task Observer를 8시간 브리프와 raw 원본으로 생성.
 
 ### Claude Code Dynamic Workflows / ultracode
@@ -101,6 +105,7 @@
 
 ### AI Platform / Service Applicability
 
+- 2026-06-07 11:42 KST: 출처 섹션을 추가해 통합 적용 분석의 배경 출처와 딥리서치 출처 링크를 분리.
 - 2026-06-07 00:24 KST, `c694a4e`: 출처 표기를 inline source pill 원칙에 맞춰 정리.
 - 2026-06-06 23:44 KST, `adbfc6a`: 특정 회사명 없이 AI 플랫폼 및 서비스 적용 관점의 synthesis 문서로 생성.
 
@@ -112,6 +117,7 @@
 
 ### Agent Trend Scout
 
+- 2026-06-07 11:42 KST: 출처 섹션을 추가해 후보 발굴 출처와 딥리서치 출처 링크를 분리.
 - 2026-06-07 00:24 KST, `c694a4e`: 후보 발굴 문서의 출처 표기와 표현을 정리.
 - 2026-06-06 23:44 KST, `adbfc6a`: AI 플랫폼 관점으로 문서 표현을 일반화.
 - 2026-06-06 21:30 KST, `a292796`: watch source 기반 agent trend scout 문서 생성.
@@ -124,6 +130,7 @@
 
 ### Selected Agent Project / Paper Overview
 
+- 2026-06-07 11:42 KST: 출처 섹션을 추가해 선정 배경과 딥리서치 출처 링크를 분리.
 - 2026-06-07 00:24 KST, `c694a4e`: 최종 source 묶음 대신 관련 요약 주변 source pill 구조로 정리.
 - 2026-06-07 00:18 KST, `b8646ef`: 주요 주제를 2026-06-07 개별 deep dive 6종으로 분리하고 overview 성격을 명확화.
 - 2026-06-06 21:30 KST, `a292796`: 선정 프로젝트/논문 개요 문서 최초 생성.
@@ -170,6 +177,7 @@
 
 ### Reporting Standard
 
+- 2026-06-07 11:42 KST: 개별 report 끝에 왜 정리했는가와 딥리서치 출처를 분리해 남기는 기준으로 업데이트.
 - 2026-06-07 00:24 KST, `c694a4e`: 참고 링크를 마지막에 몰지 않고 관련 섹션 주변에 붙이는 기준을 명확화.
 - 2026-06-06 23:51 KST, `5b3d749`: source catalog와 보고 기준을 보강.
 - 2026-06-06 21:30 KST, `a292796`: 보고 작성 표준 문서 최초 생성.

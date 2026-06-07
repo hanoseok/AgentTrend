@@ -2,7 +2,7 @@
 
 - 작성 시점: {YYYY-MM-DD HH:mm KST}
 - 조사 범위: AI agent platform, MCP, A2A, agent commerce, security/governance, eval/observability, memory/personalization, multimodal/voice/on-device agents
-- 용도: 임원 브리핑 공유 및 AI 플랫폼 및 서비스 전략 참고
+- 용도: 브리핑 공유 및 AI 플랫폼 및 서비스 전략 참고
 
 ## 1. Executive Summary
 
@@ -61,7 +61,19 @@
 - 사업/경쟁 리스크:
 - 표준화/벤더 종속 리스크:
 
-## 10. Inline Evidence Check
+## 10. 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [트렌드 발견/요청 출처 1]({trigger-source-url-1})
+- [트렌드 발견/요청 출처 2]({trigger-source-url-2})
+
+### 딥리서치 출처
+
+- [공식 문서/스펙/논문 1]({deep-source-url-1})
+- [공식 문서/스펙/논문 2]({deep-source-url-2})
+
+## 11. Inline Evidence Check
 
 - 중요한 주장, 수치, 스펙, 커뮤니티 반응, 논문 요약 바로 아래에 `참고 링크:`를 붙인다.
-- 하단에 출처만 따로 몰아두지 않는다.
+- 마지막 출처 섹션은 발견 배경과 딥리서치 근거를 빠르게 재확인하기 위한 요약으로만 사용한다.

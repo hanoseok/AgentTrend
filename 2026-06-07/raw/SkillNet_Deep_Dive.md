@@ -107,3 +107,21 @@ SkillNet은 agent skill의 공급 측 청사진으로 매우 중요하지만, �
 5. platform roadmap에서는 “skill registry”와 “skill runtime activation”을 분리해 설계한다.
 6. SkillNet식 5-D quality score와 SWE-Skills-Bench식 empirical utility를 모두 저장한다.
 7. skill graph에는 도움이 되는 관계뿐 아니라 conflicts_with와 replaces 같은 배제 관계도 포함한다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [SkillNet arXiv](https://arxiv.org/abs/2603.04448)
+- [SkillNet GitHub](https://github.com/zjunlp/SkillNet)
+- [Project Site](https://skillnet.openkg.cn)
+- [Hugging Face Blog](https://huggingface.co/blog/xzwnlp/skillnet)
+- [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)
+
+### 딥리서치 출처
+
+- [SkillNet arXiv](https://arxiv.org/abs/2603.04448)
+- [SkillNet GitHub](https://github.com/zjunlp/SkillNet)
+- [Project Site](https://skillnet.openkg.cn)
+- [Hugging Face Blog](https://huggingface.co/blog/xzwnlp/skillnet)
+- [SWE-Skills-Bench GitHub](https://github.com/GeniusHTX/SWE-Skills-Bench)

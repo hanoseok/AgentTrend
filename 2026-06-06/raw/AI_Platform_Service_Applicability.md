@@ -140,3 +140,24 @@ SkillNet은 skill graph와 대규모 skill repository 방향을 보여주지만,
 - SWE-Skills-Bench: https://arxiv.org/abs/2603.15401
 - COLLEAGUE.SKILL: https://arxiv.org/abs/2605.31264
 - Hermes Agent: https://github.com/NousResearch/hermes-agent
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [A2A Deep Dive](A2A_Deep_Dive.html)
+- [UCP Deep Dive](UCP_Deep_Dive.html)
+- [AP2 Deep Dive](AP2_Deep_Dive.html)
+- [AG-UI Deep Dive](AG_UI_Deep_Dive.html)
+- [A2-UI Deep Dive](A2_UI_Deep_Dive.html)
+- [Selected Overview](Selected_Agent_Project_Paper_Deep_Dive.html)
+
+### 딥리서치 출처
+
+- [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
+- [A2A Key Concepts](https://a2a-protocol.org/latest/topics/key-concepts/)
+- [UCP Core Concepts](https://ucp.dev/documentation/core-concepts/)
+- [AP2](https://ap2-protocol.org/)
+- [AgentBound PDF](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf)
+- [SkillNet](https://arxiv.org/abs/2603.04448)
+- [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)

@@ -107,3 +107,22 @@ UCP는 discovery-to-checkout-to-order lifecycle을 다루고, AP2는 human-prese
 - 보안 리스크: MCP 서버와 sandbox agent는 host/resource 접근권한을 명시적으로 통제해야 한다.
 - 품질 리스크: skills는 task에 맞지 않으면 효과가 없거나 오히려 성능을 떨어뜨릴 수 있다.
 - 제품 리스크: commerce agent는 추천보다 결제 승인, 책임, 분쟁 처리, audit trail이 더 어렵다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [Source Watchlist](../SOURCE_WATCHLIST.html)
+- [Anthropic Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
+- [MCP Blog](https://blog.modelcontextprotocol.io/)
+- [GitHub Blog](https://github.blog/)
+- [GeekNews](https://news.hada.io/)
+
+### 딥리서치 출처
+
+- [AgentBound PDF](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf)
+- [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401)
+- [COLLEAGUE.SKILL](https://arxiv.org/abs/2605.31264)
+- [UCP](https://ucp.dev/)
+- [AP2](https://ap2-protocol.org/)
+- [AG-UI](https://docs.ag-ui.com/)

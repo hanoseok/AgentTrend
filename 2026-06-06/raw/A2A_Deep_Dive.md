@@ -244,3 +244,21 @@ AI 플랫폼의 각 서비스 또는 도메인 에이전트를 Agent Card 기반
 - A2A Protocol, v1.0 announcement: https://a2a-protocol.org/latest/announcing-1.0/
 - A2A Protocol, Enterprise Ready: https://a2a-protocol.org/latest/topics/enterprise-ready/
 - A2A Protocol, A2A and MCP: https://a2a-protocol.org/latest/topics/a2a-and-mcp/
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [Google A2A announcement](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)
+- [Linux Foundation launch](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents)
+- [Linux Foundation update](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year)
+- [A2A v1.0](https://a2a-protocol.org/latest/announcing-1.0/)
+
+### 딥리서치 출처
+
+- [A2A docs](https://a2a-protocol.org/latest/)
+- [Key Concepts](https://a2a-protocol.org/latest/topics/key-concepts/)
+- [Agent Discovery](https://a2a-protocol.org/latest/topics/agent-discovery/)
+- [Specification](https://a2a-protocol.org/dev/specification/)
+- [Enterprise Ready](https://a2a-protocol.org/latest/topics/enterprise-ready/)
+- [A2A and MCP](https://a2a-protocol.org/latest/topics/a2a-and-mcp/)

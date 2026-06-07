@@ -85,3 +85,22 @@ AI 플랫폼 설계 원칙:
 3. Validator: agent output이 catalog schema, child reference, data binding, action whitelist를 통과해야만 렌더링되게 한다.
 4. AG-UI Transport 결합: A2-UI payload는 AG-UI event stream 안에서 surface update로 전달한다.
 5. Security Review: phishing UI, deceptive button, hidden data exfiltration, malicious action injection, accessibility failure를 테스트한다.
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+- [A2UI Docs](https://a2ui.org/)
+- [What is A2UI](https://a2ui.org/introduction/what-is-a2ui/)
+- [AG2 integration](https://docs.ag2.ai/latest/docs/user-guide/a2a/a2ui/)
+- [CopilotKit walkthrough](https://www.copilotkit.ai/blog/build-with-googles-new-a2ui-spec-agent-user-interfaces-with-a2ui-ag-ui)
+- [Macaron-A2UI](https://arxiv.org/abs/2605.24830)
+
+### 딥리서치 출처
+
+- [Core Concepts](https://a2ui.org/concepts/overview/)
+- [v0.10 protocol](https://a2ui.org/specification/v0_10/docs/a2ui_protocol/)
+- [v0.9 protocol](https://a2ui.org/specification/v0_9/docs/a2ui_protocol/)
+- [v0.8 protocol](https://a2ui.org/specification/v0.8-a2ui/)
+- [A2UI GitHub](https://github.com/a2ui-project/a2ui)
+- [Spec folder](https://github.com/a2ui-project/a2ui/tree/main/specification)
