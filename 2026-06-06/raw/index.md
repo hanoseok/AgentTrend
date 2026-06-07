@@ -1,9 +1,9 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-07 13:55 KST
+- 최종 갱신: 2026-06-07 14:00 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
-- 정기 업데이트: 07:00 / 15:00 / 23:00 KST
+- 정기 업데이트: 매일 07:00 KST
 
 ## 1. Quick Read
 
@@ -61,11 +61,11 @@
 
 | 최신 업데이트 | 문서 | 유형 | 핵심 용도 | History |
 | --- | --- | --- | --- | --- |
-| 2026-06-07 13:55 KST | `DOCUMENT_HISTORY.html` | Operations | 브리프 운영 슬롯을 07:00 / 15:00 / 23:00 KST로 변경한 이력을 반영 | `DOCUMENT_HISTORY.html#history-document-history` |
-| 2026-06-07 13:55 KST | `index.html` | Hub | Reports 중심 문서 탐색, Brief 허브, source catalog, raw 링크 허브와 07:00 시작 운영 슬롯 반영 | `DOCUMENT_HISTORY.html#history-index` |
-| 2026-06-07 13:55 KST | `Agent_Trend_Brief.html` | Brief Hub | 정기 브리프 운영 슬롯을 07:00 / 15:00 / 23:00 KST로 갱신 | `DOCUMENT_HISTORY.html#history-agent-trend-brief` |
-| 2026-06-07 13:55 KST | `SOURCE_WATCHLIST.html` | Operations | 정기 확인 시간을 07:00 / 15:00 / 23:00 KST로 갱신 | `DOCUMENT_HISTORY.html#history-source-watchlist` |
-| 2026-06-07 13:55 KST | `RESEARCH_LOG.html` | Operations | 정기 업데이트 시간을 07:00 / 15:00 / 23:00 KST로 갱신 | `DOCUMENT_HISTORY.html#history-research-log` |
+| 2026-06-07 14:00 KST | `DOCUMENT_HISTORY.html` | Operations | 브리프 운영 슬롯을 매일 07:00 KST 1회로 변경한 이력을 반영 | `DOCUMENT_HISTORY.html#history-document-history` |
+| 2026-06-07 14:00 KST | `index.html` | Hub | Reports 중심 문서 탐색, Brief 허브, source catalog, raw 링크 허브와 하루 1회 운영 슬롯 반영 | `DOCUMENT_HISTORY.html#history-index` |
+| 2026-06-07 14:00 KST | `Agent_Trend_Brief.html` | Brief Hub | 정기 브리프 운영 슬롯을 매일 07:00 KST 1회로 갱신 | `DOCUMENT_HISTORY.html#history-agent-trend-brief` |
+| 2026-06-07 14:00 KST | `SOURCE_WATCHLIST.html` | Operations | 정기 확인 시간을 매일 07:00 KST로 갱신 | `DOCUMENT_HISTORY.html#history-source-watchlist` |
+| 2026-06-07 14:00 KST | `RESEARCH_LOG.html` | Operations | 정기 업데이트 시간을 매일 07:00 KST로 갱신 | `DOCUMENT_HISTORY.html#history-research-log` |
 | 2026-06-07 12:36 KST | `2026-06-07/Google_AX_Deep_Dive.html` | Detailed Deep Dive | distributed agent runtime, event log, resumption/fork/trace, A2A/ADK/Colab interop, Agent Substrate/GKE Agent Sandbox, security gap, PoC plan | `DOCUMENT_HISTORY.html#history-google-ax` |
 | 2026-06-07 12:36 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | persistent agent runtime, architecture, memory/profile state model, skills lifecycle, gateway/MCP/cron, security controls, PoC metrics | `DOCUMENT_HISTORY.html#history-hermes-agent` |
 | 2026-06-07 12:36 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | workflow runtime, subagent orchestration, task-specific harness, execution mechanics, evaluation protocol, platform blueprint | `DOCUMENT_HISTORY.html#history-dynamic-workflows` |
@@ -76,7 +76,7 @@
 | 2026-06-07 12:36 KST | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | A2A, UCP, AP2, AG-UI, A2-UI, Dynamic Workflows, AgentBound, Hermes Agent, SkillNet을 AI 플랫폼 및 서비스 적용 관점으로 재정리 | `DOCUMENT_HISTORY.html#history-ai-platform-applicability` |
 | 2026-06-07 12:36 KST | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | agent-to-agent 표준과 Agent Registry/orchestrator 설계 | `DOCUMENT_HISTORY.html#history-a2a` |
 | 2026-06-07 12:36 KST | `2026-06-06/Agent_Trend_Scout.html` | Scout | GeekNews, MarkTechPost, GitHub Blog, Reddit 기반 딥다이브 후보 발굴 | `DOCUMENT_HISTORY.html#history-agent-trend-scout` |
-| 2026-06-07 12:36 KST | `2026-06-06/2000_agent_trend_brief.html` | 8시간 Brief | 정기 브리프 형식의 트렌드/업데이트 요약 | `DOCUMENT_HISTORY.html#history-2000-brief` |
+| 2026-06-07 12:36 KST | `2026-06-06/2000_agent_trend_brief.html` | Daily Brief | 정기 브리프 형식의 트렌드/업데이트 요약 | `DOCUMENT_HISTORY.html#history-2000-brief` |
 | 2026-06-07 12:36 KST | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html` | Overview | Dynamic Workflows, AgentBound, skills, commerce stack, Hermes Agent, SkillNet 우선순위 매트릭스. 개별 딥다이브는 2026-06-07 문서로 분리 | `DOCUMENT_HISTORY.html#history-selected-overview` |
 | 2026-06-07 12:36 KST | `2026-06-06/UCP_Deep_Dive.html` | Deep Dive | agentic commerce capability/discovery/checkout/order 표준 | `DOCUMENT_HISTORY.html#history-ucp` |
 | 2026-06-07 12:36 KST | `2026-06-06/AP2_Deep_Dive.html` | Deep Dive | agent 결제 위임, mandate, trusted surface, dispute evidence | `DOCUMENT_HISTORY.html#history-ap2` |

@@ -1,7 +1,7 @@
 # Agent Trend Source Watchlist
 
-- 최종 갱신: 2026-06-07 13:55 KST
-- 정기 확인: 07:00 / 15:00 / 23:00 KST
+- 최종 갱신: 2026-06-07 14:00 KST
+- 정기 확인: 매일 07:00 KST
 - 목적: 에이전트 트렌드 정기 조사에서 매번 순회할 소스 목록 관리
 - HTML: `SOURCE_WATCHLIST.html`
 

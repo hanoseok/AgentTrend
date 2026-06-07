@@ -1,6 +1,6 @@
 # Document Update History
 
-- 최종 갱신: 2026-06-07 13:55 KST
+- 최종 갱신: 2026-06-07 14:00 KST
 - HTML 정본: `DOCUMENT_HISTORY.html`
 - 기준: git commit 이력과 문서 metadata
 - 정렬 기준: 최신 업데이트 내림차순
@@ -9,11 +9,11 @@
 
 | 최신 업데이트 | 문서 | 상태 | 히스토리 anchor |
 | --- | --- | --- | --- |
-| 2026-06-07 13:55 KST | `DOCUMENT_HISTORY.html` | Operations | `#history-document-history` |
-| 2026-06-07 13:55 KST | `index.html` | Hub | `#history-index` |
-| 2026-06-07 13:55 KST | `Agent_Trend_Brief.html` | Brief Hub | `#history-agent-trend-brief` |
-| 2026-06-07 13:55 KST | `SOURCE_WATCHLIST.html` | Operations | `#history-source-watchlist` |
-| 2026-06-07 13:55 KST | `RESEARCH_LOG.html` | Operations | `#history-research-log` |
+| 2026-06-07 14:00 KST | `DOCUMENT_HISTORY.html` | Operations | `#history-document-history` |
+| 2026-06-07 14:00 KST | `index.html` | Hub | `#history-index` |
+| 2026-06-07 14:00 KST | `Agent_Trend_Brief.html` | Brief Hub | `#history-agent-trend-brief` |
+| 2026-06-07 14:00 KST | `SOURCE_WATCHLIST.html` | Operations | `#history-source-watchlist` |
+| 2026-06-07 14:00 KST | `RESEARCH_LOG.html` | Operations | `#history-research-log` |
 | 2026-06-07 12:36 KST | `2026-06-07/Google_AX_Deep_Dive.html` | Detailed Deep Dive | `#history-google-ax` |
 | 2026-06-07 12:36 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | `#history-hermes-agent` |
 | 2026-06-07 12:36 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | `#history-dynamic-workflows` |
@@ -24,7 +24,7 @@
 | 2026-06-07 12:36 KST | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | `#history-ai-platform-applicability` |
 | 2026-06-07 12:36 KST | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | `#history-a2a` |
 | 2026-06-07 12:36 KST | `2026-06-06/Agent_Trend_Scout.html` | Scout | `#history-agent-trend-scout` |
-| 2026-06-07 12:36 KST | `2026-06-06/2000_agent_trend_brief.html` | 8시간 Brief | `#history-2000-brief` |
+| 2026-06-07 12:36 KST | `2026-06-06/2000_agent_trend_brief.html` | Daily Brief | `#history-2000-brief` |
 | 2026-06-07 12:36 KST | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html` | Overview | `#history-selected-overview` |
 | 2026-06-07 12:36 KST | `2026-06-06/UCP_Deep_Dive.html` | Deep Dive | `#history-ucp` |
 | 2026-06-07 12:36 KST | `2026-06-06/AP2_Deep_Dive.html` | Deep Dive | `#history-ap2` |
@@ -37,7 +37,8 @@
 
 ### Document Update History
 
-- 2026-06-07 13:55 KST: 브리프 자동화 시작 시간을 07:00 KST로 조정하고 8시간 간격 운영 슬롯을 07:00 / 15:00 / 23:00 KST로 갱신.
+- 2026-06-07 14:00 KST: 브리프 자동화를 하루 1회 07:00 KST 실행으로 변경하고 운영 문서와 이력에 반영.
+- 2026-06-07 13:55 KST: 브리프 자동화 시작 시간을 07:00 KST로 조정하고 직전 다중 운영 슬롯으로 갱신.
 - 2026-06-07 12:48 KST: Agent Trend Brief 전용 허브를 추가하고 Reports 정렬을 갱신.
 - 2026-06-07 12:36 KST: LNB 분리 변경 이력과 Reports 최신순 정렬을 반영.
 - 2026-06-07 11:42 KST: 각 report의 출처 섹션 추가와 Reports 최신순 정렬 반영 이력을 추가.
@@ -49,7 +50,8 @@
 
 ### Agent Trend 전체 인덱스
 
-- 2026-06-07 13:55 KST: 정기 업데이트 시간을 07:00 / 15:00 / 23:00 KST로 변경.
+- 2026-06-07 14:00 KST: 정기 업데이트 시간을 매일 07:00 KST로 변경.
+- 2026-06-07 13:55 KST: 정기 업데이트 시간을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 12:48 KST: Agent Trend Brief 허브를 추가하고 개별 시간대 브리프를 메인 Reports에서 허브 하위로 이동.
 - 2026-06-07 12:36 KST: LNB에서 문서 링크와 내부 목차를 분리하고, 목차를 접고 펼칠 수 있는 하위 그룹으로 정리.
 - 2026-06-07 11:42 KST: Reports 중심 탐색 기준에 맞춰 출처 섹션 추가 대상 report들의 최신 업데이트 시간을 반영.
@@ -64,7 +66,8 @@
 
 ### Agent Trend Brief
 
-- 2026-06-07 13:55 KST: 운영 슬롯을 07:00 / 15:00 / 23:00 KST로 변경.
+- 2026-06-07 14:00 KST: 운영 슬롯을 매일 07:00 KST 1회로 변경하고 Cadence를 단일 슬롯으로 정리.
+- 2026-06-07 13:55 KST: 운영 슬롯을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 12:48 KST: 정기 에이전트 트렌드 브리프 전용 허브를 생성하고 09:00/20:00 브리프를 시간별 하위 목록으로 정리.
 
 ### Google Agent Executor / AX
@@ -76,7 +79,7 @@
 ### 09:00 Agent Trend Brief
 
 - 2026-06-07 11:42 KST: 출처 섹션을 추가해 트렌드 발견 출처와 딥리서치 출처 링크를 분리.
-- 2026-06-07 09:00 KST: 필수 watch sources와 공식 보조 소스를 확인하고 AX, Kimi Code CLI, Cline SDK, Copilot Agent Tasks API, Copilot App canvas/cloud automation, Colab CLI, Codex Sites, Task Observer를 8시간 브리프와 raw 원본으로 생성.
+- 2026-06-07 09:00 KST: 필수 watch sources와 공식 보조 소스를 확인하고 AX, Kimi Code CLI, Cline SDK, Copilot Agent Tasks API, Copilot App canvas/cloud automation, Colab CLI, Codex Sites, Task Observer를 정기 브리프와 raw 원본으로 생성.
 
 ### Claude Code Dynamic Workflows / ultracode
 
@@ -188,7 +191,7 @@
 
 ### Agent Trend 조사 이력
 
-- 2026-06-07 13:55 KST: 정기 업데이트 시간을 07:00 / 15:00 / 23:00 KST로 변경.
+- 2026-06-07 13:55 KST: 정기 업데이트 시간을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 12:48 KST: Agent Trend Brief 허브 생성 항목과 raw 경로를 조사 이력에 추가.
 - 2026-06-07 11:17 KST: Google AX Detailed Deep Dive 항목과 Agent Substrate/GKE Agent Sandbox source 확장 범위를 조사 이력에 추가.
 - 2026-06-07 09:00 KST: 09:00 Agent Trend Brief와 Source Watchlist Update 항목을 조사 이력에 추가하고 핵심 출처 링크를 갱신.
@@ -213,7 +216,8 @@
 
 ### Source Watchlist
 
-- 2026-06-07 13:55 KST: 정기 확인 시간을 07:00 / 15:00 / 23:00 KST로 변경.
+- 2026-06-07 14:00 KST: 정기 확인 시간을 매일 07:00 KST로 변경.
+- 2026-06-07 13:55 KST: 정기 확인 시간을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 11:17 KST: Google AX 항목에 v0.1.0과 runtime change 관찰 신호를 보강하고, Agent Substrate/GKE Agent Sandbox를 별도 보조 소스로 추가.
 - 2026-06-07 09:00 KST: Google AX, Kimi Code CLI, Cline SDK/runtime, OpenAI Codex Sites, GitHub Copilot agent platform updates, Google Colab CLI를 보조 소스로 추가하고 각 추가 이유와 관찰할 신호를 기록.
 - 2026-06-07 00:18 KST, `b8646ef`: 2026-06-07 개별 deep dive 분리와 함께 watchlist를 갱신.

@@ -6,7 +6,7 @@
 
 ## 1. Executive Summary
 
-이번 8시간 브리프의 핵심은 agent 경쟁축이 대화 UI에서 실행 runtime/control plane으로 이동하고 있다는 점이다. Google Agent Executor(AX), Kimi Code CLI, Cline SDK/runtime, GitHub Copilot Agent Tasks API는 모두 agent를 durable task, event log, worktree/session isolation, scheduled/background execution, policy/audit 대상으로 다룬다.
+이번 정기 브리프의 핵심은 agent 경쟁축이 대화 UI에서 실행 runtime/control plane으로 이동하고 있다는 점이다. Google Agent Executor(AX), Kimi Code CLI, Cline SDK/runtime, GitHub Copilot Agent Tasks API는 모두 agent를 durable task, event log, worktree/session isolation, scheduled/background execution, policy/audit 대상으로 다룬다.
 
 Sources: [Google AX](https://github.com/google/ax), [Kimi Code CLI](https://github.com/MoonshotAI/kimi-code), [Cline SDK](https://docs.cline.bot/sdk/overview), [Copilot App](https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/), [Agent Tasks API](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/)
 

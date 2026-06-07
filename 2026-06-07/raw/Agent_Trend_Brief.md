@@ -1,9 +1,9 @@
 # Agent Trend Brief
 
-- 최종 갱신: 2026-06-07 13:55 KST
+- 최종 갱신: 2026-06-07 14:00 KST
 - HTML 정본: `Agent_Trend_Brief.html`
 - 정렬 기준: 최신 작성 시각 내림차순
-- 운영 슬롯: 07:00 / 15:00 / 23:00 KST
+- 운영 슬롯: 매일 07:00 KST
 
 ## 1. Summary
 
@@ -46,9 +46,7 @@ Agent Trend Brief만 따로 모아 시간순으로 보는 페이지를 만들었
 
 | 슬롯 | 목적 | 기록 방식 |
 | --- | --- | --- |
-| 07:00 KST | 하루 첫 브리프. 밤사이 공식 발표, GitHub/Reddit/GeekNews 신호, 기존 deep dive 업데이트를 확인 | 새 HTML은 날짜 폴더에 저장하고 이 페이지 Time Briefs 최상단에 추가 |
-| 15:00 KST | 오후 중간 점검. 오전 이후 runtime, SDK, protocol, research alert를 빠르게 정리 | 개별 브리프 HTML과 raw 원본을 함께 연결 |
-| 23:00 KST | 당일 마감 점검. 저녁 이후 source watch 결과와 후속 딥다이브 후보를 정리 | 중요 후보는 별도 deep dive 여부를 판단해 사용자 확인 후 확장 |
+| 07:00 KST | 하루 1회 정기 브리프. 밤사이 공식 발표, GitHub/Reddit/GeekNews 신호, 기존 deep dive 업데이트를 확인 | 새 HTML은 날짜 폴더에 저장하고 이 페이지 Time Briefs 최상단에 추가 |
 
 ## 출처
 
