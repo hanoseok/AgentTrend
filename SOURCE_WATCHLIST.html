@@ -121,9 +121,9 @@
       <h1>Agent Trend Source Watchlist</h1>
       <p class="lead">에이전트 트렌드 정기 조사에서 매번 순회할 소스 목록. 브리프는 이 목록을 기준으로 새 이슈, 기존 주제 업데이트, 딥다이브 후보를 확인한다.</p>
       <div class="meta">
-        <span class="pill">최종 갱신: 2026-06-07 00:12 KST</span>
+        <span class="pill">최종 갱신: 2026-06-07 09:00 KST</span>
         <span class="pill">정기 확인: 08:00 / 16:00 / 00:00 KST</span>
-        <span class="pill">Raw: 2026-06-06/raw/SOURCE_WATCHLIST.md</span>
+        <span class="pill">Raw: 2026-06-07/raw/SOURCE_WATCHLIST.md</span>
       </div>
     </header>
 
@@ -217,6 +217,21 @@
             <td>persistent agent, memory, skills, gateway, cron/webhook, tool bloat, 운영 실패담을 보조 확인.</td>
           </tr>
           <tr>
+            <td><span class="tag related">Related</span><br><strong>Google Agent Executor / AX</strong></td>
+            <td><a href="https://agentexecutor.io/">https://agentexecutor.io/</a><br><a href="https://github.com/google/ax">https://github.com/google/ax</a></td>
+            <td>추가 이유: distributed agent runtime, durable event log, isolation, MCP/A2A support가 AI 플랫폼 runtime 설계와 직접 연결됨. 관찰할 신호: API 안정화, security boundary, Kubernetes target, policy/audit, release cadence.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Kimi Code CLI</strong></td>
+            <td><a href="https://github.com/MoonshotAI/kimi-code">https://github.com/MoonshotAI/kimi-code</a><br><a href="https://moonshotai.github.io/kimi-code/">https://moonshotai.github.io/kimi-code/</a></td>
+            <td>추가 이유: terminal coding agent의 MCP config, plugin marketplace, subagents, hooks, approval flow가 open-source harness 기준으로 유용함. 관찰할 신호: provider compatibility, plugin trust model, MCP auth, subagent isolation.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Cline SDK / Cline runtime</strong></td>
+            <td><a href="https://docs.cline.bot/sdk/overview">https://docs.cline.bot/sdk/overview</a><br><a href="https://github.com/cline/cline">https://github.com/cline/cline</a></td>
+            <td>추가 이유: IDE extension에서 product-embedded SDK, scheduled agents, Kanban/worktree, MCP, subagents로 확장 중. 관찰할 신호: SDK stability, schedule audit, checkpoint, MCP permission, enterprise controls.</td>
+          </tr>
+          <tr>
             <td><span class="tag related">Related</span><br><strong>arXiv / Hugging Face Papers</strong></td>
             <td><a href="https://arxiv.org/">https://arxiv.org/</a><br><a href="https://huggingface.co/papers">https://huggingface.co/papers</a></td>
             <td>agent security, skill eval, trace-to-skill, memory, workflow, multi-agent 논문과 커뮤니티 반응을 확인.</td>
@@ -235,6 +250,11 @@
             <td><span class="tag related">Related</span><br><strong>OpenAI News / Docs</strong></td>
             <td><a href="https://openai.com/news/">https://openai.com/news/</a></td>
             <td>OpenAI Agents, Codex, Responses/Agents SDK, MCP, agent commerce 관련 공식 업데이트 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>OpenAI Codex Sites</strong></td>
+            <td><a href="https://developers.openai.com/codex/sites">https://developers.openai.com/codex/sites</a></td>
+            <td>추가 이유: agent가 build/save/deploy/access-control까지 처리하는 product shipping loop의 공식 문서. 관찰할 신호: review-before-publish, deployment history, environment/secrets handling, hosted app permissions.</td>
           </tr>
           <tr>
             <td><span class="tag related">Related</span><br><strong>Model Context Protocol Docs / Blog</strong></td>
@@ -270,6 +290,16 @@
             <td><span class="tag related">Related</span><br><strong>AP2 / Google Agentic Commerce</strong></td>
             <td><a href="https://ap2-protocol.org/">https://ap2-protocol.org/</a><br><a href="https://github.com/google-agentic-commerce">https://github.com/google-agentic-commerce</a></td>
             <td>agent payments, checkout/payment mandate, commerce authorization, samples, UCP/AP2 연결 변화 확인.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>GitHub Copilot Agent Platform Updates</strong></td>
+            <td><a href="https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/">Agent Tasks API</a><br><a href="https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/">Copilot App preview</a><br><a href="https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview/">Enterprise-managed plugins</a></td>
+            <td>추가 이유: background agent task API, canvas UX, cloud automations, enterprise plugin governance가 함께 움직임. 관찰할 신호: API lifecycle, enterprise policy, worktree/session isolation, artifact review surface.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Google Colab CLI</strong></td>
+            <td><a href="https://developers.googleblog.com/introducing-the-google-colab-cli/">https://developers.googleblog.com/introducing-the-google-colab-cli/</a></td>
+            <td>추가 이유: terminal/agent가 remote GPU/TPU runtime을 tool처럼 호출하는 cloud execution 패턴. 관찰할 신호: quota, data boundary, artifact recovery, reproducible environment, agent orchestration hooks.</td>
           </tr>
         </tbody>
       </table>

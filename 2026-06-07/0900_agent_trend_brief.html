@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>0900 Agent Trend Brief</title>
+  <style>
+    :root { --bg:#f7f8fb; --panel:#fff; --ink:#141b2d; --muted:#667085; --line:#d8dee9; --accent:#2563eb; --accent-soft:#eaf1ff; --high:#b42318; --medium:#b54708; --low:#067647; --shadow:0 14px 35px rgba(15,23,42,.08); }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
+    a { color:var(--accent); text-decoration:none; overflow-wrap:anywhere; }
+    a:hover { text-decoration:underline; }
+    main { width:min(1180px, calc(100% - 32px)); margin:32px auto 56px; }
+    .hero, section { background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:28px; margin-bottom:18px; }
+    h1 { margin:0 0 10px; font-size:34px; letter-spacing:0; line-height:1.1; }
+    h2 { margin:0 0 16px; font-size:22px; letter-spacing:0; }
+    h3 { margin:20px 0 10px; font-size:17px; letter-spacing:0; }
+    p { margin:0 0 12px; }
+    .lead { color:#344054; font-size:17px; max-width:940px; }
+    .meta, .source-pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .pill, .source-pills a { display:inline-flex; align-items:center; border:1px solid #bed3ff; border-radius:999px; background:var(--accent-soft); color:#1e40af; padding:6px 10px; font-size:13px; font-weight:760; line-height:1.3; }
+    .source-pills { margin:8px 0 14px; }
+    .source-pills a { padding:3px 8px; font-size:12px; }
+    .summary-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .summary-card { border:1px solid var(--line); border-radius:12px; padding:18px; background:#fcfdff; }
+    .summary-card strong { display:block; color:var(--accent); margin-bottom:6px; }
+    .callout { border:1px solid #bed3ff; background:var(--accent-soft); border-radius:14px; padding:18px; margin:14px 0; }
+    .warning { border:1px solid #fecaca; background:#fff1f0; border-radius:14px; padding:18px; margin:14px 0; }
+    table { width:100%; border-collapse:collapse; overflow:hidden; border-radius:12px; border:1px solid var(--line); background:white; }
+    th, td { border-bottom:1px solid var(--line); padding:12px; text-align:left; vertical-align:top; }
+    th { background:#f1f4f9; color:#344054; }
+    tr:last-child td { border-bottom:0; }
+    .tag { display:inline-block; border-radius:999px; padding:3px 8px; font-size:12px; font-weight:800; white-space:nowrap; }
+    .high { color:var(--high); background:#fff1f0; border:1px solid #ffccc7; }
+    .medium { color:var(--medium); background:#fff7ed; border:1px solid #fed7aa; }
+    .low { color:var(--low); background:#ecfdf3; border:1px solid #abefc6; }
+    ul, ol { padding-left:22px; }
+    li { margin:6px 0; }
+    code { background:#eef2f7; border:1px solid #dbe3ee; border-radius:6px; padding:2px 6px; }
+    @media (max-width:820px){ main{width:min(100% - 20px,1180px);margin-top:18px;} .summary-grid{grid-template-columns:1fr;} table{font-size:14px;} th,td{padding:10px;} h1{font-size:28px;} }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <h1>0900 Agent Trend Brief</h1>
+      <p class="lead">2026-06-07 09:00 KST 기준 8시간 브리프. 필수 watch sources와 주요 공식 문서를 확인해 agent runtime, coding agent, skill lifecycle, cloud execution, 배포 surface의 변화를 AI 플랫폼 및 서비스 관점으로 정리했다.</p>
+      <div class="meta">
+        <span class="pill">작성 시점: 2026-06-07 09:00 KST</span>
+        <span class="pill">범위: Agent Runtime / MCP / Skills / Cloud Execution / Agent UX</span>
+        <span class="pill">Raw: 2026-06-07/raw/0900_agent_trend_brief.md</span>
+      </div>
+    </header>
+
+    <section id="summary">
+      <h2>1. Executive Summary</h2>
+      <div class="source-pills">
+        <a href="https://github.com/google/ax">Google AX</a>
+        <a href="https://github.com/MoonshotAI/kimi-code">Kimi Code CLI</a>
+        <a href="https://docs.cline.bot/sdk/overview">Cline SDK</a>
+        <a href="https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/">Copilot App</a>
+        <a href="https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/">Agent Tasks API</a>
+      </div>
+      <div class="summary-grid">
+        <article class="summary-card"><strong>핵심 판단 1: runtime layer가 본격 경쟁축</strong><p>Google AX, Cline SDK, Copilot cloud agent API는 agent를 “대화 UI”가 아니라 resumable execution, event log, worktree isolation, API-triggered background jobs로 운영하려는 방향을 보여준다.</p></article>
+        <article class="summary-card"><strong>핵심 판단 2: terminal coding agent 표준 기능이 수렴</strong><p>Kimi Code CLI, Cline, GitHub Copilot CLI 모두 MCP, skills, subagents, hooks, scheduling, approval 흐름을 핵심 기능으로 내세운다. 차별점은 모델보다 권한, context routing, 반복 실행 관리로 이동한다.</p></article>
+        <article class="summary-card"><strong>핵심 판단 3: skills는 “축적”보다 “관리”가 문제</strong><p>r/claudeskills에서는 Task Observer, claude-spellbook, skill libraries가 계속 공유된다. 다음 병목은 skill 생성이 아니라 검증, token overhead, drift, ownership, rollback이다.</p></article>
+      </div>
+      <div class="callout"><strong>이번 회차 결론:</strong> AI 플랫폼 및 서비스가 지금부터 설계해야 할 공통 layer는 agent execution ledger, MCP/tool permission matrix, skill registry/eval, scheduled run policy, channel-specific approval, artifact/canvas review surface다.</div>
+    </section>
+
+    <section id="coverage">
+      <h2>2. Source Coverage</h2>
+      <table>
+        <thead><tr><th>소스</th><th>확인 여부</th><th>유의미한 변화</th><th>후속 액션</th></tr></thead>
+        <tbody>
+          <tr><td>GeekNews</td><td>Checked</td><td>Agent Executor, Codex Sites, Anthropic recursive self-improvement, AI-native startup 운영 모델, harness engineering 글이 상위권에 노출.</td><td>AX와 Codex Sites는 공식 출처로 교차 확인. AX는 딥다이브 후보.</td></tr>
+          <tr><td>MarkTechPost</td><td>Checked</td><td>Kimi Code CLI가 2026-06-06 신규 릴리스로 노출. Colab CLI, Cline SDK, local/server inference orchestration도 agentic infrastructure 흐름으로 확인.</td><td>Kimi Code CLI는 공식 GitHub와 함께 Project Alert에 올림.</td></tr>
+          <tr><td>GitHub Blog / Changelog</td><td>Checked</td><td>Copilot App technical preview 확대, canvases, cloud automations, Copilot CLI scheduling/voice/rubber duck, Agent tasks REST API, enterprise-managed plugins, 1M token context가 확인됨.</td><td>기존 agent-native developer platform 판단을 강화.</td></tr>
+          <tr><td>Reddit r/Agent_AI</td><td>Checked</td><td>Hermes workflow 실사용, Agent Arena leaderboard, AI shopping agent trust, portfolio automation 등 persistent agent와 trust 논점이 반복.</td><td>커뮤니티 신호로 분리. 공식 출처 없는 성능/수익 주장은 미확인 처리.</td></tr>
+          <tr><td>Reddit r/ClaudeCode</td><td>Checked</td><td>dynamic workflows 이후 비용/속도/검증 가능성, Opus 4.8 속도와 안정성 논쟁이 지속.</td><td>workflow runtime에는 cost cap, inspectable trace, checkpoint가 필요하다는 기존 판단 유지.</td></tr>
+          <tr><td>Reddit r/claudeskills</td><td>Checked</td><td>Task Observer, claude-spellbook, skills-for-humanity, second-brain fragmentation 문제가 활발.</td><td>Task Observer를 skill lifecycle 후보로 추적.</td></tr>
+          <tr><td>Reddit r/vibecoding</td><td>Checked</td><td>이번 회차에는 공식 출처로 교차 확인 가능한 신규 핵심 프로젝트는 낮음. 기존의 quality/craft/maintenance 논쟁은 지속.</td><td>다음 회차 계속 확인.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="alerts">
+      <h2>3. Project / Paper Alert</h2>
+      <table>
+        <thead><tr><th>우선순위</th><th>프로젝트/논문</th><th>왜 이슈인가</th><th>사람들이 하는 말/논쟁</th><th>기술 핵심</th><th>검증 필요점</th><th>딥다이브</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="tag high">High</span></td>
+            <td><strong>Google Agent Executor (AX)</strong><div class="source-pills"><a href="https://agentexecutor.io/">AX Site</a><a href="https://github.com/google/ax">GitHub</a><a href="https://news.hada.io/">GeekNews</a></div></td>
+            <td>Google이 공개한 early-preview distributed agent runtime. long-running workers, resumable streams, event log, isolated actors, MCP/A2A support, audit/policy를 한 레이어에 묶는다.</td>
+            <td>GeekNews에서 주목받고, r/AI_Agents의 Kubernetes-native agent runtime 논의에서도 AX가 비교 기준으로 등장한다.</td>
+            <td>single controller, durable event log, isolated agents/tools/skills, Kubernetes target, MCP/A2A protocol support.</td>
+            <td>early development, breaking changes 예정, 외부 PR 일시 중단. 실제 API 안정성, security boundary, policy language 확인 필요.</td>
+            <td>Yes. runtime/control-plane 관점에서 최우선.</td>
+          </tr>
+          <tr>
+            <td><span class="tag high">High</span></td>
+            <td><strong>Kimi Code CLI</strong><div class="source-pills"><a href="https://github.com/MoonshotAI/kimi-code">GitHub</a><a href="https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/">MarkTechPost</a><a href="https://moonshotai.github.io/kimi-code/">Docs</a></div></td>
+            <td>Moonshot AI가 terminal-first coding agent를 MIT license로 공개. TypeScript, single-binary install, MCP conversational config, plugin marketplace, subagents, lifecycle hooks, ACP integration을 묶는다.</td>
+            <td>terminal coding agent 시장이 Claude Code/Codex/Gemini/Cline 중심에서 더 넓어지는 신호. 모델 경쟁보다 agent harness UX 경쟁으로 해석된다.</td>
+            <td>read/edit/run/search/fetch loop, approval flow, built-in coder/explore/plan subagents, hooks for risky tool calls, ACP editor integration.</td>
+            <td>provider compatibility, plugin trust model, MCP auth handling, subagent isolation, approval bypass/yolo mode 안전성 검증 필요.</td>
+            <td>Yes. terminal agent UX와 open-source harness 관점.</td>
+          </tr>
+          <tr>
+            <td><span class="tag medium">Medium</span></td>
+            <td><strong>Cline SDK / Cline runtime</strong><div class="source-pills"><a href="https://docs.cline.bot/sdk/overview">SDK Docs</a><a href="https://github.com/cline/cline">GitHub</a></div></td>
+            <td>Cline이 IDE extension을 넘어 SDK, CLI, Kanban, scheduled agents, MCP, subagents를 같은 runtime으로 묶는다.</td>
+            <td>coding agent가 plugin architecture와 product-embedded SDK로 넘어가는 신호. “agent를 제품 안에 심는” 플랫폼 관점에서 중요하다.</td>
+            <td><code>@cline/core</code>, <code>@cline/agents</code>, <code>@cline/llms</code>, scheduled agents, worktree-based Kanban, checkpointed edits.</td>
+            <td>SDK stability, pricing/API key model, MCP permission, schedule audit, benchmark 재현성.</td>
+            <td>Yes. Kimi/AX 이후 비교 딥다이브 권장.</td>
+          </tr>
+          <tr>
+            <td><span class="tag medium">Medium</span></td>
+            <td><strong>Task Observer</strong><div class="source-pills"><a href="https://github.com/rebelytics/one-skill-to-rule-them-all">GitHub</a><a href="https://www.reddit.com/r/claudeskills/">r/claudeskills</a></div></td>
+            <td>skill을 자동으로 관찰, 개선 제안, 신규 skill 후보로 바꾸는 meta-skill. GitHub에서 661 stars로 확인되고 커뮤니티 확산이 있다.</td>
+            <td>“skills가 많아지는 문제”에서 “skills가 스스로 개선되는 문제”로 논점이 이동. Hermes/OpenClaw 통합 경험도 커뮤니티에서 언급된다.</td>
+            <td>work session observation log, correction/gap detection, skill updates proposal, cross-cutting principles log, human review before applying.</td>
+            <td>self-improvement가 drift나 prompt injection을 키우지 않는지, observation log가 privacy와 IP 리스크를 만들지 않는지 확인 필요.</td>
+            <td>Conditional. skill registry/eval 연구와 묶어 볼 가치 있음.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="new">
+      <h2>4. 신규 사항</h2>
+      <table>
+        <thead><tr><th>중요도</th><th>주제</th><th>새로 확인한 내용</th><th>왜 중요한가</th><th>AI 플랫폼 및 서비스 영향</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag high">High</span></td><td>Copilot Agent Tasks REST API</td><td><div class="source-pills"><a href="https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/">GitHub</a></div>Copilot cloud agent task를 API로 시작/추적할 수 있는 public preview가 열림. fan-out refactor, internal developer portal, weekly release automation 예시가 제시됨.</td><td>agent를 사람이 클릭하는 UI가 아니라 내부 시스템이 호출하는 background worker로 다룬다.</td><td>AI 플랫폼은 agent job API, task status API, artifact/PR output, budget, auth token scope를 공통화해야 한다.</td></tr>
+          <tr><td><span class="tag high">High</span></td><td>Copilot App canvases / cloud automations</td><td><div class="source-pills"><a href="https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/">GitHub</a></div>agent work가 canvas라는 bidirectional work surface로 이동. cloud session, cloud automation, CLI session sync, agentic browser verification이 추가됨.</td><td>agent 결과가 transcript에 묻히지 않고 plan, PR, browser, terminal, release checklist 같은 work object에 남아야 한다는 방향.</td><td>서비스 agent UX도 chat-only가 아니라 reviewable canvas, action card, diff, approval, replay trace가 필요하다.</td></tr>
+          <tr><td><span class="tag medium">Medium</span></td><td>Copilot CLI scheduling / rubber duck / local voice</td><td><div class="source-pills"><a href="https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/">GitHub</a></div><code>/every</code>, <code>/after</code> schedule, reviewer-like rubber duck agent, local speech-to-text voice input이 확인됨.</td><td>CLI agent가 interactive assistant에서 recurring automation + critic agent + multimodal input으로 확장된다.</td><td>scheduled agent에는 owner, expiry, budget, scope, last-run summary가 필요하며 critic agent에는 traceable review output이 필요하다.</td></tr>
+          <tr><td><span class="tag medium">Medium</span></td><td>Enterprise-managed plugins</td><td><div class="source-pills"><a href="https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview/">GitHub</a></div>VS Code와 Copilot CLI에서 enterprise admins가 plugins, custom agents, skills, hooks, MCP configurations를 자동 배포할 수 있는 public preview.</td><td>agent 확장 생태계가 개인 설정에서 enterprise governance 대상으로 이동.</td><td>조직 단위 plugin marketplace, allowlist, forced hooks, MCP policy, rollout/rollback이 필요하다.</td></tr>
+          <tr><td><span class="tag medium">Medium</span></td><td>Google Colab CLI</td><td><div class="source-pills"><a href="https://developers.googleblog.com/introducing-the-google-colab-cli/">Google Developers</a></div>터미널에서 remote Colab runtime을 만들고 GPU/TPU, remote exec, artifact download, REPL/console을 제공. Google은 developers and AI agents를 명시.</td><td>agent가 local shell에서 remote accelerator를 tool처럼 호출하는 패턴이 강해진다.</td><td>AI 플랫폼은 remote compute broker, quota, artifact recovery, replayable notebook/log, data boundary를 설계해야 한다.</td></tr>
+          <tr><td><span class="tag medium">Medium</span></td><td>Codex Sites</td><td><div class="source-pills"><a href="https://developers.openai.com/codex/sites">OpenAI Developers</a><a href="https://news.hada.io/">GeekNews</a></div>Codex가 Sites plugin으로 hosted website/web app/game을 만들고 저장/배포/inspect 가능. version save와 production deploy가 분리됨.</td><td>agent가 코드 생성에서 배포와 접근 제어까지 이어지는 product shipping loop를 갖는다.</td><td>서비스형 agent에 review-before-publish, audience control, secrets management, versioned deployment가 필요하다.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="updates">
+      <h2>5. 기존 조사 업데이트</h2>
+      <table>
+        <thead><tr><th>기존 주제</th><th>변경점</th><th>기존 판단</th><th>후속 확인</th></tr></thead>
+        <tbody>
+          <tr><td>Hermes Agent</td><td><div class="source-pills"><a href="https://www.reddit.com/r/Agent_AI/">r/Agent_AI</a><a href="https://www.reddit.com/r/hermesagent/">r/hermesagent</a></div>커뮤니티에서 Hermes workflow, cron, Kanban, reusable skill 실험이 계속 보임.</td><td>persistent agent benchmark라는 판단 유지. 자동화는 quality 기준을 먼저 세운 뒤 반복해야 한다는 사용자 경험이 중요.</td><td>Hermes vs OpenClaw, Memory OS, gateway reliability 관련 공식/커뮤니티 자료 추적.</td></tr>
+          <tr><td>Dynamic Workflows</td><td><div class="source-pills"><a href="https://www.reddit.com/r/ClaudeAI/comments/1tq9ofy/introducing_dynamic_workflows_in_claude_code/">Reddit thread</a><a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Official blog</a></div>비용과 token burn, 자동 활성화 느낌, 결과 검증 가능성 논쟁 지속.</td><td>workflow runtime에는 cost cap, checkpoint, inspectable trace, verifier, human approval가 필요하다는 판단 강화.</td><td>실제 프로젝트 migration 사례의 재현성과 failure report 추적.</td></tr>
+          <tr><td>AgentBound / MCP permission</td><td><div class="source-pills"><a href="https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview/">GitHub plugins</a><a href="https://openai.github.io/openai-agents-python/mcp/">OpenAI Agents SDK MCP</a></div>enterprise-managed plugins와 hosted/local MCP approval/filtering 문서가 같은 방향을 가리킨다.</td><td>MCP는 연결 표준이지만 운영 표준은 별도 permission layer가 필요하다는 판단 유지.</td><td>tool filter, approval callback, connector token scope를 구현 기준으로 계속 비교.</td></tr>
+          <tr><td>Skills / SkillNet / SWE-Skills-Bench</td><td><div class="source-pills"><a href="https://github.com/rebelytics/one-skill-to-rule-them-all">Task Observer</a><a href="https://github.com/kid-sid/claude-spellbook">claude-spellbook</a></div>skill marketplace와 skill auto-improvement 실험이 늘어남.</td><td>skill은 수량보다 measured utility, activation precision, lifecycle governance가 중요하다는 판단 유지.</td><td>Task Observer를 skill eval/registry 모델과 연결해 별도 후보로 추적.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="technical">
+      <h2>6. Technical Detail</h2>
+      <div class="source-pills">
+        <a href="https://github.com/google/ax">AX</a>
+        <a href="https://docs.cline.bot/sdk/overview">Cline SDK</a>
+        <a href="https://github.com/MoonshotAI/kimi-code">Kimi Code CLI</a>
+        <a href="https://openai.github.io/openai-agents-python/release/">OpenAI Agents SDK Changelog</a>
+      </div>
+      <ul>
+        <li><strong>Execution ledger:</strong> AX의 event log, Copilot Agent Tasks API의 task tracking, Cline Kanban의 worktree/task board는 agent run을 durable object로 취급한다.</li>
+        <li><strong>Isolation:</strong> AX는 actors/tools/skills isolation을, Copilot App은 worktree/branch/session isolation을, Cline Kanban은 card별 worktree를 강조한다.</li>
+        <li><strong>Tool governance:</strong> Kimi Code CLI는 lifecycle hooks와 conversational MCP config, OpenAI Agents SDK는 hosted/local MCP approval/filtering, GitHub는 enterprise plugin governance를 제공한다.</li>
+        <li><strong>Scheduling:</strong> Copilot CLI, Cline, Hermes 모두 scheduled run을 지원한다. 공통 위험은 stale intent, hidden cost, repeated side effect다.</li>
+        <li><strong>Review surface:</strong> Copilot canvases, Codex Sites review-before-deploy, Cline checkpoints는 agent work가 visible artifact로 검증되어야 한다는 방향이다.</li>
+      </ul>
+    </section>
+
+    <section id="implications">
+      <h2>7. AI Platform / Service Implications</h2>
+      <table>
+        <thead><tr><th>영역</th><th>적용 포인트</th><th>필수 통제</th></tr></thead>
+        <tbody>
+          <tr><td>공통 agent runtime</td><td>agent task를 API로 생성/추적하고, event log와 resumable state를 저장.</td><td>owner, scope, timeout, budget, checkpoint, replay, audit.</td></tr>
+          <tr><td>서비스 agent UX</td><td>chat transcript 밖에 canvas/action card/diff/deployment candidate를 둔다.</td><td>승인 전 상태와 승인 후 상태 분리, rollback, evidence of completion.</td></tr>
+          <tr><td>MCP / connector platform</td><td>tool catalog와 hosted/local connector를 제공하되 task별 filter를 적용.</td><td>manifest review, token scope, approval callback, sensitive result redaction.</td></tr>
+          <tr><td>Skill platform</td><td>skill creation, skill observation, skill update를 lifecycle로 관리.</td><td>quarantine, eval score, activation threshold, owner, provenance, version pin.</td></tr>
+          <tr><td>Cloud execution</td><td>Colab CLI 같은 remote compute를 agent tool로 연결.</td><td>quota, data movement, artifact recovery, environment reproducibility, cost guardrail.</td></tr>
+          <tr><td>Agent deployment</td><td>Codex Sites처럼 agent가 build/save/deploy/access-control까지 처리.</td><td>review-before-publish, environment secrets, audience control, deployment history.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="actions">
+      <h2>8. Recommended Actions</h2>
+      <ol>
+        <li><strong>지금:</strong> Google AX, Kimi Code CLI, Cline SDK를 별도 딥다이브 후보로 등록하고, runtime primitive 비교표를 만든다.</li>
+        <li><strong>지금:</strong> scheduled agent run의 최소 metadata를 정의한다: owner, prompt, toolset, skillset, channel, workdir, schedule, expiry, budget, last result.</li>
+        <li><strong>30일:</strong> internal agent job API prototype을 설계한다. 최소 기능은 create/run/status/cancel/replay/artifacts/audit.</li>
+        <li><strong>30일:</strong> skill registry에 quarantine/eval/activation/rollback 상태를 넣고 Task Observer류 self-improvement를 sandbox에서만 실험한다.</li>
+        <li><strong>계속:</strong> Copilot App canvases, Codex Sites, AG-UI/A2-UI를 비교해 “agent-visible work object” UX 기준을 만든다.</li>
+      </ol>
+    </section>
+
+    <section id="risks">
+      <h2>9. Risks / Watch Items</h2>
+      <div class="warning"><strong>가장 큰 리스크:</strong> agent가 더 오래 실행되고 더 많은 도구를 호출할수록 failure mode가 prompt 품질이 아니라 runtime policy, credential scope, scheduled intent drift, hidden cost, artifact 검증 실패로 이동한다.</div>
+      <table>
+        <thead><tr><th>리스크</th><th>설명</th><th>대응</th></tr></thead>
+        <tbody>
+          <tr><td>Cost explosion</td><td>dynamic workflows와 scheduled tasks는 사용자 체감 없이 token/credit을 소모할 수 있다.</td><td>per-run budget, dry-run, approval threshold, usage alert.</td></tr>
+          <tr><td>Tool/skill bloat</td><td>MCP/skills/plugin이 많아질수록 wrong-tool, context noise, slow planning 가능성이 커진다.</td><td>task-scoped lazy loading, tool search, skill activation threshold.</td></tr>
+          <tr><td>Supply-chain risk</td><td>plugin marketplace, skill repo, MCP server bootstrap이 새로운 attack surface가 된다.</td><td>signed sources, install review, sandbox, forced enterprise policies.</td></tr>
+          <tr><td>State drift</td><td>memory/skills/scheduled jobs가 사용자의 최신 의도와 어긋날 수 있다.</td><td>expiration, periodic re-consent, human-readable run summary, rollback.</td></tr>
+          <tr><td>Cloud execution data boundary</td><td>remote GPU/hosted deployment/agent task API는 code/data/artifacts를 외부 runtime으로 보낸다.</td><td>data classification, provider policy, artifact retention, audit.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="sources">
+      <h2>10. Sources / Inline Evidence</h2>
+      <p>주요 근거 링크는 각 요약과 판단 바로 아래 source pill로 배치했다. 이번 회차에서 신규 보조 소스로 추가한 항목은 SOURCE_WATCHLIST의 관련 보조 소스에 반영했다.</p>
+      <div class="source-pills">
+        <a href="../SOURCE_WATCHLIST.html">SOURCE_WATCHLIST</a>
+        <a href="../index.html#references">Source Catalog</a>
+        <a href="raw/0900_agent_trend_brief.md">Raw Markdown</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

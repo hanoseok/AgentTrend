@@ -1,25 +1,23 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-07 01:12 KST
+- 최종 갱신: 2026-06-07 09:00 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
 - 정기 업데이트: 00:00 / 08:00 / 16:00 KST
 
 ## 1. Quick Read
 
-- 지금 가장 중요한 축: Dynamic Workflows + AgentBound. agent가 더 많은 일을 병렬로 실행할수록 workflow runtime, cost cap, checkpoint, human approval, permission boundary가 같이 필요하다. 두 문서는 확장 리서치 버전으로 업데이트했다.
+- 지금 가장 중요한 축: Agent runtime/control plane. Google AX, Copilot Agent Tasks API, Cline SDK, Kimi Code CLI가 agent를 durable task, event log, policy, scheduling, worktree isolation으로 운영하는 방향을 보여준다.
 - AI 플랫폼 사업 연결 축: UCP + AP2 + AG-UI + A2-UI. 대화형 AI 서비스/커머스/쇼핑/예약/결제를 agentic commerce로 묶으려면 commerce, payment, UI event, declarative UI가 함께 필요하다.
 - 플랫폼 품질 축: SkillNet + SWE-Skills-Bench + COLLEAGUE.SKILL. 스킬은 많이 모으는 것이 아니라 task 개선, token cost, version compatibility, governance까지 검증해야 한다.
 
 브리핑 시작점:
 
-1. `2026-06-06/AI_Platform_Service_Applicability.html`
-2. `2026-06-06/2000_agent_trend_brief.html`
-3. `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
-4. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
-5. `2026-06-07/AgentBound_Deep_Dive.html`
-6. `2026-06-06/UCP_Deep_Dive.html`
-7. `2026-06-06/AP2_Deep_Dive.html`
+1. `2026-06-07/0900_agent_trend_brief.html`
+2. `2026-06-06/AI_Platform_Service_Applicability.html`
+3. `2026-06-07/Hermes_Agent_Deep_Dive.html`
+4. `2026-06-07/AgentBound_Deep_Dive.html`
+5. `2026-06-07/SkillNet_Deep_Dive.html`
 
 ## 2. Protocol / Platform Map
 
@@ -37,12 +35,12 @@
 ### 브리핑 / 전략
 
 1. `2026-06-06/AI_Platform_Service_Applicability.html`
-2. `2026-06-06/2000_agent_trend_brief.html`
-3. `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
-4. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
-5. `2026-06-07/AgentBound_Deep_Dive.html`
-6. `2026-06-06/UCP_Deep_Dive.html`
-7. `2026-06-06/AP2_Deep_Dive.html`
+2. `2026-06-07/0900_agent_trend_brief.html`
+3. `2026-06-06/2000_agent_trend_brief.html`
+4. `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
+5. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
+6. `2026-06-07/AgentBound_Deep_Dive.html`
+7. `2026-06-06/UCP_Deep_Dive.html`
 
 ### Agent Platform 설계
 
@@ -73,9 +71,11 @@
 
 | 최신 업데이트 | 문서 | 유형 | 핵심 용도 | History |
 | --- | --- | --- | --- | --- |
-| 2026-06-07 01:12 KST | `DOCUMENT_HISTORY.html` | Operations | 각 HTML 정본의 생성/업데이트 타임라인과 Reports 정렬 기준 | `DOCUMENT_HISTORY.html#history-document-history` |
-| 2026-06-07 01:12 KST | `index.html` | Hub | 전체 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
-| 2026-06-07 01:12 KST | `RESEARCH_LOG.html` | Operations | 날짜별 조사 주제, 조사 수준, 산출물 링크를 관리하는 이력 문서 | `DOCUMENT_HISTORY.html#history-research-log` |
+| 2026-06-07 09:00 KST | `DOCUMENT_HISTORY.html` | Operations | 각 HTML 정본의 생성/업데이트 타임라인과 Reports 정렬 기준 | `DOCUMENT_HISTORY.html#history-document-history` |
+| 2026-06-07 09:00 KST | `index.html` | Hub | 전체 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
+| 2026-06-07 09:00 KST | `RESEARCH_LOG.html` | Operations | 날짜별 조사 주제, 조사 수준, 산출물 링크를 관리하는 이력 문서 | `DOCUMENT_HISTORY.html#history-research-log` |
+| 2026-06-07 09:00 KST | `SOURCE_WATCHLIST.html` | Operations | 정기 확인할 공식 문서, 커뮤니티, 논문, 뉴스 source 목록. AX, Kimi Code, Cline, Copilot agent platform, Colab CLI, Codex Sites를 보조 소스로 추가 | `DOCUMENT_HISTORY.html#history-source-watchlist` |
+| 2026-06-07 09:00 KST | `2026-06-07/0900_agent_trend_brief.html` | 8시간 Brief | AX, Kimi Code CLI, Cline SDK, Copilot Agent Tasks API, Colab CLI, Codex Sites 중심의 runtime/coding agent 업데이트 | `DOCUMENT_HISTORY.html#history-0900-brief` |
 | 2026-06-07 01:12 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | persistent agent runtime, architecture, memory/profile state model, skills lifecycle, gateway/MCP/cron, security controls, PoC metrics | `DOCUMENT_HISTORY.html#history-hermes-agent` |
 | 2026-06-07 00:37 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | workflow runtime, subagent orchestration, task-specific harness, execution mechanics, evaluation protocol, platform blueprint | `DOCUMENT_HISTORY.html#history-dynamic-workflows` |
 | 2026-06-07 00:37 KST | `2026-06-07/AgentBound_Deep_Dive.html` | Expanded Deep Dive | MCP server permission manifest, threat model, connector admission flow, evidence caveats, runtime audit schema | `DOCUMENT_HISTORY.html#history-agentbound` |
@@ -93,7 +93,6 @@
 | 2026-06-07 00:24 KST | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | agent-generated declarative UI payload/spec와 AI 플랫폼 component catalog 설계 | `DOCUMENT_HISTORY.html#history-a2-ui` |
 | 2026-06-07 00:24 KST | `README.html` | Operations | 아카이브 구조, 운영 방식, 문서 접근 경로 안내 | `DOCUMENT_HISTORY.html#history-readme` |
 | 2026-06-07 00:24 KST | `REPORTING_STANDARD.html` | Operations | 브리핑 작성 원칙, 출처 표기, 문서 품질 기준 | `DOCUMENT_HISTORY.html#history-reporting-standard` |
-| 2026-06-07 00:18 KST | `SOURCE_WATCHLIST.html` | Operations | 정기 확인할 공식 문서, 커뮤니티, 논문, 뉴스 source 목록 | `DOCUMENT_HISTORY.html#history-source-watchlist` |
 
 ## 5. Source Catalog
 
@@ -132,6 +131,7 @@
 - [MCP Blog](https://blog.modelcontextprotocol.io/)
 - [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)
 - [OpenAI News](https://openai.com/news/)
+- [Codex Sites](https://developers.openai.com/codex/sites)
 - [Claude Blog](https://claude.com/blog)
 - [Claude Code Docs](https://code.claude.com/docs)
 - [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
@@ -141,6 +141,10 @@
 - [Hermes Tools](https://hermes-agent.nousresearch.com/docs/user-guide/features/tools)
 - [Hermes Product Page](https://nousresearch.com/hermes-agent/)
 - [Hermes GitHub](https://github.com/NousResearch/hermes-agent)
+- [Google AX Site](https://agentexecutor.io/)
+- [Google AX GitHub](https://github.com/google/ax)
+- [Cline SDK](https://docs.cline.bot/sdk/overview)
+- [Cline GitHub](https://github.com/cline/cline)
 
 ### Security / Permission Boundary / Skills
 
@@ -232,6 +236,12 @@
 - [GitHub Copilot App](https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/)
 - [Copilot coding agent](https://github.blog/ai-and-ml/github-copilot/whats-new-with-github-copilot-coding-agent/)
 - [Copilot App preview](https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/)
+- [Agent Tasks API](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/)
+- [Copilot CLI scheduling](https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/)
+- [Enterprise plugins](https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview/)
+- [Kimi Code CLI](https://github.com/MoonshotAI/kimi-code)
+- [Kimi Code Docs](https://moonshotai.github.io/kimi-code/)
+- [Google Colab CLI](https://developers.googleblog.com/introducing-the-google-colab-cli/)
 - [gh skill](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/)
 - [Copilot VS Code release](https://github.blog/changelog/2026-03-06-github-copilot-in-visual-studio-code-v1-110-february-release/)
 - [Copilot CLI GA](https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available/)
@@ -264,6 +274,7 @@
 ## 6. Raw Sources
 
 - `2026-06-06/raw/A2A_Deep_Dive.md`
+- `2026-06-07/raw/0900_agent_trend_brief.md`
 - `2026-06-06/raw/AI_Platform_Service_Applicability.md`
 - `2026-06-06/raw/Agent_Trend_Scout.md`
 - `2026-06-06/raw/2000_agent_trend_brief.md`
@@ -280,7 +291,7 @@
 - `2026-06-06/raw/A2_UI_Deep_Dive.md`
 - `2026-06-07/raw/DOCUMENT_HISTORY.md`
 - `2026-06-06/raw/RESEARCH_LOG.md`
-- `2026-06-06/raw/SOURCE_WATCHLIST.md`
+- `2026-06-07/raw/SOURCE_WATCHLIST.md`
 - `2026-06-06/raw/REPORTING_STANDARD.md`
 - `2026-06-06/raw/README.md`
 

@@ -1,6 +1,6 @@
 # Agent Trend 조사 이력
 
-- 최종 갱신: 2026-06-07 01:12 KST
+- 최종 갱신: 2026-06-07 09:00 KST
 - 기준: 현재 폴더에 저장 완료된 HTML 정본과 raw 원본
 - 정기 업데이트: 08:00 / 16:00 / 00:00 KST
 
@@ -8,12 +8,14 @@
 
 조사에 사용한 전체 외부 링크 카탈로그는 `index.html#references`와 `2026-06-06/raw/index.md`의 Source Catalog에 둔다. 개별 보고서의 근거 링크는 관련 요약 바로 아래에 붙인다. 아래는 조사 이력에서 가장 자주 참조하는 핵심 출처다.
 
-참고 링크: [A2A](https://a2a-protocol.org/latest/), [MCP](https://modelcontextprotocol.io/), [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/), [A2UI](https://a2ui.org/), [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [AgentBound](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf), [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401), [COLLEAGUE.SKILL](https://arxiv.org/abs/2605.31264), [Hermes Agent](https://github.com/NousResearch/hermes-agent), [SkillNet](https://arxiv.org/abs/2603.04448)
+참고 링크: [A2A](https://a2a-protocol.org/latest/), [MCP](https://modelcontextprotocol.io/), [UCP](https://ucp.dev/), [AP2](https://ap2-protocol.org/), [AG-UI](https://docs.ag-ui.com/), [A2UI](https://a2ui.org/), [Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code), [AgentBound](https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf), [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401), [COLLEAGUE.SKILL](https://arxiv.org/abs/2605.31264), [Hermes Agent](https://github.com/NousResearch/hermes-agent), [SkillNet](https://arxiv.org/abs/2603.04448), [Google AX](https://github.com/google/ax), [Kimi Code CLI](https://github.com/MoonshotAI/kimi-code), [Cline SDK](https://docs.cline.bot/sdk/overview), [Agent Tasks API](https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/)
 
 ## 1. 저장 완료된 조사 자료
 
 | 날짜 | 조사 주제 | 조사 수준 | 핵심 범위 | 산출물 |
 | --- | --- | --- | --- | --- |
+| 2026-06-07 | 0900 Agent Trend Brief | 8시간 Brief, Watchlist update / runtime signals | 필수 소스와 공식 보조 소스를 확인하고 Google AX, Kimi Code CLI, Cline SDK/runtime, Copilot Agent Tasks API, Copilot App canvas/cloud automation, Colab CLI, Codex Sites, Task Observer를 Project / Paper Alert와 신규 사항으로 정리 | `2026-06-07/0900_agent_trend_brief.html`, `2026-06-07/raw/0900_agent_trend_brief.md` |
+| 2026-06-07 | Source Watchlist Update | Operations, 지속 모니터링 소스 확장 | Google AX, Kimi Code CLI, Cline SDK/runtime, OpenAI Codex Sites, GitHub Copilot agent platform updates, Google Colab CLI를 관련 보조 소스로 추가하고 추가 이유와 관찰할 신호를 기록 | `SOURCE_WATCHLIST.html`, `2026-06-07/raw/SOURCE_WATCHLIST.md` |
 | 2026-06-07 | Document Update History | Operations, 문서 업데이트 이력 | 각 HTML 정본의 생성/업데이트 타임라인, 최신 업데이트순 Reports 정렬 기준, 문서별 history anchor를 정리 | `DOCUMENT_HISTORY.html`, `2026-06-07/raw/DOCUMENT_HISTORY.md` |
 | 2026-06-07 | Claude Code Dynamic Workflows / ultracode | Expanded Deep Dive, Agent runtime / orchestration | dynamic workflow code 생성, subagent 병렬 실행, task-specific harness, checkpoint, verifier, cost cap, human approval, 평가 프로토콜을 workflow runtime 요구사항으로 정리 | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`, `2026-06-07/raw/Claude_Code_Dynamic_Workflows_Deep_Dive.md` |
 | 2026-06-07 | AgentBound | Expanded Deep Dive, MCP permission boundary | MCP server access control, AgentManifest, policy vocabulary, runtime enforcement, threat model, connector admission flow, risk tier, approval policy, audit schema를 AI 플랫폼 설계 관점으로 정리 | `2026-06-07/AgentBound_Deep_Dive.html`, `2026-06-07/raw/AgentBound_Deep_Dive.md` |

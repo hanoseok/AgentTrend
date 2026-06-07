@@ -1,6 +1,6 @@
 # Document Update History
 
-- 최종 갱신: 2026-06-07 01:12 KST
+- 최종 갱신: 2026-06-07 09:00 KST
 - HTML 정본: `DOCUMENT_HISTORY.html`
 - 기준: git commit 이력과 문서 metadata
 - 정렬 기준: 최신 업데이트 내림차순
@@ -9,9 +9,11 @@
 
 | 최신 업데이트 | 문서 | 상태 | 히스토리 anchor |
 | --- | --- | --- | --- |
-| 2026-06-07 01:12 KST | `DOCUMENT_HISTORY.html` | Updated | `#history-document-history` |
-| 2026-06-07 01:12 KST | `index.html` | Reports updated | `#history-index` |
-| 2026-06-07 01:12 KST | `RESEARCH_LOG.html` | Updated | `#history-research-log` |
+| 2026-06-07 09:00 KST | `DOCUMENT_HISTORY.html` | Updated | `#history-document-history` |
+| 2026-06-07 09:00 KST | `index.html` | Reports updated | `#history-index` |
+| 2026-06-07 09:00 KST | `RESEARCH_LOG.html` | Updated | `#history-research-log` |
+| 2026-06-07 09:00 KST | `SOURCE_WATCHLIST.html` | Updated | `#history-source-watchlist` |
+| 2026-06-07 09:00 KST | `2026-06-07/0900_agent_trend_brief.html` | 8시간 Brief | `#history-0900-brief` |
 | 2026-06-07 01:12 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | `#history-hermes-agent` |
 | 2026-06-07 00:37 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | `#history-dynamic-workflows` |
 | 2026-06-07 00:37 KST | `2026-06-07/AgentBound_Deep_Dive.html` | Expanded Deep Dive | `#history-agentbound` |
@@ -29,22 +31,27 @@
 | 2026-06-07 00:24 KST | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | `#history-a2-ui` |
 | 2026-06-07 00:24 KST | `README.html` | Operations | `#history-readme` |
 | 2026-06-07 00:24 KST | `REPORTING_STANDARD.html` | Operations | `#history-reporting-standard` |
-| 2026-06-07 00:18 KST | `SOURCE_WATCHLIST.html` | Operations | `#history-source-watchlist` |
 
 ## 2. Document Update History
 
 ### Document Update History
 
+- 2026-06-07 09:00 KST: 09:00 Agent Trend Brief, Source Watchlist update, Reports 최신순 정렬, raw 경로를 반영.
 - 2026-06-07 01:12 KST: Hermes Agent detailed update를 반영하고 Latest Update Summary와 Reports 정렬 기준을 갱신.
 - 2026-06-07 00:42 KST: 문서별 업데이트 히스토리 페이지를 신규 생성. Reports 정렬과 각 문서별 anchor 연결 기준으로 사용.
 
 ### Agent Trend 전체 인덱스
 
+- 2026-06-07 09:00 KST: 09:00 Agent Trend Brief를 Reports 최상단에 추가하고 Source Catalog에 AX, Kimi Code CLI, Cline SDK, Copilot Agent Tasks API, Colab CLI, Codex Sites 링크를 보강.
 - 2026-06-07 01:12 KST: Hermes Agent를 Detailed Deep Dive로 승격하고 Reports 최신 업데이트순 정렬, 핵심 용도, Agent Platform 읽기 경로를 갱신.
 - 2026-06-07 00:42 KST: Reports를 공개 HTML 산출물 목록으로 확장하고, 최신 업데이트순 정렬과 History 링크를 추가.
 - 2026-06-07 00:37 KST, `9c60981`: 2026-06-07 개별 딥다이브의 Expanded Deep Dive 상태와 핵심 범위를 반영.
 - 2026-06-07 00:24 KST, `c694a4e`: source link 표기 방식을 관련 섹션 inline pill 기준으로 정리.
 - 2026-06-07 00:18 KST, `b8646ef`: 개별 딥다이브 6종으로 분리된 문서 링크를 추가.
+
+### 09:00 Agent Trend Brief
+
+- 2026-06-07 09:00 KST: 필수 watch sources와 공식 보조 소스를 확인하고 AX, Kimi Code CLI, Cline SDK, Copilot Agent Tasks API, Copilot App canvas/cloud automation, Colab CLI, Codex Sites, Task Observer를 8시간 브리프와 raw 원본으로 생성.
 
 ### Claude Code Dynamic Workflows / ultracode
 
@@ -138,6 +145,7 @@
 
 ### Agent Trend 조사 이력
 
+- 2026-06-07 09:00 KST: 09:00 Agent Trend Brief와 Source Watchlist Update 항목을 조사 이력에 추가하고 핵심 출처 링크를 갱신.
 - 2026-06-07 01:12 KST: Hermes Agent 조사 수준과 핵심 범위를 Detailed Deep Dive 기준으로 업데이트.
 - 2026-06-07 00:42 KST: Document Update History 생성 항목을 추가하고 최종 갱신 시각을 반영.
 - 2026-06-07 00:37 KST, `9c60981`: Expanded Deep Dive 상태와 2026-06-07 개별 문서의 확장 범위를 반영.
@@ -158,6 +166,7 @@
 
 ### Source Watchlist
 
+- 2026-06-07 09:00 KST: Google AX, Kimi Code CLI, Cline SDK/runtime, OpenAI Codex Sites, GitHub Copilot agent platform updates, Google Colab CLI를 보조 소스로 추가하고 각 추가 이유와 관찰할 신호를 기록.
 - 2026-06-07 00:18 KST, `b8646ef`: 2026-06-07 개별 deep dive 분리와 함께 watchlist를 갱신.
 - 2026-06-06 23:44 KST, `adbfc6a`: AI 플랫폼 및 서비스 중심의 source monitoring 범위로 일반화.
 - 2026-06-06 21:30 KST, `a292796`: 정기 모니터링 source watchlist 최초 생성.
