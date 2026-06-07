@@ -1,6 +1,6 @@
 # Agent Trend Source Watchlist
 
-- 최종 갱신: 2026-06-07 09:00 KST
+- 최종 갱신: 2026-06-07 11:17 KST
 - 정기 확인: 08:00 / 16:00 / 00:00 KST
 - 목적: 에이전트 트렌드 정기 조사에서 매번 순회할 소스 목록 관리
 - HTML: `SOURCE_WATCHLIST.html`
@@ -25,7 +25,8 @@
 | Reddit r/ClaudeAI | https://www.reddit.com/r/ClaudeAI/ | Claude Code 외 Claude 생태계의 agent memory, MCP gateway, multi-agent 운영 사례 확인 |
 | Reddit r/mcp | https://www.reddit.com/r/mcp/ | MCP 서버, tool governance, agent-ready web, security 이슈를 보조 확인 |
 | Reddit r/hermesagent | https://www.reddit.com/r/hermesagent/ | persistent agent, memory, skills, gateway, cron/webhook, tool bloat, 운영 실패담을 보조 확인 |
-| Google Agent Executor / AX | https://agentexecutor.io/, https://github.com/google/ax | 추가 이유: distributed agent runtime, durable event log, isolation, MCP/A2A support가 AI 플랫폼 runtime 설계와 직접 연결됨. 관찰할 신호: API 안정화, security boundary, Kubernetes target, policy/audit, release cadence |
+| Google Agent Executor / AX | https://agentexecutor.io/, https://github.com/google/ax, https://github.com/google/ax/releases/tag/v0.1.0 | 추가 이유: distributed agent runtime, durable event log, resumable execution, isolation, MCP/A2A support가 AI 플랫폼 runtime 설계와 직접 연결됨. 관찰할 신호: API 안정화, event log 변경, transport/HarnessService, security boundary, Kubernetes target, policy/audit, release cadence |
+| Agent Substrate / GKE Agent Sandbox | https://github.com/agent-substrate/substrate, https://pkg.go.dev/github.com/agent-substrate/substrate, https://docs.cloud.google.com/kubernetes-engine/docs/how-to/agent-sandbox, https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/ | 추가 이유: AX의 production deployment story가 stateful actor lifecycle, suspend/resume, warm pool, pod snapshot, gVisor/Kata isolation과 직접 연결됨. 관찰할 신호: CRD/API 안정화, WorkerPool/ActorTemplate 변화, sandbox isolation defaults, snapshot/restore latency, cost model, security boundary |
 | Kimi Code CLI | https://github.com/MoonshotAI/kimi-code, https://moonshotai.github.io/kimi-code/ | 추가 이유: terminal coding agent의 MCP config, plugin marketplace, subagents, hooks, approval flow가 open-source harness 기준으로 유용함. 관찰할 신호: provider compatibility, plugin trust model, MCP auth, subagent isolation |
 | Cline SDK / Cline runtime | https://docs.cline.bot/sdk/overview, https://github.com/cline/cline | 추가 이유: IDE extension에서 product-embedded SDK, scheduled agents, Kanban/worktree, MCP, subagents로 확장 중. 관찰할 신호: SDK stability, schedule audit, checkpoint, MCP permission, enterprise controls |
 | arXiv / Hugging Face Papers | https://arxiv.org/, https://huggingface.co/papers | agent security, skill eval, trace-to-skill, memory, workflow, multi-agent 논문과 커뮤니티 반응을 확인 |

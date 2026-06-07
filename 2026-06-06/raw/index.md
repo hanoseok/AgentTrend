@@ -1,6 +1,6 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-07 09:00 KST
+- 최종 갱신: 2026-06-07 11:17 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
 - 정기 업데이트: 00:00 / 08:00 / 16:00 KST
@@ -16,8 +16,9 @@
 1. `2026-06-07/0900_agent_trend_brief.html`
 2. `2026-06-06/AI_Platform_Service_Applicability.html`
 3. `2026-06-07/Hermes_Agent_Deep_Dive.html`
-4. `2026-06-07/AgentBound_Deep_Dive.html`
-5. `2026-06-07/SkillNet_Deep_Dive.html`
+4. `2026-06-07/Google_AX_Deep_Dive.html`
+5. `2026-06-07/AgentBound_Deep_Dive.html`
+6. `2026-06-07/SkillNet_Deep_Dive.html`
 
 ## 2. Protocol / Platform Map
 
@@ -28,7 +29,7 @@
 | Payment Trust | `2026-06-06/AP2_Deep_Dive.html` | 결제 위임, 사용자 의도 증명, mandate, trusted surface, dispute evidence | 결제 플랫폼 agent 결제의 승인 UX, 감사, 분쟁 대응 기준 |
 | Agent UI Events | `2026-06-06/AG_UI_Deep_Dive.html` | agent run lifecycle, text streaming, tool call, state delta, interrupt, custom event | 대화형 AI 서비스/CS/커머스 agent UX의 공통 event schema |
 | Generative UI | `2026-06-06/A2_UI_Deep_Dive.html` | agent가 안전한 선언형 UI payload를 만들고 client가 native UI로 렌더링 | 채팅 UI 안의 상품 카드, 예약 form, 승인 summary, CS action UI |
-| Security / Skills / Runtime | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`, `2026-06-07/AgentBound_Deep_Dive.html`, `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`, `2026-06-07/SkillNet_Deep_Dive.html` | Dynamic Workflows, AgentBound, SWE-Skills-Bench, COLLEAGUE.SKILL, Hermes Agent, SkillNet을 각각 분리 정리 | workflow runtime, MCP permission boundary, skill registry/eval, persistent agent governance |
+| Security / Skills / Runtime | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`, `2026-06-07/Google_AX_Deep_Dive.html`, `2026-06-07/AgentBound_Deep_Dive.html`, `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`, `2026-06-07/SkillNet_Deep_Dive.html` | Dynamic Workflows, Google AX, AgentBound, SWE-Skills-Bench, COLLEAGUE.SKILL, Hermes Agent, SkillNet을 각각 분리 정리 | workflow runtime, durable agent execution, MCP permission boundary, skill registry/eval, persistent agent governance |
 
 ## 3. Reading Paths
 
@@ -46,12 +47,13 @@
 
 1. `2026-06-06/AI_Platform_Service_Applicability.html`
 2. `2026-06-06/A2A_Deep_Dive.html`
-3. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
-4. `2026-06-07/AgentBound_Deep_Dive.html`
-5. `2026-06-07/Hermes_Agent_Deep_Dive.html`
-6. `2026-06-07/SkillNet_Deep_Dive.html`
-7. `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`
-8. `2026-06-06/AG_UI_Deep_Dive.html`
+3. `2026-06-07/Google_AX_Deep_Dive.html`
+4. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
+5. `2026-06-07/AgentBound_Deep_Dive.html`
+6. `2026-06-07/Hermes_Agent_Deep_Dive.html`
+7. `2026-06-07/SkillNet_Deep_Dive.html`
+8. `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`
+9. `2026-06-06/AG_UI_Deep_Dive.html`
 
 ### 커머스 / 결제
 
@@ -71,10 +73,11 @@
 
 | 최신 업데이트 | 문서 | 유형 | 핵심 용도 | History |
 | --- | --- | --- | --- | --- |
-| 2026-06-07 09:00 KST | `DOCUMENT_HISTORY.html` | Operations | 각 HTML 정본의 생성/업데이트 타임라인과 Reports 정렬 기준 | `DOCUMENT_HISTORY.html#history-document-history` |
-| 2026-06-07 09:00 KST | `index.html` | Hub | 전체 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
-| 2026-06-07 09:00 KST | `RESEARCH_LOG.html` | Operations | 날짜별 조사 주제, 조사 수준, 산출물 링크를 관리하는 이력 문서 | `DOCUMENT_HISTORY.html#history-research-log` |
-| 2026-06-07 09:00 KST | `SOURCE_WATCHLIST.html` | Operations | 정기 확인할 공식 문서, 커뮤니티, 논문, 뉴스 source 목록. AX, Kimi Code, Cline, Copilot agent platform, Colab CLI, Codex Sites를 보조 소스로 추가 | `DOCUMENT_HISTORY.html#history-source-watchlist` |
+| 2026-06-07 11:17 KST | `DOCUMENT_HISTORY.html` | Operations | Google AX deep dive 생성과 Reports 최신순 정렬, 문서별 업데이트 타임라인 반영 | `DOCUMENT_HISTORY.html#history-document-history` |
+| 2026-06-07 11:17 KST | `index.html` | Hub | 전체 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
+| 2026-06-07 11:17 KST | `RESEARCH_LOG.html` | Operations | 날짜별 조사 주제, 조사 수준, 산출물 링크를 관리하는 이력 문서 | `DOCUMENT_HISTORY.html#history-research-log` |
+| 2026-06-07 11:17 KST | `SOURCE_WATCHLIST.html` | Operations | 정기 확인할 source 목록. AX, Agent Substrate, GKE Agent Sandbox, Kimi Code, Cline, Copilot agent platform, Colab CLI, Codex Sites를 보조 소스로 추적 | `DOCUMENT_HISTORY.html#history-source-watchlist` |
+| 2026-06-07 11:17 KST | `2026-06-07/Google_AX_Deep_Dive.html` | Detailed Deep Dive | distributed agent runtime, event log, resumption/fork/trace, A2A/ADK/Colab interop, Agent Substrate/GKE Agent Sandbox, security gap, PoC plan | `DOCUMENT_HISTORY.html#history-google-ax` |
 | 2026-06-07 09:00 KST | `2026-06-07/0900_agent_trend_brief.html` | 8시간 Brief | AX, Kimi Code CLI, Cline SDK, Copilot Agent Tasks API, Colab CLI, Codex Sites 중심의 runtime/coding agent 업데이트 | `DOCUMENT_HISTORY.html#history-0900-brief` |
 | 2026-06-07 01:12 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | persistent agent runtime, architecture, memory/profile state model, skills lifecycle, gateway/MCP/cron, security controls, PoC metrics | `DOCUMENT_HISTORY.html#history-hermes-agent` |
 | 2026-06-07 00:37 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | workflow runtime, subagent orchestration, task-specific harness, execution mechanics, evaluation protocol, platform blueprint | `DOCUMENT_HISTORY.html#history-dynamic-workflows` |
@@ -143,6 +146,10 @@
 - [Hermes GitHub](https://github.com/NousResearch/hermes-agent)
 - [Google AX Site](https://agentexecutor.io/)
 - [Google AX GitHub](https://github.com/google/ax)
+- [Google AX v0.1.0](https://github.com/google/ax/releases/tag/v0.1.0)
+- [AX proto](https://raw.githubusercontent.com/google/ax/main/proto/ax.proto)
+- [AX event log](https://raw.githubusercontent.com/google/ax/main/internal/controller/executor/eventlog.go)
+- [AX manifests](https://raw.githubusercontent.com/google/ax/main/manifests/README.md)
 - [Cline SDK](https://docs.cline.bot/sdk/overview)
 - [Cline GitHub](https://github.com/cline/cline)
 
@@ -241,6 +248,10 @@
 - [Enterprise plugins](https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview/)
 - [Kimi Code CLI](https://github.com/MoonshotAI/kimi-code)
 - [Kimi Code Docs](https://moonshotai.github.io/kimi-code/)
+- [Agent Substrate](https://github.com/agent-substrate/substrate)
+- [Agent Substrate Go Packages](https://pkg.go.dev/github.com/agent-substrate/substrate)
+- [GKE Agent Sandbox](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/agent-sandbox)
+- [Kubernetes Agent Sandbox](https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/)
 - [Google Colab CLI](https://developers.googleblog.com/introducing-the-google-colab-cli/)
 - [gh skill](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/)
 - [Copilot VS Code release](https://github.blog/changelog/2026-03-06-github-copilot-in-visual-studio-code-v1-110-february-release/)
@@ -274,6 +285,7 @@
 ## 6. Raw Sources
 
 - `2026-06-06/raw/A2A_Deep_Dive.md`
+- `2026-06-07/raw/Google_AX_Deep_Dive.md`
 - `2026-06-07/raw/0900_agent_trend_brief.md`
 - `2026-06-06/raw/AI_Platform_Service_Applicability.md`
 - `2026-06-06/raw/Agent_Trend_Scout.md`

@@ -121,7 +121,7 @@
       <h1>Agent Trend Source Watchlist</h1>
       <p class="lead">에이전트 트렌드 정기 조사에서 매번 순회할 소스 목록. 브리프는 이 목록을 기준으로 새 이슈, 기존 주제 업데이트, 딥다이브 후보를 확인한다.</p>
       <div class="meta">
-        <span class="pill">최종 갱신: 2026-06-07 09:00 KST</span>
+        <span class="pill">최종 갱신: 2026-06-07 11:17 KST</span>
         <span class="pill">정기 확인: 08:00 / 16:00 / 00:00 KST</span>
         <span class="pill">Raw: 2026-06-07/raw/SOURCE_WATCHLIST.md</span>
       </div>
@@ -218,8 +218,13 @@
           </tr>
           <tr>
             <td><span class="tag related">Related</span><br><strong>Google Agent Executor / AX</strong></td>
-            <td><a href="https://agentexecutor.io/">https://agentexecutor.io/</a><br><a href="https://github.com/google/ax">https://github.com/google/ax</a></td>
-            <td>추가 이유: distributed agent runtime, durable event log, isolation, MCP/A2A support가 AI 플랫폼 runtime 설계와 직접 연결됨. 관찰할 신호: API 안정화, security boundary, Kubernetes target, policy/audit, release cadence.</td>
+            <td><a href="https://agentexecutor.io/">https://agentexecutor.io/</a><br><a href="https://github.com/google/ax">https://github.com/google/ax</a><br><a href="https://github.com/google/ax/releases/tag/v0.1.0">https://github.com/google/ax/releases/tag/v0.1.0</a></td>
+            <td>추가 이유: distributed agent runtime, durable event log, resumable execution, isolation, MCP/A2A support가 AI 플랫폼 runtime 설계와 직접 연결됨. 관찰할 신호: API 안정화, event log 변경, transport/HarnessService, security boundary, Kubernetes target, policy/audit, release cadence.</td>
+          </tr>
+          <tr>
+            <td><span class="tag related">Related</span><br><strong>Agent Substrate / GKE Agent Sandbox</strong></td>
+            <td><a href="https://github.com/agent-substrate/substrate">https://github.com/agent-substrate/substrate</a><br><a href="https://pkg.go.dev/github.com/agent-substrate/substrate">https://pkg.go.dev/github.com/agent-substrate/substrate</a><br><a href="https://docs.cloud.google.com/kubernetes-engine/docs/how-to/agent-sandbox">https://docs.cloud.google.com/kubernetes-engine/docs/how-to/agent-sandbox</a><br><a href="https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/">https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/</a></td>
+            <td>추가 이유: AX의 production deployment story가 stateful actor lifecycle, suspend/resume, warm pool, pod snapshot, gVisor/Kata isolation과 직접 연결됨. 관찰할 신호: CRD/API 안정화, WorkerPool/ActorTemplate 변화, sandbox isolation defaults, snapshot/restore latency, cost model, security boundary.</td>
           </tr>
           <tr>
             <td><span class="tag related">Related</span><br><strong>Kimi Code CLI</strong></td>
