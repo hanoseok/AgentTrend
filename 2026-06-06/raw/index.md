@@ -83,7 +83,7 @@
 | 2026-06-07 12:36 KST | `2026-06-06/AG_UI_Deep_Dive.html` | Deep Dive | agent frontend event protocol, interrupt, state delta, tool call UX | `DOCUMENT_HISTORY.html#history-ag-ui` |
 | 2026-06-07 12:36 KST | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | agent-generated declarative UI payload/spec와 AI 플랫폼 component catalog 설계 | `DOCUMENT_HISTORY.html#history-a2-ui` |
 | 2026-06-07 11:42 KST | `REPORTING_STANDARD.html` | Operations | 브리핑 작성 원칙, 출처 표기, 문서 품질 기준 | `DOCUMENT_HISTORY.html#history-reporting-standard` |
-| 2026-06-07 00:24 KST | `README.html` | Operations | 아카이브 구조, 운영 방식, 문서 접근 경로 안내 | `DOCUMENT_HISTORY.html#history-readme` |
+| 2026-06-07 00:24 KST | `README.md` | Operations | 아카이브 구조, 운영 방식, 문서 접근 경로 안내 | `DOCUMENT_HISTORY.html#history-readme` |
 
 ## 4. Source Catalog
 

@@ -31,7 +31,7 @@
 | 2026-06-07 12:36 KST | `2026-06-06/AG_UI_Deep_Dive.html` | Deep Dive | `#history-ag-ui` |
 | 2026-06-07 12:36 KST | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | `#history-a2-ui` |
 | 2026-06-07 11:42 KST | `REPORTING_STANDARD.html` | Operations | `#history-reporting-standard` |
-| 2026-06-07 00:24 KST | `README.html` | Operations | `#history-readme` |
+| 2026-06-07 00:24 KST | `README.md` | Operations | `#history-readme` |
 
 ## 2. Document Update History
 
@@ -203,6 +203,7 @@
 
 ### README
 
+- 2026-06-08 00:37 KST: 루트 README를 HTML 문서에서 Markdown 문서로 전환하고 내부 참조를 README.md로 갱신.
 - 2026-06-07 00:24 KST, `c694a4e`: 문서 운영 원칙과 source link 배치 기준을 업데이트.
 - 2026-06-07 00:18 KST, `b8646ef`: 개별 deep dive 분리 상태를 반영.
 - 2026-06-06 21:30 KST, `a292796`: 리서치 아카이브 README 최초 생성.
