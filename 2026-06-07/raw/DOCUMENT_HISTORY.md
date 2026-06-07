@@ -1,6 +1,6 @@
 # Document Update History
 
-- 최종 갱신: 2026-06-07 11:17 KST
+- 최종 갱신: 2026-06-07 11:37 KST
 - HTML 정본: `DOCUMENT_HISTORY.html`
 - 기준: git commit 이력과 문서 metadata
 - 정렬 기준: 최신 업데이트 내림차순
@@ -9,8 +9,8 @@
 
 | 최신 업데이트 | 문서 | 상태 | 히스토리 anchor |
 | --- | --- | --- | --- |
-| 2026-06-07 11:17 KST | `DOCUMENT_HISTORY.html` | Updated | `#history-document-history` |
-| 2026-06-07 11:17 KST | `index.html` | Reports updated | `#history-index` |
+| 2026-06-07 11:37 KST | `DOCUMENT_HISTORY.html` | Updated | `#history-document-history` |
+| 2026-06-07 11:37 KST | `index.html` | Reports updated | `#history-index` |
 | 2026-06-07 11:17 KST | `RESEARCH_LOG.html` | Updated | `#history-research-log` |
 | 2026-06-07 11:17 KST | `SOURCE_WATCHLIST.html` | Updated | `#history-source-watchlist` |
 | 2026-06-07 11:17 KST | `2026-06-07/Google_AX_Deep_Dive.html` | Detailed Deep Dive | `#history-google-ax` |
@@ -37,6 +37,7 @@
 
 ### Document Update History
 
+- 2026-06-07 11:37 KST: 프로토콜 맵 섹션 제거 요청을 반영하고, Index를 Reports 중심 구조로 정리한 이력을 추가.
 - 2026-06-07 11:17 KST: Google AX deep dive 생성, Agent Substrate/GKE Agent Sandbox source 추가, Reports 최신순 정렬, raw 경로를 반영.
 - 2026-06-07 09:00 KST: 09:00 Agent Trend Brief, Source Watchlist update, Reports 최신순 정렬, raw 경로를 반영.
 - 2026-06-07 01:12 KST: Hermes Agent detailed update를 반영하고 Latest Update Summary와 Reports 정렬 기준을 갱신.
@@ -44,6 +45,7 @@
 
 ### Agent Trend 전체 인덱스
 
+- 2026-06-07 11:37 KST: 프로토콜 맵 섹션과 nav 항목을 제거하고, Reports 중심 탐색 흐름에 맞춰 섹션 번호와 raw index를 정리.
 - 2026-06-07 11:17 KST: Google AX deep dive를 Reports와 Agent Platform 읽기 경로에 추가하고 Source Catalog에 AX proto, event log, manifests, Agent Substrate, GKE Agent Sandbox 링크를 보강.
 - 2026-06-07 09:00 KST: 09:00 Agent Trend Brief를 Reports 최상단에 추가하고 Source Catalog에 AX, Kimi Code CLI, Cline SDK, Copilot Agent Tasks API, Colab CLI, Codex Sites 링크를 보강.
 - 2026-06-07 01:12 KST: Hermes Agent를 Detailed Deep Dive로 승격하고 Reports 최신 업데이트순 정렬, 핵심 용도, Agent Platform 읽기 경로를 갱신.

@@ -152,7 +152,6 @@
     <nav aria-label="문서 목차">
       <strong>Agent Trend Index</strong>
       <a href="#quick">Quick Read</a>
-      <a href="#map">Protocol Map</a>
       <a href="2026-06-06/AI_Platform_Service_Applicability.html">Applicability</a>
       <a href="#paths">Reading Paths</a>
       <a href="#reports">Reports</a>
@@ -168,7 +167,7 @@
         <h1>Agent Trend 전체 인덱스</h1>
         <p class="lead">에이전트 트렌드 조사 자료를 한 번에 보는 허브. 브리핑, 플랫폼 설계, 커머스/결제, UI 프로토콜, 스킬/보안 조사 자료로 바로 이동할 수 있게 정리했다.</p>
         <div class="meta">
-          <span class="pill">최종 갱신: 2026-06-07 11:17 KST</span>
+          <span class="pill">최종 갱신: 2026-06-07 11:37 KST</span>
           <span class="pill">정본: HTML</span>
           <span class="pill">raw 원본: 날짜 폴더 아래 raw/</span>
           <span class="pill">정기 업데이트: 00:00 / 08:00 / 16:00 KST</span>
@@ -187,60 +186,8 @@
         </div>
       </section>
 
-      <section id="map">
-        <h2>2. Protocol / Platform Map</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>레이어</th>
-              <th>관련 자료</th>
-              <th>무엇을 해결하나</th>
-              <th>AI 플랫폼 관점</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Agent-to-Agent</strong></td>
-              <td><a href="2026-06-06/A2A_Deep_Dive.html">A2A Deep Dive</a></td>
-              <td>agent discovery, task delegation, Agent Card, task lifecycle, artifact 교환.</td>
-              <td>내부/외부 agent registry와 orchestrator의 표준 후보.</td>
-            </tr>
-            <tr>
-              <td><strong>Commerce</strong></td>
-              <td><a href="2026-06-06/UCP_Deep_Dive.html">UCP Deep Dive</a></td>
-              <td>상품 탐색, cart, checkout, order, identity linking, merchant capability discovery.</td>
-              <td>커머스, 쇼핑, 예약, 지도/로컬, 채널 파트너를 agent-readable commerce로 전환.</td>
-            </tr>
-            <tr>
-              <td><strong>Payment Trust</strong></td>
-              <td><a href="2026-06-06/AP2_Deep_Dive.html">AP2 Deep Dive</a></td>
-              <td>결제 위임, 사용자 의도 증명, mandate, trusted surface, dispute evidence.</td>
-              <td>결제 플랫폼 agent 결제의 승인 UX, 감사, 분쟁 대응 기준.</td>
-            </tr>
-            <tr>
-              <td><strong>Agent UI Events</strong></td>
-              <td><a href="2026-06-06/AG_UI_Deep_Dive.html">AG-UI Deep Dive</a></td>
-              <td>agent run lifecycle, text streaming, tool call, state delta, interrupt, custom event.</td>
-              <td>대화형 AI 서비스/CS/커머스 agent UX의 공통 event schema.</td>
-            </tr>
-            <tr>
-              <td><strong>Generative UI</strong></td>
-              <td><a href="2026-06-06/A2_UI_Deep_Dive.html">A2-UI Deep Dive</a></td>
-              <td>agent가 안전한 선언형 UI payload를 만들고 client가 native UI로 렌더링.</td>
-              <td>채팅 UI 안의 상품 카드, 예약 form, 승인 summary, CS action UI.</td>
-            </tr>
-            <tr>
-              <td><strong>Security / Skills / Runtime</strong></td>
-              <td><a href="2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html">Selected Overview</a><br><a href="2026-06-07/Google_AX_Deep_Dive.html">Google AX</a> / <a href="2026-06-07/AgentBound_Deep_Dive.html">AgentBound</a> / <a href="2026-06-07/SWE_Skills_Bench_Deep_Dive.html">SWE-Skills-Bench</a> / <a href="2026-06-07/SkillNet_Deep_Dive.html">SkillNet</a></td>
-              <td>Dynamic Workflows, AgentBound, SWE-Skills-Bench, COLLEAGUE.SKILL, Hermes Agent, SkillNet을 각각 분리 정리.</td>
-              <td>workflow runtime, MCP permission boundary, skill registry/eval, persistent agent governance.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
       <section id="paths">
-        <h2>3. Reading Paths</h2>
+        <h2>2. Reading Paths</h2>
         <div class="grid two">
           <article class="card">
             <strong>브리핑 / 전략</strong>
@@ -286,7 +233,7 @@
       </section>
 
       <section id="reports">
-        <h2>4. Reports</h2>
+        <h2>3. Reports</h2>
         <p>현재 공개된 HTML 산출물을 최신 업데이트순으로 정렬했다. 각 문서의 상세 업데이트 이력은 History 링크에서 확인한다.</p>
         <table>
           <thead>
@@ -299,8 +246,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>2026-06-07 11:17 KST</td><td><a href="DOCUMENT_HISTORY.html">Document Update History</a></td><td><span class="tag brief">Operations</span></td><td>Google AX deep dive 생성과 Reports 최신순 정렬, 문서별 업데이트 타임라인 반영.</td><td><a href="DOCUMENT_HISTORY.html#history-document-history">History</a></td></tr>
-            <tr><td>2026-06-07 11:17 KST</td><td><a href="index.html">Agent Trend 전체 인덱스</a></td><td><span class="tag brief">Hub</span></td><td>전체 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브.</td><td><a href="DOCUMENT_HISTORY.html#history-index">History</a></td></tr>
+            <tr><td>2026-06-07 11:37 KST</td><td><a href="DOCUMENT_HISTORY.html">Document Update History</a></td><td><span class="tag brief">Operations</span></td><td>프로토콜 맵 섹션 제거와 Reports 중심 index 구조 변경 이력 반영.</td><td><a href="DOCUMENT_HISTORY.html#history-document-history">History</a></td></tr>
+            <tr><td>2026-06-07 11:37 KST</td><td><a href="index.html">Agent Trend 전체 인덱스</a></td><td><span class="tag brief">Hub</span></td><td>Reports 중심 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브.</td><td><a href="DOCUMENT_HISTORY.html#history-index">History</a></td></tr>
             <tr><td>2026-06-07 11:17 KST</td><td><a href="RESEARCH_LOG.html">Agent Trend 조사 이력</a></td><td><span class="tag brief">Operations</span></td><td>날짜별 조사 주제, 조사 수준, 산출물 링크를 관리하는 이력 문서.</td><td><a href="DOCUMENT_HISTORY.html#history-research-log">History</a></td></tr>
             <tr><td>2026-06-07 11:17 KST</td><td><a href="SOURCE_WATCHLIST.html">Source Watchlist</a></td><td><span class="tag brief">Operations</span></td><td>정기 확인할 source 목록. AX, Agent Substrate, GKE Agent Sandbox, Kimi Code, Cline, Copilot agent platform, Colab CLI, Codex Sites를 보조 소스로 추적.</td><td><a href="DOCUMENT_HISTORY.html#history-source-watchlist">History</a></td></tr>
             <tr><td>2026-06-07 11:17 KST</td><td><a href="2026-06-07/Google_AX_Deep_Dive.html">Google Agent Executor / AX</a></td><td><span class="tag deep">Detailed Deep Dive</span></td><td>distributed agent runtime, event log, resumption/fork/trace, A2A/ADK/Colab interop, Agent Substrate/GKE Agent Sandbox, security gap, PoC plan.</td><td><a href="DOCUMENT_HISTORY.html#history-google-ax">History</a></td></tr>
@@ -327,7 +274,7 @@
       </section>
 
       <section id="references">
-        <h2>5. Source Catalog</h2>
+        <h2>4. Source Catalog</h2>
         <p>이 영역은 전체 소스 탐색용 카탈로그다. 개별 딥다이브의 근거 링크는 마지막에 몰아두지 않고, 관련 요약과 판단이 나오는 섹션 바로 아래에 source pill로 붙인다.</p>
         <div class="grid two">
           <article class="card">
@@ -541,7 +488,7 @@
       </section>
 
       <section id="raw">
-        <h2>6. Raw Sources</h2>
+        <h2>5. Raw Sources</h2>
         <p>raw 원본은 날짜 폴더 아래에만 둔다. 아래 링크는 같은 내용의 Markdown 원본이다.</p>
         <div class="grid two">
           <article class="card"><strong>Core / Brief</strong>
@@ -586,7 +533,7 @@
       </section>
 
       <section id="operations">
-        <h2>7. Operations</h2>
+        <h2>6. Operations</h2>
         <div class="grid">
           <article class="card"><strong><a href="DOCUMENT_HISTORY.html">문서 업데이트 히스토리</a></strong>각 HTML 정본이 언제 생성되고 업데이트됐는지 문서별로 확인하는 페이지.</article>
           <article class="card"><strong><a href="RESEARCH_LOG.html">조사 이력</a></strong>날짜별로 어떤 트렌드를 조사했는지, 조사 수준이 Deep Dive인지 Brief인지 확인하는 문서.</article>

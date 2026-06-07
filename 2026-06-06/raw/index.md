@@ -1,6 +1,6 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-07 11:17 KST
+- 최종 갱신: 2026-06-07 11:37 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
 - 정기 업데이트: 00:00 / 08:00 / 16:00 KST
@@ -20,18 +20,7 @@
 5. `2026-06-07/AgentBound_Deep_Dive.html`
 6. `2026-06-07/SkillNet_Deep_Dive.html`
 
-## 2. Protocol / Platform Map
-
-| 레이어 | 관련 자료 | 무엇을 해결하나 | AI 플랫폼 관점 |
-| --- | --- | --- | --- |
-| Agent-to-Agent | `2026-06-06/A2A_Deep_Dive.html` | agent discovery, task delegation, Agent Card, task lifecycle, artifact 교환 | 내부/외부 agent registry와 orchestrator의 표준 후보 |
-| Commerce | `2026-06-06/UCP_Deep_Dive.html` | 상품 탐색, cart, checkout, order, identity linking, merchant capability discovery | 커머스, 쇼핑, 예약, 지도/로컬, 채널 파트너를 agent-readable commerce로 전환 |
-| Payment Trust | `2026-06-06/AP2_Deep_Dive.html` | 결제 위임, 사용자 의도 증명, mandate, trusted surface, dispute evidence | 결제 플랫폼 agent 결제의 승인 UX, 감사, 분쟁 대응 기준 |
-| Agent UI Events | `2026-06-06/AG_UI_Deep_Dive.html` | agent run lifecycle, text streaming, tool call, state delta, interrupt, custom event | 대화형 AI 서비스/CS/커머스 agent UX의 공통 event schema |
-| Generative UI | `2026-06-06/A2_UI_Deep_Dive.html` | agent가 안전한 선언형 UI payload를 만들고 client가 native UI로 렌더링 | 채팅 UI 안의 상품 카드, 예약 form, 승인 summary, CS action UI |
-| Security / Skills / Runtime | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`, `2026-06-07/Google_AX_Deep_Dive.html`, `2026-06-07/AgentBound_Deep_Dive.html`, `2026-06-07/SWE_Skills_Bench_Deep_Dive.html`, `2026-06-07/SkillNet_Deep_Dive.html` | Dynamic Workflows, Google AX, AgentBound, SWE-Skills-Bench, COLLEAGUE.SKILL, Hermes Agent, SkillNet을 각각 분리 정리 | workflow runtime, durable agent execution, MCP permission boundary, skill registry/eval, persistent agent governance |
-
-## 3. Reading Paths
+## 2. Reading Paths
 
 ### 브리핑 / 전략
 
@@ -67,14 +56,14 @@
 2. `2026-06-06/A2_UI_Deep_Dive.html`
 3. `2026-06-06/UCP_Deep_Dive.html`
 
-## 4. Reports
+## 3. Reports
 
 현재 공개된 HTML 산출물을 최신 업데이트순으로 정렬했다. 각 문서의 상세 업데이트 이력은 `DOCUMENT_HISTORY.html`의 History anchor에서 확인한다.
 
 | 최신 업데이트 | 문서 | 유형 | 핵심 용도 | History |
 | --- | --- | --- | --- | --- |
-| 2026-06-07 11:17 KST | `DOCUMENT_HISTORY.html` | Operations | Google AX deep dive 생성과 Reports 최신순 정렬, 문서별 업데이트 타임라인 반영 | `DOCUMENT_HISTORY.html#history-document-history` |
-| 2026-06-07 11:17 KST | `index.html` | Hub | 전체 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
+| 2026-06-07 11:37 KST | `DOCUMENT_HISTORY.html` | Operations | 프로토콜 맵 섹션 제거와 Reports 중심 index 구조 변경 이력 반영 | `DOCUMENT_HISTORY.html#history-document-history` |
+| 2026-06-07 11:37 KST | `index.html` | Hub | Reports 중심 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
 | 2026-06-07 11:17 KST | `RESEARCH_LOG.html` | Operations | 날짜별 조사 주제, 조사 수준, 산출물 링크를 관리하는 이력 문서 | `DOCUMENT_HISTORY.html#history-research-log` |
 | 2026-06-07 11:17 KST | `SOURCE_WATCHLIST.html` | Operations | 정기 확인할 source 목록. AX, Agent Substrate, GKE Agent Sandbox, Kimi Code, Cline, Copilot agent platform, Colab CLI, Codex Sites를 보조 소스로 추적 | `DOCUMENT_HISTORY.html#history-source-watchlist` |
 | 2026-06-07 11:17 KST | `2026-06-07/Google_AX_Deep_Dive.html` | Detailed Deep Dive | distributed agent runtime, event log, resumption/fork/trace, A2A/ADK/Colab interop, Agent Substrate/GKE Agent Sandbox, security gap, PoC plan | `DOCUMENT_HISTORY.html#history-google-ax` |
@@ -97,7 +86,7 @@
 | 2026-06-07 00:24 KST | `README.html` | Operations | 아카이브 구조, 운영 방식, 문서 접근 경로 안내 | `DOCUMENT_HISTORY.html#history-readme` |
 | 2026-06-07 00:24 KST | `REPORTING_STANDARD.html` | Operations | 브리핑 작성 원칙, 출처 표기, 문서 품질 기준 | `DOCUMENT_HISTORY.html#history-reporting-standard` |
 
-## 5. Source Catalog
+## 4. Source Catalog
 
 이 영역은 전체 소스 탐색용 카탈로그다. 개별 딥다이브의 근거 링크는 마지막에 몰아두지 않고, 관련 요약과 판단이 나오는 섹션 바로 아래에 `참고 링크:`로 붙인다.
 
@@ -282,7 +271,7 @@
 - [GeekNews topic 29493](https://news.hada.io/topic?id=29493)
 - [GeekNews topic 30028](https://news.hada.io/topic?id=30028)
 
-## 6. Raw Sources
+## 5. Raw Sources
 
 - `2026-06-06/raw/A2A_Deep_Dive.md`
 - `2026-06-07/raw/Google_AX_Deep_Dive.md`
@@ -307,7 +296,7 @@
 - `2026-06-06/raw/REPORTING_STANDARD.md`
 - `2026-06-06/raw/README.md`
 
-## 7. Operations
+## 6. Operations
 
 - `DOCUMENT_HISTORY.html`: 각 HTML 정본의 업데이트 히스토리.
 - `RESEARCH_LOG.html`: 날짜별 조사 이력.
