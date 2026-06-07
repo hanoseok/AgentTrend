@@ -1,6 +1,6 @@
 # Document Update History
 
-- 최종 갱신: 2026-06-07 12:36 KST
+- 최종 갱신: 2026-06-07 12:48 KST
 - HTML 정본: `DOCUMENT_HISTORY.html`
 - 기준: git commit 이력과 문서 metadata
 - 정렬 기준: 최신 업데이트 내림차순
@@ -9,8 +9,10 @@
 
 | 최신 업데이트 | 문서 | 상태 | 히스토리 anchor |
 | --- | --- | --- | --- |
-| 2026-06-07 12:36 KST | `DOCUMENT_HISTORY.html` | Operations | `#history-document-history` |
-| 2026-06-07 12:36 KST | `index.html` | Hub | `#history-index` |
+| 2026-06-07 12:48 KST | `DOCUMENT_HISTORY.html` | Operations | `#history-document-history` |
+| 2026-06-07 12:48 KST | `index.html` | Hub | `#history-index` |
+| 2026-06-07 12:48 KST | `Agent_Trend_Brief.html` | Brief Hub | `#history-agent-trend-brief` |
+| 2026-06-07 12:48 KST | `RESEARCH_LOG.html` | Operations | `#history-research-log` |
 | 2026-06-07 12:36 KST | `2026-06-07/Google_AX_Deep_Dive.html` | Detailed Deep Dive | `#history-google-ax` |
 | 2026-06-07 12:36 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | `#history-hermes-agent` |
 | 2026-06-07 12:36 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | `#history-dynamic-workflows` |
@@ -29,7 +31,6 @@
 | 2026-06-07 12:36 KST | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | `#history-a2-ui` |
 | 2026-06-07 11:42 KST | `2026-06-07/0900_agent_trend_brief.html` | 8시간 Brief | `#history-0900-brief` |
 | 2026-06-07 11:42 KST | `REPORTING_STANDARD.html` | Operations | `#history-reporting-standard` |
-| 2026-06-07 11:17 KST | `RESEARCH_LOG.html` | Operations | `#history-research-log` |
 | 2026-06-07 11:17 KST | `SOURCE_WATCHLIST.html` | Operations | `#history-source-watchlist` |
 | 2026-06-07 00:24 KST | `README.html` | Operations | `#history-readme` |
 
@@ -37,6 +38,7 @@
 
 ### Document Update History
 
+- 2026-06-07 12:48 KST: Agent Trend Brief 전용 허브를 추가하고 Reports 정렬을 갱신.
 - 2026-06-07 12:36 KST: LNB 분리 변경 이력과 Reports 최신순 정렬을 반영.
 - 2026-06-07 11:42 KST: 각 report의 출처 섹션 추가와 Reports 최신순 정렬 반영 이력을 추가.
 - 2026-06-07 11:37 KST: 프로토콜 맵 섹션 제거 요청을 반영하고, Index를 Reports 중심 구조로 정리한 이력을 추가.
@@ -47,6 +49,7 @@
 
 ### Agent Trend 전체 인덱스
 
+- 2026-06-07 12:48 KST: Agent Trend Brief 허브를 추가하고 개별 시간대 브리프를 메인 Reports에서 허브 하위로 이동.
 - 2026-06-07 12:36 KST: LNB에서 문서 링크와 내부 목차를 분리하고, 목차를 접고 펼칠 수 있는 하위 그룹으로 정리.
 - 2026-06-07 11:42 KST: Reports 중심 탐색 기준에 맞춰 출처 섹션 추가 대상 report들의 최신 업데이트 시간을 반영.
 - 2026-06-07 11:37 KST: 프로토콜 맵 섹션과 nav 항목을 제거하고, Reports 중심 탐색 흐름에 맞춰 섹션 번호와 raw index를 정리.
@@ -57,6 +60,10 @@
 - 2026-06-07 00:37 KST, `9c60981`: 2026-06-07 개별 딥다이브의 Expanded Deep Dive 상태와 핵심 범위를 반영.
 - 2026-06-07 00:24 KST, `c694a4e`: source link 표기 방식을 관련 섹션 inline pill 기준으로 정리.
 - 2026-06-07 00:18 KST, `b8646ef`: 개별 딥다이브 6종으로 분리된 문서 링크를 추가.
+
+### Agent Trend Brief
+
+- 2026-06-07 12:48 KST: 정기 에이전트 트렌드 브리프 전용 허브를 생성하고 09:00/20:00 브리프를 시간별 하위 목록으로 정리.
 
 ### Google Agent Executor / AX
 
@@ -179,6 +186,7 @@
 
 ### Agent Trend 조사 이력
 
+- 2026-06-07 12:48 KST: Agent Trend Brief 허브 생성 항목과 raw 경로를 조사 이력에 추가.
 - 2026-06-07 11:17 KST: Google AX Detailed Deep Dive 항목과 Agent Substrate/GKE Agent Sandbox source 확장 범위를 조사 이력에 추가.
 - 2026-06-07 09:00 KST: 09:00 Agent Trend Brief와 Source Watchlist Update 항목을 조사 이력에 추가하고 핵심 출처 링크를 갱신.
 - 2026-06-07 01:12 KST: Hermes Agent 조사 수준과 핵심 범위를 Detailed Deep Dive 기준으로 업데이트.

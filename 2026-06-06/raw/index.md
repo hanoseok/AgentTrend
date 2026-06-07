@@ -1,6 +1,6 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-07 12:36 KST
+- 최종 갱신: 2026-06-07 12:48 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
 - 정기 업데이트: 00:00 / 08:00 / 16:00 KST
@@ -13,7 +13,7 @@
 
 브리핑 시작점:
 
-1. `2026-06-07/0900_agent_trend_brief.html`
+1. `Agent_Trend_Brief.html`
 2. `2026-06-06/AI_Platform_Service_Applicability.html`
 3. `2026-06-07/Hermes_Agent_Deep_Dive.html`
 4. `2026-06-07/Google_AX_Deep_Dive.html`
@@ -25,12 +25,11 @@
 ### 브리핑 / 전략
 
 1. `2026-06-06/AI_Platform_Service_Applicability.html`
-2. `2026-06-07/0900_agent_trend_brief.html`
-3. `2026-06-06/2000_agent_trend_brief.html`
-4. `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
-5. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
-6. `2026-06-07/AgentBound_Deep_Dive.html`
-7. `2026-06-06/UCP_Deep_Dive.html`
+2. `Agent_Trend_Brief.html`
+3. `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html`
+4. `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`
+5. `2026-06-07/AgentBound_Deep_Dive.html`
+6. `2026-06-06/UCP_Deep_Dive.html`
 
 ### Agent Platform 설계
 
@@ -58,12 +57,14 @@
 
 ## 3. Reports
 
-현재 공개된 HTML 산출물을 최신 업데이트순으로 정렬했다. 각 문서의 상세 업데이트 이력은 `DOCUMENT_HISTORY.html`의 History anchor에서 확인한다.
+현재 공개된 HTML 산출물을 최신 업데이트순으로 정렬했다. 정기 브리프는 `Agent_Trend_Brief.html` 하위에 시간별로 모으고, 각 문서의 상세 업데이트 이력은 `DOCUMENT_HISTORY.html`의 History anchor에서 확인한다.
 
 | 최신 업데이트 | 문서 | 유형 | 핵심 용도 | History |
 | --- | --- | --- | --- | --- |
-| 2026-06-07 12:36 KST | `DOCUMENT_HISTORY.html` | Operations | LNB 분리 변경 이력과 Reports 최신순 정렬 반영 | `DOCUMENT_HISTORY.html#history-document-history` |
-| 2026-06-07 12:36 KST | `index.html` | Hub | Reports 중심 문서 탐색, 최신 업데이트순 Reports, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
+| 2026-06-07 12:48 KST | `DOCUMENT_HISTORY.html` | Operations | Agent Trend Brief 허브 추가와 Reports 최신순 정렬 반영 | `DOCUMENT_HISTORY.html#history-document-history` |
+| 2026-06-07 12:48 KST | `index.html` | Hub | Reports 중심 문서 탐색, Brief 허브, source catalog, raw 링크 허브 | `DOCUMENT_HISTORY.html#history-index` |
+| 2026-06-07 12:48 KST | `Agent_Trend_Brief.html` | Brief Hub | 정기 에이전트 트렌드 브리프를 시간별로 모아 보는 전용 페이지. 09:00/20:00 브리프를 하위 목록으로 정리 | `DOCUMENT_HISTORY.html#history-agent-trend-brief` |
+| 2026-06-07 12:48 KST | `RESEARCH_LOG.html` | Operations | 날짜별 조사 주제, 조사 수준, 산출물 링크에 Agent Trend Brief 허브를 추가 | `DOCUMENT_HISTORY.html#history-research-log` |
 | 2026-06-07 12:36 KST | `2026-06-07/Google_AX_Deep_Dive.html` | Detailed Deep Dive | distributed agent runtime, event log, resumption/fork/trace, A2A/ADK/Colab interop, Agent Substrate/GKE Agent Sandbox, security gap, PoC plan | `DOCUMENT_HISTORY.html#history-google-ax` |
 | 2026-06-07 12:36 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | persistent agent runtime, architecture, memory/profile state model, skills lifecycle, gateway/MCP/cron, security controls, PoC metrics | `DOCUMENT_HISTORY.html#history-hermes-agent` |
 | 2026-06-07 12:36 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | workflow runtime, subagent orchestration, task-specific harness, execution mechanics, evaluation protocol, platform blueprint | `DOCUMENT_HISTORY.html#history-dynamic-workflows` |
@@ -74,15 +75,12 @@
 | 2026-06-07 12:36 KST | `2026-06-06/AI_Platform_Service_Applicability.html` | Synthesis | A2A, UCP, AP2, AG-UI, A2-UI, Dynamic Workflows, AgentBound, Hermes Agent, SkillNet을 AI 플랫폼 및 서비스 적용 관점으로 재정리 | `DOCUMENT_HISTORY.html#history-ai-platform-applicability` |
 | 2026-06-07 12:36 KST | `2026-06-06/A2A_Deep_Dive.html` | Deep Dive | agent-to-agent 표준과 Agent Registry/orchestrator 설계 | `DOCUMENT_HISTORY.html#history-a2a` |
 | 2026-06-07 12:36 KST | `2026-06-06/Agent_Trend_Scout.html` | Scout | GeekNews, MarkTechPost, GitHub Blog, Reddit 기반 딥다이브 후보 발굴 | `DOCUMENT_HISTORY.html#history-agent-trend-scout` |
-| 2026-06-07 12:36 KST | `2026-06-06/2000_agent_trend_brief.html` | 8시간 Brief | 정기 브리프 형식의 트렌드/업데이트 요약 | `DOCUMENT_HISTORY.html#history-2000-brief` |
 | 2026-06-07 12:36 KST | `2026-06-06/Selected_Agent_Project_Paper_Deep_Dive.html` | Overview | Dynamic Workflows, AgentBound, skills, commerce stack, Hermes Agent, SkillNet 우선순위 매트릭스. 개별 딥다이브는 2026-06-07 문서로 분리 | `DOCUMENT_HISTORY.html#history-selected-overview` |
 | 2026-06-07 12:36 KST | `2026-06-06/UCP_Deep_Dive.html` | Deep Dive | agentic commerce capability/discovery/checkout/order 표준 | `DOCUMENT_HISTORY.html#history-ucp` |
 | 2026-06-07 12:36 KST | `2026-06-06/AP2_Deep_Dive.html` | Deep Dive | agent 결제 위임, mandate, trusted surface, dispute evidence | `DOCUMENT_HISTORY.html#history-ap2` |
 | 2026-06-07 12:36 KST | `2026-06-06/AG_UI_Deep_Dive.html` | Deep Dive | agent frontend event protocol, interrupt, state delta, tool call UX | `DOCUMENT_HISTORY.html#history-ag-ui` |
 | 2026-06-07 12:36 KST | `2026-06-06/A2_UI_Deep_Dive.html` | Deep Dive | agent-generated declarative UI payload/spec와 AI 플랫폼 component catalog 설계 | `DOCUMENT_HISTORY.html#history-a2-ui` |
-| 2026-06-07 11:42 KST | `2026-06-07/0900_agent_trend_brief.html` | 8시간 Brief | AX, Kimi Code CLI, Cline SDK, Copilot Agent Tasks API, Colab CLI, Codex Sites 중심의 runtime/coding agent 업데이트 | `DOCUMENT_HISTORY.html#history-0900-brief` |
 | 2026-06-07 11:42 KST | `REPORTING_STANDARD.html` | Operations | 브리핑 작성 원칙, 출처 표기, 문서 품질 기준 | `DOCUMENT_HISTORY.html#history-reporting-standard` |
-| 2026-06-07 11:17 KST | `RESEARCH_LOG.html` | Operations | 날짜별 조사 주제, 조사 수준, 산출물 링크를 관리하는 이력 문서 | `DOCUMENT_HISTORY.html#history-research-log` |
 | 2026-06-07 11:17 KST | `SOURCE_WATCHLIST.html` | Operations | 정기 확인할 source 목록. AX, Agent Substrate, GKE Agent Sandbox, Kimi Code, Cline, Copilot agent platform, Colab CLI, Codex Sites를 보조 소스로 추적 | `DOCUMENT_HISTORY.html#history-source-watchlist` |
 | 2026-06-07 00:24 KST | `README.html` | Operations | 아카이브 구조, 운영 방식, 문서 접근 경로 안내 | `DOCUMENT_HISTORY.html#history-readme` |
 
@@ -275,6 +273,7 @@
 
 - `2026-06-06/raw/A2A_Deep_Dive.md`
 - `2026-06-07/raw/Google_AX_Deep_Dive.md`
+- `2026-06-07/raw/Agent_Trend_Brief.md`
 - `2026-06-07/raw/0900_agent_trend_brief.md`
 - `2026-06-06/raw/AI_Platform_Service_Applicability.md`
 - `2026-06-06/raw/Agent_Trend_Scout.md`

@@ -1,6 +1,6 @@
 # Agent Trend 조사 이력
 
-- 최종 갱신: 2026-06-07 11:17 KST
+- 최종 갱신: 2026-06-07 12:48 KST
 - 기준: 현재 폴더에 저장 완료된 HTML 정본과 raw 원본
 - 정기 업데이트: 08:00 / 16:00 / 00:00 KST
 
@@ -14,6 +14,7 @@
 
 | 날짜 | 조사 주제 | 조사 수준 | 핵심 범위 | 산출물 |
 | --- | --- | --- | --- | --- |
+| 2026-06-07 | Agent Trend Brief Hub | Brief Hub, 시간별 정기 브리프 인덱스 | 정기 Agent Trend Brief만 별도 페이지로 분리하고, 09:00/20:00 등 시간별 브리프를 최신 작성 시각 내림차순으로 정리. 각 회차의 HTML 정본과 raw 원본, 후속 딥다이브 연결을 한 화면에서 확인하도록 구성 | `Agent_Trend_Brief.html`, `2026-06-07/raw/Agent_Trend_Brief.md` |
 | 2026-06-07 | Google Agent Executor / AX | Detailed Deep Dive, Distributed agent runtime / control plane | official site, GitHub README/release/proto/code/issues, Agent Substrate, GKE Agent Sandbox, Kubernetes Agent Sandbox, GeekNews/community signals를 확인. Controller, registry, event log, SQLite ledger, resumption, fork, trace, A2A/ADK/Colab interop, MCP readiness gap, credential/security gap, PoC plan을 AI 플랫폼 및 서비스 설계 관점으로 정리 | `2026-06-07/Google_AX_Deep_Dive.html`, `2026-06-07/raw/Google_AX_Deep_Dive.md` |
 | 2026-06-07 | 0900 Agent Trend Brief | 8시간 Brief, Watchlist update / runtime signals | 필수 소스와 공식 보조 소스를 확인하고 Google AX, Kimi Code CLI, Cline SDK/runtime, Copilot Agent Tasks API, Copilot App canvas/cloud automation, Colab CLI, Codex Sites, Task Observer를 Project / Paper Alert와 신규 사항으로 정리 | `2026-06-07/0900_agent_trend_brief.html`, `2026-06-07/raw/0900_agent_trend_brief.md` |
 | 2026-06-07 | Source Watchlist Update | Operations, 지속 모니터링 소스 확장 | Google AX, Agent Substrate/GKE Agent Sandbox, Kimi Code CLI, Cline SDK/runtime, OpenAI Codex Sites, GitHub Copilot agent platform updates, Google Colab CLI를 관련 보조 소스로 추가하고 추가 이유와 관찰할 신호를 기록 | `SOURCE_WATCHLIST.html`, `2026-06-07/raw/SOURCE_WATCHLIST.md` |

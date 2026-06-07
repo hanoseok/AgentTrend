@@ -1,0 +1,65 @@
+# Agent Trend Brief
+
+- 최종 갱신: 2026-06-07 12:48 KST
+- HTML 정본: `Agent_Trend_Brief.html`
+- 정렬 기준: 최신 작성 시각 내림차순
+- 운영 슬롯: 00:00 / 08:00 / 16:00 KST
+
+## 1. Summary
+
+Agent Trend Brief만 따로 모아 시간순으로 보는 페이지를 만들었다. 새 브리프가 생성되면 이 페이지의 Time Briefs에 최신순으로 추가하고, 개별 HTML과 raw 원본으로 바로 이동할 수 있게 관리한다.
+
+- 가장 최근 브리프: `2026-06-07/0900_agent_trend_brief.html`, `2026-06-07/raw/0900_agent_trend_brief.md`
+- 직전 브리프: `2026-06-06/2000_agent_trend_brief.html`, `2026-06-06/raw/2000_agent_trend_brief.md`
+- 운영 원칙: 메인 Reports는 브리프 허브를 대표 항목으로 보여주고, 각 시간대 브리프는 이 페이지 하위 목록에서 접근한다.
+
+## 2. Time Briefs
+
+| 작성 시각 | 브리프 | 핵심 신호 | 후속 액션 | 원본 |
+| --- | --- | --- | --- | --- |
+| 2026-06-07 09:00 KST | `2026-06-07/0900_agent_trend_brief.html` | Agent runtime/control plane, terminal coding agent, skill lifecycle, cloud execution, product shipping surface | Google AX deep dive 완료. Kimi Code CLI, Cline SDK, Task Observer는 다음 후보로 추적 | `2026-06-07/raw/0900_agent_trend_brief.md` |
+| 2026-06-06 20:00 KST | `2026-06-06/2000_agent_trend_brief.html` | Dynamic Workflows, MCP update, AgentBound, skill eval papers, agentic commerce protocol stack | Dynamic Workflows, AgentBound, SWE-Skills-Bench, COLLEAGUE.SKILL, SkillNet, Hermes Agent를 개별 deep dive로 분리 | `2026-06-06/raw/2000_agent_trend_brief.md` |
+
+## 3. 2026-06-07
+
+### 09:00 Agent Trend Brief
+
+참고 링크: `2026-06-07/0900_agent_trend_brief.html`, `2026-06-07/raw/0900_agent_trend_brief.md`, `2026-06-07/Google_AX_Deep_Dive.html`, `SOURCE_WATCHLIST.html`
+
+- Project / Paper Alert: Google AX, Kimi Code CLI, Cline SDK/runtime, Task Observer.
+- 신규 사항: Copilot Agent Tasks REST API, Copilot App canvas/cloud automation, enterprise-managed plugins, Colab CLI, Codex Sites.
+- 판단: agent는 대화 UI보다 durable task, event log, worktree isolation, schedule, policy, canvas review surface로 제품화되는 흐름이 강하다.
+- 후속: runtime/control-plane, terminal harness, skill governance를 같은 비교 축으로 계속 추적한다.
+
+## 4. 2026-06-06
+
+### 20:00 Agent Trend Brief
+
+참고 링크: `2026-06-06/2000_agent_trend_brief.html`, `2026-06-06/raw/2000_agent_trend_brief.md`, `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html`, `2026-06-07/AgentBound_Deep_Dive.html`, `2026-06-07/SkillNet_Deep_Dive.html`
+
+- Project / Paper Alert: Claude Code Dynamic Workflows, AgentBound, SWE-Skills-Bench, COLLEAGUE.SKILL, Hermes Agent, SkillNet.
+- 프로토콜 축: UCP, AP2, AG-UI, A2-UI를 commerce/payment/UI protocol stack으로 연결했다.
+- 판단: agent 플랫폼은 protocol interoperability, security boundary, skill lifecycle, front-end interaction protocol을 동시에 설계해야 한다.
+- 후속: 주요 후보를 2026-06-07 개별 deep dive로 분리해 상세화했다.
+
+## 5. Cadence
+
+| 슬롯 | 목적 | 기록 방식 |
+| --- | --- | --- |
+| 00:00 KST | 전일 저녁 이후 공식 발표, GitHub/Reddit/GeekNews 신호, 기존 deep dive 업데이트 확인 | 새 HTML은 날짜 폴더에 저장하고 이 페이지 Time Briefs 최상단에 추가 |
+| 08:00 KST | 업무 시작 전 최신 runtime, SDK, protocol, research alert를 빠르게 정리 | 개별 브리프 HTML과 raw 원본을 함께 연결 |
+| 16:00 KST | 오후까지의 source watch 결과와 후속 딥다이브 후보를 정리 | 중요 후보는 별도 deep dive 여부를 판단해 사용자 확인 후 확장 |
+
+## 출처
+
+### 왜 이걸 정리하게 되었는가
+
+정기 브리프가 개별 Reports 목록에 흩어지면 시간 흐름을 빠르게 보기 어렵다. 브리프만 별도 허브로 분리해 회차별 변화와 후속 딥다이브 연결을 한눈에 확인하도록 정리했다.
+
+참고 링크: `index.html`, `DOCUMENT_HISTORY.html`, `2026-06-07/0900_agent_trend_brief.html`, `2026-06-06/2000_agent_trend_brief.html`
+
+### 딥리서치 출처
+
+각 시간대 브리프의 실제 세부 근거와 원문 링크는 개별 브리프 HTML 및 raw Markdown에 보관한다.
+
+참고 링크: `2026-06-07/raw/0900_agent_trend_brief.md`, `2026-06-06/raw/2000_agent_trend_brief.md`, `SOURCE_WATCHLIST.html`, `2026-06-07/raw/SOURCE_WATCHLIST.md`
