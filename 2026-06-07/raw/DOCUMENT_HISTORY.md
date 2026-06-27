@@ -1,6 +1,6 @@
 # Document Update History
 
-- 최종 갱신: 2026-06-11 11:03 KST
+- 최종 갱신: 2026-06-28 07:00 KST
 - HTML 정본: `DOCUMENT_HISTORY.html`
 - 기준: git commit 이력과 문서 metadata
 - 정렬 기준: 최신 업데이트 내림차순
@@ -9,6 +9,12 @@
 
 | 최신 업데이트 | 문서 | 상태 | 히스토리 anchor |
 | --- | --- | --- | --- |
+| 2026-06-28 07:00 KST | `2026-06-28/0700_agent_trend_brief.html` | Daily Brief | `#history-0700-2026-06-28-brief` |
+| 2026-06-28 07:00 KST | `DOCUMENT_HISTORY.html` | Operations | `#history-document-history` |
+| 2026-06-28 07:00 KST | `index.html` | Hub | `#history-index` |
+| 2026-06-28 07:00 KST | `Agent_Trend_Brief.html` | Brief Hub | `#history-agent-trend-brief` |
+| 2026-06-28 07:00 KST | `SOURCE_WATCHLIST.html` | Operations | `#history-source-watchlist` |
+| 2026-06-28 07:00 KST | `RESEARCH_LOG.html` | Operations | `#history-research-log` |
 | 2026-06-11 11:03 KST | `2026-06-11/1103_agent_trend_manual.html` | Manual Brief | `#history-1103-agent-trend-manual` |
 | 2026-06-11 11:03 KST | `DOCUMENT_HISTORY.html` | Operations | `#history-document-history` |
 | 2026-06-11 11:03 KST | `index.html` | Hub | `#history-index` |
@@ -38,6 +44,7 @@
 
 ### Document Update History
 
+- 2026-06-28 07:00 KST: 07:00 Agent Trend Brief 생성, 브리프 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
 - 2026-06-11 11:03 KST: AI Agent 사용 분야 수동 브리프 생성, 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
 - 2026-06-07 14:00 KST: 브리프 자동화를 하루 1회 07:00 KST 실행으로 변경하고 운영 문서와 이력에 반영.
 - 2026-06-07 13:55 KST: 브리프 자동화 시작 시간을 07:00 KST로 조정하고 직전 다중 운영 슬롯으로 갱신.
@@ -52,6 +59,7 @@
 
 ### Agent Trend 전체 인덱스
 
+- 2026-06-28 07:00 KST: 07:00 정기 브리프를 Reports 최상단과 raw 목록에 추가하고, agent work/discovery/governance/eval source catalog를 보강.
 - 2026-06-11 11:03 KST: AI Agent 사용 분야 수동 브리프를 Reports 최상단과 raw 목록에 추가하고, usage/adoption benchmark source catalog를 보강.
 - 2026-06-07 14:00 KST: 정기 업데이트 시간을 매일 07:00 KST로 변경.
 - 2026-06-07 13:55 KST: 정기 업데이트 시간을 직전 다중 운영 슬롯으로 변경.
@@ -69,10 +77,17 @@
 
 ### Agent Trend Brief
 
+- 2026-06-28 07:00 KST: 07:00 Agent Trend Brief를 Time Briefs 최상단과 2026-06-28 날짜 섹션에 추가.
 - 2026-06-11 11:03 KST: 11:03 AI Agent 사용 분야 수동 브리프를 Time Briefs 최상단과 2026-06-11 날짜 섹션에 추가.
 - 2026-06-07 14:00 KST: 운영 슬롯을 매일 07:00 KST 1회로 변경하고 Cadence를 단일 슬롯으로 정리.
 - 2026-06-07 13:55 KST: 운영 슬롯을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 12:48 KST: 정기 에이전트 트렌드 브리프 전용 허브를 생성하고 09:00/20:00 브리프를 시간별 하위 목록으로 정리.
+
+### 2026-06-28 Reports
+
+#### 07:00 Agent Trend Brief
+
+- 2026-06-28 07:00 KST: OpenAI Codex work 데이터, Anthropic Claude Code expertise, Google ARD, GitHub Agent Finder, Microsoft Agent 365, Patronus digital world models, NIST identity/authorization, LangGraph 1.0 자료를 확인하고 agent가 위임 가능한 작업 단위와 운영/거버넌스 레이어로 이동하는 흐름을 정기 브리프와 raw 원본으로 생성.
 
 ### 2026-06-11 Reports
 
@@ -201,6 +216,7 @@
 
 ### Agent Trend 조사 이력
 
+- 2026-06-28 07:00 KST: 07:00 Agent Trend Brief 항목과 agent work/discovery/governance/eval 관련 source들을 조사 이력에 추가.
 - 2026-06-11 11:03 KST: AI Agent 사용 분야 수동 브리프 항목과 관련 benchmark source들을 조사 이력에 추가.
 - 2026-06-07 13:55 KST: 정기 업데이트 시간을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 12:48 KST: Agent Trend Brief 허브 생성 항목과 raw 경로를 조사 이력에 추가.
@@ -228,6 +244,7 @@
 
 ### Source Watchlist
 
+- 2026-06-28 07:00 KST: Agent Work / Discovery / Governance / Evals 보조 소스를 추가하고 ARD 채택, agent identity, digital world eval, framework stability 관찰 기준을 기록.
 - 2026-06-11 11:03 KST: AI Agent Usage / Adoption Benchmarks 보조 소스를 추가하고 customer service, research/data analysis, internal productivity, IT/security 사용 비중 추적 기준을 기록.
 - 2026-06-07 14:00 KST: 정기 확인 시간을 매일 07:00 KST로 변경.
 - 2026-06-07 13:55 KST: 정기 확인 시간을 직전 다중 운영 슬롯으로 변경.

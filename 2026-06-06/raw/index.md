@@ -1,22 +1,22 @@
 # Agent Trend 전체 인덱스
 
-- 최종 갱신: 2026-06-07 14:00 KST
+- 최종 갱신: 2026-06-28 07:00 KST
 - HTML 정본: `index.html`
 - raw 원본: `2026-06-06/raw/index.md`
 - 정기 업데이트: 매일 07:00 KST
 
 ## 1. Quick Read
 
-- 지금 가장 중요한 축: Agent runtime/control plane. Google AX, Copilot Agent Tasks API, Cline SDK, Kimi Code CLI가 agent를 durable task, event log, policy, scheduling, worktree isolation으로 운영하는 방향을 보여준다.
+- 지금 가장 중요한 운영 축: Agentic work, discovery/registry, identity/authorization, eval/simulation. agent가 대화형 도구에서 위임 가능한 작업 단위로 이동하면서 관리 레이어가 핵심이 됐다.
 - AI 플랫폼 사업 연결 축: UCP + AP2 + AG-UI + A2-UI. 대화형 AI 서비스/커머스/쇼핑/예약/결제를 agentic commerce로 묶으려면 commerce, payment, UI event, declarative UI가 함께 필요하다.
 - 플랫폼 품질 축: SkillNet + SWE-Skills-Bench + COLLEAGUE.SKILL. 스킬은 많이 모으는 것이 아니라 task 개선, token cost, version compatibility, governance까지 검증해야 한다.
 
 브리핑 시작점:
 
 1. `Agent_Trend_Brief.html`
-2. `2026-06-06/AI_Platform_Service_Applicability.html`
-3. `2026-06-07/Hermes_Agent_Deep_Dive.html`
-4. `2026-06-07/Google_AX_Deep_Dive.html`
+2. `2026-06-28/0700_agent_trend_brief.html`
+3. `2026-06-06/AI_Platform_Service_Applicability.html`
+4. `2026-06-07/Hermes_Agent_Deep_Dive.html`
 5. `2026-06-07/AgentBound_Deep_Dive.html`
 6. `2026-06-07/SkillNet_Deep_Dive.html`
 
@@ -61,6 +61,13 @@
 
 | 최신 업데이트 | 문서 | 유형 | 핵심 용도 | History |
 | --- | --- | --- | --- | --- |
+| 2026-06-28 07:00 KST | `2026-06-28/0700_agent_trend_brief.html` | Daily Brief | OpenAI/Anthropic 사용 데이터, Google ARD, GitHub Agent Finder, Microsoft Agent 365, Patronus eval funding, NIST identity/authorization을 agent 운영 레이어 부상으로 정리 | `DOCUMENT_HISTORY.html#history-0700-2026-06-28-brief` |
+| 2026-06-28 07:00 KST | `DOCUMENT_HISTORY.html` | Operations | 07:00 정기 브리프 생성과 관련 허브/운영 문서 갱신 이력을 반영 | `DOCUMENT_HISTORY.html#history-document-history` |
+| 2026-06-28 07:00 KST | `index.html` | Hub | 07:00 정기 브리프와 agent discovery/governance/eval source catalog를 추가 | `DOCUMENT_HISTORY.html#history-index` |
+| 2026-06-28 07:00 KST | `Agent_Trend_Brief.html` | Brief Hub | 07:00 정기 브리프를 Time Briefs와 2026-06-28 날짜 섹션에 추가 | `DOCUMENT_HISTORY.html#history-agent-trend-brief` |
+| 2026-06-28 07:00 KST | `SOURCE_WATCHLIST.html` | Operations | Agent discovery/governance/eval 보조 소스를 관련 watchlist에 추가 | `DOCUMENT_HISTORY.html#history-source-watchlist` |
+| 2026-06-28 07:00 KST | `RESEARCH_LOG.html` | Operations | 2026-06-28 07:00 정기 브리프 조사 항목을 추가 | `DOCUMENT_HISTORY.html#history-research-log` |
+| 2026-06-11 11:03 KST | `2026-06-11/1103_agent_trend_manual.html` | Manual Brief | 사람들이 AI Agent를 가장 많이 사용하는 분야를 고객지원, 리서치/데이터 분석, 생산성/내부 워크플로, IT/개발/보안 순으로 정리 | `DOCUMENT_HISTORY.html#history-1103-agent-trend-manual` |
 | 2026-06-07 14:00 KST | `DOCUMENT_HISTORY.html` | Operations | 브리프 운영 슬롯을 매일 07:00 KST 1회로 변경한 이력을 반영 | `DOCUMENT_HISTORY.html#history-document-history` |
 | 2026-06-07 14:00 KST | `index.html` | Hub | Reports 중심 문서 탐색, Brief 허브, source catalog, raw 링크 허브와 하루 1회 운영 슬롯 반영 | `DOCUMENT_HISTORY.html#history-index` |
 | 2026-06-07 14:00 KST | `Agent_Trend_Brief.html` | Brief Hub | 정기 브리프 운영 슬롯을 매일 07:00 KST 1회로 갱신 | `DOCUMENT_HISTORY.html#history-agent-trend-brief` |
@@ -101,6 +108,19 @@
 - [r/claudeskills](https://www.reddit.com/r/claudeskills/)
 - [r/vibecoding](https://www.reddit.com/r/vibecoding/)
 - [r/mcp](https://www.reddit.com/r/mcp/)
+
+### Agent Work / Discovery / Governance
+
+- [OpenAI agents at work](https://openai.com/index/how-agents-are-transforming-work/)
+- [Anthropic Economic Index](https://www.anthropic.com/research/economic-index-june-2026-report)
+- [Claude Code expertise](https://www.anthropic.com/research/claude-code-expertise)
+- [Google ARD](https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/)
+- [GitHub Agent Finder](https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available/)
+- [Microsoft Build 2026](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/)
+- [NIST Agent Identity](https://www.nccoe.nist.gov/sites/default/files/2026-02/accelerating-the-adoption-of-software-and-ai-agent-identity-and-authorization-concept-paper.pdf)
+- [Patronus Digital World Models](https://www.prnewswire.com/news-releases/patronus-ai-raises-50-million-series-b-and-unveils-first-digital-world-models-for-ai-agent-training-and-simulation-302811248.html)
+- [Google Jules eval](https://developers.googleblog.com/measuring-what-matters-with-jules/)
+- [LangGraph 1.0](https://www.langchain.com/blog/langchain-langgraph-1dot0)
 
 ### A2A / Agent Interoperability
 
@@ -272,6 +292,8 @@
 
 ## 5. Raw Sources
 
+- `2026-06-28/raw/0700_agent_trend_brief.md`
+- `2026-06-11/raw/1103_agent_trend_manual.md`
 - `2026-06-06/raw/A2A_Deep_Dive.md`
 - `2026-06-07/raw/Google_AX_Deep_Dive.md`
 - `2026-06-07/raw/Agent_Trend_Brief.md`
