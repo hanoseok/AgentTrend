@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Agent 사용 분야 수동 브리프</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --ink: #142033;
+      --muted: #667085;
+      --line: #d8dee9;
+      --accent: #2563eb;
+      --soft: #eaf1ff;
+      --green: #067647;
+      --green-soft: #ecfdf3;
+      --amber: #b54708;
+      --amber-soft: #fff7ed;
+      --red: #b42318;
+      --red-soft: #fff1f0;
+      --shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.62;
+    }
+    a { color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
+    a:hover { text-decoration: underline; }
+    .page {
+      width: min(1240px, calc(100% - 32px));
+      margin: 28px auto 60px;
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+    nav {
+      position: sticky;
+      top: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    nav strong { display: block; margin-bottom: 10px; }
+    nav a {
+      display: block;
+      padding: 8px 0;
+      color: #344054;
+      font-size: 14px;
+      border-top: 1px solid #eef2f7;
+    }
+    nav .nav-links, nav .toc-group { border-top: 1px solid #eef2f7; margin-top: 10px; padding-top: 8px; }
+    nav .nav-label, nav .toc-group summary { display: block; color: var(--muted); font-size: 12px; font-weight: 850; }
+    nav .nav-label { margin-bottom: 4px; }
+    nav .toc-group summary { cursor: pointer; color: #344054; list-style: none; }
+    nav .toc-group summary::-webkit-details-marker { display: none; }
+    nav .toc-group summary::after { content: "+"; float: right; color: var(--muted); font-weight: 850; }
+    nav .toc-group[open] summary::after { content: "-"; }
+    nav .toc-links { margin-top: 6px; padding-left: 10px; border-left: 2px solid var(--soft); }
+    nav .nav-links a, nav .toc-links a { border-top: 0; }
+    nav .nav-links a + a, nav .toc-links a + a { border-top: 1px solid #eef2f7; }
+    nav .toc-links a { font-size: 13px; padding: 6px 0; }
+    main { min-width: 0; }
+    .hero, section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-bottom: 18px;
+    }
+    h1 { margin: 0; font-size: clamp(34px, 5vw, 52px); line-height: 1.06; letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 24px; letter-spacing: 0; }
+    h3 { margin: 22px 0 10px; font-size: 18px; letter-spacing: 0; }
+    p { margin: 0 0 13px; }
+    .eyebrow { margin: 0 0 8px; color: var(--accent); font-weight: 850; font-size: 14px; }
+    .lead { max-width: 900px; margin-top: 16px; color: #344054; font-size: 18px; }
+    .meta, .source-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .pill, .source-pills a {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid #bed3ff;
+      background: var(--soft);
+      color: #1e40af;
+      padding: 6px 10px;
+      font-size: 13px;
+      font-weight: 760;
+      line-height: 1.3;
+    }
+    .source-pills { margin: 8px 0 14px; }
+    .source-pills a { padding: 3px 8px; font-size: 12px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fcfdff;
+    }
+    .card strong { display: block; margin-bottom: 6px; color: var(--accent); }
+    .callout {
+      border: 1px solid #bed3ff;
+      background: var(--soft);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+    }
+    th, td {
+      padding: 13px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f1f4f9; color: #344054; font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+      margin: 0 4px 5px 0;
+    }
+    .confirmed { color: var(--green); background: var(--green-soft); border: 1px solid #abefc6; }
+    .signal { color: var(--amber); background: var(--amber-soft); border: 1px solid #fed7aa; }
+    .risk { color: var(--red); background: var(--red-soft); border: 1px solid #ffccc7; }
+    ul, ol { padding-left: 22px; }
+    li { margin: 6px 0; }
+    code {
+      background: #eef2f7;
+      border: 1px solid #dbe3ee;
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-size: 0.92em;
+    }
+    @media (max-width: 980px) {
+      .page { display: block; width: min(100% - 20px, 1240px); margin-top: 18px; }
+      nav { position: static; margin-bottom: 18px; }
+      .grid, .grid.two { grid-template-columns: 1fr; }
+      .hero, section { padding: 22px; }
+      h1 { font-size: 30px; }
+      table { font-size: 14px; }
+      th, td { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav aria-label="AI Agent 사용 분야 브리프 목차">
+      <strong>Manual Brief</strong>
+      <div class="nav-links" aria-label="문서 링크">
+        <span class="nav-label">링크</span>
+        <a href="../Agent_Trend_Brief.html">Brief Hub</a>
+        <a href="../index.html">Index</a>
+        <a href="../DOCUMENT_HISTORY.html">History</a>
+      </div>
+      <details class="toc-group">
+        <summary>목차</summary>
+        <div class="toc-links">
+          <a href="#summary">Summary</a>
+          <a href="#changed">What Changed</a>
+          <a href="#ranking">Usage Ranking</a>
+          <a href="#signals">Signals</a>
+          <a href="#platform">Implications</a>
+          <a href="#actions">Actions</a>
+          <a href="#risks">Risks</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#sources">Sources</a>
+        </div>
+      </details>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <p class="eyebrow">2026-06-11 11:03 KST · Manual Brief</p>
+        <h1>사람들이 AI Agent를 가장 많이 쓰는 분야</h1>
+        <p class="lead">최신 survey와 제품 신호를 기준으로 개인 사용, 기업 배포, 개발자/IT 사용을 분리해 정리했다. 결론은 기업 기준 고객지원과 리서치/데이터 분석, 개인 기준 조사/요약과 생산성 보조가 가장 강하다는 것이다.</p>
+        <div class="meta">
+          <span class="pill">질문: 사용 분야 분포</span>
+          <span class="pill">기준: 2025-2026 공개 자료</span>
+          <span class="pill">raw: 2026-06-11/raw/1103_agent_trend_manual.md</span>
+        </div>
+      </header>
+
+      <section id="summary">
+        <h2>1. Executive Summary</h2>
+        <div class="callout">
+          <strong>한 줄 결론:</strong> 현재 AI Agent 사용이 가장 많이 확인되는 분야는 기업 기준으로는 고객지원/컨택센터와 리서치/데이터 분석이다. 개인/지식근로자 기준으로는 조사/요약, 정보 탐색, 글쓰기, 개인 생산성 보조가 가장 강하다.
+        </div>
+        <div class="grid">
+          <article class="card"><strong>1위 축</strong>고객지원, 컨택센터, CRM. LangChain 2025의 primary deployment 1위이며 Deloitte/PwC도 agentic AI의 최우선 영향 영역으로 본다.</article>
+          <article class="card"><strong>2위 축</strong>리서치, 요약, 데이터 분석, 지식관리. agent가 여러 출처와 도구를 순차적으로 다루기 쉬운 영역이다.</article>
+          <article class="card"><strong>성장 축</strong>IT, 개발, 사이버보안. 전략 중요도는 높지만 Stack Overflow 2025 기준 개발자 agent 사용은 아직 mainstream이라고 보기 어렵다.</article>
+        </div>
+        <div class="source-pills">
+          <a href="https://www.langchain.com/state-of-agent-engineering">LangChain 2025</a>
+          <a href="https://www.langchain.com/stateofaiagents">LangChain 2024</a>
+          <a href="https://openai.com/index/how-people-are-using-chatgpt/">OpenAI Usage Study</a>
+          <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">McKinsey 2025</a>
+          <a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html">Deloitte 2026</a>
+          <a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-agent-survey.html">PwC 2025</a>
+        </div>
+      </section>
+
+      <section id="changed">
+        <h2>2. What Changed</h2>
+        <table>
+          <thead><tr><th>구분</th><th>2024년 신호</th><th>2025-2026년 신호</th><th>해석</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Agent 사용처</td>
+              <td>LangChain 2024는 research/summarization 58%, personal productivity/assistance 53.5%, customer service 45.8%를 상위 사용처로 제시.</td>
+              <td>LangChain 2025는 실제 primary deployment 기준 customer service 26.5%, research &amp; data analysis 24.4%, internal workflow automation 18%를 제시.</td>
+              <td>실험/기대 단계에서는 지식 작업과 생산성이 강했고, production 배포 단계에서는 고객지원과 데이터/리서치가 앞선다.</td>
+            </tr>
+            <tr>
+              <td>기업 확산 단계</td>
+              <td>여러 산업에서 agent production 계획이 높다는 신호.</td>
+              <td>McKinsey 2025는 62%가 agent를 실험 중이거나 scaling 중이지만, 개별 기능별 scaling은 10%를 넘지 않는다고 설명.</td>
+              <td>관심은 넓지만 scale은 아직 초기다. 기능별로는 좁고 검증 가능한 업무부터 간다.</td>
+            </tr>
+            <tr>
+              <td>개발/IT</td>
+              <td>coding assistant와 autocomplete 중심.</td>
+              <td>Stack Overflow 2025 기준 개발자 agent daily 사용은 14.1%, weekly는 9%다.</td>
+              <td>개발/IT는 빠르게 agent화되지만 일반화까지는 품질, 신뢰, 권한 통제가 병목이다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="ranking">
+        <h2>3. High-Importance Updates</h2>
+        <h3>현재 가장 많이 쓰는 분야 순위</h3>
+        <table>
+          <thead><tr><th>순위</th><th>분야</th><th>근거 수준</th><th>왜 많이 쓰이는가</th><th>플랫폼/서비스 의미</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>고객지원 / 컨택센터 / CRM</strong></td><td><span class="tag confirmed">Confirmed</span></td><td>문의량이 많고 FAQ, 주문, 예약, 환불, 케이스 라우팅처럼 반복 업무가 많다.</td><td>brand tone, PII redaction, 답변 근거, escalation, audit log, SLA를 runtime 기본 기능으로 넣어야 한다.</td></tr>
+            <tr><td>2</td><td><strong>리서치 / 요약 / 데이터 분석 / 지식관리</strong></td><td><span class="tag confirmed">Confirmed</span></td><td>정보 수집, 요약, 비교, 보고서 초안, 데이터 해석은 agent가 여러 소스와 도구를 순차적으로 다루기 좋은 업무다.</td><td>retrieval, citation, data connector, evidence trace, analyst review surface가 핵심이다.</td></tr>
+            <tr><td>3</td><td><strong>개인 생산성 / 내부 워크플로 자동화</strong></td><td><span class="tag confirmed">Confirmed</span></td><td>일정, 이메일, 회의 액션아이템, 문서 정리, HR/finance/procurement 요청 같은 반복 사무 업무가 많다.</td><td>employee identity, approval, workflow handoff, connector, scheduled run policy가 필요하다.</td></tr>
+            <tr><td>4</td><td><strong>IT / 개발 / 사이버보안</strong></td><td><span class="tag confirmed">Confirmed, uneven</span></td><td>코드 작성, 테스트, 로그 분석, 서비스데스크, 취약점 triage는 tool-using agent와 잘 맞는다.</td><td>privileged tool access, sandbox, branch/worktree isolation, incident audit, rollback이 우선이다.</td></tr>
+            <tr><td>5</td><td><strong>세일즈 / 마케팅 / 콘텐츠</strong></td><td><span class="tag signal">Near-term signal</span></td><td>고객 세그먼트 조사, 캠페인 초안, 제안서, CRM 업데이트, 리드 qualification이 반복된다.</td><td>brand policy, claim review, CRM write-back, campaign approval, attribution tracking이 중요하다.</td></tr>
+            <tr><td>6</td><td><strong>공급망 / R&amp;D / 금융 / HR / 법무 / 구매</strong></td><td><span class="tag signal">High potential</span></td><td>업무 가치는 크지만 domain data, 책임 소재, 승인 절차가 복잡하다.</td><td>vertical template, policy-aware workflow, domain eval, human-in-the-loop approval부터 설계해야 한다.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>고객지원이 1위로 보이는 이유</h3>
+        <ul>
+          <li><strong>Confirmed fact:</strong> LangChain 2025는 primary agent use case 중 customer service를 26.5%로 가장 흔한 배포처라고 제시했다.</li>
+          <li><strong>Confirmed fact:</strong> Deloitte 2026은 agentic AI가 customer support에서 가장 큰 impact를 낼 것으로 봤다.</li>
+          <li><strong>Confirmed fact:</strong> PwC 2025는 AI agent를 쓰거나 6개월 내 쓸 계획인 기업 중 customer service/support가 57%, sales/marketing 54%, IT/cybersecurity 53%라고 보고했다.</li>
+          <li><strong>Interpretation:</strong> 고객지원은 자연어 요청이 들어오지만 뒤의 처리는 lookup, refund rule, ticket update, escalation, response draft처럼 tool call과 workflow로 쪼개진다.</li>
+        </ul>
+      </section>
+
+      <section id="signals">
+        <h2>4. Project, Paper, Product, and Protocol Signals</h2>
+        <table>
+          <thead><tr><th>신호</th><th>유형</th><th>요지</th><th>왜 중요한가</th></tr></thead>
+          <tbody>
+            <tr><td>LangChain State of Agent Engineering 2025</td><td>Survey</td><td>production agent의 primary use case가 customer service와 research/data analysis에 집중.</td><td>agent builder/enterprise audience 기준으로 현재 배포 우선순위를 보여준다.</td></tr>
+            <tr><td>McKinsey State of AI 2025</td><td>Survey</td><td>62%가 agent를 실험 또는 scaling 중이지만, 기능별 scaling은 아직 낮음.</td><td>관심은 넓고 scale은 좁다는 도입 상태를 보여준다.</td></tr>
+            <tr><td>Deloitte State of AI 2026</td><td>Survey / analyst</td><td>customer support가 agentic AI impact 최상위로 제시되고, supply chain/R&amp;D/KM/cybersecurity가 뒤따름.</td><td>고객지원 1위 판단을 보강하며 다음 확장 분야를 제시한다.</td></tr>
+            <tr><td>ServiceNow Autonomous Workforce 2026</td><td>Product signal</td><td>IT, CRM, employee service, security/risk를 role-scoped specialist로 제품화.</td><td>enterprise workflow vendor들이 agent를 workflow 실행 계층으로 배치하고 있다.</td></tr>
+            <tr><td>Stack Overflow Developer Survey 2025</td><td>Developer survey</td><td>개발자 agent 사용은 아직 mainstream이라고 보기 어려움.</td><td>coding agent 과열 해석을 보정하고 adoption gap을 보여준다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="platform">
+        <h2>5. AI Platform and Service Implications</h2>
+        <div class="grid two">
+          <article class="card">
+            <strong>우선 투자 순서</strong>
+            <ol>
+              <li>고객지원/CRM agent</li>
+              <li>리서치/데이터 분석 agent</li>
+              <li>내부 워크플로/employee service agent</li>
+              <li>IT/개발/보안 agent</li>
+              <li>세일즈/마케팅/content agent</li>
+            </ol>
+          </article>
+          <article class="card">
+            <strong>공통 플랫폼 기능</strong>
+            <ul>
+              <li>Agent identity, scope, owner</li>
+              <li>Tool permission matrix</li>
+              <li>Execution ledger and trace</li>
+              <li>Human escalation and approval</li>
+              <li>Evidence and citation layer</li>
+              <li>Domain eval suite</li>
+              <li>Artifact review surface</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="actions">
+        <h2>6. Recommended Actions</h2>
+        <ol>
+          <li>고객지원과 리서치/데이터 분석을 첫 번째 benchmark use case로 잡는다.</li>
+          <li>분야별 agent registry를 만든다: customer support, research, productivity, IT/security, sales/marketing, back-office.</li>
+          <li>고객지원 agent는 자동 답변보다 triage, draft, retrieval-grounded answer, escalation부터 시작한다.</li>
+          <li>리서치/데이터 agent는 citation, source ranking, stale-source warning, data lineage를 기본 기능으로 둔다.</li>
+          <li>개발/IT/보안 agent는 worktree/sandbox, read-only default, production write approval, incident replay를 최소 조건으로 둔다.</li>
+          <li>30일 안에 분야별 adoption metric을 정한다: deflection rate, answer acceptance, cycle time, human edit distance, escalation rate, tool error, policy violation, cost per completed task.</li>
+        </ol>
+      </section>
+
+      <section id="risks">
+        <h2>7. Risks, Uncertainties, and Watch Items</h2>
+        <table>
+          <thead><tr><th>리스크</th><th>설명</th><th>대응</th></tr></thead>
+          <tbody>
+            <tr><td>정의 혼선</td><td>survey마다 AI agent, chatbot, AI assistant, agentic workflow의 정의가 다르다.</td><td>자율 계획, 도구 사용, 상태 유지, 업무 완료 수준별로 분류한다.</td></tr>
+            <tr><td>표본 편향</td><td>LangChain은 builder/enterprise audience, Stack Overflow는 개발자, PwC/Deloitte/McKinsey는 기업 응답 중심이다.</td><td>개인 사용, 개발자 사용, 기업 배포를 섞지 않고 따로 본다.</td></tr>
+            <tr><td>고객지원 rollback</td><td>고객지원은 많이 쓰이지만 hallucination, data exposure, audit 부재가 바로 고객 피해로 이어질 수 있다.</td><td>high-risk query escalation, PII redaction, answer grounding, post-resolution audit를 필수화한다.</td></tr>
+            <tr><td>개발/IT 권한</td><td>coding/IT/security agent는 repo, cloud, ticket, identity system을 건드린다.</td><td>least privilege, sandbox, branch isolation, approval checkpoint, rollback plan을 둔다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="evidence">
+        <h2>8. Inline Evidence</h2>
+        <table>
+          <thead><tr><th>Claim</th><th>Evidence</th><th>Label</th></tr></thead>
+          <tbody>
+            <tr><td>기업 production agent의 1위 use case는 customer service에 가깝다.</td><td>LangChain 2025: customer service 26.5%, research &amp; data analysis 24.4%.</td><td><span class="tag confirmed">Confirmed fact</span></td></tr>
+            <tr><td>agent에 적합한 개인/지식 업무는 research/summarization과 personal productivity가 강하다.</td><td>LangChain 2024: research/summarization 58%, personal productivity/assistance 53.5%, customer service 45.8%.</td><td><span class="tag confirmed">Confirmed fact</span></td></tr>
+            <tr><td>일반 AI 사용은 practical guidance, information seeking, writing 중심이다.</td><td>OpenAI 2025 ChatGPT usage study. 단, agent 전용 조사는 아니다.</td><td><span class="tag signal">Adjacent evidence</span></td></tr>
+            <tr><td>기업 agent는 아직 초기 scale 단계다.</td><td>McKinsey 2025: 62%가 experimenting/scaling, 기능별 scaling은 10% 이하.</td><td><span class="tag confirmed">Confirmed fact</span></td></tr>
+            <tr><td>개발자 agent 사용은 빠르게 커지지만 mainstream은 아니다.</td><td>Stack Overflow 2025: daily 14.1%, weekly 9%.</td><td><span class="tag confirmed">Confirmed fact</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sources">
+        <h2>9. Sources</h2>
+        <div class="grid two">
+          <article class="card">
+            <strong>왜 이걸 정리하게 되었는가</strong>
+            <p>사용자가 사람들이 AI Agent를 어느 분야에 가장 많이 사용하는지 요청했다. 기존 Agent Trend 문서가 runtime/control plane, protocol, skill governance 중심이어서 실제 사용 분야 분포를 별도 수동 브리프로 정리했다.</p>
+            <div class="source-pills">
+              <a href="../Agent_Trend_Brief.html">Agent Trend Brief</a>
+              <a href="../SOURCE_WATCHLIST.html">Source Watchlist</a>
+              <a href="../RESEARCH_LOG.html">Research Log</a>
+            </div>
+          </article>
+          <article class="card">
+            <strong>딥리서치 출처</strong>
+            <div class="source-pills">
+              <a href="https://www.langchain.com/state-of-agent-engineering">LangChain 2025</a>
+              <a href="https://www.langchain.com/stateofaiagents">LangChain 2024</a>
+              <a href="https://openai.com/index/how-people-are-using-chatgpt/">OpenAI Usage Study</a>
+              <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">McKinsey 2025</a>
+              <a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html">Deloitte 2026</a>
+              <a href="https://www.deloitte.com/us/en/insights/topics/emerging-technologies/ai-agents-scaling-faster.html">Deloitte Guardrails</a>
+              <a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-agent-survey.html">PwC AI Agent Survey</a>
+              <a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/agentic-ai-in-it.html">PwC IT Agents</a>
+              <a href="https://survey.stackoverflow.co/2025/ai">Stack Overflow 2025</a>
+              <a href="https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-brings-Autonomous-Workforce-to-every-major-business-function/default.aspx">ServiceNow 2026</a>
+              <a href="https://www.zendesk.com/blog/ai/productivity/ai-customer-service-statistics/">Zendesk CX Signal</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

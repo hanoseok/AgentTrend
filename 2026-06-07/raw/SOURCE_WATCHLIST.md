@@ -1,6 +1,6 @@
 # Agent Trend Source Watchlist
 
-- 최종 갱신: 2026-06-07 14:00 KST
+- 최종 갱신: 2026-06-11 11:03 KST
 - 정기 확인: 매일 07:00 KST
 - 목적: 에이전트 트렌드 정기 조사에서 매번 순회할 소스 목록 관리
 - HTML: `SOURCE_WATCHLIST.html`
@@ -29,6 +29,7 @@
 | Agent Substrate / GKE Agent Sandbox | https://github.com/agent-substrate/substrate, https://pkg.go.dev/github.com/agent-substrate/substrate, https://docs.cloud.google.com/kubernetes-engine/docs/how-to/agent-sandbox, https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/ | 추가 이유: AX의 production deployment story가 stateful actor lifecycle, suspend/resume, warm pool, pod snapshot, gVisor/Kata isolation과 직접 연결됨. 관찰할 신호: CRD/API 안정화, WorkerPool/ActorTemplate 변화, sandbox isolation defaults, snapshot/restore latency, cost model, security boundary |
 | Kimi Code CLI | https://github.com/MoonshotAI/kimi-code, https://moonshotai.github.io/kimi-code/ | 추가 이유: terminal coding agent의 MCP config, plugin marketplace, subagents, hooks, approval flow가 open-source harness 기준으로 유용함. 관찰할 신호: provider compatibility, plugin trust model, MCP auth, subagent isolation |
 | Cline SDK / Cline runtime | https://docs.cline.bot/sdk/overview, https://github.com/cline/cline | 추가 이유: IDE extension에서 product-embedded SDK, scheduled agents, Kanban/worktree, MCP, subagents로 확장 중. 관찰할 신호: SDK stability, schedule audit, checkpoint, MCP permission, enterprise controls |
+| AI Agent Usage / Adoption Benchmarks | https://www.langchain.com/state-of-agent-engineering, https://www.langchain.com/stateofaiagents, https://openai.com/index/how-people-are-using-chatgpt/, https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai, https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html, https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-agent-survey.html, https://survey.stackoverflow.co/2025/ai | 추가 이유: agent runtime/protocol 조사와 별도로 실제 사용 분야, production deployment, 기업 기능별 adoption, 개발자 agent 사용률을 추적하기 위한 benchmark 묶음. 관찰할 신호: customer service vs research/data analysis 비중, internal productivity 변화, IT/security agent 확산, agent 정의 변화, survey 표본 편향 |
 | arXiv / Hugging Face Papers | https://arxiv.org/, https://huggingface.co/papers | agent security, skill eval, trace-to-skill, memory, workflow, multi-agent 논문과 커뮤니티 반응을 확인 |
 | Google Developers Blog | https://developers.googleblog.com/ | A2A, UCP, AP2, A2UI, AG-UI, ADK 등 공식 프로토콜/SDK 업데이트 교차 확인 |
 | Anthropic / Claude Blog | https://claude.com/blog | Claude Code, Skills, Managed Agents, MCP, memory, workflow 기능의 공식 발표 확인 |

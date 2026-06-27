@@ -1,6 +1,6 @@
 # Document Update History
 
-- 최종 갱신: 2026-06-07 14:00 KST
+- 최종 갱신: 2026-06-11 11:03 KST
 - HTML 정본: `DOCUMENT_HISTORY.html`
 - 기준: git commit 이력과 문서 metadata
 - 정렬 기준: 최신 업데이트 내림차순
@@ -9,11 +9,12 @@
 
 | 최신 업데이트 | 문서 | 상태 | 히스토리 anchor |
 | --- | --- | --- | --- |
-| 2026-06-07 14:00 KST | `DOCUMENT_HISTORY.html` | Operations | `#history-document-history` |
-| 2026-06-07 14:00 KST | `index.html` | Hub | `#history-index` |
-| 2026-06-07 14:00 KST | `Agent_Trend_Brief.html` | Brief Hub | `#history-agent-trend-brief` |
-| 2026-06-07 14:00 KST | `SOURCE_WATCHLIST.html` | Operations | `#history-source-watchlist` |
-| 2026-06-07 14:00 KST | `RESEARCH_LOG.html` | Operations | `#history-research-log` |
+| 2026-06-11 11:03 KST | `2026-06-11/1103_agent_trend_manual.html` | Manual Brief | `#history-1103-agent-trend-manual` |
+| 2026-06-11 11:03 KST | `DOCUMENT_HISTORY.html` | Operations | `#history-document-history` |
+| 2026-06-11 11:03 KST | `index.html` | Hub | `#history-index` |
+| 2026-06-11 11:03 KST | `Agent_Trend_Brief.html` | Brief Hub | `#history-agent-trend-brief` |
+| 2026-06-11 11:03 KST | `SOURCE_WATCHLIST.html` | Operations | `#history-source-watchlist` |
+| 2026-06-11 11:03 KST | `RESEARCH_LOG.html` | Operations | `#history-research-log` |
 | 2026-06-07 12:36 KST | `2026-06-07/Google_AX_Deep_Dive.html` | Detailed Deep Dive | `#history-google-ax` |
 | 2026-06-07 12:36 KST | `2026-06-07/Hermes_Agent_Deep_Dive.html` | Detailed Deep Dive | `#history-hermes-agent` |
 | 2026-06-07 12:36 KST | `2026-06-07/Claude_Code_Dynamic_Workflows_Deep_Dive.html` | Expanded Deep Dive | `#history-dynamic-workflows` |
@@ -37,6 +38,7 @@
 
 ### Document Update History
 
+- 2026-06-11 11:03 KST: AI Agent 사용 분야 수동 브리프 생성, 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
 - 2026-06-07 14:00 KST: 브리프 자동화를 하루 1회 07:00 KST 실행으로 변경하고 운영 문서와 이력에 반영.
 - 2026-06-07 13:55 KST: 브리프 자동화 시작 시간을 07:00 KST로 조정하고 직전 다중 운영 슬롯으로 갱신.
 - 2026-06-07 12:48 KST: Agent Trend Brief 전용 허브를 추가하고 Reports 정렬을 갱신.
@@ -50,6 +52,7 @@
 
 ### Agent Trend 전체 인덱스
 
+- 2026-06-11 11:03 KST: AI Agent 사용 분야 수동 브리프를 Reports 최상단과 raw 목록에 추가하고, usage/adoption benchmark source catalog를 보강.
 - 2026-06-07 14:00 KST: 정기 업데이트 시간을 매일 07:00 KST로 변경.
 - 2026-06-07 13:55 KST: 정기 업데이트 시간을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 12:48 KST: Agent Trend Brief 허브를 추가하고 개별 시간대 브리프를 메인 Reports에서 허브 하위로 이동.
@@ -66,9 +69,16 @@
 
 ### Agent Trend Brief
 
+- 2026-06-11 11:03 KST: 11:03 AI Agent 사용 분야 수동 브리프를 Time Briefs 최상단과 2026-06-11 날짜 섹션에 추가.
 - 2026-06-07 14:00 KST: 운영 슬롯을 매일 07:00 KST 1회로 변경하고 Cadence를 단일 슬롯으로 정리.
 - 2026-06-07 13:55 KST: 운영 슬롯을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 12:48 KST: 정기 에이전트 트렌드 브리프 전용 허브를 생성하고 09:00/20:00 브리프를 시간별 하위 목록으로 정리.
+
+### 2026-06-11 Reports
+
+#### AI Agent 사용 분야 수동 브리프
+
+- 2026-06-11 11:03 KST: LangChain, OpenAI, McKinsey, Deloitte, PwC, Stack Overflow, ServiceNow, Zendesk 자료를 확인하고 사람들이 AI Agent를 가장 많이 쓰는 분야를 고객지원/컨택센터, 리서치/데이터 분석, 생산성/내부 워크플로, IT/개발/보안 중심으로 정리한 수동 브리프와 raw 원본을 생성.
 
 ### Google Agent Executor / AX
 
@@ -191,6 +201,7 @@
 
 ### Agent Trend 조사 이력
 
+- 2026-06-11 11:03 KST: AI Agent 사용 분야 수동 브리프 항목과 관련 benchmark source들을 조사 이력에 추가.
 - 2026-06-07 13:55 KST: 정기 업데이트 시간을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 12:48 KST: Agent Trend Brief 허브 생성 항목과 raw 경로를 조사 이력에 추가.
 - 2026-06-07 11:17 KST: Google AX Detailed Deep Dive 항목과 Agent Substrate/GKE Agent Sandbox source 확장 범위를 조사 이력에 추가.
@@ -217,6 +228,7 @@
 
 ### Source Watchlist
 
+- 2026-06-11 11:03 KST: AI Agent Usage / Adoption Benchmarks 보조 소스를 추가하고 customer service, research/data analysis, internal productivity, IT/security 사용 비중 추적 기준을 기록.
 - 2026-06-07 14:00 KST: 정기 확인 시간을 매일 07:00 KST로 변경.
 - 2026-06-07 13:55 KST: 정기 확인 시간을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 11:17 KST: Google AX 항목에 v0.1.0과 runtime change 관찰 신호를 보강하고, Agent Substrate/GKE Agent Sandbox를 별도 보조 소스로 추가.
