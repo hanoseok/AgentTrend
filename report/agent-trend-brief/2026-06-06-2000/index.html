@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2000 Agent Trend Brief</title>
+  <style>
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+    .source-pills a { display: inline-flex; align-items: center; border: 1px solid #c7d2fe; border-radius: 999px; background: #f5f8ff; color: #1d4ed8; padding: 3px 8px; font-size: 12px; font-weight: 760; line-height: 1.3; }
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --ink: #142033;
+      --muted: #667085;
+      --line: #d8dee9;
+      --accent: #2563eb;
+      --accent-soft: #eaf1ff;
+      --green: #067647;
+      --green-soft: #ecfdf3;
+      --amber: #b54708;
+      --amber-soft: #fff7ed;
+      --red: #b42318;
+      --red-soft: #fff1f0;
+      --shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.62;
+    }
+    a { color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
+    a:hover { text-decoration: underline; }
+    .page {
+      width: min(1240px, calc(100% - 32px));
+      margin: 28px auto 60px;
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+    nav {
+      position: sticky;
+      top: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    nav strong { display: block; margin-bottom: 10px; }
+    nav a {
+      display: block;
+      padding: 8px 0;
+      color: #344054;
+      font-size: 14px;
+      border-top: 1px solid #eef2f7;
+    }
+    nav .nav-links, nav .toc-group { border-top:1px solid #eef2f7; margin-top:10px; padding-top:8px; }
+    nav .nav-label, nav .toc-group summary { display:block; color:var(--muted, #667085); font-size:12px; font-weight:850; }
+    nav .nav-label { margin-bottom:4px; }
+    nav .toc-group summary { cursor:pointer; color:#344054; list-style:none; }
+    nav .toc-group summary::-webkit-details-marker { display:none; }
+    nav .toc-group summary::after { content:"+"; float:right; color:var(--muted, #667085); font-weight:850; }
+    nav .toc-group[open] summary::after { content:"-"; }
+    nav .toc-links { margin-top:6px; padding-left:10px; border-left:2px solid var(--soft, #eaf1ff); }
+    nav .nav-links a, nav .toc-links a { border-top:0; }
+    nav .nav-links a + a, nav .toc-links a + a { border-top:1px solid #eef2f7; }
+    nav .toc-links a { font-size:13px; padding:6px 0; }
+    main { min-width: 0; }
+    .hero, section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-bottom: 18px;
+    }
+    h1 { margin: 0; font-size: clamp(34px, 5vw, 54px); line-height: 1.06; letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 24px; letter-spacing: 0; }
+    h3 { margin: 24px 0 10px; font-size: 18px; letter-spacing: 0; }
+    p { margin: 0 0 13px; }
+    .eyebrow { margin: 0 0 8px; color: var(--accent); font-weight: 850; font-size: 14px; }
+    .lead { max-width: 880px; margin-top: 16px; color: #344054; font-size: 18px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid #bed3ff;
+      background: var(--accent-soft);
+      color: #1e40af;
+      padding: 7px 11px;
+      font-size: 13px;
+      font-weight: 760;
+    }
+    .summary-grid, .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fcfdff;
+    }
+    .card strong { display: block; margin-bottom: 6px; color: var(--accent); }
+    .callout {
+      border: 1px solid #bed3ff;
+      background: var(--accent-soft);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+    }
+    th, td {
+      padding: 13px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f1f4f9; color: #344054; font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .high { color: var(--red); background: var(--red-soft); border: 1px solid #ffccc7; }
+    .medium { color: var(--amber); background: var(--amber-soft); border: 1px solid #fed7aa; }
+    .yes { color: var(--green); background: var(--green-soft); border: 1px solid #abefc6; }
+    ul, ol { padding-left: 22px; }
+    li { margin: 6px 0; }
+    .source-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .source-list a { display: block; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fcfdff; }
+    @media (max-width: 980px) {
+      .page { display: block; width: min(100% - 20px, 1240px); margin-top: 18px; }
+      nav { position: static; margin-bottom: 18px; }
+      .summary-grid, .card-grid, .source-list { grid-template-columns: 1fr; }
+      .hero, section { padding: 22px; }
+      h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav aria-label="문서 목차">
+      <strong>2000 Brief</strong>
+      <div class="nav-links" aria-label="문서 링크">
+        <span class="nav-label">링크</span>
+        <a href="../../../index.html">Index</a>
+      </div>
+      <details class="toc-group">
+        <summary>목차</summary>
+        <div class="toc-links">
+          <a href="#summary">Executive Summary</a>
+          <a href="#coverage">Source Coverage</a>
+          <a href="#alerts">Project / Paper Alert</a>
+          <a href="#new">신규 사항</a>
+          <a href="#updates">기존 조사 업데이트</a>
+          <a href="#technical">Technical Detail</a>
+          <a href="#platform">AI Platform Implications</a>
+          <a href="#actions">Recommended Actions</a>
+        </div>
+      </details>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <p class="eyebrow">Manual Agent Trend Brief</p>
+        <h1>2026-06-06 20:00 에이전트 트렌드 업데이트</h1>
+        <p class="lead">watchlist 기반 수동 업데이트. 이번 회차의 핵심은 Claude Code Dynamic Workflows, MCP 2026-07-28 RC, MCP 보안 논문 AgentBound, Skills 벤치마크, agentic commerce/UI protocol stack이다.</p>
+        <div class="meta">
+          <span class="pill">작성 시점: 2026-06-06 20:00 KST</span>
+          <span class="pill">실행 유형: 수동 업데이트</span>
+          <span class="pill">Raw: raw/2000_agent_trend_brief.md</span>
+        </div>
+      </header>
+
+      <section id="summary">
+        <h2>1. Executive Summary</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Anthropic</a>
+          <a href="https://blog.modelcontextprotocol.io/">MCP Blog</a>
+          <a href="https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf">AgentBound</a>
+          <a href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</a>
+        </div>
+        <div class="summary-grid">
+          <article class="card"><strong>Dynamic Workflows가 최강 신호</strong>Anthropic 공식 발표와 Reddit 반응이 동시에 강하다. 병렬 subagent, workflow-as-code, 장시간 코드베이스 작업, token burn 논쟁이 모두 붙었다.</article>
+          <article class="card"><strong>MCP는 production protocol로 이동</strong>2026-07-28 RC는 stateless core, MCP Apps, Tasks, OAuth/OIDC, deprecation policy를 포함한다. 단순 tool 연결을 넘어 플랫폼 계약이 되고 있다.</article>
+          <article class="card"><strong>Skills는 hype보다 eval</strong>SWE-Skills-Bench는 49개 public SWE skills 중 39개가 pass-rate 개선이 없다고 보고한다. skill marketplace는 eval/compatibility 중심이어야 한다.</article>
+        </div>
+      </section>
+
+      <section id="coverage">
+        <h2>2. Source Coverage</h2>
+        <table>
+          <thead><tr><th>소스</th><th>확인</th><th>유의미한 변화</th><th>후속 액션</th></tr></thead>
+          <tbody>
+            <tr><td>GeekNews</td><td>Checked</td><td>AI 에이전트, CLI 회귀, MCP 논쟁, 로컬 AI/비용 이슈 흐름 유지</td><td>MCP governance와 coding agent 비용 추적</td></tr>
+            <tr><td>MarkTechPost</td><td>Checked</td><td>AIO Sandbox, UCP, OpenSpace, Cloudflare Agents SDK 확인</td><td>AIO Sandbox와 UCP 딥다이브 후보</td></tr>
+            <tr><td>GitHub Blog</td><td>Checked</td><td>Copilot App preview 확대, gh skill, usage billing 확인</td><td>Agent-native developer UX 딥다이브 후보</td></tr>
+            <tr><td>Reddit r/ClaudeCode / r/vibecoding</td><td>Checked</td><td>Dynamic Workflows 반응이 강함. token burn, 비용, 제어권 논쟁</td><td>최우선 딥다이브 후보</td></tr>
+            <tr><td>MCP / OpenAI / UCP / AP2 / AG-UI Docs</td><td>Checked</td><td>protocol stack과 production runtime 기준 확인</td><td>AI 플랫폼 계약 설계에 반영</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="alerts">
+        <h2>3. Project / Paper Alert</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Dynamic Workflows</a>
+          <a href="https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf">AgentBound</a>
+          <a href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</a>
+          <a href="https://arxiv.org/abs/2605.31264">COLLEAGUE.SKILL</a>
+        </div>
+        <table>
+          <thead><tr><th>구분</th><th>프로젝트/논문</th><th>왜 이슈인가</th><th>사람들이 하는 말</th><th>AI 플랫폼/서비스 영향</th><th>딥다이브</th></tr></thead>
+          <tbody>
+            <tr><td>Project</td><td><strong>Claude Code Dynamic Workflows / ultracode</strong></td><td>공식 발표와 커뮤니티 반응이 동시에 강함. 수십~수백 subagent, Bun port 사례</td><td>전환점이라는 반응과 token burn/제어권 우려가 동시에 큼</td><td>사내 개발/운영 에이전트, 보안 감사, 마이그레이션 자동화</td><td><span class="tag yes">Yes</span></td></tr>
+            <tr><td>Spec</td><td><strong>MCP 2026-07-28 RC</strong></td><td>stateless core, MCP Apps, Tasks, OAuth/OIDC alignment, deprecation policy</td><td>production MCP의 큰 전환점</td><td>MCP registry, task lifecycle, app rendering, auth 설계 영향</td><td><span class="tag yes">Yes</span></td></tr>
+            <tr><td>Paper</td><td><strong>AgentBound</strong></td><td>MCP 서버 접근통제 논문. 296개 MCP 서버 분석, 자동 policy 생성</td><td>MCP 서버 권한 과다 문제를 정면으로 다룸</td><td>AI 플랫폼 MCP 보안 baseline 후보</td><td><span class="tag yes">Yes</span></td></tr>
+            <tr><td>Paper</td><td><strong>SWE-Skills-Bench</strong></td><td>Agent skills 효과 검증. 39/49 skills가 pass-rate 개선 없음</td><td>skills hype에 제동</td><td>skill marketplace eval 기준 필요</td><td><span class="tag yes">Yes</span></td></tr>
+            <tr><td>Paper/Project</td><td><strong>COLLEAGUE.SKILL</strong></td><td>expert traces를 portable/correctable skill로 증류</td><td>person-grounded skills 가능성, 검증 필요</td><td>사내 업무/CS/운영 지식 skill화</td><td><span class="tag medium">Maybe</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="new">
+        <h2>4. 신규 사항</h2>
+        <table>
+          <thead><tr><th>중요도</th><th>주제</th><th>새로 확인한 내용</th><th>AI 플랫폼/서비스 영향</th><th>출처</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag high">High</span></td><td>Dynamic Workflows</td><td>2026-05-28 Anthropic 발표. workflow script + parallel subagents + verification</td><td>workflow orchestration, budget guardrail, subagent trace 필요</td><td>Anthropic, Reddit</td></tr>
+            <tr><td><span class="tag high">High</span></td><td>MCP 2026-07-28 RC</td><td>출시 이후 최대급 revision. stateless core와 Tasks/App/Auth 변화</td><td>MCP registry 설계 업데이트 필요</td><td>MCP Blog</td></tr>
+            <tr><td><span class="tag high">High</span></td><td>AgentBound</td><td>MCP 서버 접근통제 논문</td><td>permission tier, sandbox policy, audit에 직접 연결</td><td>Paper</td></tr>
+            <tr><td><span class="tag high">High</span></td><td>SWE-Skills-Bench</td><td>skills 효과가 제한적이라는 벤치마크</td><td>skill marketplace에 eval/compatibility 필수</td><td>arXiv</td></tr>
+            <tr><td><span class="tag medium">Medium</span></td><td>GitHub Copilot App + gh skill</td><td>agent-native app, MCP, skills, scheduled automations, voice, cloud sessions</td><td>내부 개발 플랫폼 UX 참고</td><td>GitHub</td></tr>
+            <tr><td><span class="tag medium">Medium</span></td><td>UCP/AP2/AG-UI</td><td>commerce, payment, user-facing UI protocol stack</td><td>쇼핑/커머스/결제/예약 전략에 중요</td><td>Docs</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="updates">
+        <h2>5. 기존 조사 업데이트</h2>
+        <table>
+          <thead><tr><th>기존 주제</th><th>변경점</th><th>판단</th><th>후속 확인</th></tr></thead>
+          <tbody>
+            <tr><td>A2A</td><td>AP2/UCP 문서에서 A2A가 commerce/payment stack의 일부로 연결됨</td><td>A2A 단독이 아니라 MCP/UCP/AP2/AG-UI와 함께 설계</td><td>통합 플로우 딥다이브</td></tr>
+            <tr><td>MCP Production Mess</td><td>MCP RC와 AgentBound가 production pain을 공식/연구 레벨에서 뒷받침</td><td>tool 연결보다 governance가 중요</td><td>MCP RC 딥다이브</td></tr>
+            <tr><td>Skills Marketplace</td><td>GitHub gh skill과 SWE-Skills-Bench가 동시에 등장</td><td>skill은 중요하지만 검증 없이는 위험</td><td>SWE-Skills-Bench 딥다이브</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="technical">
+        <h2>6. Technical Detail</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Workflow runtime</a>
+          <a href="https://modelcontextprotocol.io/">MCP Docs</a>
+          <a href="https://ucp.dev/">UCP</a>
+          <a href="https://ap2-protocol.org/">AP2</a>
+          <a href="https://docs.ag-ui.com/">AG-UI</a>
+        </div>
+        <div class="card-grid">
+          <article class="card"><strong>Workflow runtime</strong>Dynamic Workflows의 본질은 agent가 orchestration code를 만들고 병렬 실행/검증/재개를 운영하는 runtime이다. AI 플랫폼은 cost cap, model routing, trace, approval을 같이 설계해야 한다.</article>
+          <article class="card"><strong>MCP enterprise shift</strong>MCP RC는 stateless HTTP, MCP Apps, Tasks, auth/OIDC, deprecation policy를 강조한다. MCP registry도 versioning과 task lifecycle을 포함해야 한다.</article>
+          <article class="card"><strong>Skills eval</strong>GitHub는 skill install/publish 생태계를 밀고 있지만, SWE-Skills-Bench는 대부분의 skills가 효과가 제한적이라고 말한다. 배포 전 task eval이 필수다.</article>
+          <article class="card"><strong>Commerce/UI stack</strong>UCP는 checkout/order, AP2는 mandate/audit, AG-UI는 streaming/interrupt/shared state를 다룬다. 서비스형 에이전트는 이 세 계층을 모두 봐야 한다.</article>
+        </div>
+      </section>
+
+      <section id="platform">
+        <h2>7. AI Platform Implications</h2>
+        <ul>
+          <li>AI 플랫폼: Agent Registry와 MCP Registry를 통합하되 risk annotation, permission, Tasks, UI rendering, deprecation을 같이 관리해야 한다.</li>
+          <li>대화형 AI 서비스: AG-UI류의 streaming, interrupt, approval, shared state, user steering이 필요하다.</li>
+          <li>쇼핑/커머스/결제/로컬 예약: UCP/AP2 스타일의 checkout mandate, payment mandate, identity linking, order lifecycle을 검토해야 한다.</li>
+          <li>사내 개발 플랫폼: agent task board, review queue, trace view, budget guardrail이 필요하다.</li>
+        </ul>
+      </section>
+
+      <section id="actions">
+        <h2>8. Recommended Actions</h2>
+        <div class="callout">
+          <strong>제가 추천하는 다음 딥다이브:</strong> 1순위는 Claude Code Dynamic Workflows, 2순위는 MCP 2026-07-28 RC, 3순위는 AgentBound + SWE-Skills-Bench 묶음입니다.
+        </div>
+      </section>
+
+      <section>
+        <h2>9. Risks / Watch Items</h2>
+        <ul>
+          <li>multi-agent workflows는 token 사용량이 급증할 수 있다.</li>
+          <li>MCP 서버와 sandbox agent는 host/resource 접근권한을 명시적으로 통제해야 한다.</li>
+          <li>skills는 task에 맞지 않으면 효과가 없거나 오히려 성능을 떨어뜨릴 수 있다.</li>
+          <li>commerce agent는 결제 승인, 책임, 분쟁 처리, audit trail이 가장 어렵다.</li>
+        </ul>
+      </section>
+      <section id="report-sources">
+        <h2>출처</h2>
+        <h3>왜 이걸 정리하게 되었는가</h3>
+        <div class="source-pills">
+          <a href="../../../source/index.html">Source Watchlist</a>
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Anthropic Dynamic Workflows</a>
+          <a href="https://blog.modelcontextprotocol.io/">MCP Blog</a>
+          <a href="https://github.blog/">GitHub Blog</a>
+          <a href="https://news.hada.io/">GeekNews</a>
+        </div>
+        <h3>딥리서치 출처</h3>
+        <div class="source-pills">
+          <a href="https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf">AgentBound PDF</a>
+          <a href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</a>
+          <a href="https://arxiv.org/abs/2605.31264">COLLEAGUE.SKILL</a>
+          <a href="https://ucp.dev/">UCP</a>
+          <a href="https://ap2-protocol.org/">AP2</a>
+          <a href="https://docs.ag-ui.com/">AG-UI</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

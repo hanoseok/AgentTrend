@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Platform / Service Applicability</title>
+  <style>
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+    .source-pills a { display: inline-flex; align-items: center; border: 1px solid #c7d2fe; border-radius: 999px; background: #f5f8ff; color: #1d4ed8; padding: 3px 8px; font-size: 12px; font-weight: 760; line-height: 1.3; }
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --ink: #141f33;
+      --muted: #667085;
+      --line: #d8dee9;
+      --accent: #2563eb;
+      --green: #0f766e;
+      --amber: #b54708;
+      --red: #b42318;
+      --soft: #eaf1ff;
+      --green-soft: #ecfdf3;
+      --amber-soft: #fff7ed;
+      --red-soft: #fff1f0;
+      --shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.62;
+    }
+    a { color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
+    a:hover { text-decoration: underline; }
+    .page {
+      width: min(1240px, calc(100% - 32px));
+      margin: 28px auto 60px;
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+    nav {
+      position: sticky;
+      top: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    nav strong { display: block; margin-bottom: 10px; }
+    nav a {
+      display: block;
+      padding: 8px 0;
+      color: #344054;
+      font-size: 14px;
+      border-top: 1px solid #eef2f7;
+    }
+    nav .nav-links, nav .toc-group { border-top:1px solid #eef2f7; margin-top:10px; padding-top:8px; }
+    nav .nav-label, nav .toc-group summary { display:block; color:var(--muted, #667085); font-size:12px; font-weight:850; }
+    nav .nav-label { margin-bottom:4px; }
+    nav .toc-group summary { cursor:pointer; color:#344054; list-style:none; }
+    nav .toc-group summary::-webkit-details-marker { display:none; }
+    nav .toc-group summary::after { content:"+"; float:right; color:var(--muted, #667085); font-weight:850; }
+    nav .toc-group[open] summary::after { content:"-"; }
+    nav .toc-links { margin-top:6px; padding-left:10px; border-left:2px solid var(--soft, #eaf1ff); }
+    nav .nav-links a, nav .toc-links a { border-top:0; }
+    nav .nav-links a + a, nav .toc-links a + a { border-top:1px solid #eef2f7; }
+    nav .toc-links a { font-size:13px; padding:6px 0; }
+    main { min-width: 0; }
+    .hero, section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-bottom: 18px;
+    }
+    .hero { padding: 36px; }
+    .eyebrow { margin: 0 0 8px; color: var(--accent); font-weight: 850; font-size: 14px; letter-spacing: 0; }
+    h1 { margin: 0; font-size: clamp(34px, 5vw, 54px); line-height: 1.06; letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 24px; letter-spacing: 0; }
+    h3 { margin: 22px 0 10px; font-size: 18px; letter-spacing: 0; }
+    p { margin: 0 0 13px; }
+    .lead { max-width: 900px; margin-top: 16px; color: #344054; font-size: 18px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .pill {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid #bed3ff;
+      background: var(--soft);
+      color: #1e40af;
+      padding: 7px 11px;
+      font-size: 13px;
+      font-weight: 760;
+    }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fcfdff;
+    }
+    .card strong { display: block; margin-bottom: 6px; color: var(--accent); }
+    .callout {
+      border: 1px solid #bed3ff;
+      background: var(--soft);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+    .warning {
+      border: 1px solid #ffccc7;
+      background: var(--red-soft);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+    }
+    th, td {
+      padding: 13px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f1f4f9; color: #344054; font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+      margin: 0 4px 5px 0;
+    }
+    .high { color: var(--red); background: var(--red-soft); border: 1px solid #ffccc7; }
+    .medium { color: var(--amber); background: var(--amber-soft); border: 1px solid #fed7aa; }
+    .ready { color: var(--green); background: var(--green-soft); border: 1px solid #abefc6; }
+    ul, ol { padding-left: 22px; }
+    li { margin: 6px 0; }
+    code {
+      background: #eef2f7;
+      border: 1px solid #dbe3ee;
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-size: 0.92em;
+    }
+    @media (max-width: 980px) {
+      .page { display: block; width: min(100% - 20px, 1240px); margin-top: 18px; }
+      nav { position: static; margin-bottom: 18px; }
+      .grid, .grid.two { grid-template-columns: 1fr; }
+      .hero, section { padding: 22px; }
+      h1 { font-size: 30px; }
+      table { font-size: 14px; }
+      th, td { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav aria-label="문서 목차">
+      <strong>Applicability</strong>
+      <div class="nav-links" aria-label="문서 링크">
+        <span class="nav-label">링크</span>
+        <a href="../../index.html">Index</a>
+      </div>
+      <details class="toc-group">
+        <summary>목차</summary>
+        <div class="toc-links">
+          <a href="#summary">Executive Summary</a>
+          <a href="#map">Platform Map</a>
+          <a href="#runtime">Runtime</a>
+          <a href="#registry">Registry / Governance</a>
+          <a href="#commerce">Commerce / Payment</a>
+          <a href="#ui">Agent UI</a>
+          <a href="#skills">Skills</a>
+          <a href="#roadmap">30/60/90</a>
+        </div>
+      </details>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <p class="eyebrow">2026-06-06 23:38 KST · Cross-Report Brief</p>
+        <h1>AI 플랫폼 및 서비스 적용 포인트</h1>
+        <p class="lead">A2A, UCP, AP2, AG-UI, A2-UI, Dynamic Workflows, AgentBound, Hermes Agent, SkillNet 계열 조사를 실제 AI 플랫폼과 사용자-facing 서비스 설계로 옮기기 위한 브리핑.</p>
+        <div class="meta">
+          <span class="pill">조사 수준: Cross-Report Synthesis</span>
+          <span class="pill">정본: HTML</span>
+          <span class="pill">raw 원본: raw/AI_Platform_Service_Applicability.md</span>
+          <span class="pill">범위: 특정 회사명 제외</span>
+        </div>
+      </header>
+
+      <section id="summary">
+        <h2>1. Executive Summary</h2>
+        <div class="source-pills">
+          <a href="../selected-agent-project-paper-overview/index.html">Selected Deep Dive</a>
+          <a href="../a2a-deep-dive/index.html">A2A Deep Dive</a>
+          <a href="../ucp-deep-dive/index.html">UCP Deep Dive</a>
+          <a href="../ap2-deep-dive/index.html">AP2 Deep Dive</a>
+          <a href="../ag-ui-deep-dive/index.html">AG-UI Deep Dive</a>
+          <a href="../a2-ui-deep-dive/index.html">A2-UI Deep Dive</a>
+        </div>
+        <div class="callout">
+          <strong>핵심 판단:</strong> 에이전트 트렌드는 “모델이 더 똑똑해진다”보다 “권한 있는 실행자가 되는 agent를 플랫폼이 어떻게 통제, 연결, 평가, 표시, 결제/승인하게 만들 것인가”로 이동하고 있다.
+        </div>
+        <div class="grid">
+          <article class="card"><strong>1. Runtime이 제품의 중심</strong>장시간 실행, subagent 병렬 처리, checkpoint, cancellation, verifier, cost cap이 없는 agent 서비스는 실사용 업무로 확장하기 어렵다.</article>
+          <article class="card"><strong>2. Registry는 catalog가 아니다</strong>Agent, MCP tool, skill, UI component를 등록하는 기능은 permission, risk tier, audit, versioning, deprecation까지 포함해야 한다.</article>
+          <article class="card"><strong>3. UI는 채팅창을 넘어선다</strong>AG-UI/A2-UI 흐름은 streaming, interrupt, shared state, 승인 UI, 선언형 component payload가 agent 앱의 기본 UX가 될 가능성을 보여준다.</article>
+          <article class="card"><strong>4. 결제/커머스는 별도 신뢰 계층</strong>UCP/AP2는 agentic commerce가 추천 문제가 아니라 checkout, mandate, trusted surface, 책임 증거 문제임을 보여준다.</article>
+          <article class="card"><strong>5. Skill은 양보다 검증</strong>SkillNet은 skill graph/registry 방향을, SWE-Skills-Bench는 무검증 skill marketplace의 위험을 보여준다.</article>
+          <article class="card"><strong>6. Persistent agent는 매력적이지만 위험</strong>Hermes Agent류의 memory, gateway, cron, multi-provider routing은 제품 벤치마크 가치가 크지만 privacy와 권한 통제가 먼저다.</article>
+        </div>
+      </section>
+
+      <section id="map">
+        <h2>2. AI Platform / Service Layer Map</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>레이어</th>
+              <th>핵심 역할</th>
+              <th>관련 트렌드</th>
+              <th>플랫폼 산출물</th>
+              <th>초기 우선순위</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>User Surface</strong></td>
+              <td>대화형 서비스, 업무 도구, 커머스/예약/CS 화면에서 agent와 사용자 상호작용 제공.</td>
+              <td>AG-UI, A2-UI</td>
+              <td>Agent event stream, interrupt UX, declarative UI renderer.</td>
+              <td><span class="tag high">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>Agent Runtime</strong></td>
+              <td>task decomposition, subagent orchestration, checkpoint, resume, cancellation, verifier 실행.</td>
+              <td>Dynamic Workflows, Hermes Agent</td>
+              <td>Workflow runtime, task graph, budget policy, model routing.</td>
+              <td><span class="tag high">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>Agent / Tool Registry</strong></td>
+              <td>agent discovery, tool capability, skill, component, version, SLA, risk metadata 관리.</td>
+              <td>A2A, MCP, AgentBound, SkillNet</td>
+              <td>Agent Card registry, MCP manifest, skill card, component catalog.</td>
+              <td><span class="tag high">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>Commerce / Payment Trust</strong></td>
+              <td>구매, 예약, 주문, 결제, 취소/환불, 분쟁 대응을 agent-safe하게 처리.</td>
+              <td>UCP, AP2</td>
+              <td>Capability profile, checkout mandate, payment mandate, trusted approval surface.</td>
+              <td><span class="tag medium">Medium-High</span></td>
+            </tr>
+            <tr>
+              <td><strong>Skill Infrastructure</strong></td>
+              <td>스킬 생성, 검색, 조합, 배포, 평가, 버전 호환성을 관리.</td>
+              <td>SkillNet, SWE-Skills-Bench, COLLEAGUE.SKILL</td>
+              <td>Skill graph, eval metadata, compatibility matrix, expert-skill policy.</td>
+              <td><span class="tag medium">Medium</span></td>
+            </tr>
+            <tr>
+              <td><strong>Governance / Observability</strong></td>
+              <td>권한, 감사, 비용, 품질, 정책 위반, 모델/도구별 책임 추적.</td>
+              <td>AgentBound, A2A Enterprise, AG-UI traces</td>
+              <td>Audit schema, trace viewer, risk policy, human approval policy.</td>
+              <td><span class="tag high">High</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="runtime">
+        <h2>3. Runtime: 실행형 Agent의 Control Plane</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Dynamic Workflows</a>
+          <a href="https://github.com/imsai-sh/open-dynamic-workflows">open-dynamic-workflows</a>
+          <a href="https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-hermes-agent">Hermes Docs</a>
+          <a href="https://github.com/NousResearch/hermes-agent">Hermes GitHub</a>
+        </div>
+        <p>AI 플랫폼이 단순 챗봇을 넘어 업무 수행 agent를 만들려면 runtime이 먼저 필요하다. 모델이 계획을 세우더라도, 실행은 task graph, subagent pool, tool permission, checkpoint, verifier, retry policy, budget policy로 통제되어야 한다.</p>
+        <table>
+          <thead>
+            <tr><th>사용 가능한 점</th><th>왜 필요한가</th><th>구현 힌트</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>장시간 task 실행</td><td>코드 마이그레이션, 운영 점검, 고객 이슈 처리, 문서 작성처럼 한 번의 답변으로 끝나지 않는 업무를 처리.</td><td>Task DAG, run id, checkpoint, resume/cancel API를 표준화.</td></tr>
+            <tr><td>Subagent 병렬화</td><td>탐색, 분석, 검증, 요약을 동시에 실행해 처리 시간을 줄이고 관점을 다양화.</td><td>subagent cap, per-branch budget, branch result verifier를 둔다.</td></tr>
+            <tr><td>Executable verifier</td><td>agent output은 말로 검증하지 말고 테스트, 빌드, 정책 체크, 스크린샷, schema validation으로 검증해야 한다.</td><td>verifier result를 Artifact로 남기고 다음 agent가 읽게 한다.</td></tr>
+            <tr><td>비용/품질 라우팅</td><td>모든 subtask를 최고가 모델에 맡기면 비용이 급증한다.</td><td>task type, risk tier, expected value 기준의 model routing을 둔다.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <strong>추천 PoC:</strong> 개발/운영 업무 하나를 골라 “계획 agent → 병렬 조사 subagents → verifier → human approval → 최종 artifact” 흐름을 30일 안에 구현한다.
+        </div>
+      </section>
+
+      <section id="registry">
+        <h2>4. Registry / Governance: Agent와 Tool을 안전하게 발견시키는 방법</h2>
+        <div class="source-pills">
+          <a href="https://a2a-protocol.org/latest/topics/key-concepts/">A2A Key Concepts</a>
+          <a href="https://a2a-protocol.org/latest/topics/agent-discovery/">A2A Agent Discovery</a>
+          <a href="https://a2a-protocol.org/latest/topics/enterprise-ready/">A2A Enterprise Ready</a>
+          <a href="https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf">AgentBound PDF</a>
+        </div>
+        <p>A2A의 Agent Card와 AgentBound의 permission manifest 관점은 함께 봐야 한다. Agent discovery는 기능 소개가 아니라 “누가, 어떤 권한으로, 어떤 데이터를, 어떤 조건에서, 어떤 감사 로그를 남기며 실행할 수 있는가”를 정의하는 계약이다.</p>
+        <table>
+          <thead>
+            <tr><th>Registry 항목</th><th>필수 metadata</th><th>서비스 적용 의미</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Agent Card</td><td>name, endpoint, skills, input/output modes, auth, owner, SLA.</td><td>내부/외부 agent를 발견하고 orchestrator가 task를 위임할 수 있다.</td></tr>
+            <tr><td>Tool / MCP Manifest</td><td>declared capabilities, file/network/secret/payment scope, rate limit, egress rule.</td><td>tool server를 trust-by-default로 두지 않고 실행 전 정책 검사를 한다.</td></tr>
+            <tr><td>Risk Tier</td><td>read-only, write, external action, personal data, payment, irreversible action.</td><td>위험도별 자동 실행/사용자 승인/관리자 승인 정책을 분리한다.</td></tr>
+            <tr><td>Audit Schema</td><td>actor, model, tool, payload hash, approval id, result, rollback link.</td><td>분쟁, 보안 감사, 품질 회고가 가능해진다.</td></tr>
+            <tr><td>Deprecation / Version</td><td>supported versions, sunset date, compatibility, migration note.</td><td>agent가 오래된 tool/skill을 잘못 호출하는 문제를 줄인다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="commerce">
+        <h2>5. Commerce / Payment: Agentic Action의 신뢰 계층</h2>
+        <div class="source-pills">
+          <a href="https://ucp.dev/">UCP</a>
+          <a href="https://ucp.dev/documentation/core-concepts/">UCP Core Concepts</a>
+          <a href="https://ucp.dev/documentation/ucp-and-ap2/">UCP + AP2</a>
+          <a href="https://ap2-protocol.org/">AP2</a>
+          <a href="https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/">FIDO</a>
+        </div>
+        <p>구매/예약/결제 agent는 “추천 잘하기”보다 “사용자가 정확히 무엇을 승인했는가”가 더 중요하다. UCP는 merchant capability와 checkout/order lifecycle을, AP2는 mandate와 trusted surface를 통해 결제 권한과 책임 증거를 다룬다.</p>
+        <table>
+          <thead>
+            <tr><th>서비스 시나리오</th><th>필요한 표준형 구성</th><th>리스크</th><th>플랫폼 대응</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>상품 탐색과 비교</td><td>catalog.search, catalog.lookup, real-time price/stock.</td><td>가격/재고 불일치, 추천 근거 불명확.</td><td>상품 ID, timestamp, merchant source, comparison reason을 Artifact로 남긴다.</td></tr>
+            <tr><td>장바구니와 checkout</td><td>cart, checkout, order capability profile.</td><td>옵션/배송지/할인/환불 조건 누락.</td><td>checkout summary와 user confirmation을 분리한다.</td></tr>
+            <tr><td>결제 승인</td><td>Checkout Mandate, Payment Mandate, trusted approval surface.</td><td>LLM 생성 UI가 승인 범위를 왜곡할 수 있음.</td><td>결제 서비스가 제어하는 deterministic approval UI만 mandate를 발행한다.</td></tr>
+            <tr><td>예약/주문 후 처리</td><td>order status, cancel, refund, support capability.</td><td>취소/변경 책임 소재 불명확.</td><td>order lifecycle event와 dispute evidence를 audit log에 연결한다.</td></tr>
+          </tbody>
+        </table>
+        <div class="warning">
+          <strong>하지 말아야 할 것:</strong> agent가 생성한 채팅 문구만으로 결제를 확정하거나, 결제/개인정보/외부 발송 action을 모델 응답에서 바로 실행하면 안 된다. 모든 고위험 action은 interrupt와 trusted surface를 거쳐야 한다.
+        </div>
+      </section>
+
+      <section id="ui">
+        <h2>6. Agent UI: 채팅을 넘어선 Event / Declarative UI</h2>
+        <div class="source-pills">
+          <a href="https://docs.ag-ui.com/">AG-UI Docs</a>
+          <a href="https://docs.ag-ui.com/concepts/events">AG-UI Events</a>
+          <a href="https://a2ui.org/introduction/what-is-a2ui/">A2UI Intro</a>
+          <a href="https://a2ui.org/specification/v0_9/docs/a2ui_protocol/">A2UI v0.9</a>
+          <a href="https://arxiv.org/abs/2605.24830">Macaron-A2UI</a>
+        </div>
+        <p>사용자-facing agent 서비스는 텍스트 답변만으로 충분하지 않다. 장시간 실행 상태, tool call, 승인 요청, 취소/재시도, 비교표, 상품 카드, 예약 form, 증빙 업로드 UI가 agent run과 함께 움직여야 한다.</p>
+        <table>
+          <thead>
+            <tr><th>UI 요구</th><th>AG-UI 관점</th><th>A2-UI 관점</th><th>적용 포인트</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>실행 상태 표시</td><td>Run/Step lifecycle, activity, tool call event.</td><td>상태 card, progress surface.</td><td>사용자가 agent가 무엇을 하고 있는지 추적.</td></tr>
+            <tr><td>Human interrupt</td><td>승인/수정/취소가 필요한 시점에 event로 중단.</td><td>ApprovalSummary, OptionSelector, ConfirmButton.</td><td>결제, 예약 확정, 개인정보 제공, 외부 발송을 안전하게 처리.</td></tr>
+            <tr><td>Shared state</td><td>StateSnapshot/Delta, JSON Patch.</td><td>component data binding.</td><td>상품 비교, 장바구니, CS ticket 상태가 계속 업데이트.</td></tr>
+            <tr><td>선언형 UI</td><td>transport/event stream.</td><td>catalog 기반 component payload.</td><td>agent가 임의 HTML을 만들지 않고 허용된 component intent만 생성.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <strong>추천 PoC:</strong> AG-UI event stream 위에 A2-UI payload를 실어 “상품 비교 → 옵션 선택 → 결제 승인 interrupt → 주문 추적” 흐름을 하나의 대화형 UI로 만든다.
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>7. Skills: Marketplace보다 Eval Infrastructure</h2>
+        <div class="source-pills">
+          <a href="https://arxiv.org/abs/2603.04448">SkillNet</a>
+          <a href="https://github.com/zjunlp/SkillNet">SkillNet GitHub</a>
+          <a href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</a>
+          <a href="https://github.com/GeniusHTX/SWE-Skills-Bench">SWE-Skills-Bench GitHub</a>
+          <a href="https://arxiv.org/abs/2605.31264">COLLEAGUE.SKILL</a>
+        </div>
+        <p>SkillNet은 skill graph와 대규모 skill repository 방향을 보여주지만, SWE-Skills-Bench는 많은 public skill이 실제 pass-rate 개선을 만들지 못하거나 token cost만 늘릴 수 있음을 보여준다. 따라서 AI 플랫폼의 skill 전략은 “등록 수”가 아니라 “측정된 효용” 중심이어야 한다.</p>
+        <table>
+          <thead>
+            <tr><th>설계 원칙</th><th>구현 항목</th><th>KPI</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Skill card 표준화</td><td>purpose, supported versions, activation condition, required tools, risk tier.</td><td>skill 오작동률, fallback 비율.</td></tr>
+            <tr><td>Task-specific eval</td><td>acceptance criteria, deterministic test, benchmark dataset, regression history.</td><td>pass-rate 개선, time-to-complete, token cost.</td></tr>
+            <tr><td>Compatibility matrix</td><td>모델/도구/서비스 버전별 지원 여부와 실패 사례.</td><td>version mismatch로 인한 실패 감소.</td></tr>
+            <tr><td>Expert skill governance</td><td>trace 수집 동의, PII masking, IP, 삭제권, rollback, access control.</td><td>개인정보/권한 위반 0건, skill review SLA.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="roadmap">
+        <h2>8. 30 / 60 / 90일 실행안</h2>
+        <table>
+          <thead>
+            <tr><th>기간</th><th>목표</th><th>산출물</th><th>성공 기준</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>30일</strong></td>
+              <td>통제 가능한 agent runtime과 registry 초안 확보.</td>
+              <td>Workflow runtime PoC, Agent Card schema, MCP manifest draft, audit schema, 1개 verifier.</td>
+              <td>하나의 업무 task를 end-to-end로 실행하고 trace, cost, approval, verifier result를 남김.</td>
+            </tr>
+            <tr>
+              <td><strong>60일</strong></td>
+              <td>사용자-facing agent UX와 고위험 action interrupt 검증.</td>
+              <td>AG-UI-compatible event schema, A2-UI component catalog, approval surface prototype, skill card/eval schema.</td>
+              <td>결제/예약/개인정보 제공 같은 고위험 action을 interrupt 기반으로 중단/승인/취소 가능.</td>
+            </tr>
+            <tr>
+              <td><strong>90일</strong></td>
+              <td>서비스 PoC를 production architecture 후보로 전환.</td>
+              <td>Agent registry beta, tool policy enforcement, commerce capability profile pilot, skill eval dashboard, trace viewer.</td>
+              <td>2개 이상 서비스 도메인에서 agent workflow, UI event, audit, policy, eval이 공통 플랫폼으로 동작.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>우선순위 의사결정</h3>
+        <ol>
+          <li><strong>먼저 할 것:</strong> workflow runtime, Agent/Tool Registry, audit/approval policy.</li>
+          <li><strong>동시에 볼 것:</strong> AG-UI/A2-UI 기반 사용자 UX와 commerce/payment trusted surface.</li>
+          <li><strong>조심해서 할 것:</strong> skill marketplace, persistent memory, messaging gateway full-tool access.</li>
+          <li><strong>하지 말아야 할 것:</strong> 무검증 skill 대량 등록, LLM 생성 UI 기반 결제 확정, 권한 없는 MCP/tool server 실행, pre-v1 spec 전면 고정 도입.</li>
+        </ol>
+      </section>
+      <section id="report-sources">
+        <h2>출처</h2>
+        <h3>왜 이걸 정리하게 되었는가</h3>
+        <div class="source-pills">
+          <a href="../a2a-deep-dive/index.html">A2A Deep Dive</a>
+          <a href="../ucp-deep-dive/index.html">UCP Deep Dive</a>
+          <a href="../ap2-deep-dive/index.html">AP2 Deep Dive</a>
+          <a href="../ag-ui-deep-dive/index.html">AG-UI Deep Dive</a>
+          <a href="../a2-ui-deep-dive/index.html">A2-UI Deep Dive</a>
+          <a href="../selected-agent-project-paper-overview/index.html">Selected Overview</a>
+        </div>
+        <h3>딥리서치 출처</h3>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Dynamic Workflows</a>
+          <a href="https://a2a-protocol.org/latest/topics/key-concepts/">A2A Key Concepts</a>
+          <a href="https://ucp.dev/documentation/core-concepts/">UCP Core Concepts</a>
+          <a href="https://ap2-protocol.org/">AP2</a>
+          <a href="https://programming-group.com/assets/pdf/papers/2026_AgentBound-Securing-Execution-Boundaries-of-AI-Agents.pdf">AgentBound PDF</a>
+          <a href="https://arxiv.org/abs/2603.04448">SkillNet</a>
+          <a href="https://arxiv.org/abs/2603.15401">SWE-Skills-Bench</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

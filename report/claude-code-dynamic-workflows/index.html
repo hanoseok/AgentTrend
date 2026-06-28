@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Code Dynamic Workflows Deep Dive</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --ink:#141f33; --muted:#667085; --line:#d8dee9; --accent:#2563eb; --soft:#eaf1ff; --shadow:0 16px 42px rgba(15,23,42,.08); }
+    * { box-sizing:border-box; } body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); line-height:1.62; }
+    a { color:var(--accent); text-decoration:none; overflow-wrap:anywhere; } a:hover { text-decoration:underline; }
+    .page { width:min(1180px, calc(100% - 32px)); margin:28px auto 60px; display:grid; grid-template-columns:250px minmax(0,1fr); gap:22px; }
+    nav, .hero, section { background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); }
+    nav { position:sticky; top:18px; padding:18px; align-self:start; } nav strong { display:block; margin-bottom:10px; } nav a { display:block; padding:8px 0; border-top:1px solid #eef2f7; color:#344054; font-size:14px; }
+    .hero, section { padding:30px; margin-bottom:18px; } h1 { margin:0; font-size:clamp(34px,5vw,52px); line-height:1.06; letter-spacing:0; } h2 { margin:0 0 16px; font-size:24px; } h3 { margin:22px 0 10px; font-size:18px; }
+    p { margin:0 0 13px; } .lead { max-width:880px; margin-top:16px; color:#344054; font-size:18px; } .eyebrow { margin:0 0 8px; color:var(--accent); font-weight:850; }
+    .meta, .source-pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; } .pill, .source-pills a { display:inline-flex; border-radius:999px; border:1px solid #bed3ff; background:var(--soft); color:#1e40af; padding:6px 10px; font-size:13px; font-weight:760; }
+    .source-pills { margin:8px 0 14px; } .source-pills a { font-size:12px; padding:3px 8px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; } .card { border:1px solid var(--line); border-radius:12px; padding:16px; background:#fcfdff; } .card strong { display:block; color:var(--accent); margin-bottom:6px; }
+    .callout { border:1px solid #bed3ff; background:var(--soft); border-radius:14px; padding:18px; margin:14px 0; }
+    table { width:100%; border-collapse:collapse; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff; } th,td { padding:13px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; } th { background:#f1f4f9; color:#344054; font-size:14px; } tr:last-child td { border-bottom:0; }
+    code { background:#eef2f7; border:1px solid #dbe3ee; border-radius:6px; padding:2px 6px; } ul,ol { padding-left:22px; }
+    @media (max-width:900px){ .page{display:block;width:min(100% - 20px,1180px);} nav{position:static;margin-bottom:18px;} .grid{grid-template-columns:1fr;} .hero,section{padding:22px;} }
+    nav .nav-links, nav .toc-group { border-top:1px solid #eef2f7; margin-top:10px; padding-top:8px; }
+    nav .nav-label, nav .toc-group summary { display:block; color:var(--muted, #667085); font-size:12px; font-weight:850; }
+    nav .nav-label { margin-bottom:4px; }
+    nav .toc-group summary { cursor:pointer; color:#344054; list-style:none; }
+    nav .toc-group summary::-webkit-details-marker { display:none; }
+    nav .toc-group summary::after { content:"+"; float:right; color:var(--muted, #667085); font-weight:850; }
+    nav .toc-group[open] summary::after { content:"-"; }
+    nav .toc-links { margin-top:6px; padding-left:10px; border-left:2px solid var(--soft, #eaf1ff); }
+    nav .nav-links a, nav .toc-links a { border-top:0; }
+    nav .nav-links a + a, nav .toc-links a + a { border-top:1px solid #eef2f7; }
+    nav .toc-links a { font-size:13px; padding:6px 0; }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <strong>Dynamic Workflows</strong>
+      <div class="nav-links" aria-label="문서 링크">
+        <span class="nav-label">링크</span>
+        <a href="../../index.html">Index</a>
+      </div>
+      <details class="toc-group">
+        <summary>목차</summary>
+        <div class="toc-links">
+          <a href="#summary">Summary</a>
+          <a href="#what">What It Is</a>
+          <a href="#signals">Trend Signals</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#implications">Implications</a>
+          <a href="#research-lens">Research Lens</a>
+          <a href="#mechanics">Mechanics</a>
+          <a href="#evaluation">Evaluation</a>
+          <a href="#blueprint">Blueprint</a>
+          <a href="#actions">Actions</a>
+        </div>
+      </details>
+    </nav>
+    <main>
+      <header class="hero">
+        <p class="eyebrow">2026-06-07 00:27 KST · Expanded Project Deep Dive</p>
+        <h1>Claude Code Dynamic Workflows / ultracode</h1>
+        <p class="lead">Claude Code의 Dynamic Workflows는 agent가 workflow code를 만들고 다수 subagent를 병렬 실행하는 방향을 보여준다. AI 플랫폼 관점에서는 “채팅형 agent”에서 “통제 가능한 workflow runtime”으로 넘어가는 핵심 신호다.</p>
+        <div class="meta">
+          <span class="pill">조사 수준: Deep Dive</span>
+          <span class="pill">유형: Agent runtime / orchestration</span>
+          <span class="pill">raw: raw/Claude_Code_Dynamic_Workflows_Deep_Dive.md</span>
+        </div>
+      </header>
+
+      <section id="summary">
+        <h2>1. Executive Summary</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Anthropic Blog</a>
+          <a href="https://github.com/imsai-sh/open-dynamic-workflows">open-dynamic-workflows</a>
+          <a href="https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/">r/ClaudeCode</a>
+        </div>
+        <div class="callout"><strong>핵심 판단:</strong> Dynamic Workflows는 모델 기능이라기보다 agent runtime 요구사항이다. AI 플랫폼은 subtask graph, checkpoint, verifier, cost cap, human approval을 하나의 control plane으로 설계해야 한다.</div>
+        <div class="grid">
+          <article class="card"><strong>왜 중요함</strong>대규모 코드 마이그레이션, 보안 audit, 운영 점검처럼 장시간 병렬성이 필요한 작업을 agent가 처리할 수 있게 한다.</article>
+          <article class="card"><strong>트렌디한 이유</strong>“모델이 답한다”에서 “모델이 실행 계획과 workflow를 만들고 외부 runtime이 수행한다”로 agent 제품의 중심이 이동한다.</article>
+        </div>
+      </section>
+
+      <section id="what">
+        <h2>2. What It Is</h2>
+        <p>Anthropic이 2026-05-28 공개한 Claude Code 기능이다. Claude가 큰 작업을 subtasks로 나누고, 동적으로 orchestration script를 작성한 뒤, 여러 subagent를 병렬 실행하는 research preview 성격의 기능으로 소개됐다.</p>
+        <p>공식 발표는 Claude Code CLI, Desktop, VS Code extension, API, Bedrock, Vertex AI, Microsoft Foundry 등에서 사용 가능한 흐름을 설명한다. 커뮤니티에서는 ultracode/open-dynamic-workflows 같은 재현 프로젝트와 함께 token burn, review burden, 실패 제어권에 대한 논의가 이어졌다.</p>
+      </section>
+
+      <section id="signals">
+        <h2>3. Trend Signals</h2>
+        <div class="source-pills">
+          <a href="https://www.reddit.com/r/ClaudeAI/comments/1tq9ofy/introducing_dynamic_workflows_in_claude_code/">r/ClaudeAI</a>
+          <a href="https://www.reddit.com/r/vibecoding/comments/1tqe2yp/anthropic_just_introduced_dynamic_workflows_in/">r/vibecoding</a>
+        </div>
+        <table>
+          <thead><tr><th>신호</th><th>의미</th><th>판단</th></tr></thead>
+          <tbody>
+            <tr><td>공식 발표</td><td>Claude가 workflow code와 subagent orchestration을 직접 생성.</td><td>agent runtime이 제품의 전면 기능으로 올라왔다.</td></tr>
+            <tr><td>Bun Zig-to-Rust 사례</td><td>공식 발표는 대규모 코드 포팅 사례를 제시했다.</td><td>사례 수치는 별도 재현 검증이 필요하지만 방향성은 강하다.</td></tr>
+            <tr><td>오픈소스 재현</td><td>open-dynamic-workflows 같은 구현이 등장.</td><td>기능의 핵심이 특정 UI보다 orchestration pattern에 있음을 보여준다.</td></tr>
+            <tr><td>Reddit 반응</td><td>token cost, human review, 실패 경계가 주요 쟁점.</td><td>제품화에는 cost/approval/tracing이 필수다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="architecture">
+        <h2>4. Technical Model</h2>
+        <table>
+          <thead><tr><th>구성요소</th><th>역할</th><th>플랫폼 설계 포인트</th></tr></thead>
+          <tbody>
+            <tr><td>Planner</td><td>작업을 subtask graph로 분해.</td><td>task type, risk tier, expected output schema를 함께 생성.</td></tr>
+            <tr><td>Workflow Script</td><td>subagent 실행 순서와 병렬/순차 흐름을 정의.</td><td>검증 가능한 DSL 또는 제한된 runtime으로 감싼다.</td></tr>
+            <tr><td>Subagent Pool</td><td>탐색, 구현, 검증, 요약 등 역할별 agent 실행.</td><td>branch cap, token cap, timeout, cancellation을 둔다.</td></tr>
+            <tr><td>Verifier</td><td>테스트, 빌드, policy check, screenshot, security scan 수행.</td><td>결과를 Artifact로 남기고 다음 단계에서 참조.</td></tr>
+            <tr><td>Human Approval</td><td>고위험 merge/action 전 사용자 확인.</td><td>승인 전후 상태와 근거를 audit log에 기록.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="implications">
+        <h2>5. AI 플랫폼 및 서비스 적용 방향</h2>
+        <ul>
+          <li>장시간 업무 agent는 대화 session이 아니라 run/task 단위로 관리해야 한다.</li>
+          <li>model routing, token budget, branch budget, retry policy를 runtime 기본 기능으로 둔다.</li>
+          <li>결과 품질은 “agent가 말했다”가 아니라 executable verifier로 확인한다.</li>
+          <li>workflow 결과는 텍스트 요약뿐 아니라 Artifact, trace, approval record, rollback link를 포함해야 한다.</li>
+        </ul>
+      </section>
+
+      <section id="research-lens">
+        <h2>6. Research Lens: 모델 기능이 아니라 실행 시스템</h2>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Launch Post</a>
+          <a href="https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code">Harness Post</a>
+        </div>
+        <p>Dynamic Workflows의 본질은 “더 긴 생각을 하는 모델”이 아니다. 핵심은 모델이 task-specific harness를 만들고, 그 harness가 subagent 실행, 중간 결과 저장, 검증, 수렴 판단을 담당한다는 점이다. 따라서 경쟁력은 모델 단독 성능보다 run graph, worker isolation, checkpoint, verifier, approval UI를 결합한 실행 시스템에서 나온다.</p>
+        <p>공식 문서는 workflow가 연구, 보안 분석, agent team, code review처럼 기존에는 별도 harness가 필요했던 작업을 더 자연스럽게 수행하게 만든다고 설명한다. 이 말은 agent 제품이 “대화 UI”에서 “작업별 임시 운영체제”로 이동한다는 의미다. 사용자는 결과를 받지만, 플랫폼은 뒤에서 planner, executor, verifier, reviewer를 분리해 운영해야 한다.</p>
+        <div class="callout"><strong>리서치 해석:</strong> 앞으로 고급 agent 기능은 prompt template이 아니라, 모델이 생성하거나 선택한 executable harness를 안전하게 실행하는 platform layer가 된다.</div>
+      </section>
+
+      <section id="mechanics">
+        <h2>7. Execution Mechanics</h2>
+        <div class="source-pills">
+          <a href="https://github.com/imsai-sh/open-dynamic-workflows">open-dynamic-workflows</a>
+          <a href="https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/">r/ClaudeCode</a>
+        </div>
+        <table>
+          <thead><tr><th>단계</th><th>실행 내용</th><th>제품화 시 필요한 통제</th></tr></thead>
+          <tbody>
+            <tr><td>Task Framing</td><td>사용자 요청을 목표, 범위, 금지 조건, 성공 기준으로 정규화한다.</td><td>요구사항 snapshot, risk tier, 예상 비용, 승인 필요 여부를 먼저 확정한다.</td></tr>
+            <tr><td>Dynamic Planning</td><td>모델이 작업을 병렬/순차 subtask graph로 나누고 역할별 worker를 정의한다.</td><td>branch cap, dependency edge, retry policy, stop condition을 명시한다.</td></tr>
+            <tr><td>Harness Generation</td><td>workflow script 또는 제한된 DSL이 worker 실행과 결과 수집을 조율한다.</td><td>생성된 harness를 sandbox에서 실행하고, 외부 action 전 approval을 요구한다.</td></tr>
+            <tr><td>Independent Verification</td><td>각 결과를 test, build, static check, secondary reviewer, adversarial agent로 검증한다.</td><td>검증 없는 결과는 final answer나 production action으로 승격하지 않는다.</td></tr>
+            <tr><td>Convergence</td><td>상충 결과를 비교하고 재시도하며 최종 산출물과 근거를 합친다.</td><td>conflict log, rejected candidate, confidence reason을 artifact로 남긴다.</td></tr>
+            <tr><td>Resume / Recovery</td><td>장시간 run이 중단되어도 저장된 진행 상태에서 재개한다.</td><td>checkpoint format, artifact retention, cancellation, rollback을 표준화한다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="evaluation">
+        <h2>8. Evaluation Protocol</h2>
+        <p>Dynamic Workflows류 기능은 “멋진 데모”가 아니라 기존 single-agent, fixed workflow, human-led process와 비교해야 한다. 특히 공식 발표의 대규모 migration 사례는 방향성 신호로는 강하지만, 플랫폼 의사결정에는 독립 재현과 실패 사례 분석이 필요하다.</p>
+        <table>
+          <thead><tr><th>평가 축</th><th>측정 지표</th><th>실험 설계</th></tr></thead>
+          <tbody>
+            <tr><td>성공률</td><td>acceptance test pass-rate, reviewer acceptance, rollback 없는 merge 비율.</td><td>동일 task를 single-agent, static workflow, dynamic workflow로 paired run.</td></tr>
+            <tr><td>검증 품질</td><td>false positive, false negative, duplicated finding, missed edge case.</td><td>보안 audit, dead code scan, migration validation처럼 ground truth를 만들 수 있는 task 사용.</td></tr>
+            <tr><td>비용</td><td>token, wall-clock, subagent count, retry count, human review time.</td><td>run마다 budget envelope와 stop reason을 기록한다.</td></tr>
+            <tr><td>복구성</td><td>interrupt 후 resume 성공률, partial artifact 재사용률, failed branch 격리 여부.</td><td>중간 실패, API failure, test failure, reviewer reject를 의도적으로 주입한다.</td></tr>
+            <tr><td>운영 안전성</td><td>권한 위반, 승인 누락, 고위험 action 차단률.</td><td>AgentBound식 tool policy와 연결해 workflow action을 제한한다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="blueprint">
+        <h2>9. Platform Blueprint</h2>
+        <div class="source-pills">
+          <a href="../agentbound-deep-dive/index.html">AgentBound Deep Dive</a>
+          <a href="../swe-skills-bench-deep-dive/index.html">SWE-Skills-Bench Deep Dive</a>
+        </div>
+        <table>
+          <thead><tr><th>모듈</th><th>필수 데이터</th><th>설계 판단</th></tr></thead>
+          <tbody>
+            <tr><td>Run Graph Store</td><td>task id, parent/child edge, worker role, status, artifacts.</td><td>대화 transcript보다 run graph가 운영의 source of truth가 된다.</td></tr>
+            <tr><td>Budget Manager</td><td>token cap, branch cap, time cap, retry cap, escalation threshold.</td><td>동적 workflow는 기본적으로 비용 폭주 가능성이 있으므로 선한도와 중간 경고가 필요하다.</td></tr>
+            <tr><td>Verifier Registry</td><td>test command, build command, policy check, screenshot diff, security scanner.</td><td>agent가 만든 결과보다 verifier가 통과시킨 결과를 신뢰해야 한다.</td></tr>
+            <tr><td>Approval Console</td><td>action summary, affected resource, risk tier, evidence, rollback plan.</td><td>고위험 action은 채팅 확인이 아니라 구조화된 승인 카드가 필요하다.</td></tr>
+            <tr><td>Artifact Ledger</td><td>input hash, output hash, logs, rejected alternatives, final rationale.</td><td>사후 브리핑, 품질 분석, 분쟁 대응에 필요하다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="actions">
+        <h2>10. Recommended Actions</h2>
+        <ol>
+          <li>30일 내: 하나의 개발/운영 task를 골라 subagent task graph PoC를 만든다.</li>
+          <li>Workflow schema: task, branch, verifier, budget, approval, artifact schema를 정의한다.</li>
+          <li>Cost guardrail: workflow별 token cap, subagent cap, stop condition을 둔다.</li>
+          <li>Verifier first: test/build/security/policy checker 없이 자동 merge/action을 허용하지 않는다.</li>
+          <li>PoC 평가는 single-agent baseline과 paired comparison으로 설계한다.</li>
+          <li>AgentBound식 tool permission과 연결해 workflow worker별 권한을 최소화한다.</li>
+        </ol>
+      </section>
+      <section id="report-sources">
+        <h2>출처</h2>
+        <h3>왜 이걸 정리하게 되었는가</h3>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Anthropic Blog</a>
+          <a href="https://www.reddit.com/r/ClaudeCode/comments/1tq9pge/introducing_dynamic_workflows_in_claude_code/">r/ClaudeCode</a>
+          <a href="https://www.reddit.com/r/ClaudeAI/comments/1tq9ofy/introducing_dynamic_workflows_in_claude_code/">r/ClaudeAI</a>
+          <a href="https://www.reddit.com/r/vibecoding/comments/1tqe2yp/anthropic_just_introduced_dynamic_workflows_in/">r/vibecoding</a>
+        </div>
+        <h3>딥리서치 출처</h3>
+        <div class="source-pills">
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code">Launch Post</a>
+          <a href="https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code">Harness Post</a>
+          <a href="https://github.com/imsai-sh/open-dynamic-workflows">open-dynamic-workflows</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

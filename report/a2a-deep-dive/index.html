@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A2A Deep Dive</title>
+  <style>
+    .source-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+    .source-pills a { display: inline-flex; align-items: center; border: 1px solid #c7d2fe; border-radius: 999px; background: #f5f8ff; color: #1d4ed8; padding: 3px 8px; font-size: 12px; font-weight: 760; line-height: 1.3; }
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --ink: #111827;
+      --muted: #667085;
+      --line: #d8dee9;
+      --accent: #2563eb;
+      --accent-2: #0f766e;
+      --accent-soft: #eaf1ff;
+      --green-soft: #ecfdf3;
+      --amber-soft: #fff7ed;
+      --red-soft: #fff1f0;
+      --shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page {
+      width: min(1240px, calc(100% - 32px));
+      margin: 28px auto 60px;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+    nav {
+      position: sticky;
+      top: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    nav strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    nav a {
+      display: block;
+      padding: 8px 0;
+      color: #344054;
+      font-size: 14px;
+      border-top: 1px solid #eef2f7;
+    }
+    nav .nav-links, nav .toc-group { border-top:1px solid #eef2f7; margin-top:10px; padding-top:8px; }
+    nav .nav-label, nav .toc-group summary { display:block; color:var(--muted, #667085); font-size:12px; font-weight:850; }
+    nav .nav-label { margin-bottom:4px; }
+    nav .toc-group summary { cursor:pointer; color:#344054; list-style:none; }
+    nav .toc-group summary::-webkit-details-marker { display:none; }
+    nav .toc-group summary::after { content:"+"; float:right; color:var(--muted, #667085); font-weight:850; }
+    nav .toc-group[open] summary::after { content:"-"; }
+    nav .toc-links { margin-top:6px; padding-left:10px; border-left:2px solid var(--soft, #eaf1ff); }
+    nav .nav-links a, nav .toc-links a { border-top:0; }
+    nav .nav-links a + a, nav .toc-links a + a { border-top:1px solid #eef2f7; }
+    nav .toc-links a { font-size:13px; padding:6px 0; }
+    main { min-width: 0; }
+    .hero, section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-bottom: 18px;
+    }
+    .hero {
+      padding: 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 800;
+      letter-spacing: 0;
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    h2 { margin: 0 0 16px; font-size: 25px; letter-spacing: 0; }
+    h3 { margin: 22px 0 10px; font-size: 18px; letter-spacing: 0; }
+    p { margin: 0 0 13px; }
+    .lead {
+      max-width: 840px;
+      margin-top: 16px;
+      color: #344054;
+      font-size: 18px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #bed3ff;
+      background: var(--accent-soft);
+      color: #1e40af;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .kpi-grid, .summary-grid, .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fcfdff;
+    }
+    .card strong {
+      display: block;
+      color: #101828;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+    .card .value {
+      display: block;
+      color: var(--accent);
+      font-size: 28px;
+      font-weight: 850;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .callout {
+      border: 1px solid #bed3ff;
+      background: var(--accent-soft);
+      border-radius: 14px;
+      padding: 20px;
+      margin: 14px 0;
+    }
+    .callout strong { color: #1e40af; }
+    .timeline {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .event {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 14px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fcfdff;
+    }
+    .date {
+      font-weight: 850;
+      color: var(--accent);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+    }
+    th, td {
+      padding: 13px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f1f4f9;
+      color: #344054;
+      font-size: 14px;
+    }
+    tr:last-child td { border-bottom: 0; }
+    ul, ol { padding-left: 22px; }
+    li { margin: 6px 0; }
+    code {
+      background: #eef2f7;
+      border: 1px solid #dbe3ee;
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-size: 0.92em;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 8px;
+    }
+    .flow-step {
+      min-height: 112px;
+      border: 1px solid #cfd8e7;
+      background: #fbfcff;
+      border-radius: 14px;
+      padding: 13px;
+      position: relative;
+    }
+    .flow-step:not(:last-child)::after {
+      content: ">";
+      position: absolute;
+      right: -10px;
+      top: 44px;
+      color: var(--accent);
+      font-weight: 900;
+    }
+    .flow-step b {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .risk {
+      border: 1px solid #ffccc7;
+      background: var(--red-soft);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .risk strong { color: #b42318; }
+    .action {
+      border: 1px solid #abefc6;
+      background: var(--green-soft);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .action strong { color: #067647; }
+    .watch {
+      border: 1px solid #fed7aa;
+      background: var(--amber-soft);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .watch strong { color: #b54708; }
+    .source-list {
+      display: grid;
+      gap: 10px;
+    }
+    .source-list a {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fcfdff;
+      overflow-wrap: anywhere;
+    }
+    .print-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 18px;
+    }
+    @media (max-width: 980px) {
+      .page { display: block; width: min(100% - 20px, 1240px); margin-top: 18px; }
+      nav { position: static; margin-bottom: 18px; }
+      .kpi-grid, .summary-grid, .decision-grid, .risk-grid { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; }
+      .flow-step:not(:last-child)::after { content: ""; }
+      .event { grid-template-columns: 1fr; }
+      .hero, section { padding: 22px; }
+    }
+    @media print {
+      body { background: white; }
+      .page { display: block; width: 100%; margin: 0; }
+      nav { display: none; }
+      .hero, section { box-shadow: none; page-break-inside: avoid; }
+      a { color: #111827; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav aria-label="문서 목차">
+      <strong>A2A Deep Dive</strong>
+      <div class="nav-links" aria-label="문서 링크">
+        <span class="nav-label">링크</span>
+        <a href="../../index.html">Index</a>
+      </div>
+      <details class="toc-group">
+        <summary>목차</summary>
+        <div class="toc-links">
+          <a href="#summary">브리핑 핵심 판단</a>
+          <a href="#why">왜 중요한가</a>
+          <a href="#timeline">상태와 타임라인</a>
+          <a href="#mcp">A2A vs MCP</a>
+          <a href="#components">구성요소</a>
+          <a href="#flow">프로토콜 흐름</a>
+          <a href="#security">보안과 거버넌스</a>
+          <a href="#platform">AI 플랫폼/서비스 적용 방향</a>
+          <a href="#actions">권장 액션</a>
+        </div>
+      </details>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <p class="eyebrow">Agent Trend Deep Dive</p>
+        <h1>A2A: Agent2Agent Protocol</h1>
+        <p class="lead">에이전트가 서로를 발견하고, 작업을 위임하고, 상태와 결과물을 교환하기 위한 공개 프로토콜. AI 플랫폼 및 서비스 설계에서는 내부 Agent Registry, Task lifecycle, Artifact, 권한 위임, 감사 추적의 기준점으로 봐야 한다.</p>
+        <div class="meta">
+          <span class="pill">검증 시점: 2026-06-06 18:45 KST</span>
+          <span class="pill">주제: A2A / Agent Platform / Interoperability</span>
+          <span class="pill">Raw 원본: raw/A2A_Deep_Dive.md</span>
+        </div>
+        <div class="kpi-grid">
+          <article class="card"><span class="value">2025.04</span><strong>Google 공개</strong>50개 이상 파트너와 agent interoperability 표준 후보로 발표.</article>
+          <article class="card"><span class="value">2025.06</span><strong>Linux Foundation 이동</strong>오픈 거버넌스 프로젝트로 확장.</article>
+          <article class="card"><span class="value">150+</span><strong>조직 지원 신호</strong>2026년 Linux Foundation 발표 기준.</article>
+          <article class="card"><span class="value">v1.0</span><strong>안정 버전</strong>version negotiation, signed Agent Card, enterprise security 강조.</article>
+        </div>
+      </header>
+
+      <section id="summary">
+        <h2>0. 브리핑 핵심 판단</h2>
+        <div class="source-pills">
+          <a href="https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/">Google A2A 발표</a>
+          <a href="https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents">Linux Foundation 이관</a>
+          <a href="https://a2a-protocol.org/latest/announcing-1.0/">A2A v1.0</a>
+        </div>
+        <div class="callout">
+          <strong>결론.</strong> A2A는 에이전트 시대의 "서비스 간 협업 프로토콜" 후보다. AI 플랫폼은 A2A를 당장 전면 채택하기보다 내부 Agent Registry, Task 상태 모델, Artifact schema, 인증/인가, audit trace를 A2A-compatible하게 설계하는 것이 전략적으로 안전하다.
+        </div>
+        <div class="decision-grid">
+          <article class="card"><strong>1. 플랫폼 계약</strong>내부 에이전트 플랫폼의 기본 계약을 A2A-compatible하게 잡을 것인가.</article>
+          <article class="card"><strong>2. Agent Registry</strong>서비스별 Agent Card와 Agent Registry를 중앙 플랫폼 기능으로 제공할 것인가.</article>
+          <article class="card"><strong>3. 고위험 액션 통제</strong>human approval, per-skill authorization, delegated token을 공통 표준으로 둘 것인가.</article>
+          <article class="card"><strong>4. MCP 결합</strong>MCP와 A2A를 결합한 구조를 내부 AI 플랫폼 SDK에 포함할 것인가.</article>
+        </div>
+      </section>
+
+      <section id="why">
+        <h2>1. 왜 중요한가</h2>
+        <div class="summary-grid">
+          <article class="card"><strong>시장 신호</strong>Google 발표 이후 Linux Foundation 프로젝트로 이동했고, 주요 기업과 클라우드 플랫폼 지원이 확대되는 흐름이다.</article>
+          <article class="card"><strong>기술 신호</strong>MCP가 agent-to-tool 표준 후보라면, A2A는 agent-to-agent 표준 후보로 자리 잡는 중이다.</article>
+          <article class="card"><strong>AI 플랫폼 신호</strong>대화형 AI 서비스, 쇼핑/커머스, 로컬/지도, 결제, 일정, 고객센터가 각각 독립 에이전트화될 경우 표준 위임 체계가 필요하다.</article>
+          <article class="card"><strong>리스크 신호</strong>에이전트 간 위임은 개인정보, 결제, 예약, 메시지 발송 같은 고위험 액션을 확장하므로 보안/인가/감사 체계가 먼저 필요하다.</article>
+        </div>
+      </section>
+
+      <section id="timeline">
+        <h2>2. 현재 상태와 타임라인</h2>
+        <div class="source-pills">
+          <a href="https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/">2025 Google 발표</a>
+          <a href="https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year">2026 LF 업데이트</a>
+          <a href="https://a2a-protocol.org/latest/announcing-1.0/">v1.0 발표</a>
+        </div>
+        <div class="timeline">
+          <div class="event"><div class="date">2025-04-09</div><div>Google이 A2A를 공개하고 50개 이상의 기술 파트너와 함께 에이전트 상호운용성 표준으로 발표했다.</div></div>
+          <div class="event"><div class="date">2025-06-23</div><div>Linux Foundation이 A2A Protocol Project를 출범시켰다. 특정 벤더 주도에서 오픈 거버넌스 구조로 이동한 점이 중요하다.</div></div>
+          <div class="event"><div class="date">2026 기준</div><div>Linux Foundation 발표에 따르면 A2A는 150개 이상의 조직 지원, 주요 클라우드 플랫폼 통합, 엔터프라이즈 프로덕션 사용 사례를 확보한 것으로 소개된다.</div></div>
+          <div class="event"><div class="date">A2A v1.0</div><div>안정 버전으로 발표되었고, multi-protocol binding, version negotiation, signed Agent Card, enterprise security 기능이 강조된다.</div></div>
+        </div>
+        <p class="print-note">판단: A2A는 아직 모든 산업의 사실상 표준이라고 보기에는 이르지만, MCP와 함께 에이전트 플랫폼의 표준 인터페이스 후보로 반드시 추적해야 한다.</p>
+      </section>
+
+      <section id="mcp">
+        <h2>3. A2A와 MCP의 차이</h2>
+        <div class="source-pills">
+          <a href="https://a2a-protocol.org/latest/topics/a2a-and-mcp/">A2A and MCP</a>
+          <a href="https://modelcontextprotocol.io/">MCP Docs</a>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>구분</th>
+              <th>MCP</th>
+              <th>A2A</th>
+              <th>AI 플랫폼 설계 의미</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>핵심 역할</td>
+              <td>에이전트가 외부 도구, API, 데이터 소스에 접근</td>
+              <td>에이전트가 다른 에이전트를 발견하고 작업 위임</td>
+              <td>도구 연결과 에이전트 협업을 분리해 설계</td>
+            </tr>
+            <tr>
+              <td>예시</td>
+              <td>캘린더 조회, CRM 검색, 문서 검색, DB 질의, 결제 API 호출</td>
+              <td>예약 에이전트, 커머스 에이전트, 결제 에이전트 간 협업</td>
+              <td>서비스별 전문 에이전트를 중앙 오케스트레이터가 조합</td>
+            </tr>
+            <tr>
+              <td>위험</td>
+              <td>도구 권한 오남용, 데이터 유출, API 실패</td>
+              <td>위임 체인 확산, 책임 추적 어려움, 권한 초과 액션</td>
+              <td>per-skill auth, trace replay, approval state 필수</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <strong>권장 구조.</strong> 사용자-facing 오케스트레이터는 A2A로 전문 에이전트에게 작업을 위임하고, 각 전문 에이전트는 MCP 또는 내부 API gateway로 실제 서비스 데이터와 액션에 접근한다.
+        </div>
+      </section>
+
+      <section id="components">
+        <h2>4. 핵심 구성요소</h2>
+        <div class="source-pills">
+          <a href="https://a2a-protocol.org/latest/topics/key-concepts/">Key Concepts</a>
+          <a href="https://a2a-protocol.org/latest/topics/agent-discovery/">Agent Discovery</a>
+          <a href="https://a2a-protocol.org/dev/specification/">Specification</a>
+        </div>
+        <div class="summary-grid">
+          <article class="card"><strong>Agent Card</strong>에이전트의 이름, 설명, 엔드포인트, 지원 기능, 입출력 형식, 인증 요구사항, 스킬 정보를 담는 discovery 명세. Agent Registry의 기본 단위 후보.</article>
+          <article class="card"><strong>A2A Client / Server</strong>Client는 작업을 위임하는 쪽, Server 또는 Remote Agent는 작업을 수행하는 쪽. 내부 구현과 모델 종류는 강제하지 않는다.</article>
+          <article class="card"><strong>Message / Part</strong>에이전트 사이에서 오가는 요청과 응답의 구성 단위. 텍스트, 파일, 구조화 데이터 조각을 포함할 수 있다.</article>
+          <article class="card"><strong>Task / Artifact</strong>Task는 작업 상태를 관리하고 Artifact는 최종 결과물이다. AI 플랫폼에서는 UI와 액션으로 연결되는 구조화 결과물로 설계해야 한다.</article>
+        </div>
+        <h3>Task lifecycle</h3>
+        <table>
+          <thead><tr><th>상태</th><th>의미</th><th>AI 플랫폼 UX/플랫폼 처리</th></tr></thead>
+          <tbody>
+            <tr><td><code>submitted</code></td><td>작업 접수</td><td>traceId/contextId 발급, 정책 검사 시작</td></tr>
+            <tr><td><code>working</code></td><td>작업 수행 중</td><td>진행 상태 표시, timeout/fallback 관리</td></tr>
+            <tr><td><code>input_required</code></td><td>사용자 추가 정보 필요</td><td>대화로 정보 수집, Task 재개</td></tr>
+            <tr><td><code>auth_required</code></td><td>인증 또는 권한 승인 필요</td><td>로그인, 동의, 결제/예약 승인 UI 연결</td></tr>
+            <tr><td><code>completed</code></td><td>결과 Artifact 생성 완료</td><td>구조화 결과 렌더링, 후속 액션 제공</td></tr>
+            <tr><td><code>failed/rejected/canceled</code></td><td>실패, 정책 거부, 취소</td><td>원인 기록, 사용자 안내, 재시도 또는 대안 제공</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="flow">
+        <h2>5. 프로토콜 흐름</h2>
+        <div class="flow">
+          <div class="flow-step"><b>1. Discover</b>Agent Registry 또는 공개 URL에서 Agent Card 탐색</div>
+          <div class="flow-step"><b>2. Verify</b>기능, 인증 요구사항, 입출력 형식 확인</div>
+          <div class="flow-step"><b>3. Select</b>policy, ranking, eval 결과로 remote agent 선택</div>
+          <div class="flow-step"><b>4. Send</b><code>message:send</code> 또는 streaming 방식으로 작업 전달</div>
+          <div class="flow-step"><b>5. Track</b>Task 생성, 상태 갱신, 진행 상황 수신</div>
+          <div class="flow-step"><b>6. Approve</b>필요 시 input_required 또는 auth_required 처리</div>
+          <div class="flow-step"><b>7. Return</b>Artifact 수신 후 사용자 경험으로 합성</div>
+        </div>
+        <ul>
+          <li>discovery와 execution은 분리해야 한다.</li>
+          <li>에이전트 선택을 모델 프롬프트에만 맡기지 말고 policy/ranking/eval 결과를 함께 써야 한다.</li>
+          <li>Task와 Artifact에는 traceId, contextId, userId/tenantId, approval state가 붙어야 한다.</li>
+          <li>실패, 취소, 사용자 추가 입력 요청을 정상 경로로 설계해야 한다.</li>
+        </ul>
+      </section>
+
+      <section id="security">
+        <h2>6. 보안과 거버넌스</h2>
+        <div class="source-pills">
+          <a href="https://a2a-protocol.org/latest/topics/enterprise-ready/">Enterprise Ready</a>
+          <a href="https://a2a-protocol.org/latest/topics/agent-discovery/">Signed Agent Card</a>
+        </div>
+        <p>A2A는 인증과 인가를 프로토콜 자체의 마법으로 해결하지 않는다. HTTP, TLS, OAuth, OIDC, mTLS, API key 등 기존 엔터프라이즈 보안 메커니즘과 결합하는 방식에 가깝다. 따라서 플랫폼 구현자가 책임져야 할 영역이 크다.</p>
+        <div class="risk-grid">
+          <article class="risk"><strong>Agent Card 위조/오염</strong><br>잘못된 Agent Card 또는 악성 Agent Card가 registry에 등록될 수 있다.</article>
+          <article class="risk"><strong>Prompt injection 전파</strong><br>한 에이전트가 받은 악성 지시가 위임 체인을 타고 다른 에이전트로 확산될 수 있다.</article>
+          <article class="risk"><strong>Delegated action 초과</strong><br>사용자 권한을 초과한 결제, 예약, 메시지 발송이 발생할 수 있다.</article>
+          <article class="risk"><strong>추적 불가</strong><br>장애나 오작동 시 어느 에이전트가 어떤 판단을 했는지 설명하기 어려울 수 있다.</article>
+        </div>
+        <h3>필수 통제</h3>
+        <div class="summary-grid">
+          <article class="action"><strong>Agent Registry 승인</strong>등록, 변경, 폐기, 버전 관리를 중앙에서 통제한다.</article>
+          <article class="action"><strong>Signed Agent Card</strong>발급자 검증과 card tampering 방지를 포함한다.</article>
+          <article class="action"><strong>Per-skill authorization</strong>에이전트 단위가 아니라 skill/action 단위로 권한을 제한한다.</article>
+          <article class="action"><strong>Trace replay</strong>delegation chain, prompt, tool call, approval state를 재현 가능하게 남긴다.</article>
+        </div>
+      </section>
+
+      <section id="platform">
+        <h2>7. AI 플랫폼 및 서비스 적용 방향</h2>
+        <div class="summary-grid">
+          <article class="card"><strong>내부 Agent Registry</strong>AI 플랫폼의 각 서비스 또는 도메인 에이전트를 Agent Card 기반으로 등록한다. 검색, 발견, 권한, SLA, 데이터 접근 범위, 정책 태그를 하나의 registry에서 관리한다.</article>
+          <article class="card"><strong>Orchestrator와 전문 에이전트 분리</strong>사용자-facing 에이전트는 orchestration에 집중하고, 전문 에이전트는 자신의 도메인 기능, 정책, 데이터 접근, 액션 실행을 책임진다.</article>
+          <article class="card"><strong>구조화 Artifact 중심 UX</strong>예약 후보, 선물 추천, 결제 요청, 일정 변경을 텍스트가 아니라 UI와 액션으로 연결되는 구조화 결과물로 다룬다.</article>
+          <article class="card"><strong>Human-in-the-loop</strong>결제, 예약 확정, 메시지 발송, 개인정보 공유처럼 사용자에게 영향이 큰 액션은 명시적 승인을 받는다.</article>
+        </div>
+        <h3>우선순위가 높은 에이전트 후보</h3>
+        <table>
+          <thead><tr><th>도메인</th><th>역할</th><th>A2A 적용 포인트</th></tr></thead>
+          <tbody>
+            <tr><td>대화형 AI 서비스 대화/메시징</td><td>사용자 의도 이해와 알림/메시지 액션</td><td>고위험 메시지 발송 승인, 대화 context 최소 전달</td></tr>
+            <tr><td>로컬/지도/예약</td><td>장소 탐색, 예약 후보, 확정</td><td>예약 후보 Artifact, 취소 정책, 승인 상태</td></tr>
+            <tr><td>쇼핑/커머스</td><td>상품 추천과 구매 플로우</td><td>상품 ID, 재고, 배송 가능일, 결제 승인 Artifact</td></tr>
+            <tr><td>결제/정산</td><td>결제 요청, 승인, 영수증</td><td>auth_required, irreversible action guardrail</td></tr>
+            <tr><td>사내 업무/문서 검색</td><td>문서/지식 검색과 업무 자동화</td><td>tenant별 권한, 문서 출처, 감사 로그</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="actions">
+        <h2>8. 지금 해야 할 일</h2>
+        <div class="summary-grid">
+          <article class="action"><strong>즉시</strong>A2A 스펙을 기준으로 내부 Agent Card, Task, Message, Artifact, auth_required, input_required 초안을 만든다.</article>
+          <article class="action"><strong>30일 내</strong>검색/문서, 일정, 쇼핑 추천 중 2~3개 도메인 에이전트로 A2A-compatible PoC를 만든다.</article>
+          <article class="action"><strong>병행</strong>signed Agent Card, per-skill auth, 최소 권한 token, human approval, audit log를 보안 baseline으로 정의한다.</article>
+          <article class="watch"><strong>계속 추적</strong>A2A v1.x 변경, 주요 벤더 SDK, MCP와 A2A 결합 사례, production 보안 사고를 추적한다.</article>
+        </div>
+      </section>
+      <section id="report-sources">
+        <h2>출처</h2>
+        <h3>왜 이걸 정리하게 되었는가</h3>
+        <div class="source-pills">
+          <a href="https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/">Google A2A announcement</a>
+          <a href="https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents">Linux Foundation launch</a>
+          <a href="https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year">Linux Foundation update</a>
+          <a href="https://a2a-protocol.org/latest/announcing-1.0/">A2A v1.0</a>
+        </div>
+        <h3>딥리서치 출처</h3>
+        <div class="source-pills">
+          <a href="https://a2a-protocol.org/latest/">A2A docs</a>
+          <a href="https://a2a-protocol.org/latest/topics/key-concepts/">Key Concepts</a>
+          <a href="https://a2a-protocol.org/latest/topics/agent-discovery/">Agent Discovery</a>
+          <a href="https://a2a-protocol.org/dev/specification/">Specification</a>
+          <a href="https://a2a-protocol.org/latest/topics/enterprise-ready/">Enterprise Ready</a>
+          <a href="https://a2a-protocol.org/latest/topics/a2a-and-mcp/">A2A and MCP</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
