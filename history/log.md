@@ -1,6 +1,6 @@
 # Document Update History
 
-- 최종 갱신: 2026-06-29 07:00 KST
+- 최종 갱신: 2026-06-30 07:00 KST
 - HTML 정본: `history/`
 - 기준: git commit 이력과 문서 metadata
 - 정렬 기준: 최신 업데이트 내림차순
@@ -9,6 +9,12 @@
 
 | 최신 업데이트 | 문서 | 상태 | 히스토리 anchor |
 | --- | --- | --- | --- |
+| 2026-06-30 07:00 KST | `report/agent-trend-brief/2026-06-30-0700/` | Daily Brief | `#history-0700-2026-06-30-brief` |
+| 2026-06-30 07:00 KST | `history/` | Operations | `#history-document-history` |
+| 2026-06-30 07:00 KST | `index.html` | Hub | `#history-index` |
+| 2026-06-30 07:00 KST | `report/agent-trend-brief/` | Brief Hub | `#history-agent-trend-brief` |
+| 2026-06-30 07:00 KST | `source/` | Operations | `#history-source-watchlist` |
+| 2026-06-30 07:00 KST | `report/research-log/` | Operations | `#history-research-log` |
 | 2026-06-29 07:00 KST | `report/agent-trend-brief/2026-06-29-0700/` | Daily Brief | `#history-0700-2026-06-29-brief` |
 | 2026-06-29 07:00 KST | `history/` | Operations | `#history-document-history` |
 | 2026-06-29 07:00 KST | `index.html` | Hub | `#history-index` |
@@ -50,6 +56,7 @@
 
 ### Document Update History
 
+- 2026-06-30 07:00 KST: 07:00 Agent Trend Brief 생성, 브리프 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
 - 2026-06-29 07:00 KST: 07:00 Agent Trend Brief 생성, 브리프 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
 - 2026-06-28 07:00 KST: 07:00 Agent Trend Brief 생성, 브리프 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
 - 2026-06-11 11:03 KST: AI Agent 사용 분야 수동 브리프 생성, 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
@@ -66,6 +73,7 @@
 
 ### Agent Trend 전체 인덱스
 
+- 2026-06-30 07:00 KST: 07:00 정기 브리프를 Reports 최상단과 raw 목록에 추가하고, Copilot CLI/model operations, Visual Studio MCP trust, OpenAI private MCP source catalog를 보강.
 - 2026-06-29 07:00 KST: 07:00 정기 브리프를 Reports 최상단과 raw 목록에 추가하고, private MCP/Copilot operations/Microsoft Agent Framework source catalog를 보강.
 - 2026-06-28 07:00 KST: 07:00 정기 브리프를 Reports 최상단과 raw 목록에 추가하고, agent work/discovery/governance/eval source catalog를 보강.
 - 2026-06-11 11:03 KST: AI Agent 사용 분야 수동 브리프를 Reports 최상단과 raw 목록에 추가하고, usage/adoption benchmark source catalog를 보강.
@@ -85,12 +93,19 @@
 
 ### Agent Trend Brief
 
+- 2026-06-30 07:00 KST: 07:00 Agent Trend Brief를 Time Briefs 최상단과 2026-06-30 날짜 섹션에 추가.
 - 2026-06-29 07:00 KST: 07:00 Agent Trend Brief를 Time Briefs 최상단과 2026-06-29 날짜 섹션에 추가.
 - 2026-06-28 07:00 KST: 07:00 Agent Trend Brief를 Time Briefs 최상단과 2026-06-28 날짜 섹션에 추가.
 - 2026-06-11 11:03 KST: 11:03 AI Agent 사용 분야 수동 브리프를 Time Briefs 최상단과 2026-06-11 날짜 섹션에 추가.
 - 2026-06-07 14:00 KST: 운영 슬롯을 매일 07:00 KST 1회로 변경하고 Cadence를 단일 슬롯으로 정리.
 - 2026-06-07 13:55 KST: 운영 슬롯을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 12:48 KST: 정기 에이전트 트렌드 브리프 전용 허브를 생성하고 09:00/20:00 브리프를 시간별 하위 목록으로 정리.
+
+### 2026-06-30 Reports
+
+#### 07:00 Agent Trend Brief
+
+- 2026-06-30 07:00 KST: GitHub Copilot CLI GA/MAI-Code-1 flash/Copilot model signals, Visual Studio 2026 MCP trust validation/usage tracking/agent delegation, OpenAI private MCP, OpenAI personal finance 자료를 확인하고 agent 운영 표면이 terminal/IDE/model policy/MCP trust/private data connector로 확장되는 흐름을 정기 브리프와 raw 원본으로 생성.
 
 ### 2026-06-29 Reports
 
@@ -231,6 +246,7 @@
 
 ### Agent Trend 조사 이력
 
+- 2026-06-30 07:00 KST: 07:00 Agent Trend Brief 항목과 Copilot CLI/model operations, Visual Studio MCP trust, OpenAI private MCP, sensitive-domain agent service source들을 조사 이력에 추가.
 - 2026-06-28 07:00 KST: 07:00 Agent Trend Brief 항목과 agent work/discovery/governance/eval 관련 source들을 조사 이력에 추가.
 - 2026-06-11 11:03 KST: AI Agent 사용 분야 수동 브리프 항목과 관련 benchmark source들을 조사 이력에 추가.
 - 2026-06-07 13:55 KST: 정기 업데이트 시간을 직전 다중 운영 슬롯으로 변경.
@@ -259,6 +275,7 @@
 
 ### Source Watchlist
 
+- 2026-06-30 07:00 KST: GitHub Copilot CLI/model operations, Visual Studio MCP trust validation, OpenAI private MCP, sensitive-domain account linking 신호를 source watchlist에 반영.
 - 2026-06-28 07:00 KST: Agent Work / Discovery / Governance / Evals 보조 소스를 추가하고 ARD 채택, agent identity, digital world eval, framework stability 관찰 기준을 기록.
 - 2026-06-11 11:03 KST: AI Agent Usage / Adoption Benchmarks 보조 소스를 추가하고 customer service, research/data analysis, internal productivity, IT/security 사용 비중 추적 기준을 기록.
 - 2026-06-07 14:00 KST: 정기 확인 시간을 매일 07:00 KST로 변경.

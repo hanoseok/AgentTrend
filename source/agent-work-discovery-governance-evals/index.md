@@ -14,6 +14,9 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [GitHub - Agent Finder](https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available/)
 - [GitHub - MAI-Code-1 flash for Copilot Business and Enterprise](https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/)
 - [GitHub - Copilot CLI new terminal interface GA](https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available/)
+- [GitHub - Copilot Changelog](https://github.blog/changelog/label/copilot/)
+- [Microsoft - Visual Studio 2026 release notes](https://learn.microsoft.com/en-us/visualstudio/releases/2026/release-notes)
+- [OpenAI - Personal finance in ChatGPT](https://openai.com/index/personal-finance-chatgpt/)
 - [Microsoft Agent Framework at Build 2026](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/)
 - [Microsoft Build 2026](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/)
 - [NIST - Software and AI Agent Identity and Authorization](https://www.nccoe.nist.gov/sites/default/files/2026-02/accelerating-the-adoption-of-software-and-ai-agent-identity-and-authorization-concept-paper.pdf)
@@ -31,3 +34,6 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - framework production stability
 - private MCP connector topology and governance
 - model routing, lifecycle, and deprecation controls
+- IDE/terminal session ledger, checkpoint, and handoff controls
+- MCP server trust validation and enterprise allowlist behavior
+- sensitive-domain account linking, consent, evidence, and revocation patterns

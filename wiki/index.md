@@ -7,6 +7,11 @@
 - [Agent Trend Brief 요약](syntheses/agent-trend-brief.md)
 - [Reporting Standard](syntheses/reporting-standard.md)
 
+## Latest Brief
+
+- [2026-06-30 07:00 Agent Trend Brief](../report/agent-trend-brief/2026-06-30-0700/)
+- [2026-06-30 raw Markdown](../history/2026-06-30/0700_agent_trend_brief.md)
+
 ## Sources
 
 - [Source Watchlist](../source/watchlist/)

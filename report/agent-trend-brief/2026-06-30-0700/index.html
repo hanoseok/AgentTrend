@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>0700 Agent Trend Brief</title>
+  <style>
+    :root { --bg:#f7f8fb; --panel:#fff; --ink:#141b2d; --muted:#667085; --line:#d8dee9; --accent:#2563eb; --accent-soft:#eaf1ff; --high:#b42318; --medium:#b54708; --low:#067647; --shadow:0 14px 35px rgba(15,23,42,.08); }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
+    a { color:var(--accent); text-decoration:none; overflow-wrap:anywhere; }
+    a:hover { text-decoration:underline; }
+    main { width:min(1180px, calc(100% - 32px)); margin:32px auto 56px; }
+    .hero, section { background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:28px; margin-bottom:18px; }
+    h1 { margin:0 0 10px; font-size:34px; letter-spacing:0; line-height:1.1; }
+    h2 { margin:0 0 16px; font-size:22px; letter-spacing:0; }
+    h3 { margin:20px 0 10px; font-size:17px; letter-spacing:0; }
+    p { margin:0 0 12px; }
+    .lead { color:#344054; font-size:17px; max-width:940px; }
+    .meta, .source-pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .pill, .source-pills a { display:inline-flex; align-items:center; border:1px solid #bed3ff; border-radius:999px; background:var(--accent-soft); color:#1e40af; padding:6px 10px; font-size:13px; font-weight:760; line-height:1.3; }
+    .source-pills { margin:8px 0 14px; }
+    .source-pills a { padding:3px 8px; font-size:12px; }
+    .summary-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .summary-card { border:1px solid var(--line); border-radius:12px; padding:18px; background:#fcfdff; }
+    .summary-card strong { display:block; color:var(--accent); margin-bottom:6px; }
+    .callout { border:1px solid #bed3ff; background:var(--accent-soft); border-radius:14px; padding:18px; margin:14px 0; }
+    .warning { border:1px solid #fecaca; background:#fff1f0; border-radius:14px; padding:18px; margin:14px 0; }
+    table { width:100%; border-collapse:collapse; overflow:hidden; border-radius:12px; border:1px solid var(--line); background:white; }
+    th, td { border-bottom:1px solid var(--line); padding:12px; text-align:left; vertical-align:top; }
+    th { background:#f1f4f9; color:#344054; }
+    tr:last-child td { border-bottom:0; }
+    .tag { display:inline-block; border-radius:999px; padding:3px 8px; font-size:12px; font-weight:800; white-space:nowrap; }
+    .high { color:var(--high); background:#fff1f0; border:1px solid #ffccc7; }
+    .medium { color:var(--medium); background:#fff7ed; border:1px solid #fed7aa; }
+    .low { color:var(--low); background:#ecfdf3; border:1px solid #abefc6; }
+    ul, ol { padding-left:22px; }
+    li { margin:6px 0; }
+    code { background:#eef2f7; border:1px solid #dbe3ee; border-radius:6px; padding:2px 6px; }
+    @media (max-width:820px){ main{width:min(100% - 20px,1180px);margin-top:18px;} .summary-grid{grid-template-columns:1fr;} table{font-size:14px;} th,td{padding:10px;} h1{font-size:28px;} }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <h1>0700 Agent Trend Brief</h1>
+      <p class="lead">2026-06-30 07:00 KST 기준 정기 브리프. Copilot CLI/model operations, Visual Studio agent guardrails, MCP trust validation, OpenAI private MCP, 민감 도메인 agent service 신호를 확인하고 AI 플랫폼 및 서비스 적용 관점으로 정리했다.</p>
+      <div class="meta">
+        <span class="pill">작성 시점: 2026-06-30 07:00 KST</span>
+        <span class="pill">범위: Coding Agent Ops / MCP Trust / Private Connectors / Sensitive Data</span>
+        <span class="pill">Raw: history/2026-06-30/0700_agent_trend_brief.md</span>
+      </div>
+    </header>
+
+    <section id="summary">
+      <h2>1. Executive Summary</h2>
+      <div class="source-pills">
+        <a href="https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available/">Copilot CLI GA</a>
+        <a href="https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/">GitHub MAI-Code-1 flash</a>
+        <a href="https://learn.microsoft.com/en-us/visualstudio/releases/2026/release-notes">Visual Studio 2026</a>
+        <a href="https://developers.openai.com/blog/connect-private-mcp-servers-to-openai-products">OpenAI private MCP</a>
+        <a href="https://openai.com/index/personal-finance-chatgpt/">OpenAI personal finance</a>
+      </div>
+      <div class="summary-grid">
+        <article class="summary-card"><strong>핵심 판단 1: Agent surface가 운영 표면이 됐다</strong><p>Copilot CLI GA, GitHub Desktop/Copilot, Visual Studio 2026 흐름은 terminal, desktop, IDE, cloud agent를 같은 session으로 묶는 방향이다.</p></article>
+        <article class="summary-card"><strong>핵심 판단 2: Model choice는 정책이다</strong><p>MAI-Code-1 flash와 Copilot model preview 신호는 task별 latency, cost, capability, admin enablement, deprecation을 관리해야 함을 보여준다.</p></article>
+        <article class="summary-card"><strong>핵심 판단 3: MCP는 trust 문제다</strong><p>Visual Studio의 MCP trust validation과 OpenAI private MCP는 connector 등록보다 신뢰 검증, 네트워크 경계, 감사가 중요하다는 신호다.</p></article>
+      </div>
+      <div class="callout"><strong>이번 회차 결론:</strong> AI 플랫폼은 agent session ledger, model catalog policy, MCP trust registry, private connector controls, usage/cost alert, domain-specific data permission을 하나의 운영 패키지로 설계해야 한다.</div>
+    </section>
+
+    <section id="coverage">
+      <h2>2. Source Coverage</h2>
+      <table>
+        <thead><tr><th>소스</th><th>확인 여부</th><th>유의미한 변화</th><th>신뢰도</th></tr></thead>
+        <tbody>
+          <tr><td>GitHub Changelog</td><td>Checked</td><td>Copilot CLI 새 terminal interface GA, MAI-Code-1 flash for Copilot Business/Enterprise, Copilot 관련 모델/desktop 신호 확인.</td><td>Official / Confirmed</td></tr>
+          <tr><td>Microsoft Learn</td><td>Checked</td><td>Visual Studio 2026 release notes에서 MCP trust validation, usage tracking/alerts, App Modernization for C++ GA, PR context, agent delegation, Copilot CLI integration 확인.</td><td>Official / Confirmed</td></tr>
+          <tr><td>OpenAI Developers</td><td>Checked</td><td>private MCP server를 OpenAI products에 연결하는 pattern을 enterprise connector 신호로 유지.</td><td>Official / Confirmed</td></tr>
+          <tr><td>OpenAI Product</td><td>Checked</td><td>ChatGPT personal finance 기능이 account linking과 민감 데이터 기반 agent/service UX 신호를 제공.</td><td>Official / Confirmed</td></tr>
+          <tr><td>Google / GitHub discovery sources</td><td>Checked</td><td>ARD, Agent Finder 흐름을 agent registry/discovery 운영 레이어로 유지.</td><td>Official / Confirmed</td></tr>
+          <tr><td>NIST / Patronus / LangChain</td><td>Checked</td><td>agent identity/authorization, digital-world eval, production agent framework 안정화 신호를 후속 추적 대상으로 유지.</td><td>Government / Company / Official</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="alerts">
+      <h2>3. Project / Product / Policy Alerts</h2>
+      <h3>GitHub Copilot CLI and model operations</h3>
+      <div class="source-pills"><a href="https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available/">Copilot CLI GA</a><a href="https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/">MAI-Code-1 flash</a><a href="https://github.blog/changelog/label/copilot/">GitHub Copilot Changelog</a></div>
+      <p><strong>확인된 사실:</strong> GitHub는 Copilot CLI의 새 terminal interface를 GA로 올렸고, Copilot Business/Enterprise에서 MAI-Code-1 flash를 제공한다. Copilot changelog에는 Claude Opus 4.8 fast preview와 GitHub Desktop 3.6의 worktree/Copilot integration 신호도 이어졌다.</p>
+      <p><strong>해석:</strong> coding agent 제품의 경쟁축은 단일 chat UI가 아니라 terminal, IDE, desktop, cloud agent, model route를 연결하는 운영 경험이다.</p>
+      <p><strong>적용 포인트:</strong> session summary, checkpoint, file/image context, MCP server state, worktree isolation, model route를 공통 session schema로 저장해야 한다.</p>
+
+      <h3>Visual Studio 2026 agent guardrails</h3>
+      <div class="source-pills"><a href="https://learn.microsoft.com/en-us/visualstudio/releases/2026/release-notes">Visual Studio 2026 release notes</a></div>
+      <p><strong>확인된 사실:</strong> Visual Studio 2026 release notes는 GitHub Copilot usage tracking/alerts, MCP server trust validation, PR context in Chat, App Modernization for C++ GA, agent task delegation, Copilot CLI integration을 포함한다.</p>
+      <p><strong>해석:</strong> IDE agent는 코드 생성 도우미보다 조직의 비용, 권한, MCP 신뢰, PR 문맥, agent 간 위임을 관리하는 운영 콘솔에 가까워지고 있다.</p>
+      <p><strong>적용 포인트:</strong> MCP trust state, org policy, usage budget, PR context, delegated task owner, result provenance를 IDE와 backend가 공유해야 한다.</p>
+
+      <h3>OpenAI private MCP and sensitive-domain agent services</h3>
+      <div class="source-pills"><a href="https://developers.openai.com/blog/connect-private-mcp-servers-to-openai-products">OpenAI private MCP</a><a href="https://openai.com/index/personal-finance-chatgpt/">OpenAI personal finance</a></div>
+      <p><strong>확인된 사실:</strong> OpenAI는 private MCP server 연결 방식을 공개했고, ChatGPT의 personal finance 경험은 account linking과 금융 데이터 기반 응답을 제품화하는 방향을 보여준다.</p>
+      <p><strong>해석:</strong> enterprise/private-data agent와 consumer sensitive-domain agent는 모두 연결된 데이터에 대한 권한, 출처, 설명, 감사가 핵심이다.</p>
+      <p><strong>적용 포인트:</strong> private connector tier, account linking consent, data-class tagging, audit trail, citation/evidence, revocation UX가 필요하다.</p>
+
+      <h3>Discovery, identity, eval continuity</h3>
+      <div class="source-pills"><a href="https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/">Google ARD</a><a href="https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available/">GitHub Agent Finder</a><a href="https://www.nccoe.nist.gov/sites/default/files/2026-02/accelerating-the-adoption-of-software-and-ai-agent-identity-and-authorization-concept-paper.pdf">NIST identity</a><a href="https://www.prnewswire.com/news-releases/patronus-ai-raises-50-million-series-b-and-unveils-first-digital-world-models-for-ai-agent-training-and-simulation-302811248.html">Patronus AI</a></div>
+      <p><strong>확인된 사실:</strong> ARD/Agent Finder, NIST agent identity, Patronus simulation/eval, LangGraph productionization 신호는 전일 브리프의 운영 레이어 흐름과 연결된다.</p>
+      <p><strong>해석:</strong> agent가 IDE/terminal/private data로 들어올수록 discovery, identity, permission, eval이 하나의 release gate가 된다.</p>
+    </section>
+
+    <section id="trends">
+      <h2>4. Major Trends and Importance</h2>
+      <table>
+        <thead><tr><th>중요도</th><th>동향</th><th>확인된 사실</th><th>해석 / 추론</th><th>AI 플랫폼 적용 포인트</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag high">High</span></td><td>Terminal/IDE agent surface</td><td>Copilot CLI GA, Visual Studio 2026 Copilot/agent 기능 확인.</td><td>agent는 chat tab이 아니라 개발 환경 전체의 operational layer로 이동.</td><td>session ledger, checkpoint, worktree, PR context, CLI/IDE/cloud handoff.</td></tr>
+          <tr><td><span class="tag high">High</span></td><td>Model operations</td><td>MAI-Code-1 flash, Claude Opus fast preview, Copilot model lifecycle 신호.</td><td>모델 선택은 user preference가 아니라 admin policy와 task routing 문제.</td><td>model catalog, preview flag, fallback, deprecation, task-class route.</td></tr>
+          <tr><td><span class="tag high">High</span></td><td>MCP trust</td><td>Visual Studio MCP trust validation, OpenAI private MCP pattern 확인.</td><td>MCP adoption의 병목은 server 수가 아니라 trust boundary.</td><td>signed server metadata, allowlist, connector tier, audit, egress control.</td></tr>
+          <tr><td><span class="tag medium">Medium-High</span></td><td>Sensitive-domain agent UX</td><td>OpenAI personal finance in ChatGPT 확인.</td><td>finance-style domains need consent, evidence, revocation and explainability.</td><td>account linking consent, data scope, citation, retention and revocation UX.</td></tr>
+          <tr><td><span class="tag medium">Medium-High</span></td><td>Discovery/governance/eval</td><td>ARD/Agent Finder/NIST/Patronus 흐름 유지.</td><td>agent catalog와 eval status가 procurement/release gate로 묶일 가능성.</td><td>registry graph, trust tier, run trace, simulation benchmark.</td></tr>
+          <tr><td><span class="tag medium">Medium</span></td><td>Enterprise usage management</td><td>Visual Studio usage tracking/alerts 확인.</td><td>agent 확산이 빨라질수록 비용/사용량 알림이 governance 기능이 됨.</td><td>budget policy, quota, alerts, team-level usage analytics.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="implications">
+      <h2>5. AI Platform / Service Implications</h2>
+      <table>
+        <thead><tr><th>영역</th><th>적용 포인트</th><th>우선순위</th></tr></thead>
+        <tbody>
+          <tr><td>Agent session schema</td><td>terminal, IDE, desktop, cloud agent가 같은 작업을 이어갈 수 있도록 session id, repo/worktree, model route, MCP state, checkpoint, summary, artifacts, approvals를 공통 기록으로 둔다.</td><td><span class="tag high">High</span></td></tr>
+          <tr><td>Model catalog policy</td><td><code>active</code>, <code>preview</code>, <code>admin_enabled</code>, <code>deprecated_at</code>, <code>fallback</code>, <code>blocked_for_sensitive_action</code> 같은 필드를 둔다.</td><td><span class="tag high">High</span></td></tr>
+          <tr><td>MCP trust registry</td><td>MCP server별 owner, auth method, network boundary, data class, signing/trust validation, allowlist, last verified time, audit log를 저장한다.</td><td><span class="tag high">High</span></td></tr>
+          <tr><td>Sensitive-domain consent</td><td>finance, healthcare, legal, HR domain은 account linking consent, data scope preview, evidence citation, revocation, retention notice, action confirmation이 기본값이어야 한다.</td><td><span class="tag medium">Medium-High</span></td></tr>
+          <tr><td>Usage and cost alerts</td><td>팀/조직 단위 사용량, 모델별 비용, preview model 사용량, 실패율, tool-call volume을 알림과 budget policy로 연결한다.</td><td><span class="tag medium">Medium</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="actions">
+      <h2>6. Recommended Actions</h2>
+      <ol>
+        <li>지금: agent session ledger 초안을 만든다. 최소 필드는 <code>session_id</code>, <code>surface</code>, <code>repo_or_workspace</code>, <code>model_route</code>, <code>mcp_servers</code>, <code>checkpoint</code>, <code>artifact</code>, <code>approval</code>, <code>summary</code>, <code>cost</code>, <code>risk_tier</code>다.</li>
+        <li>지금: MCP trust registry에 <code>trust_validation_status</code>, <code>network_boundary</code>, <code>data_class</code>, <code>owner</code>, <code>last_verified_at</code>, <code>revocation_path</code> 필드를 추가한다.</li>
+        <li>30일: Copilot CLI GA의 checkpoint/session summary와 Visual Studio MCP trust validation을 benchmark checklist로 만든다.</li>
+        <li>30일: finance-style account linking UX를 민감 도메인 agent pattern으로 분해해 consent/evidence/revocation requirements를 만든다.</li>
+      </ol>
+      <div class="warning"><strong>후속 확인:</strong> 이번 회차에서 큰 인수합병 신호는 확인하지 못했다. Copilot CLI CI/CD preview, Visual Studio agent delegation, OpenAI private MCP 배포 패턴, 민감 도메인 account linking 정책 문구를 계속 추적한다.</div>
+    </section>
+
+    <section id="sources">
+      <h2>7. Sources / Inline Evidence</h2>
+      <p>주요 근거 링크는 각 요약과 판단 바로 아래 source pill로 배치했다. 확인된 사실과 해석/추론을 구분했고, 커뮤니티 신호는 공식 발표로 교차 확인 가능한 항목만 본문에 반영했다.</p>
+      <div class="source-pills">
+        <a href="../index.html">Agent Trend Brief Hub</a>
+        <a href="../../../source/index.html">SOURCE_WATCHLIST</a>
+        <a href="../../../index.html#references">Source Catalog</a>
+        <a href="../../../history/2026-06-30/0700_agent_trend_brief.md">Raw Markdown</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
