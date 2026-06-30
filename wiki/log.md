@@ -2,6 +2,7 @@
 
 | 시각 | 작업 | 결과 |
 | --- | --- | --- |
+| 2026-07-01 07:00 KST | daily brief export | `history/2026-07-01/0700_agent_trend_brief.md`와 `report/agent-trend-brief/2026-07-01-0700/` 생성. Claude Science, GeneBench-Pro, ADK Go 2.0, Agent Quality Flywheel, LangChain guardrails/evals/wiki memory, SkillOpt 신호를 반영. |
 | 2026-06-30 07:00 KST | daily brief export | `history/2026-06-30/0700_agent_trend_brief.md`와 `report/agent-trend-brief/2026-06-30-0700/` 생성. Copilot CLI/model operations, Visual Studio MCP trust, OpenAI private MCP, sensitive-domain agent service 신호를 반영. |
 | 2026-06-29 07:00 KST | daily brief export | `history/2026-06-29/0700_agent_trend_brief.md`와 `report/agent-trend-brief/2026-06-29-0700/` 생성. private MCP, Copilot model/CLI operations, Microsoft Agent Framework, discovery/governance/eval 신호를 반영. |
 | 2026-06-28 KST | 저장소 구조 재정렬 | `report/`, `history/`, `wiki/`, `raw/`, `source/`, `tools/` 구조로 리포트와 원문을 분리. |
