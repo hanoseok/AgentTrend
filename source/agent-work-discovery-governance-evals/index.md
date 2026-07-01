@@ -12,10 +12,13 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [OpenAI - GeneBench-Pro case studies](https://openai.com/index/genebench-pro/case-studies/)
 - [Anthropic Economic Index June 2026](https://www.anthropic.com/research/economic-index-june-2026-report)
 - [Anthropic - How Claude Code is used in practice](https://www.anthropic.com/research/claude-code-expertise)
+- [Anthropic - Redeploying Fable 5](https://www.anthropic.com/news/redeploying-fable-5)
 - [Anthropic - Claude Science](https://www.anthropic.com/news/claude-science-ai-workbench)
 - [Anthropic - Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5)
 - [Google - Agentic Resource Discovery](https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/)
+- [Google - Genkit Agents API](https://developers.googleblog.com/build-agentic-full-stack-apps-with-genkit/)
 - [Google - ADK Go 2.0](https://developers.googleblog.com/announcing-adk-go-20/)
+- [Google - Why we built ADK 2.0](https://developers.googleblog.com/why-we-built-adk-20/)
 - [Google - Agent Quality Flywheel](https://developers.googleblog.com/driving-the-agent-quality-flywheel-from-your-coding-agent/)
 - [GitHub - Agent Finder](https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available/)
 - [GitHub - MAI-Code-1 flash for Copilot Business and Enterprise](https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/)
@@ -48,6 +51,8 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - IDE/terminal session ledger, checkpoint, and handoff controls
 - MCP server trust validation and enterprise allowlist behavior
 - sensitive-domain account linking, consent, evidence, and revocation patterns
+- frontier model access tier, classifier change, and jailbreak severity framework
+- full-stack agent API session, persistence, frontend SDK, and remote handoff behavior
 - scientific agent workbench and domain-specific evals
 - graph-based multi-agent runtime with HITL and resumability
 - agent quality flywheel, AutoRaters, and failure clustering
