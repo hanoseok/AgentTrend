@@ -23,6 +23,15 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [GitHub - Agent Finder](https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available/)
 - [GitHub - MAI-Code-1 flash for Copilot Business and Enterprise](https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/)
 - [GitHub - Copilot CLI new terminal interface GA](https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available/)
+- [GitHub - Copilot agent session streaming](https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview/)
+- [GitHub - Cost centers now support AI credit pools](https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps/)
+- [GitHub - Set AI credit session limits in Copilot CLI and SDK](https://github.blog/changelog/2026-07-01-set-ai-credit-session-limits-in-copilot-cli-and-sdk/)
+- [GitHub - Copilot CLI auto model selection](https://github.blog/changelog/2026-07-01-copilot-cli-auto-model-selection-routes-based-on-task/)
+- [GitHub - Enterprises can default to auto model selection](https://github.blog/changelog/2026-07-01-enterprises-can-default-to-auto-model-selection/)
+- [GitHub - Kimi K2.7 Code in Copilot](https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/)
+- [GitHub - Browser tools for Copilot in VS Code GA](https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/)
+- [GitHub - Copilot vision GA](https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available/)
+- [GitHub - Issue fields GA with MCP integration](https://github.blog/changelog/2026-07-02-issue-fields-are-now-generally-available/)
 - [GitHub - Copilot Changelog](https://github.blog/changelog/label/copilot/)
 - [Microsoft - Visual Studio 2026 release notes](https://learn.microsoft.com/en-us/visualstudio/releases/2026/release-notes)
 - [OpenAI - Personal finance in ChatGPT](https://openai.com/index/personal-finance-chatgpt/)
@@ -36,7 +45,10 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [LangChain - Harbor eval stack](https://www.langchain.com/blog/unified-stack-for-evaluating-agents)
 - [LangChain - Wiki Memory](https://www.langchain.com/blog/wiki-memory)
 - [LangChain - Dynamic Subagents in Deep Agents](https://www.langchain.com/blog/introducing-dynamic-subagents-in-deep-agents)
+- [LangChain - Coding agent cost observability](https://www.langchain.com/blog/fix-your-coding-agent-bill)
+- [LangChain - OpenWiki](https://www.langchain.com/blog/introducing-openwiki-an-open-source-agent-for-repo-documentation)
 - [Microsoft Research - SkillOpt](https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/)
+- [Microsoft Research - Memora](https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/)
 
 ## Watch Signals
 
@@ -58,3 +70,8 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - agent quality flywheel, AutoRaters, and failure clustering
 - untrusted agent-written code execution boundary
 - skill and wiki-memory optimization lifecycle
+- agent session event streaming, usage record schema, and SIEM/warehouse export
+- AI credit pools, session caps, cost-center chargeback, and model route cost attribution
+- auto model selection route explanation, admin override, open-weight model provenance, and hosted boundary
+- browser/vision tool surface retention, domain allowlist, and MCP issue-field write audit
+- long-horizon memory retrieval budget, stale memory detection, and documentation freshness
