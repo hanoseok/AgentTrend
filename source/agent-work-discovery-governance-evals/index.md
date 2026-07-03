@@ -15,7 +15,10 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [Anthropic - Redeploying Fable 5](https://www.anthropic.com/news/redeploying-fable-5)
 - [Anthropic - Claude Science](https://www.anthropic.com/news/claude-science-ai-workbench)
 - [Anthropic - Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5)
+- [Axios - Anthropic model governance context](https://www.axios.com/2026/07/03/anthropic-ai-models-revived-behind-the-scenes)
 - [Google - Agentic Resource Discovery](https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/)
+- [Google Cloud - Gemini Enterprise Agent Platform announcement](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform)
+- [Google Cloud - Gemini Enterprise Agent Platform product page](https://cloud.google.com/products/gemini-enterprise-agent-platform)
 - [Google - Genkit Agents API](https://developers.googleblog.com/build-agentic-full-stack-apps-with-genkit/)
 - [Google - ADK Go 2.0](https://developers.googleblog.com/announcing-adk-go-20/)
 - [Google - Why we built ADK 2.0](https://developers.googleblog.com/why-we-built-adk-20/)
@@ -49,6 +52,9 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [LangChain - OpenWiki](https://www.langchain.com/blog/introducing-openwiki-an-open-source-agent-for-repo-documentation)
 - [Microsoft Research - SkillOpt](https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/)
 - [Microsoft Research - Memora](https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/)
+- [Microsoft Cloud - Agent Confidence Index](https://www.microsoft.com/en-us/microsoft-cloud/blog/2026/06/29/the-2026-agent-confidence-index-where-300-builders-see-real-momentum/)
+- [Stanford SALT Lab - Future of Work with AI Agents](https://futureofwork.saltlab.stanford.edu/)
+- [White House - Promoting Advanced AI Innovation and Security](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/)
 
 ## Watch Signals
 
@@ -75,3 +81,7 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - auto model selection route explanation, admin override, open-weight model provenance, and hosted boundary
 - browser/vision tool surface retention, domain allowlist, and MCP issue-field write audit
 - long-horizon memory retrieval budget, stale memory detection, and documentation freshness
+- delegation trust matrix, task-level confidence, worker-desired agency, and HITL requirements
+- enterprise agent control plane details: identity, registry, gateway, runtime, simulation, evaluation, observability
+- model release gate, jailbreak severity taxonomy, export control, rollback, and customer remediation
+- domain workbench artifact lineage, reviewer agent verdicts, human signoff, and external validation status
