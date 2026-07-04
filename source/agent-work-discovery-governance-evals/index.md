@@ -10,6 +10,7 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [OpenAI - Connect private MCP servers to OpenAI products](https://developers.openai.com/blog/connect-private-mcp-servers-to-openai-products)
 - [OpenAI - GeneBench-Pro](https://openai.com/index/introducing-genebench-pro/)
 - [OpenAI - GeneBench-Pro case studies](https://openai.com/index/genebench-pro/case-studies/)
+- [OpenAI - AgentKit migration update](https://openai.com/index/introducing-agentkit/)
 - [Anthropic Economic Index June 2026](https://www.anthropic.com/research/economic-index-june-2026-report)
 - [Anthropic - How Claude Code is used in practice](https://www.anthropic.com/research/claude-code-expertise)
 - [Anthropic - Redeploying Fable 5](https://www.anthropic.com/news/redeploying-fable-5)
@@ -19,6 +20,7 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [Google - Agentic Resource Discovery](https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/)
 - [Google Cloud - Gemini Enterprise Agent Platform announcement](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform)
 - [Google Cloud - Gemini Enterprise Agent Platform product page](https://cloud.google.com/products/gemini-enterprise-agent-platform)
+- [Google Cloud - Monthly AI update with Managed Agents API and CodeMender](https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month)
 - [Google - Genkit Agents API](https://developers.googleblog.com/build-agentic-full-stack-apps-with-genkit/)
 - [Google - ADK Go 2.0](https://developers.googleblog.com/announcing-adk-go-20/)
 - [Google - Why we built ADK 2.0](https://developers.googleblog.com/why-we-built-adk-20/)
@@ -27,6 +29,9 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [GitHub - MAI-Code-1 flash for Copilot Business and Enterprise](https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/)
 - [GitHub - Copilot CLI new terminal interface GA](https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available/)
 - [GitHub - Copilot agent session streaming](https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview/)
+- [GitHub - Improved Copilot usage metrics coverage](https://github.blog/changelog/2026-07-02-improved-accuracy-and-coverage-in-copilot-usage-metrics-reports/)
+- [GitHub - Copilot CLI in Actions without PAT](https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions/)
+- [GitHub - Gemini model deprecation in Copilot](https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash/)
 - [GitHub - Cost centers now support AI credit pools](https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps/)
 - [GitHub - Set AI credit session limits in Copilot CLI and SDK](https://github.blog/changelog/2026-07-01-set-ai-credit-session-limits-in-copilot-cli-and-sdk/)
 - [GitHub - Copilot CLI auto model selection](https://github.blog/changelog/2026-07-01-copilot-cli-auto-model-selection-routes-based-on-task/)
@@ -55,6 +60,10 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [Microsoft Cloud - Agent Confidence Index](https://www.microsoft.com/en-us/microsoft-cloud/blog/2026/06/29/the-2026-agent-confidence-index-where-300-builders-see-real-momentum/)
 - [Stanford SALT Lab - Future of Work with AI Agents](https://futureofwork.saltlab.stanford.edu/)
 - [White House - Promoting Advanced AI Innovation and Security](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/)
+- [Bank of England - Agents of change speech](https://www.bankofengland.co.uk/speech/2026/june/sarah-breeden-panel-at-the-european-central-bank-forum-on-central-banking-2026)
+- [KDnuggets - Agentic AI frameworks roundup](https://www.kdnuggets.com/10-agentic-ai-frameworks-you-should-know-in-2026)
+- [WSJ - Arcade authorization funding context](https://www.wsj.com/cio-journal/arcade-dev-raises-60-million-to-secure-ai-agents-5d07eff4)
+- [Axios - Gradial agentic marketing funding context](https://www.axios.com/2026/06/18/gradial-ai-agents-marketing)
 
 ## Watch Signals
 
@@ -85,3 +94,9 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - enterprise agent control plane details: identity, registry, gateway, runtime, simulation, evaluation, observability
 - model release gate, jailbreak severity taxonomy, export control, rollback, and customer remediation
 - domain workbench artifact lineage, reviewer agent verdicts, human signoff, and external validation status
+- agent accountability ledger schema, telemetry coverage version, and measurement-change metadata
+- CI/CD agent workflow token scope, org-billed credits, session cap, and approval gates
+- model lifecycle calendar, deprecation notices, fallback model eval, and admin model policy migration
+- regulated-market guardrails: circuit breakers, kill switches, human escalation, and public-policy constraints
+- framework portability across code-first SDKs, hosted agents, graph runtimes, and open-source frameworks
+- authorized action policy for enterprise apps, databases, and workflow tools

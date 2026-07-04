@@ -1,6 +1,6 @@
 # Document Update History
 
-- 최종 갱신: 2026-07-04 07:01 KST
+- 최종 갱신: 2026-07-05 07:01 KST
 - HTML 정본: `history/`
 - 기준: git commit 이력과 문서 metadata
 - 정렬 기준: 최신 업데이트 내림차순
@@ -9,6 +9,12 @@
 
 | 최신 업데이트 | 문서 | 상태 | 히스토리 anchor |
 | --- | --- | --- | --- |
+| 2026-07-05 07:01 KST | `report/agent-trend-brief/2026-07-05-0701/` | Daily Brief | `#history-0701-2026-07-05-brief` |
+| 2026-07-05 07:01 KST | `history/` | Operations | `#history-document-history` |
+| 2026-07-05 07:01 KST | `index.html` | Hub | `#history-index` |
+| 2026-07-05 07:01 KST | `report/agent-trend-brief/` | Brief Hub | `#history-agent-trend-brief` |
+| 2026-07-05 07:01 KST | `source/` | Operations | `#history-source-watchlist` |
+| 2026-07-05 07:01 KST | `report/research-log/` | Operations | `#history-research-log` |
 | 2026-07-04 07:01 KST | `report/agent-trend-brief/2026-07-04-0701/` | Daily Brief | `#history-0701-2026-07-04-brief` |
 | 2026-07-04 07:01 KST | `history/` | Operations | `#history-document-history` |
 | 2026-07-04 07:01 KST | `index.html` | Hub | `#history-index` |
@@ -80,6 +86,7 @@
 
 ### Document Update History
 
+- 2026-07-05 07:01 KST: 07:01 Agent Trend Brief 생성, 브리프 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
 - 2026-07-04 07:01 KST: 07:01 Agent Trend Brief 생성, 브리프 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
 - 2026-07-03 07:00 KST: 07:00 Agent Trend Brief 생성, 브리프 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
 - 2026-07-02 07:00 KST: 07:00 Agent Trend Brief 생성, 브리프 허브/인덱스/조사 이력/source watchlist 업데이트 이력을 반영.
@@ -101,6 +108,7 @@
 
 ### Agent Trend 전체 인덱스
 
+- 2026-07-05 07:01 KST: 07:01 정기 브리프를 Reports 최상단과 raw 목록에 추가하고, agent accountability plane, CI agent policy, model lifecycle, regulated guardrail, framework portability source catalog를 보강.
 - 2026-07-04 07:01 KST: 07:01 정기 브리프를 Reports 최상단과 raw 목록에 추가하고, delegation trust architecture, agent control plane, task-level confidence, model release gate, domain workbench audit source catalog를 보강.
 - 2026-07-03 07:00 KST: 07:00 정기 브리프를 Reports 최상단과 raw 목록에 추가하고, Copilot session observability, AI spend governance, model routing, tool surface, memory/cost source catalog를 보강.
 - 2026-07-02 07:00 KST: 07:00 정기 브리프를 Reports 최상단과 raw 목록에 추가하고, model access governance, full-stack agent API, graph/eval runtime, skill/memory source catalog를 보강.
@@ -125,6 +133,7 @@
 
 ### Agent Trend Brief
 
+- 2026-07-05 07:01 KST: 07:01 Agent Trend Brief를 Time Briefs 최상단과 2026-07-05 날짜 섹션에 추가.
 - 2026-07-04 07:01 KST: 07:01 Agent Trend Brief를 Time Briefs 최상단과 2026-07-04 날짜 섹션에 추가.
 - 2026-07-03 07:00 KST: 07:00 Agent Trend Brief를 Time Briefs 최상단과 2026-07-03 날짜 섹션에 추가.
 - 2026-07-02 07:00 KST: 07:00 Agent Trend Brief를 Time Briefs 최상단과 2026-07-02 날짜 섹션에 추가.
@@ -136,6 +145,12 @@
 - 2026-06-07 14:00 KST: 운영 슬롯을 매일 07:00 KST 1회로 변경하고 Cadence를 단일 슬롯으로 정리.
 - 2026-06-07 13:55 KST: 운영 슬롯을 직전 다중 운영 슬롯으로 변경.
 - 2026-06-07 12:48 KST: 정기 에이전트 트렌드 브리프 전용 허브를 생성하고 09:00/20:00 브리프를 시간별 하위 목록으로 정리.
+
+### 2026-07-05 Reports
+
+#### 07:01 Agent Trend Brief
+
+- 2026-07-05 07:01 KST: GitHub Copilot usage metrics coverage, Copilot CLI Actions token model, Gemini model deprecation, Google Managed Agents API/CodeMender, Bank of England agentic finance guardrails, OpenAI AgentKit migration, Anthropic Claude Sonnet 5 자료를 확인하고 agent accountability layer로 수렴하는 흐름을 정기 브리프와 raw 원본으로 생성.
 
 ### 2026-07-04 Reports
 
@@ -306,6 +321,7 @@
 
 ### Agent Trend 조사 이력
 
+- 2026-07-05 07:01 KST: 07:01 Agent Trend Brief 항목과 Copilot usage metrics coverage, Copilot CLI Actions token model, Gemini deprecation, Google Managed Agents API/CodeMender, Bank of England agentic finance guardrails, OpenAI AgentKit migration, Claude Sonnet 5 source들을 조사 이력에 추가.
 - 2026-07-04 07:01 KST: 07:01 Agent Trend Brief 항목과 Google Agent Platform, Microsoft Agent Confidence Index, Stanford WORKBank/JobBench, Anthropic Fable redeploy/Claude Science, GitHub session/cost/model controls source들을 조사 이력에 추가.
 - 2026-07-03 07:00 KST: 07:00 Agent Trend Brief 항목과 Copilot session streaming, AI credit pools, auto model selection, Kimi K2.7, browser/vision GA, issue fields MCP, Memora, LangChain cost/OpenWiki source들을 조사 이력에 추가.
 - 2026-07-02 07:00 KST: 07:00 Agent Trend Brief 항목과 Fable 5/Mythos 5 release governance, Genkit Agents API, ADK 2.0, Agent Quality Flywheel, Claude Science/GeneBench-Pro, LangChain Deep Agents, SkillOpt source들을 조사 이력에 추가.
@@ -339,6 +355,7 @@
 
 ### Source Watchlist
 
+- 2026-07-05 07:01 KST: Agent accountability plane, CI agent policy, model lifecycle calendar, regulated agent guardrail, hosted runtime, framework portability, authorization policy 신호를 source watchlist에 반영.
 - 2026-07-04 07:01 KST: Delegation trust architecture, agent control plane, task-level confidence, human agency, model release governance, domain workbench audit 신호를 source watchlist에 반영.
 - 2026-07-03 07:00 KST: Agent session observability, AI spend governance, model routing, open-weight model policy, browser/vision/MCP write surface, long-horizon memory/cost observability 신호를 source watchlist에 반영.
 - 2026-07-02 07:00 KST: Model access governance, full-stack agent API, ADK 2.0 graph runtime, agent eval flywheel, skill/memory lifecycle 신호를 source watchlist에 반영.

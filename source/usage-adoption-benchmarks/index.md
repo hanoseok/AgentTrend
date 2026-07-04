@@ -15,3 +15,6 @@ Track surveys and usage studies that explain where AI agents are adopted and whi
 - [Stack Overflow Developer Survey - AI](https://survey.stackoverflow.co/2025/ai)
 - [Microsoft Agent Confidence Index](https://www.microsoft.com/en-us/microsoft-cloud/blog/2026/06/29/the-2026-agent-confidence-index-where-300-builders-see-real-momentum/)
 - [Stanford Future of Work with AI Agents](https://futureofwork.saltlab.stanford.edu/)
+- [Bank of England - Agents of change](https://www.bankofengland.co.uk/speech/2026/june/sarah-breeden-panel-at-the-european-central-bank-forum-on-central-banking-2026)
+- [Axios - Gradial agentic marketing funding context](https://www.axios.com/2026/06/18/gradial-ai-agents-marketing)
+- [WSJ - Arcade authorization funding context](https://www.wsj.com/cio-journal/arcade-dev-raises-60-million-to-secure-ai-agents-5d07eff4)
