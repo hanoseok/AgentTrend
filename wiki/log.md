@@ -2,6 +2,7 @@
 
 | 시각 | 작업 | 결과 |
 | --- | --- | --- |
+| 2026-07-08 07:00 KST | daily brief export | `history/2026-07-08/0700_agent_trend_brief.md`와 `report/agent-trend-brief/2026-07-08-0700/` 생성. GitHub Copilot app all-plan/BYOK access, per-user budget UI, Google agentic enterprise runtime/control-plane, Microsoft Agent Skills stable API, Anthropic Alberta cybersecurity deployment, cyber severity/public governance 신호를 반영. |
 | 2026-07-05 07:01 KST | daily brief export | `history/2026-07-05/0701_agent_trend_brief.md`와 `report/agent-trend-brief/2026-07-05-0701/` 생성. Copilot usage metrics coverage, Copilot CLI Actions token model, Gemini deprecation, Google Managed Agents API/CodeMender, Bank of England agentic finance guardrails, OpenAI AgentKit migration, Claude Sonnet 5 신호를 반영. |
 | 2026-07-04 07:01 KST | daily brief export | `history/2026-07-04/0701_agent_trend_brief.md`와 `report/agent-trend-brief/2026-07-04-0701/` 생성. GitHub session/cost/model controls, Google Agent Platform, Microsoft/Stanford task-level confidence, Anthropic release governance/Claude Science 신호를 반영. |
 | 2026-07-03 07:00 KST | daily brief export | `history/2026-07-03/0700_agent_trend_brief.md`와 `report/agent-trend-brief/2026-07-03-0700/` 생성. Copilot session streaming, AI credit pools/session limits, auto model selection, Kimi K2.7, browser/vision GA, issue fields MCP, Memora, LangChain cost/OpenWiki 신호를 반영. |

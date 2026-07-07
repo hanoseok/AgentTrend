@@ -9,6 +9,8 @@
 
 ## Latest Brief
 
+- [2026-07-08 07:00 Agent Trend Brief](../report/agent-trend-brief/2026-07-08-0700/)
+- [2026-07-08 raw Markdown](../history/2026-07-08/0700_agent_trend_brief.md)
 - [2026-07-05 07:01 Agent Trend Brief](../report/agent-trend-brief/2026-07-05-0701/)
 - [2026-07-05 raw Markdown](../history/2026-07-05/0701_agent_trend_brief.md)
 - [2026-07-04 07:01 Agent Trend Brief](../report/agent-trend-brief/2026-07-04-0701/)

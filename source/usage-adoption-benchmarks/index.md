@@ -18,3 +18,6 @@ Track surveys and usage studies that explain where AI agents are adopted and whi
 - [Bank of England - Agents of change](https://www.bankofengland.co.uk/speech/2026/june/sarah-breeden-panel-at-the-european-central-bank-forum-on-central-banking-2026)
 - [Axios - Gradial agentic marketing funding context](https://www.axios.com/2026/06/18/gradial-ai-agents-marketing)
 - [WSJ - Arcade authorization funding context](https://www.wsj.com/cio-journal/arcade-dev-raises-60-million-to-secure-ai-agents-5d07eff4)
+- [Anthropic - Alberta government cybersecurity deployment](https://www.anthropic.com/news/alberta-government-claude-cybersecurity)
+- [TechCrunch - Norm legal agents funding context](https://techcrunch.com/2026/07/07/ai-law-startup-norm-raises-120m-hits-unicorn-valuation/)
+- [TechCrunch - Claude Cowork office-work context](https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/)

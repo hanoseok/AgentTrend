@@ -16,11 +16,14 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [Anthropic - Redeploying Fable 5](https://www.anthropic.com/news/redeploying-fable-5)
 - [Anthropic - Claude Science](https://www.anthropic.com/news/claude-science-ai-workbench)
 - [Anthropic - Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5)
+- [Anthropic - Alberta government cybersecurity deployment](https://www.anthropic.com/news/alberta-government-claude-cybersecurity)
+- [Anthropic - Fable safeguards and Cyber Jailbreak Severity](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework)
 - [Axios - Anthropic model governance context](https://www.axios.com/2026/07/03/anthropic-ai-models-revived-behind-the-scenes)
 - [Google - Agentic Resource Discovery](https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/)
 - [Google Cloud - Gemini Enterprise Agent Platform announcement](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform)
 - [Google Cloud - Gemini Enterprise Agent Platform product page](https://cloud.google.com/products/gemini-enterprise-agent-platform)
 - [Google Cloud - Monthly AI update with Managed Agents API and CodeMender](https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month)
+- [Google Cloud - 20 questions for the agentic enterprise](https://cloud.google.com/blog/products/ai-machine-learning/20-questions-for-the-agentic-enterprise)
 - [Google - Genkit Agents API](https://developers.googleblog.com/build-agentic-full-stack-apps-with-genkit/)
 - [Google - ADK Go 2.0](https://developers.googleblog.com/announcing-adk-go-20/)
 - [Google - Why we built ADK 2.0](https://developers.googleblog.com/why-we-built-adk-20/)
@@ -40,10 +43,14 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [GitHub - Browser tools for Copilot in VS Code GA](https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/)
 - [GitHub - Copilot vision GA](https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available/)
 - [GitHub - Issue fields GA with MCP integration](https://github.blog/changelog/2026-07-02-issue-fields-are-now-generally-available/)
+- [GitHub - Copilot app available to all](https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all/)
+- [GitHub - Per-user budgets for cost centers in billing UI](https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui/)
+- [GitHub - Copilot Billing Preview app retirement](https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3/)
 - [GitHub - Copilot Changelog](https://github.blog/changelog/label/copilot/)
 - [Microsoft - Visual Studio 2026 release notes](https://learn.microsoft.com/en-us/visualstudio/releases/2026/release-notes)
 - [OpenAI - Personal finance in ChatGPT](https://openai.com/index/personal-finance-chatgpt/)
 - [Microsoft Agent Framework at Build 2026](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/)
+- [Microsoft Agent Framework - Agent Skills for .NET](https://devblogs.microsoft.com/agent-framework/agent-skills-for-net-is-now-released/)
 - [Microsoft Build 2026](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/)
 - [NIST - Software and AI Agent Identity and Authorization](https://www.nccoe.nist.gov/sites/default/files/2026-02/accelerating-the-adoption-of-software-and-ai-agent-identity-and-authorization-concept-paper.pdf)
 - [Patronus AI - Digital world models](https://www.prnewswire.com/news-releases/patronus-ai-raises-50-million-series-b-and-unveils-first-digital-world-models-for-ai-agent-training-and-simulation-302811248.html)
@@ -62,6 +69,11 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - [White House - Promoting Advanced AI Innovation and Security](https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/)
 - [Bank of England - Agents of change speech](https://www.bankofengland.co.uk/speech/2026/june/sarah-breeden-panel-at-the-european-central-bank-forum-on-central-banking-2026)
 - [KDnuggets - Agentic AI frameworks roundup](https://www.kdnuggets.com/10-agentic-ai-frameworks-you-should-know-in-2026)
+- [LangChain - AI agent frameworks](https://www.langchain.com/resources/ai-agent-frameworks)
+- [UNESCO - UN Global Dialogue on AI Governance](https://www.unesco.org/en/articles/un-global-dialogue-opens-urgent-call-safe-and-inclusive-ai-benefits-all)
+- [ITU - AI for Good Summit 2026](https://aiforgood.itu.int/summit26/)
+- [TechCrunch - Norm funding context](https://techcrunch.com/2026/07/07/ai-law-startup-norm-raises-120m-hits-unicorn-valuation/)
+- [TechCrunch - Claude Cowork context](https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/)
 - [WSJ - Arcade authorization funding context](https://www.wsj.com/cio-journal/arcade-dev-raises-60-million-to-secure-ai-agents-5d07eff4)
 - [Axios - Gradial agentic marketing funding context](https://www.axios.com/2026/06/18/gradial-ai-agents-marketing)
 
@@ -100,3 +112,8 @@ Track sources that show agents becoming delegated work units with discovery, reg
 - regulated-market guardrails: circuit breakers, kill switches, human escalation, and public-policy constraints
 - framework portability across code-first SDKs, hosted agents, graph runtimes, and open-source frameworks
 - authorized action policy for enterprise apps, databases, and workflow tools
+- agent workforce OS: access surface, budget policy, skill registry, runtime profile, identity, registry, gateway, security evidence
+- BYOK provider policy, billing UI/export join key, and per-user budget inheritance
+- skill package signing/provenance, approval-by-default, sandbox, logging, and revocation
+- security agent evidence ledger: file/line citation, generated tests, human approval, red/blue review, release gate
+- cyber jailbreak severity taxonomy and public governance alignment
